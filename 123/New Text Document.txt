@@ -1,3 +1,0 @@
-git add .
-git commit -m"nop bai"
-git push origin main/master
