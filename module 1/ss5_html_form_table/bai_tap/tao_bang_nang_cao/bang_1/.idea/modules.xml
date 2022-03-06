@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../tao_bang_don_gian/.idea/tao_bang_don_gian.iml" filepath="$PROJECT_DIR$/../tao_bang_don_gian/.idea/tao_bang_don_gian.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../thuc_hanh/tao_bang_nang_cao/.idea/tao_bang_nang_cao.iml" filepath="$PROJECT_DIR$/../../thuc_hanh/tao_bang_nang_cao/.idea/tao_bang_nang_cao.iml" />
+    </modules>
+  </component>
+</project>

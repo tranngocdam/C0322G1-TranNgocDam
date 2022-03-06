@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form lấy survey khách hàng</title>
+    <style>
+        th, td {
+            border:1px solid black;
+        }
+    </style>
+</head>
+<body>
+<form action="okok">
+    <label>What is your age range?</label>
+    <br>
+    <select name="age">
+        <option>18-24</option>
+        <option>25-34</option>
+        <option>35-50</option>
+        <option>50+</option>
+    </select>
+    <br>
+    <br>
+    <lable>What is your yearly income range?</lable>
+    <br>
+    <select name="income range">
+        <option>$0 - $25,000</option>
+        <option>$25,001 - $50,000</option>
+        <option>$50,001 - $100,000</option>
+        <option>$100,000+</option>
+    </select>
+    <br>
+    <br>
+    <label>Gender identity</label>
+    <br>
+        <input type="radio" name="gender" value="male"> Male
+    <br>
+        <input type="radio" name="gender" value="female"> Female
+    <br>
+        <input type="radio" name="gender" value="none"> Nonbinary
+    <br>
+        <input type="radio" name="gender" value="other"> other
+    <br>
+    <form action="ok">
+        <input type="text">
+    </form>
+    <br>
+    <label>Which of the following products have your purchased in the last 2 months. Please check all that apply.</label>
+    <br>
+    <input type="checkbox" name="produce" value="produce"> produce 1
+    <br>
+    <input type="checkbox" name="produce" value="produce"> produce 2
+    <br>
+    <input type="checkbox" name="produce" value="produce"> produce 3
+    <br>
+    <br>
+    <label>How often would you use our new product?</label>
+    <br>
+    <input type="radio" name="new produce" value="Daily"> Daily
+    <br>
+    <input type="radio" name="new produce" value="Weekly"> Weekly
+    <br>
+    <input type="radio" name="new produc" value="Monthly"> Monthly
+    <br>
+    <br>
+    <label>What would you pay for the new produce?</label>
+    <br>
+    <label>$</label>
+        <input type = "text"  size="15"/>
+    <label>.g</label>
+        <input type = "text"  size="15"/>
+    <br>
+    <br>
+    <label>What features would you like to see in the new produce</label>
+        <br>
+        <input type="text" size="60">
+    <br>
+    <br>
+</form>
+    <table cellpadding="20px" style="border-collapse: collapse;">
+            <tr>
+                <td colspan="5">Please rate your level of agreement with the following statement</td>
+            </tr>
+            <tr>
+                <th></th>
+                <th>Strongly Disagree</th>
+                <th>Disagree</th>
+                <th>Agree</th>
+                <th>Strongly Agree</th>
+            </tr>
+            <tr>
+                <td>Our produce are priced fairly</td>
+                <th><input type="radio"><br>1</th>
+                <th><input type="radio"><br>2</th>
+                <th><input type="radio"><br>3</th>
+                <th><input type="radio"><br>4</th>
+            </tr>
+            <tr>
+                <td>Our produce are high quality</td>
+                <th><input type="radio"><br>1</th>
+                <th><input type="radio"><br>2</th>
+                <th><input type="radio"><br>3</th>
+                <th><input type="radio"><br>4</th>
+            </tr>
+            <tr>
+                <td>You would recommend our produce to a friend or coworker</td>
+                <th><input type="radio"><br>1</th>
+                <th><input type="radio"><br>2</th>
+                <th><input type="radio"><br>3</th>
+                <th><input type="radio"><br>4</th>
+            </tr>
+    </table>
+        <button type="submit">Submit</button>
+</body>
+</html>

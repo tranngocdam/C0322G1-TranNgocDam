@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo form đơn giản</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        th, td, caption {
+            border: 1px solid white;
+            /*border-right: 0px;*/
+        }
+
+        /* Khai báo Css cho thẻ có class buổi*/
+        .buoi {
+            color: red;
+        }
+        .mau {
+            color: blue;
+
+        }
+        .header {
+            background-color: red;
+            color: white;
+        }
+        div {
+            border: 1px solid black;
+            width: 30%;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <table cellpadding="12px" style="border-collapse: collapse ">
+
+        <caption class="header">SỞ THÍCH CÁ NHÂN</caption>
+        <thead>
+        <tr>
+            <td class="mau"> Họ và tên</td>
+            <td colspan="3" class="buoi">
+                <form action="okok">
+                    <input id="username" type="text" placeholder="" name="username">
+                </form>
+            </td>
+        </tr>
+        </thead>
+        <tr>
+            <td class="mau"> Email</td>
+            <td colspan="2" class="buoi">
+                <form action="okok">
+                    <input id="username1" type="text" placeholder="" name="username1">
+                </form>
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <form action="plpl">
+                <td class="mau"> Sở thích</td>
+                <td class="buoi">  <input type="checkbox" name="hobbies" value="sport"> Thể thao</td>
+                <td class="buoi">  <input type="checkbox" name="hobbies" value="music"> Âm nhạc</td>
+                <td class="buoi"> <input type="checkbox" name="hobbies" value="read"> Đọc sách</td>
+            </form>
+        </tr>
+        <tr>
+            <td> </td>
+            <td class="buoi">  <input type="checkbox" name="hobbies" value="wed"> Lướt wed</td>
+            <td class="buoi">  <input type="checkbox" name="hobbies" value="game"> Chơi game</td>
+            <td class="buoi"> <input type="checkbox" name="hobbies" value="film"> Điện ảnh</td>
+        </tr>
+        <tr>
+            <td> </td>
+            <td class="buoi"> <input type="checkbox" name="hobbies" value="visit"> Du lịch</td>
+            <td> </td>
+            <td> </td>
+        </tr>
+        <tr>
+            <form action="ggg">
+                 <td> </td>
+                 <td> <button type="submit">Gửi thông tin</button></td>
+                 <td> <button type="submit">Nhập lại</button></td>
+                 <td> </td>
+            </form>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
