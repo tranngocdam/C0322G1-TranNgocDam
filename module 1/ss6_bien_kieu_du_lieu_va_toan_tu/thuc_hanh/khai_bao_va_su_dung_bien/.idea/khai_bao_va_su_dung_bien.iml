@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/.tmp" />
+      <excludeFolder url="file://$MODULE_DIR$/temp" />
+      <excludeFolder url="file://$MODULE_DIR$/tmp" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="su_dung_toan_tu" />
+    <orderEntry type="module" module-name="bai_1" />
+    <orderEntry type="module" module-name="bai_2" />
+    <orderEntry type="module" module-name="bai_3" />
+    <orderEntry type="module" module-name="bai_4" />
+    <orderEntry type="module" module-name="ung_dung_chuyen_doi_tien_te" />
+  </component>
+</module>

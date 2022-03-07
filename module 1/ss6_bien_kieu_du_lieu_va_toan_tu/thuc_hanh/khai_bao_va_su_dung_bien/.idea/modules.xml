@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../../bai_tap/bien_kieu_du_lieu_va_toan_tu/bai_1/.idea/bai_1.iml" filepath="$PROJECT_DIR$/../../bai_tap/bien_kieu_du_lieu_va_toan_tu/bai_1/.idea/bai_1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../bai_tap/bien_kieu_du_lieu_va_toan_tu/bai_2/.idea/bai_2.iml" filepath="$PROJECT_DIR$/../../bai_tap/bien_kieu_du_lieu_va_toan_tu/bai_2/.idea/bai_2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../bai_tap/bien_kieu_du_lieu_va_toan_tu/bai_3/.idea/bai_3.iml" filepath="$PROJECT_DIR$/../../bai_tap/bien_kieu_du_lieu_va_toan_tu/bai_3/.idea/bai_3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../bai_tap/bien_kieu_du_lieu_va_toan_tu/bai_4/.idea/bai_4.iml" filepath="$PROJECT_DIR$/../../bai_tap/bien_kieu_du_lieu_va_toan_tu/bai_4/.idea/bai_4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/khai_bao_va_su_dung_bien.iml" filepath="$PROJECT_DIR$/.idea/khai_bao_va_su_dung_bien.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../su_dung_toan_tu/.idea/su_dung_toan_tu.iml" filepath="$PROJECT_DIR$/../su_dung_toan_tu/.idea/su_dung_toan_tu.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../bai_tap/ung_dung_chuyen_doi_tien_te/.idea/ung_dung_chuyen_doi_tien_te.iml" filepath="$PROJECT_DIR$/../../bai_tap/ung_dung_chuyen_doi_tien_te/.idea/ung_dung_chuyen_doi_tien_te.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nhập điểm học sinh</title>
+</head>
+<body>
+<script>
+    let inputPhysics, inputChemistry, inputBiology;
+    inputBiology=prompt("Enter the physics");
+    inputChemistry=prompt("Enter the chemistry");
+    inputPhysics=prompt("Enter the biology");
+    let physics= parseFloat(inputPhysics);
+    let chemistry= parseFloat(inputChemistry);
+    let biology= parseFloat(inputBiology);
+    let sum= physics+biology+chemistry;
+    let average= (biology+chemistry+physics)/3;
+
+    document.write("sum=" + sum);
+    document.write('<br>');
+    document.write("average=" + average);
+
+</script>
+</body>
+</html>

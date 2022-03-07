@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi tiền tệ</title>
+    <style>
+        th, td, caption {
+            border: 1px solid white;
+            /*border-right: 0px;*/
+        }
+        /* Khai báo Css cho thẻ có class buổi*/
+        .buoi {
+            color: #3CF9ED;
+        }
+    </style>
+</head>
+<body>
+<table cellpadding="20px" style="border-collapse: collapse;">
+    <tr>
+        <th>Amount</th>
+        <th>From Currency</th>
+        <th>To Currency</th>
+        <th></th>
+    </tr>
+    <tr>
+        <th>
+            <form action="soluong">
+                <input type="number">
+            </form>
+        </th>
+        <th>
+            <form action="quocgia">
+                <select name="country">
+                    <option value="VN">Việt Nam</option>
+                    <option value="L">Lào</option>
+                    <option value="TL">Thái Lan</option>
+                    <option value="D">Đức</option>
+                </select>
+            </form>
+        </th>
+        <th>
+            <form action="tien">
+                <select name="currency">-->
+                            <option> USD </option>
+                            <option> EURO </option>
+                </select>
+            </form>
+        </th>
+        <th>
+            <form action="submit">
+                <button type="submit">convert</button>
+            </form>
+        </th>
+    </tr>
+</table>
+<script>
+    function tinhtien() {
+
+    }
+</script>
+</body>
+</html>

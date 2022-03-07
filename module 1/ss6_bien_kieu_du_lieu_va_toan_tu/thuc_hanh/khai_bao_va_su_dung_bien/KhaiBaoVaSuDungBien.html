@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Khai báo và sử dụng biến</title>
+</head>
+<body>
+<button onclick="boi()">click me</button>
+<br>
+    <script>
+            // var i= 10;
+            // var f= 20.5;
+            // var b= true;
+            // var s= "Hà Nội";
+            let i= 10;
+            let f= 20.5;
+            let b= true;
+            let s= "hà nội"
+
+            document.write('i= ' + i);
+            document.write('<br>');
+            document.write('f= ' + f);
+            document.write('<br>');
+            document.write('b=' + b);
+            document.write('<br>');
+            document.write('s= ' + s);
+            document.write('<br>');
+            let width= 10;
+            let height= 20;
+            let area= width*hight;
+            document.write('area='+area);
+            document.write('<br>')
+            function boi(){
+                let a=prompt("Nhập a=");
+                let b=prompt("Nhập b=");
+                let c= a%b;
+                if(c==0){
+                    document.write('a là bội của b');
+                }
+                else{
+                    document.write('a không là bội của b');
+                }
+            }
+
+    </script>
+</body>
+</html>
