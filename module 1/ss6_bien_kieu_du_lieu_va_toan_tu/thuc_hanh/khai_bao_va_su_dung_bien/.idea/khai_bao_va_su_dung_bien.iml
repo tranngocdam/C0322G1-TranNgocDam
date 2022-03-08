@@ -14,5 +14,11 @@
     <orderEntry type="module" module-name="bai_3" />
     <orderEntry type="module" module-name="bai_4" />
     <orderEntry type="module" module-name="ung_dung_chuyen_doi_tien_te" />
+    <orderEntry type="module" module-name="ung_dung_may_tinh" />
+    <orderEntry type="module" module-name="kiem_tra_nam_nhuan" />
+    <orderEntry type="module" module-name="luyen_tap_voi_cau_truc_if_else_if" />
+    <orderEntry type="module" module-name="luyen_tap_voi_cau_truc_switch_case" />
+    <orderEntry type="module" module-name="luyen_tap_toan_tu_3_ngoi" />
+    <orderEntry type="module" module-name="gt" />
   </component>
 </module>

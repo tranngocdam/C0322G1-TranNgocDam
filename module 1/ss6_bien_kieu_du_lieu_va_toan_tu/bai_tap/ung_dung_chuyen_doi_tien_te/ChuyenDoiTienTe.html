@@ -4,13 +4,8 @@
     <meta charset="UTF-8">
     <title>Chuyển đổi tiền tệ</title>
     <style>
-        th, td, caption {
+        th, td {
             border: 1px solid white;
-            /*border-right: 0px;*/
-        }
-        /* Khai báo Css cho thẻ có class buổi*/
-        .buoi {
-            color: #3CF9ED;
         }
     </style>
 </head>
@@ -24,38 +19,43 @@
     </tr>
     <tr>
         <th>
-            <form action="soluong">
-                <input type="number">
-            </form>
+            <input type="text" id="number">
         </th>
         <th>
-            <form action="quocgia">
-                <select name="country">
+            <select name="" id="country">
                     <option value="VN">Việt Nam</option>
-                    <option value="L">Lào</option>
                     <option value="TL">Thái Lan</option>
-                    <option value="D">Đức</option>
-                </select>
-            </form>
+            </select>
         </th>
         <th>
-            <form action="tien">
-                <select name="currency">-->
-                            <option> USD </option>
-                            <option> EURO </option>
-                </select>
-            </form>
+            <select name="" id="currency">
+                <option value="US"> USD </option>
+                <option value="EU"> EURO </option>
+            </select>
         </th>
         <th>
-            <form action="submit">
-                <button type="submit">convert</button>
-            </form>
+            <button onclick="tinhtien()">convert</button>
         </th>
     </tr>
 </table>
 <script>
     function tinhtien() {
+        let nhaptien=document.getElementById('number').value;
+        let country=document.getElementById('country').value;
+        let currency=document.getElementById('currency').value;
 
+        if(country=="VN"&&currency=="US"){
+            alert(nhaptien/23000);
+        }
+        if(country=="Tl"&&currency=="US"){
+            alert(nhaptien/32.9);
+        }
+        if(country=="VN"&&currency=="EU"){
+            alert(nhaptien/24.920);
+        }
+        if(country=="TL"&&currency=="EU"){
+            alert(nhaptien/35.86);
+        }
     }
 </script>
 </body>

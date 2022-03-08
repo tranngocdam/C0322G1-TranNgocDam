@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng máy tính</title>
+</head>
+<body>
+<div>
+    <p id="kq"></p>
+    <h1>Caculator</h1>
+    <tr>
+        <th>
+            <input type="text" id="number1">
+            <input type="text" id="number2">
+        </th>
+    </tr>
+    <br>
+    <br>
+    <tr>
+        <th>
+            <button type="button" onclick="tong()">Adition(+)</button>
+            <button type="button" onclick="hieu()">Subtraction(-)</button>
+            <button type="button" onclick="tich()">Multiplication(x)</button>
+            <button type="button" onclick="thuong()">Division(/)</button>
+        </th>
+    </tr>
+    <br>
+    <br>
+</div>
+<script>
+    function tong() {
+        let nhap1 = parseInt(document.getElementById('number1').value);
+        let nhap2 = parseInt(document.getElementById('number2').value);
+        let tong=(nhap1+nhap2);
+        document.getElementById('kq').innerText=tong;
+    }
+    function hieu() {
+        let nhap1 = parseInt(document.getElementById('number1').value);
+        let nhap2 = parseInt(document.getElementById('number2').value);
+        let hieu=nhap1-nhap2;
+        document.getElementById('kq').innerText=hieu;
+    }
+    function tich() {
+        let nhap1 = parseInt(document.getElementById('number1').value);
+        let nhap2 = parseInt(document.getElementById('number2').value);
+        let tich=nhap1*nhap2;
+        document.getElementById('kq').innerText=tich;
+    }
+    function thuong() {
+        let nhap1 = parseInt(document.getElementById('number1').value);
+        let nhap2 = parseInt(document.getElementById('number2').value);
+        let thuong=nhap1/nhap2;
+        document.getElementById('kq').innerText=thuong;
+    }
+</script>
+
+</body>
+</html>
