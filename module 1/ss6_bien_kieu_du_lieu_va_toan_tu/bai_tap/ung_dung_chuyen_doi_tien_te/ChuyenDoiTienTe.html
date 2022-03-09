@@ -34,27 +34,27 @@
             </select>
         </th>
         <th>
-            <button onclick="tinhtien()">convert</button>
+            <button onclick="tinhTien()">convert</button>
         </th>
     </tr>
 </table>
 <script>
-    function tinhtien() {
-        let nhaptien=document.getElementById('number').value;
+    function tinhTien() {
+        let nhapTien=document.getElementById('number').value;
         let country=document.getElementById('country').value;
         let currency=document.getElementById('currency').value;
 
         if(country=="VN"&&currency=="US"){
-            alert(nhaptien/23000);
+            alert(nhapTien/23000);
         }
         if(country=="Tl"&&currency=="US"){
-            alert(nhaptien/32.9);
+            alert(nhapTien/32.9);
         }
         if(country=="VN"&&currency=="EU"){
-            alert(nhaptien/24.920);
+            alert(nhapTien/24.920);
         }
         if(country=="TL"&&currency=="EU"){
-            alert(nhaptien/35.86);
+            alert(nhapTien/35.86);
         }
     }
 </script>

@@ -20,5 +20,9 @@
     <orderEntry type="module" module-name="luyen_tap_voi_cau_truc_switch_case" />
     <orderEntry type="module" module-name="luyen_tap_toan_tu_3_ngoi" />
     <orderEntry type="module" module-name="gt" />
+    <orderEntry type="module" module-name="chi_so_can_nang" />
+    <orderEntry type="module" module-name="cau_lenh_switch_case" />
+    <orderEntry type="module" module-name="luyen_tap_cau_truc_dieu_kien_01" />
+    <orderEntry type="module" module-name="luyen_tap_cau_truc_dieu_kien_02" />
   </component>
 </module>

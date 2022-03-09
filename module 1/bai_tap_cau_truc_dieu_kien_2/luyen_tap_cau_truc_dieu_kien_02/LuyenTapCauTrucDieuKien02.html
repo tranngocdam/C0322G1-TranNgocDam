@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>câu diều kiện 2</title>
+</head>
+<body>
+<!---------------------bài 1-->
+<!--<input type="text" id="oC" placeholder="nhập độ oC">-->
+<!--<button type="button" onclick="oF()">chuyển sang độ oF</button>-->
+<!--<p id="b1"></p>-->
+<!---------------------bài 1-->
+<!---------------------bài 3-->
+<!--<input type="text" id="dt" placeholder="Nhập cạnh">-->
+<!--<button type="button" onclick="hv()">Tính</button>-->
+<!--<p id="b3"></p>-->
+<!----------------------bài 3-->
+<!-----------------------bài 6-->
+<!--<input type="text" id="a" placeholder="nhập a">-->
+<!--<input type="text" id="b" placeholder="nhập b">-->
+<!--<button type="button" onclick="ptb1()">kết quả</button>-->
+<!--<p id="b6"></p>-->
+<!-----------------------------bài 6-->
+<!---------------------------bài 7-->
+<!--<input type="text" id="a" placeholder="số a">-->
+<!--<input type="text" id="b" placeholder="số b">-->
+<!--<input type="text" id="c" placeholder="số c">-->
+<!--<button type="button" onclick="ptb2()">Nghiệm</button>-->
+<!--<p id="b7"></p>-->
+<!--<p id="b8"></p>-->
+<!-----------------------------bài 7-->
+<!--------------------------bài 9-->
+<!--<input type="text" id="a" placeholder="số a">-->
+<!--<input type="text" id="b" placeholder="số b">-->
+<!--<input type="text" id="c" placeholder="số c">-->
+<!--<button type="button" onclick="tamGiac()">Kiểm tra</button>-->
+<!--<p id="b9"></p>-->
+<!-----------------------------bài 9-->
+<script>
+//////////////////////////////bài 1
+//     function oF() {
+//         let nhietDo=parseFloat(document.getElementById('oC').value);
+//         let F=(nhietDo*9)/5+32;
+//         document.getElementById('b1').innerText="Độ F="+F;
+//    }
+///////////////////////////////bài 1
+/////////////////////////////// bài 3
+// function hv() {
+//     let canhHinhVuong=parseFloat(document.getElementById('dt').value);
+//     let dienTich=canhHinhVuong*canhHinhVuong;
+//     document.getElementById('b3').innerText="Diện tích hình vuông:"+ dienTich;
+// }
+/////////////////////////////// bài 3
+/////////////////////////////// bài 6
+// function ptb1() {
+//     let soA=parseFloat(document.getElementById('a').value);
+//     let soB=parseFloat(document.getElementById('b').value);
+//     if(soA==0){
+//         if(soB==0){
+//             document.getElementById('b6').innerText="phương trình vô số nghiệm";
+//         } else{
+//             document.getElementById('b6').innerText="phương trình vô nghiệm";
+//             }
+//         } else {
+//         let x=-soB/soA;
+//         document.getElementById('b6').innerText="phương trình có nghiệm"+ x;
+//     }
+// }
+////////////////////////////// bài 6
+//////////////////////////////// bài 7
+// function ptb2() {
+//     let soA=parseFloat(document.getElementById('a').value);
+//     let soB=parseFloat(document.getElementById('b').value);
+//     let soC=parseFloat(document.getElementById('c').value);
+//     let delta=(soB*soB)-(4*soA*soC);
+//     if(delta<0){
+//         document.getElementById('b7').innerText="phương trình vô nghiệm";
+//          // alert("delta<0")
+//     } else if(delta==0){
+//         let x2=-soB/(2*soA);
+//         document.getElementById('b7').innerText="phương trình có nghiệm kép:"+ x2;
+//         //alert("delta=0")
+//     } else{
+//         let x1=(-soB+Math.sqrt(delta))/(2*soA);
+//         let x2=(-soB-Math.sqrt(delta))/(2*soA);
+//         document.getElementById('b7').innerText="nghiệm 1:"+   x1;
+//         document.getElementById('b8').innerText="nghiệm 2:"+   x2;
+//         //  alert("delta>0")
+//     }
+// }
+///////////////////////////////// bài 7
+///////////////////////////////// bài 9
+// function tamGiac() {
+//     //alert("ok")
+//     let soA = parseFloat(document.getElementById('a').value);
+//     let soB = parseFloat(document.getElementById('b').value);
+//     let soC = parseFloat(document.getElementById('c').value);
+//     let s1 = soA + soB;
+//     let s2 = soA + soC;
+//     let s3 = soB + soC;
+//     if (soA > 0 && soC > 0 && soB > 0) {
+//         if (s1>soC && s2>soB && s3>soA) {
+//             document.getElementById('b9').innerText="là 3 canh tam giác";
+//         } else {
+//             document.getElementById('b9').innerText="không pải 3 canh tam giác";
+//         }
+//     }else {
+//         document.getElementById('b9').innerText="không pải 3 canh tam giác";
+//     }
+// }
+////////////////////////////////////// bài 9
+</script>
+</body>
+</html>

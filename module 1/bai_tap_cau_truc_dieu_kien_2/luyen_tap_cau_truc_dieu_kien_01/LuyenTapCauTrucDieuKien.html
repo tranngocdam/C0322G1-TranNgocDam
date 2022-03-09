@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>luyện tập</title>
+</head>
+<body>
+<p id="b2"></p>
+<p id="b3"></p>
+<p id="b4"></p>
+<p id="b5"></p>
+<p id="b6"></p>
+<!----------------------------bài 4-->
+<!--<input type="text" id="number1">-->
+<!--<input type="text" id="number2">-->
+<!--<input type="text" id="number3">-->
+<!--<button type="button" onclick="sosanh()">kết quả</button>-->
+<!--------------------------bài 5-->
+<!--<input type="text" id="kt" placeholder="điểm kiểm tra">-->
+<!--<input type="text" id="gk" placeholder="điểm giữa kì">-->
+<!--<input type="text" id="ck" placeholder="điểm cuối kì">-->
+<!--<button type="button" onclick="hocluc()">học lực</button>-->
+<!------------------------------bài 6-->
+<!--<input type="text" id="ds" placeholder="nhập danh số">-->
+<!--<button type="button" onclick="tinhds()">kết quả</button>-->
+
+<script>
+//------------bài 1----------------
+//     let a=parseInt(prompt("Nhập a:"));
+//     let b=parseInt(prompt("Nhập b"));
+//     if(a%b===0) {
+//         alert("a chia hết chi b");
+//     } else {
+//         alert("a không chia hết cho b");
+//     }
+//-------------bài 2----------------
+//         let old=parseInt(prompt("Nhập tuổi:"));
+//         if(old>=16){
+//             document.getElementById('b2').innerText="Đủ tuổi vào lớp 10";
+//         } else {
+//             document.getElementById('b2').innerText="Không đủ tuổi vào lớp 10";
+//         }
+//--------------bài 3------------
+//         let numBer=parseInt(prompt("nhập số nguyên:"));
+//         if(numBer>0){
+//             document.getElementById('b3').innerText="Số vừa nhập lớn hơn 0";
+//         } else if(numBer<0){
+//             document.getElementById('b3').innerText="Số vừa nhập bé hơn 0";
+//         } else {
+//             document.getElementById('b3').innerText="Số vừa nhập bằng 0";
+//         }
+//----------------bài 4----------
+// function sosanh() {
+//     let a=parseInt(document.getElementById('number1').value);
+//     let b=parseInt(document.getElementById('number2').value);
+//     let c=parseInt(document.getElementById('number3').value);
+//     if(a>b){
+//         if(a>c){
+//             document.getElementById('b4').innerText="Số lớn nhất là:"+ a;
+//         } else{
+//             document.getElementById('b4').innerText="Số lớn nhất là:"+ c;
+//         }
+//     } else {
+//         if(b>c){
+//             document.getElementById('b4').innerText="Số lớn nhất là:"+ b;
+//         } else{
+//             document.getElementById('b4').innerText="Số lớn nhất là:"+ c;
+//         }
+//     }
+// }
+//-----------------bài 5----------------
+// function hocluc() {
+//         let kiemTra=parseFloat(document.getElementById('kt').value);
+//         let giuaKi=parseFloat(document.getElementById('gk').value);
+//         let cuoiKi=parseFloat(document.getElementById('ck').value);
+//         let dtb=(kiemTra+giuaKi*2+cuoiKi*3)/6;
+//         if(dtb>=8){
+//             document.getElementById('b5').innerText="Học sinh giỏi";
+//         } else if(dtb>=6.5){
+//             document.getElementById('b5').innerText="Học sinh khá";
+//         } else if(dtb>=4){
+//             document.getElementById('b5').innerText="Học sinh trung bình";
+//         } else {
+//             document.getElementById('b5').innerText="Học sinh yếu";
+//         }
+// }
+//--------------------bài 6-------------------
+// function tinhds() {
+//     //let hoaHong=1;
+//     let danhSo=parseInt(document.getElementById('ds').value);
+//     if(danhSo<300){
+//         let hoaHong1=parseFloat(danhSo*0.3);
+//         document.getElementById('b6').innerText="Hoa hồng là:"+ hoaHong1;
+//     } else if(danhSo<600){
+//         let hoaHong2=parseFloat((danhSo-300)*0.6+300*0.3);
+//         document.getElementById('b6').innerText="Hoa hồng là:"+ hoaHong2;
+//     } else if(danhSo<1000){
+//         let hoaHong3=parseFloat((danhSo-300)*0.6+(danhSo-300)*0.3+(danhSo-600));
+//         document.getElementById('b6').innerText="Hoa hồng là:"+ hoaHong3;
+//     } else{
+//         let hoaHong4=parseFloat((danhSo-300)*0.6+(danhSo-300)*0.3+(danhSo-600)+(danhSo-1000)*1.2);
+//         document.getElementById('b6').innerText="Hoa hồng là:"+ hoaHong4;
+//     }
+// }
+</script>
+</body>
+</html>
