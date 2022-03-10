@@ -24,5 +24,11 @@
     <orderEntry type="module" module-name="cau_lenh_switch_case" />
     <orderEntry type="module" module-name="luyen_tap_cau_truc_dieu_kien_01" />
     <orderEntry type="module" module-name="luyen_tap_cau_truc_dieu_kien_02" />
+    <orderEntry type="module" module-name="su_dung_vong_lap_for" />
+    <orderEntry type="module" module-name="su_dung_vong_lap_do_while" />
+    <orderEntry type="module" module-name="may_tinh_don_gian" />
+    <orderEntry type="module" module-name="bang_cuu_chuong" />
+    <orderEntry type="module" module-name="so_nguyen_to" />
+    <orderEntry type="module" module-name="luyen_tap_vong_lap_01" />
   </component>
 </module>

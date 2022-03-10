@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vòng lặp</title>
+</head>
+<body>
+<script>
+    // --------------bài 1
+    // for(let i=1; i<100;i++){
+    //     document.write(i);
+    //     document.write("<br>");
+    //     if(i===99){
+    //         document.write("đã hoàn thành")
+    //     }
+    // }
+    // bài 2
+    // let nt=parseFloat(prompt("nhập nhiệt độ: "));
+    // if(nt>100){
+    //     document.write("giảm nhiệt độ");
+    // }
+    // if(nt<20){
+    //     document.write("tăng nhiệt độ");
+    // }
+    // bài 3
+    //         let a1 = 0, a2 = 1, a;
+    //         for (let i = 1;i<=20; i++) {
+    //             document.write(a1);
+    //             document.write("<br>");
+    //             a = a1 + a2;
+    //             a1 = a2;
+    //             a2 = a;
+    //         }
+// bài 4
+//     let a1 = 0, a2 = 1, a;
+//     for (let i = 1; ; i++) {
+//         a = a1 + a2;
+//         a1 = a2;
+//         a2 = a;
+//         if (a1 % 5 === 0) {
+//             document.write(a1);
+//             break;
+//         }
+//     }
+//     bài 5
+//             let a1 = 0, a2 = 1, a, s=0;
+//             for (let i = 1;i<=20; i++) {
+//                 s += a1;
+//                 a = a1 + a2;
+//                 a1 = a2;
+//                 a2 = a;
+//             }
+//             document.write(s);
+//     bài 6
+    let count=0, s=0;
+    for(let i=1; ; i++){
+        if(i%7==0){
+            s+=i;
+            count++;
+            if(count===3){
+                break;
+            }
+        }
+    }
+    document.write(s);
+</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>máy tính đơn giản</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td colspan="4"><input type="text" id="display"></td>
+    </tr>
+    <tr>
+        <th><button type="button" onclick="nhap(1)">1</button></th>
+        <th><button type="button" onclick="nhap(2)">2</button></th>
+        <th><button type="button" onclick="nhap(3)">3</button></th>
+        <th><button type="button" onclick="nhap('+')">+</button></th>
+    </tr>
+    <tr>
+        <th><button type="button" onclick="nhap(4)">4</button></th>
+        <th><button type="button" onclick="nhap(5)">5</button></th>
+        <th><button type="button" onclick="nhap(6)">6</button></th>
+        <th><button type="button" onclick="nhap('-')">-</button></th>
+    </tr>
+    <tr>
+        <th><button type="button" onclick="nhap(7)">7</button> </th>
+        <th><button type="button" onclick="nhap(8)">8</button> </th>
+        <th><button type="button" onclick="nhap(9)">9</button> </th>
+        <th><button type="button" onclick="nhap('*')">*</button> </th>
+    </tr>
+    <tr>
+        <th><button type="button" onclick="xoa()">C</button> </th>
+        <th><button type="button" onclick="nhap(0)">0</button> </th>
+        <th><button type="button" onclick="kq()">=</button> </th>
+        <th><button type="button" onclick="nhap('/')">/</button> </th>
+    </tr>
+</table>
+<script>
+function nhap(gtri) {
+        document.getElementById('display').value+=gtri;
+}
+function kq() {
+    let str=document.getElementById('display').value;
+    let ketQua=eval(str);
+    document.getElementById('display').value=ketQua;
+}
+function xoa() {
+    let c='';
+    document.getElementById('display').value=c;
+
+}
+</script>
+</body>
+</html>
