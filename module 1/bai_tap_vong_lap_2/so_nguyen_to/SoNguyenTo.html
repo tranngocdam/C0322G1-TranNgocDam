@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>số nguyên tố</title>
+</head>
+<body>
+<script>
+     var  i, j, count=0;
+     var flag=true;
+    for ( i=2; ; i++) {
+        flag = true;
+        for (j = 2; j * j <= i; j++) {
+            if (i % j == 0) {
+                flag = false;
+                break;
+            }
+        }
+        if (flag == true) {
+            count+=1;
+            if(count==20){
+                break;
+            }
+            document.write(i);
+            document.write("<br>");
+        }
+    }
+</script>
+</body>
+</html>

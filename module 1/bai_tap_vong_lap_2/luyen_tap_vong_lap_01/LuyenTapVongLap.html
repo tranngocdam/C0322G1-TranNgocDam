@@ -14,7 +14,7 @@
     //         document.write("đã hoàn thành")
     //     }
     // }
-    // bài 2
+    //------------------ bài 2
     // let nt=parseFloat(prompt("nhập nhiệt độ: "));
     // if(nt>100){
     //     document.write("giảm nhiệt độ");
@@ -22,7 +22,7 @@
     // if(nt<20){
     //     document.write("tăng nhiệt độ");
     // }
-    // bài 3
+    //------------- bài 3
     //         let a1 = 0, a2 = 1, a;
     //         for (let i = 1;i<=20; i++) {
     //             document.write(a1);
@@ -31,7 +31,7 @@
     //             a1 = a2;
     //             a2 = a;
     //         }
-// bài 4
+//--------------- bài 4
 //     let a1 = 0, a2 = 1, a;
 //     for (let i = 1; ; i++) {
 //         a = a1 + a2;
@@ -42,7 +42,7 @@
 //             break;
 //         }
 //     }
-//     bài 5
+//   -----------  bài 5
 //             let a1 = 0, a2 = 1, a, s=0;
 //             for (let i = 1;i<=20; i++) {
 //                 s += a1;
@@ -51,18 +51,32 @@
 //                 a2 = a;
 //             }
 //             document.write(s);
-//     bài 6
-    let count=0, s=0;
-    for(let i=1; ; i++){
-        if(i%7==0){
-            s+=i;
-            count++;
-            if(count===3){
-                break;
+//   ---------  bài 6
+//     let count=0, s=0;
+//     for(let i=1; ; i++){
+//         if(i%7==0){
+//             s+=i;
+//             count++;
+//             if(count===30){
+//                 break;
+//             }
+//         }
+//     }
+//     document.write(s);
+//     bài 7
+
+        for ( var i = 1; i <= 100; i++) {
+            if (i % 3 === 0 && i % 5 === 0) {
+                document.write("FizzBuzz");
+            } else if (i % 3 === 0) {
+                document.write("Fizz");
+            } else if (i % 5 === 0) {
+                document.write("Buzz");
+            } else {
+                document.write(i);
             }
+            document.write("<br>");
         }
-    }
-    document.write(s);
 </script>
 </body>
 </html>

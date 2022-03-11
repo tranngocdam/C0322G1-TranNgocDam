@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>luyện tập vòng lặp</title>
+</head>
+<body>
+<script>
+    //--------------------- bài 1
+    // let b, b1=0, b2=1;
+    // for(let i=0; i<100; i++){
+    //     document.write(b1);
+    //     document.write("<br>");
+    //     b=b1+b2;
+    //     b1=b2;
+    //     b2=b;
+    // }
+    // ------------------bài 2
+    // var n=parseInt(prompt("nhập n"));
+    // var giaiThua=1;
+    // for(let i=1; i<=n; i++){
+    //     giaiThua*=i;
+    // }
+    // document.write("Giai thừa:"+ giaiThua);
+    // bài 3
+    //---------------------------------------
+    // for(let i=0; i<5; i++){
+    //     for(let j=0; j<5; j++ ){
+    //         if(i===j||i>j) {
+    //             document.write("*");
+    //         }
+    //     }
+    //     document.write("<br>");
+    // }
+//-------------------------------------------
+//     var z=0;
+//     for(let i=0; i<5; i++){
+//         for(let j=0; j<5-z; j++ ){
+//             document.write("*");
+//         }
+//         document.write("<br>");
+//         z++;
+//     }
+    // --------------------------------
+    // for(let i=0; i<=5 ; i++) {
+    //     for (let j = 0;j<=5; j++) {
+    //         if(j<=5-i){
+    //             document.write("&nbsp&nbsp");
+    //         }else{
+    //             document.write("*");
+    //         }
+    //     }
+    //     document.write("<br>");
+    // }
+    //-----------------------------------
+    // for(let i=0; i<5; i++){
+    //     for(let j=0;j<5;j++){
+    //         if(i>j){
+    //             document.write("&nbsp&nbsp");
+    //         }else {
+    //             document.write("*");
+    //         }
+    //     }
+    //     document.write("<br>");
+    // }
+    //-------------------------------
+    let chieuDai=parseInt(prompt("nhập chiều dài:"));
+    let chieuCao=parseInt(prompt("nhập chiều cao:"));
+        for(let i=0; i<chieuDai; i++){
+            for(let j=0; j<chieuCao; j++){
+                if(i===0||i===chieuDai-1||j===0||j===chieuCao-1){
+                    document.write("*");
+                }else {
+                    document.write("&nbsp&nbsp");
+                }
+            }
+            document.write("<br>");
+        }
+</script>
+</body>
+</html>
