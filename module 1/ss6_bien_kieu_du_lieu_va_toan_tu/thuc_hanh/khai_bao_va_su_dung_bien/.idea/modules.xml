@@ -3,17 +3,21 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../../bai_tap/bien_kieu_du_lieu_va_toan_tu/bai_1/.idea/bai_1.iml" filepath="$PROJECT_DIR$/../../bai_tap/bien_kieu_du_lieu_va_toan_tu/bai_1/.idea/bai_1.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../../bai_tap/bien_kieu_du_lieu_va_toan_tu/bai_2/.idea/bai_2.iml" filepath="$PROJECT_DIR$/../../bai_tap/bien_kieu_du_lieu_va_toan_tu/bai_2/.idea/bai_2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../../../Tailieu md1/bai_tap/bai_2/.idea/bai_2.iml" filepath="$PROJECT_DIR$/../../../../../Tailieu md1/bai_tap/bai_2/.idea/bai_2.iml" />
       <module fileurl="file://$PROJECT_DIR$/../../bai_tap/bien_kieu_du_lieu_va_toan_tu/bai_3/.idea/bai_3.iml" filepath="$PROJECT_DIR$/../../bai_tap/bien_kieu_du_lieu_va_toan_tu/bai_3/.idea/bai_3.iml" />
       <module fileurl="file://$PROJECT_DIR$/../../bai_tap/bien_kieu_du_lieu_va_toan_tu/bai_4/.idea/bai_4.iml" filepath="$PROJECT_DIR$/../../bai_tap/bien_kieu_du_lieu_va_toan_tu/bai_4/.idea/bai_4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../ss9_mang/thuc_hanh/ban_co_caro/.idea/ban_co_caro.iml" filepath="$PROJECT_DIR$/../../../ss9_mang/thuc_hanh/ban_co_caro/.idea/ban_co_caro.iml" />
       <module fileurl="file://$PROJECT_DIR$/../../../bai_tap_vong_lap_2/bang_cuu_chuong/.idea/bang_cuu_chuong.iml" filepath="$PROJECT_DIR$/../../../bai_tap_vong_lap_2/bang_cuu_chuong/.idea/bang_cuu_chuong.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../../../../vidu/bang_sc/.idea/bang_sc.iml" filepath="$PROJECT_DIR$/../../../../../../vidu/bang_sc/.idea/bang_sc.iml" />
       <module fileurl="file://$PROJECT_DIR$/../../../bai_tap_cau_truc_dieu_kien_2/cau_lenh_switch_case/.idea/cau_lenh_switch_case.iml" filepath="$PROJECT_DIR$/../../../bai_tap_cau_truc_dieu_kien_2/cau_lenh_switch_case/.idea/cau_lenh_switch_case.iml" />
       <module fileurl="file://$PROJECT_DIR$/../../../bai_tap_cau_truc_dieu_kien_2/chi_so_can_nang/.idea/chi_so_can_nang.iml" filepath="$PROJECT_DIR$/../../../bai_tap_cau_truc_dieu_kien_2/chi_so_can_nang/.idea/chi_so_can_nang.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../ss9_mang/thuc_hanh/dao_nguoc_cac_phan_tu_mang/.idea/dao_nguoc_cac_phan_tu_mang.iml" filepath="$PROJECT_DIR$/../../../ss9_mang/thuc_hanh/dao_nguoc_cac_phan_tu_mang/.idea/dao_nguoc_cac_phan_tu_mang.iml" />
       <module fileurl="file://$PROJECT_DIR$/../../../../../../vidu/gt/.idea/gt.iml" filepath="$PROJECT_DIR$/../../../../../../vidu/gt/.idea/gt.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/khai_bao_va_su_dung_bien.iml" filepath="$PROJECT_DIR$/.idea/khai_bao_va_su_dung_bien.iml" />
       <module fileurl="file://$PROJECT_DIR$/../../../ss7_cau_truc_dieu_kien_1/thuc_hanh/kiem_tra_nam_nhuan/.idea/kiem_tra_nam_nhuan.iml" filepath="$PROJECT_DIR$/../../../ss7_cau_truc_dieu_kien_1/thuc_hanh/kiem_tra_nam_nhuan/.idea/kiem_tra_nam_nhuan.iml" />
       <module fileurl="file://$PROJECT_DIR$/../../../bai_tap_cau_truc_dieu_kien_2/luyen_tap_cau_truc_dieu_kien_01/.idea/luyen_tap_cau_truc_dieu_kien_01.iml" filepath="$PROJECT_DIR$/../../../bai_tap_cau_truc_dieu_kien_2/luyen_tap_cau_truc_dieu_kien_01/.idea/luyen_tap_cau_truc_dieu_kien_01.iml" />
       <module fileurl="file://$PROJECT_DIR$/../../../bai_tap_cau_truc_dieu_kien_2/luyen_tap_cau_truc_dieu_kien_02/.idea/luyen_tap_cau_truc_dieu_kien_02.iml" filepath="$PROJECT_DIR$/../../../bai_tap_cau_truc_dieu_kien_2/luyen_tap_cau_truc_dieu_kien_02/.idea/luyen_tap_cau_truc_dieu_kien_02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../bai_tap_mang_2/luyen_tap_mang_01/.idea/luyen_tap_mang_01.iml" filepath="$PROJECT_DIR$/../../../bai_tap_mang_2/luyen_tap_mang_01/.idea/luyen_tap_mang_01.iml" />
       <module fileurl="file://$PROJECT_DIR$/../../../ss7_cau_truc_dieu_kien_1/thuc_hanh/luyen_tap_toan_tu_3_ngoi/.idea/luyen_tap_toan_tu_3_ngoi.iml" filepath="$PROJECT_DIR$/../../../ss7_cau_truc_dieu_kien_1/thuc_hanh/luyen_tap_toan_tu_3_ngoi/.idea/luyen_tap_toan_tu_3_ngoi.iml" />
       <module fileurl="file://$PROJECT_DIR$/../../../ss7_cau_truc_dieu_kien_1/thuc_hanh/luyen_tap_voi_cau_truc_if_else_if/.idea/luyen_tap_voi_cau_truc_if_else_if.iml" filepath="$PROJECT_DIR$/../../../ss7_cau_truc_dieu_kien_1/thuc_hanh/luyen_tap_voi_cau_truc_if_else_if/.idea/luyen_tap_voi_cau_truc_if_else_if.iml" />
       <module fileurl="file://$PROJECT_DIR$/../../../ss7_cau_truc_dieu_kien_1/thuc_hanh/luyen_tap_voi_cau_truc_switch_case/.idea/luyen_tap_voi_cau_truc_switch_case.iml" filepath="$PROJECT_DIR$/../../../ss7_cau_truc_dieu_kien_1/thuc_hanh/luyen_tap_voi_cau_truc_switch_case/.idea/luyen_tap_voi_cau_truc_switch_case.iml" />
@@ -24,6 +28,9 @@
       <module fileurl="file://$PROJECT_DIR$/../su_dung_toan_tu/.idea/su_dung_toan_tu.iml" filepath="$PROJECT_DIR$/../su_dung_toan_tu/.idea/su_dung_toan_tu.iml" />
       <module fileurl="file://$PROJECT_DIR$/../../../ss8_vong_lap/thuc_hanh/su_dung_vong_lap_do_while/.idea/su_dung_vong_lap_do_while.iml" filepath="$PROJECT_DIR$/../../../ss8_vong_lap/thuc_hanh/su_dung_vong_lap_do_while/.idea/su_dung_vong_lap_do_while.iml" />
       <module fileurl="file://$PROJECT_DIR$/../../../ss8_vong_lap/thuc_hanh/su_dung_vong_lap_for/.idea/su_dung_vong_lap_for.iml" filepath="$PROJECT_DIR$/../../../ss8_vong_lap/thuc_hanh/su_dung_vong_lap_for/.idea/su_dung_vong_lap_for.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../ss9_mang/thuc_hanh/tao_va_thao_tac_voi_mang/.idea/tao_va_thao_tac_voi_mang.iml" filepath="$PROJECT_DIR$/../../../ss9_mang/thuc_hanh/tao_va_thao_tac_voi_mang/.idea/tao_va_thao_tac_voi_mang.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../ss9_mang/thuc_hanh/tim_gia_tri_lon_nhat_trong_mang/.idea/tim_gia_tri_lon_nhat_trong_mang.iml" filepath="$PROJECT_DIR$/../../../ss9_mang/thuc_hanh/tim_gia_tri_lon_nhat_trong_mang/.idea/tim_gia_tri_lon_nhat_trong_mang.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../ss9_mang/thuc_hanh/tim_phan_tu_mang/.idea/tim_phan_tu_mang.iml" filepath="$PROJECT_DIR$/../../../ss9_mang/thuc_hanh/tim_phan_tu_mang/.idea/tim_phan_tu_mang.iml" />
       <module fileurl="file://$PROJECT_DIR$/../../bai_tap/ung_dung_chuyen_doi_tien_te/.idea/ung_dung_chuyen_doi_tien_te.iml" filepath="$PROJECT_DIR$/../../bai_tap/ung_dung_chuyen_doi_tien_te/.idea/ung_dung_chuyen_doi_tien_te.iml" />
       <module fileurl="file://$PROJECT_DIR$/../../bai_tap/ung_dung_may_tinh/.idea/ung_dung_may_tinh.iml" filepath="$PROJECT_DIR$/../../bai_tap/ung_dung_may_tinh/.idea/ung_dung_may_tinh.iml" />
     </modules>
