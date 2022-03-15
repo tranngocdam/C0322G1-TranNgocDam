@@ -40,5 +40,8 @@
     <orderEntry type="module" module-name="ban_co_caro" />
     <orderEntry type="module" module-name="bai_2" />
     <orderEntry type="module" module-name="luyen_tap_mang_01" />
+    <orderEntry type="module" module-name="su_dung_cac_ham_co_san" />
+    <orderEntry type="module" module-name="tu_dien" />
+    <orderEntry type="module" module-name="luyen_tap_mang_02" />
   </component>
 </module>

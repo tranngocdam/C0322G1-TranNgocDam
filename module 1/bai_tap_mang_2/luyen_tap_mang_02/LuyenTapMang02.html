@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mảng 02</title>
+</head>
+<body>
+<script>
+    // -------------------------bài 1----------------------
+    // let a = [ [1, 2, 1, 24], [8, 11, 9, 4], [7, 0, 7, 27], [7, 4, 28, 14], [3, 10, 26, 7]];
+    // for (var i in a)
+    // {
+    //     console.log("row " + i);
+    //     for (var j in a[i])
+    //     {
+    //         console.log(" " + a[i][j]);
+    //     }
+    // }
+    // ----------------------bài 2---------------------------
+    // let array=['c', 's', 'c', '2', '6', '1'];
+    // let first=0;
+    // let last=array.length;
+    // while (first<last){
+    //     let dem=array[first];
+    //     array[first]=array[last];
+    //     array[last]=dem;
+    //     first++;
+    //     last--;
+    // }
+    // document.write(array.join(""));
+    //--------------------------- bài 3-----------------
+    // let array=['c', 's', 'l', '2', 'k', '1', 'h', '7', 't', '8', '99'];
+    // let count =0;
+    // for(let i=0; i<array.length; i++){
+    //         if(array[i]%2==0||array[i]%2==1){
+    //             count++;
+    //         }
+    // }
+    // document.write("Kí tự số là:"+ count);
+    //---------------------- bài 4------------------
+    // let str=prompt("nhập:")
+    // // let str = "đà nẵng thành phố đáng sống, việt nam";
+    // let count=0;
+    // for(let i=0; i<str.length; i++){
+    //     if(str[i]===" "){
+    //         count++;
+    //     }
+    // }
+    // document.write("Số từ có trong chuỗi:"+(count+1));
+    //--------------------- bài 5-----------------
+    // let flag=false;
+    // let x=0;
+    // // let str1='tôi thích học lập trình';
+    // // let str2='tôi không học lập trình';
+    // let str1=prompt("nhập:");
+    // let str2=prompt("nhập:");
+    // if(str1.length!=str2.length){
+    //     flag=false;
+    // }else {
+    //     for(let i=0; i<str1.length; i++){
+    //         if(str1[i]==str2[i]){
+    //             flag=true;
+    //         }else {
+    //             flag=false;
+    //             break;
+    //         }
+    //     }
+    // }
+    // if(flag===true){
+    //     document.write("giống nhau");
+    // }else{
+    //     document.write("không giống nhau");
+    // }
+    //---------------------- bài 6-----------------
+    let str1=["tôi", "-", "thích", "-", "học", "-", "lập", "-", "trình"];
+    for(let i=0; i<str1.length; i++){
+       if(str1[i]==='-') {
+            str1.splice(i, 1,"_");
+       }
+    }
+    //document.write(str1);
+    document.write(str1.join(" "));
+</script>
+</body>
+</html>

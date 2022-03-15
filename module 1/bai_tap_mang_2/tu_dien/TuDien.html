@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>từ điển</title>
+</head>
+<body>
+<input type="text" id="english" placeholder="english">
+<input type="text" id="vietnam" placeholder="vietnam">
+<input type="button" value="Dịch" onclick="phienDich()">
+<p id="display"></p>
+<script>
+    let array1=["hi", "laptop", "sleep", "eat", "soccer", "egg", "money"];
+    let array2=["xin chào", "máy tính", "ngủ", "ăn", "bóng đá", "trứng", "tiền"];
+    let flag=false;
+function phienDich() {
+    for(let i=0; i<array1.length; i++){
+        for(let j=0; j<array2.length; j++){
+            let x=document.getElementById("english").value;
+            if(array1[i]===x){
+                if(i==j){
+                    document.getElementById("vietnam").value=array2[j];
+                    flag=true;
+                }
+            }
+
+        }
+    }
+    if(flag===false){
+        document.getElementById("display").innerText="No found";
+    }else{
+        document.getElementById("display").innerText="found";
+    }
+}
+</script>
+</body>
+</html>
