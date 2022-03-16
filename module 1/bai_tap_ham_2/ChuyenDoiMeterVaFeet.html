@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="foot" placeholder="foot">
+<input type="button" value="foot->meter" onclick="chuyenDoi()">
+<input type="text" id="meter" placeholder="meter">
+<br>
+<br>
+<input type="text" id="meter1" placeholder="meter">
+<input type="button" value="meter->foot" onclick="chuyenNguoc()">
+<input type="text" id="foot1" placeholder="foot">
+<script>
+    function footToMeter(foot) {
+        return 0.305 * foot;
+    }
+    function meterToFeet(meter) {
+        return 3.279 * meter ;
+    }
+    function chuyenDoi() {
+        let feet=footToMeter(document.getElementById("foot").value);
+        document.getElementById("meter").value=feet;
+    }
+    function chuyenNguoc() {
+        let meter=meterToFeet(document.getElementById("meter1").value);
+        document.getElementById("foot1").value=meter;
+    }
+</script>
+</body>
+</html>

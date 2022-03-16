@@ -18,13 +18,23 @@
 <!--<input type="button" value="display" onclick="displayArray()">-->
 <!--<input type="button" value="xuất" onclick="outputArray()">-->
 <!--<p id="okok"></p>-->
+<!------------------------bài 7------------------------>
+<input type="text" id="b7" placeholder="Nhập mảng">
+<input type="button" value="nhập mảng" onclick="addArray()">
+<input type="button" value="xuất mảng" onclick="displayArray()">
+<br>
+<br>
+<input type="text" id="nhapv" placeholder="nhập v">
+<input type="button" value="tìm v" onclick="findElement()">
+<p id="display1"></p>
+<p id="display2"></p>
 <!-----------------------bài 8--------------------------->
-<input type="text" id="ok">
-<input type="button" value="nhập" id="b6" onclick="addArray()">
-<input type="button" value="xuất" id="b" onclick="displayArray()">
-<input type="button" value="đảo ngược" id="bb" onclick="sapXep()">
-<p id="okok"></p>
-<p id="okokok"></p>
+<!--<input type="text" id="ok">-->
+<!--<input type="button" value="nhập" id="b6" onclick="addArray()">-->
+<!--<input type="button" value="xuất" id="b" onclick="displayArray()">-->
+<!--<input type="button" value="đảo ngược" id="bb" onclick="sapXep()">-->
+<!--<p id="okok"></p>-->
+<!--<p id="okokok"></p>-->
 <script>
     // ----------------bài 1-------------------
     // var array=[2, 40, 6, 12, 7, 15, 55, 76, 5, 30];
@@ -125,34 +135,62 @@
     //         document.write("V is not in the array");
     //     }
     // }
-    // ---------------------bài 8------------------
-    let array=Array();
-    let t=0;
-    function addArray() {
-        array[t]=document.getElementById("ok").value;
-        alert("giá trị"+array[t]+"      chỉ số:"+ t);
-        document.getElementById("ok").value="";
-        t++;
-    }
-    function displayArray() {
-        let a="<hr>";
-        for(let i=0; i<array.length; i++){
-            a+="chỉ số:"+i+"="+array[i]+"<br>";
+    //---------------------- bài 7--------------
+        let array=Array();
+        let t=0, find;
+        function addArray() {
+            array[t]=document.getElementById("b7").value;
+            alert("giá trị"+array[t]+"       chỉ số:"+ t);
+            document.getElementById("b7").value=" ";
+            t++;
         }
-        document.getElementById("okok").innerHTML=a;
-    }
-    function sapXep() {
-        for(let i=0; i<array.length-1; i++){
-            for(let j=i+1; j<array.length; j++){
-                if(array[i]<array[j]){
-                    let dem=array[i];
-                    array[i]=array[j];
-                    array[j]=dem;
-                }
+        function displayArray() {
+            let b="<hr>";
+            for(let i=0; i<array.length; i++){
+                b+="chỉ số:  "+i+"     giá trị=  "+array[i]+"<br>";
             }
+            document.getElementById("display1").innerHTML=b;
         }
-            document.getElementById("okokok").innerHTML=array;
-    }
+        function findElement() {
+            for(let i=0; i<array.length; i++){
+                find =document.getElementById("nhapv").value;
+                if(array[i]===find){
+                  let t =  array.splice(i, 1);
+                    //array.push(0);
+                }
+                //array.push(0);
+                //document.getElementById("display2").innerHTML=array;
+            }
+            document.getElementById("display2").innerHTML=t;
+        }
+    // ---------------------bài 8------------------
+    // let array=Array();
+    // let t=0;
+    // function addArray() {
+    //     array[t]=document.getElementById("ok").value;
+    //     alert("giá trị"+array[t]+"      chỉ số:"+ t);
+    //     document.getElementById("ok").value="";
+    //     t++;
+    // }
+    // function displayArray() {
+    //     let a="<hr>";
+    //     for(let i=0; i<array.length; i++){
+    //         a+="chỉ số:"+i+"="+array[i]+"<br>";
+    //     }
+    //     document.getElementById("okok").innerHTML=a;
+    // }
+    // function sapXep() {
+    //     for(let i=0; i<array.length-1; i++){
+    //         for(let j=i+1; j<array.length; j++){
+    //             if(array[i]<array[j]){
+    //                 let dem=array[i];
+    //                 array[i]=array[j];
+    //                 array[j]=dem;
+    //             }
+    //         }
+    //     }
+    //         document.getElementById("okokok").innerHTML=array;
+    // }
 
 </script>
 </body>

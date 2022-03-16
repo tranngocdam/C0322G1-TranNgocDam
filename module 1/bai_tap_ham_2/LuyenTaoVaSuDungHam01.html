@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!------------------------bài 1-------------------------->
+<!--<input type="button"value="call" onclick="alertMessage()">-->
+<!------------------------bài 2--------------------->
+<!--<input type="button" value="call" onclick="goiHam()">-->
+<!-------------------------bài 3---------------------->
+<!--<input type="text" id="a1" placeholder="a">-->
+<!--<input type="text" id="b1" placeholder="b">-->
+<!--<input type="button" value="duyệt" onclick="xemXet()">-->
+<!-------------------------bài 5---------------------------->
+<input type="text" placeholder="chuỗi sao 1" id="sao1">
+<input type="button" value="tìm" onclick="timSao()">
+<input type="text" placeholder="chùm sao" id="chum1">
+<script>
+    //----------------- bài 1----------------
+    // function alertMessage() {
+    //         alert("xin chào");
+    // }
+    //------------------bài 2----------------
+    // let i=prompt("nhập:");
+    // function goiHam() {
+    //     i++;
+    //     alert("kết quả:   "+ i);
+    // }
+    //------------------ bài 3----------------
+    // function soSanh(a, b) {
+    //     let sum=a+b;
+    //     if(a>b){
+    //       return  "a lớn hơn b";
+    //     }else {
+    //         return  "tổng hai số:"+ sum;
+    //     }
+    // }
+    //     let c1=soSanh(7, 12);
+    //     alert(c1);
+    //----------------- bài 4----------------
+    // function addNumbers() {
+    //     alert(result);
+    //     firstNum = 4;
+    //     secondNum = 8;
+    //     result = firstNum + secondNum;
+    //     return result;
+    // }
+    // result = 0;
+    // result = addNumbers();
+    // //alert(result);
+    // ---------------------bài 5---------
+    let array1=["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+    let array2=["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+        function timSao() {
+            for (let i = 0; i < array1.length; i++) {
+                for (let j = 0; j < array2.length; j++) {
+                    if (array1[i] === document.getElementById("sao1").value){
+                        if (i === j) {
+                            document.getElementById("chum1").value = array2[j];
+                            return alert("tìm thấy");
+                            break;
+                        }
+                    }
+                }
+            }
+            return alert("ko tìm thấy");
+        }
+</script>
+</body>
+</html>

@@ -43,5 +43,9 @@
     <orderEntry type="module" module-name="su_dung_cac_ham_co_san" />
     <orderEntry type="module" module-name="tu_dien" />
     <orderEntry type="module" module-name="luyen_tap_mang_02" />
+    <orderEntry type="module" module-name="thuc_hanh" />
+    <orderEntry type="module" module-name="bai_tap" />
+    <orderEntry type="module" module-name="bai_tap" />
+    <orderEntry type="module" module-name="bai_tap_ham_2" />
   </component>
 </module>
