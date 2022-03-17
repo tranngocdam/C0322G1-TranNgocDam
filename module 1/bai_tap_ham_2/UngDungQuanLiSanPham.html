@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <label ><b>Add new product</b></label>
+    <br>
+    <br>
+    <input type="text" placeholder="new product" id="newproduct">
+    <input type="button" value="Add" onclick="addProduct()">
+</div>
+<table id="displayArr" border="1"></table>
+<script>
+    let arrayProduct=['Sony Xperia', 'Samsung Galaxy', 'Nokia 6', 'Xiaomi Redmi X4', 'Apple ip6s'];
+    display();
+    function display() {
+        let str='<tr>'+
+            '<td>New product</td>'+
+            '<td></td>'+
+            '<td>'+arrayProduct.length+'produce</td>'+
+            '</tr>';
+        for (let i = 0; i <arrayProduct.length ; i++) {
+            str+='<tr>' +
+                '<td>'+arrayProduct[i]+'</td>'+
+                '<td><button onclick="editProduct(' + i + ')">edit</button></td>'+
+                '<td><button onclick="deleteProduct(' + i + ')">delete</button></td>' +
+                '</tr>'
+        }
+        document.getElementById("displayArr").innerHTML=str;
+    }
+    function addProduct() {
+            let produceName=document.getElementById('newproduct').value;
+            document.getElementById('newproduct').value='';
+            arrayProduct.push(produceName);
+            //console.log(arrayProduct);
+            display();
+    }
+    function deleteProduct(i) {
+           arrayProduct.splice(i, 1);
+           display();
+        //alert('delete'+index);
+    }
+    function editProduct() {
+
+    }
+</script>
+</body>
+</html>

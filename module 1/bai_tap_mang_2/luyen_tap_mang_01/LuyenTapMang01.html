@@ -28,6 +28,7 @@
 <input type="button" value="tìm v" onclick="findElement()">
 <p id="display1"></p>
 <p id="display2"></p>
+<p id="display3"></p>
 <!-----------------------bài 8--------------------------->
 <!--<input type="text" id="ok">-->
 <!--<input type="button" value="nhập" id="b6" onclick="addArray()">-->
@@ -137,11 +138,12 @@
     // }
     //---------------------- bài 7--------------
         let array=Array();
-        let t=0, find;
+        let t=0;
         function addArray() {
             array[t]=document.getElementById("b7").value;
+            debugger
             alert("giá trị"+array[t]+"       chỉ số:"+ t);
-            document.getElementById("b7").value=" ";
+            document.getElementById("b7").value="";
             t++;
         }
         function displayArray() {
@@ -152,16 +154,24 @@
             document.getElementById("display1").innerHTML=b;
         }
         function findElement() {
+            let count=0;
+            let find =document.getElementById("nhapv").value;
             for(let i=0; i<array.length; i++){
-                find =document.getElementById("nhapv").value;
-                if(array[i]===find){
-                  let t =  array.splice(i, 1);
-                    //array.push(0);
+                if(array[i]==find){
+                    //count+=1;
+                    array.splice(i, 1);
+                    //array.push(0)
+                    //count+=1;
                 }
-                //array.push(0);
-                //document.getElementById("display2").innerHTML=array;
+                //array.push(0)
+                //array.splice(i, 1);
             }
-            document.getElementById("display2").innerHTML=t;
+            //document.getElementById("display3").innerHTML=count;
+            // for (let j = 0; j < count ; j++) {
+            //     //array.splice(j, 1);
+            //     array.push(0);
+            // }
+            document.getElementById("display2").innerHTML=array;
         }
     // ---------------------bài 8------------------
     // let array=Array();
