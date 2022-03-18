@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class HinhChuNhat{
+        constructor(cd, cr) {
+            this.cd=cd;
+            this.cr=cr;
+        }
+        getChieuRong(){
+            return this.cr;
+        }
+        getChieuDai(){
+            return this.cd;
+        }
+        getDienTich(){
+            return (cd * cr);
+        }
+        getChuVi(){
+            return ((cd + cr)*2);
+        }
+    }
+    let cDai=parseFloat(prompt("Nhập chiều dài:"));
+    let cRong=parseFloat(prompt("nhập chiều rộng:"));
+    let chuNhat=new HinhChuNhat(cDai, cRong);
+    let cd=chuNhat.getChieuDai();
+    let cr=chuNhat.getChieuRong();
+    let dienTich=chuNhat.getDienTich();
+    let chuVi=chuNhat.getChuVi();
+     alert("chiều dài"+cd+"     chiều rộng:"+cr+"       diện tích:"+dienTich+"     chu vi:"+ chuVi);
+</script>
+</body>
+</html>

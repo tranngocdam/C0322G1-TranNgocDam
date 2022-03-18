@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Temperature{
+        constructor(oC) {
+            this.oC=oC;
+        }
+        getDoC(){
+            return this.oC;
+        }
+        getCToF() {
+            return ((oC*9)/5+32);
+        }
+        getCToK(){
+            return oC+273.15;
+        }
+    }
+    let c=parseFloat(prompt("nhập độ oC:"));
+    let nhietDo=new Temperature(c);
+    let oC=nhietDo.getDoC();
+    let DoK=nhietDo.getCToK();
+    let DoF=nhietDo.getCToF();
+    alert("ĐỘ K:"+DoK+"          ĐỘ F:"+DoF);
+</script>
+</body>
+</html>

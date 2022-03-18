@@ -48,5 +48,8 @@
     <orderEntry type="module" module-name="bai_tap" />
     <orderEntry type="module" module-name="bai_tap_ham_2" />
     <orderEntry type="module" module-name="quan_li_san_pham" />
+    <orderEntry type="module" module-name="thuc_hanh" />
+    <orderEntry type="module" module-name="bai_tap" />
+    <orderEntry type="module" module-name="bai_tap_huong_doi_tuong_2" />
   </component>
 </module>
