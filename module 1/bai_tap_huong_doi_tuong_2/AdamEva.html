@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="eat">Eat</button>
+<script>
+    class Apple{
+        constructor(weight) {
+            this.weight=weight;
+        }
+        getWeight(){
+            return this.weight;
+        }
+        decrease(){
+            if(this.weight>0){
+                this.weight--;
+            }
+        }
+        isEmpty(){
+            if(this.weight===0){
+                return false;
+            }
+            else{
+                return true;
+            }
+        }
+    }
+    class Human{
+        constructor(name, gender, weight) {
+            this.name=name;
+            this.gender=gender;
+            this.weight=weight;
+        }
+        setGender(boolean){
+        this.gender=boolean;
+        }
+        getMale() {
+            if (this.gender === 'male') {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        checkApple(){
+        console.log(apple.getWeight());
+        return apple.getWeight();
+        }
+        eat(weight){
+            weight.decrease();
+        }
+        getName(){
+            return this.name;
+        }
+        setName(name) {
+            this.name = name;
+        }
+        getWeight(){
+           return  this.weight;
+        }
+        setWeight(weight){
+            this.weight=weight;
+        }
+        say(str){
+            console.log(str);
+        }
+    }
+    let adam = new Human('adam', 'male', 54);
+    let eva = new Human('eva', 'female', 45);
+    const apple = new Apple(6);
+    let adamOf =false;
+    document.getElementById('eat').onclick= () => {
+        if(apple.isEmpty()){
+            if(adamOf){
+                adam.eat(apple);
+                adam.setWeight(++adam.weight);
+                if(!adam.checkApple(apple)){
+                    adam.say("Hết táo rồi để a đi kiếm thêm");
+                }
+                adamOf=true;
+            }
+            else{
+                eva.eat(apple);
+                eva.setWeight(++adam.weight);
+                if(!eva.checkApple(apple)){
+                    eva.say("Hết táo rồi đi kiếm thêm đi");
+                }
+                adamOf=false;
+            }
+        }
+
+    }
+</script>
+</body>
+</html>

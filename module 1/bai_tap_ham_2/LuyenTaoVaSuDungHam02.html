@@ -85,7 +85,7 @@
     //     let check=hoanVi(soA, soB);
     //     //document.write("hoán vị:  "+ check);
     // console.log(check);
-    // bài 8
+    // -------------------bài 8--------------------
     // let array1=[64, 3, 8, 56, 45, 4];
     // function hoanViArray(array) {
     //         let i=0;
@@ -101,26 +101,26 @@
     // }
     //          let t=hoanViArray(array1);
     //          alert(t.join(" "));
-    // bài 8
-    // let array1=['n', 'm', 'g', 'm', 'm', 'h', 'f', 'q'];
-    // function kiemTra(array) {
-    //     let count=0;
-    //     let flag=false;
-    //     let check=prompt("nhập :");
-    //     for (let i = 0; i < array.length; i++) {
-    //         if (array[i] === check) {
-    //             count++;
-    //             flag = true;
-    //         }
-    //     }
-    //     if(flag===true){
-    //         return alert("số lần xuất hiện: "+ count);
-    //     }else {
-    //         return -1;
-    //     }
-    // }
-    // let t=kiemTra(array1);
-    // alert(t);
+    // ---------------------bài 9---------------------
+    let check=prompt("nhập :");
+    let array1=['n', 'm', 'g', 'm', 'm', 'h', 'f', 'q'];
+    function kiemTra(array, k) {
+        let count=0;
+        let flag=false;
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] === k) {
+                count++;
+                flag = true;
+            }
+        }
+        if(flag===true){
+            return alert("số lần xuất hiện: "+ count);
+        }else {
+            return -1;
+        }
+    }
+    let t=kiemTra(array1, check);
+    alert(t);
 
 </script> 
 </body>

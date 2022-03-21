@@ -20,12 +20,12 @@
             return oC+273.15;
         }
     }
-    let c=parseFloat(prompt("nhập độ oC:"));
-    let nhietDo=new Temperature(c);
+    let DoC=parseFloat(prompt("nhập độ oC:"));
+    let nhietDo=new Temperature(DoC);
     let oC=nhietDo.getDoC();
-    let DoK=nhietDo.getCToK();
-    let DoF=nhietDo.getCToF();
-    alert("ĐỘ K:"+DoK+"          ĐỘ F:"+DoF);
+    let chuyenDoCToK=nhietDo.getCToK();
+    let chuyenDoCToF=nhietDo.getCToF();
+    alert("ĐỘ K:"+chuyenDoCToK+"          ĐỘ F:"+chuyenDoCToF);
 </script>
 </body>
 </html>

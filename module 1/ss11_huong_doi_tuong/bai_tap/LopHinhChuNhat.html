@@ -5,7 +5,9 @@
     <title>Title</title>
 </head>
 <body>
+<canvas id="DemoCanvas" width="500" height="600"></canvas>
 <script>
+    let canvas = document.getElementById("DemoCanvas");
     class HinhChuNhat{
         constructor(cd, cr) {
             this.cd=cd;
@@ -23,15 +25,27 @@
         getChuVi(){
             return ((cd + cr)*2);
         }
+        getHienThi(x, y, cd, cr){
+            if (canvas.getContext)
+            {
+                let ctx = canvas.getContext('2d');
+                ctx.fillStyle='#fa4b2a';    // color of fill
+                ctx.fillRect(x, y, cd, cr); // create rectangle
+            }
+        }
     }
     let cDai=parseFloat(prompt("Nhập chiều dài:"));
     let cRong=parseFloat(prompt("nhập chiều rộng:"));
+    let trucX=parseInt(prompt("Nhập tọa độ trục x: "));
+    let trucY=parseInt(prompt("Nhập tọa độ trục Y: "));
     let chuNhat=new HinhChuNhat(cDai, cRong);
     let cd=chuNhat.getChieuDai();
     let cr=chuNhat.getChieuRong();
     let dienTich=chuNhat.getDienTich();
     let chuVi=chuNhat.getChuVi();
-     alert("chiều dài"+cd+"     chiều rộng:"+cr+"       diện tích:"+dienTich+"     chu vi:"+ chuVi);
+    let hienThi=chuNhat.getHienThi(trucX, trucY, cDai, cRong);
+     alert("chiều dài:"+cd+"     chiều rộng:"+cr+"       diện tích:"+dienTich+"     chu vi:"+ chuVi);
+
 </script>
 </body>
 </html>
