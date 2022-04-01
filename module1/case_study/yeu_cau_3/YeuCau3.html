@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+        <p><b>List đồ uống</b></p>
+        <input type="button" id="1" value="1 Cafe" onclick="giaCa1()" >
+        <input type="button" id="2" value="2 Cam vắt" onclick="giaCa2()" >
+        <input type="button" id="3" value="3 Nước ép cà rốt" onclick="giaCa3()">
+        <input type="button" id="4" value="4 Nước ép cà chua" onclick="giaCa4()">
+        <input type="button" id="5" value="5 nước lọc" onclick="giaCa5()">
+        <input type="button" id="6" value="6 Nước dừa" onclick="giaCa6()">
+        <input type="button" id="7" value="Thoát gọi món" onclick="so7()">
+        <br>
+        <br>
+        <input type="number" id="mon" placeholder="chọn món">
+        <input type="number" id="soLuong" placeholder="số lượng">
+        <br>
+        <br>
+        <input type="button" value="thành tiền" onclick="hienThiGia()">
+        <br>
+        <br>
+        <p id="ok"></p>
+        <br>
+        <h1 id="ok1"></h1>
+<script>
+    // -----------------bài 1----------------
+    // let a=[1,4,6];
+    // let b=[];
+    // function sum(arr1, arr2) {
+    //     let dem=0;
+    //     for ( let i = 0; i<arr1.length; i++) {
+    //             dem+=arr1[i];
+    //             arr2.push(dem);
+    //     }
+    //     return arr2;
+    // }
+    // sum(a, b);
+    // alert(b);
+    // ----------------bài 2----------------
+    // let arrayA=[8,2,5,4,5,3,0,9];
+    // let arrayB=[7,2,5,6,6,1,5,3];
+    // function value(arrA, arrB) {
+    //     let missingValue=[];
+    //     for (let i = 0; i <arrB.length ; i++) {
+    //         for (let j = 0; j <arrA.length ; j++) {
+    //             if(arrB[i]===arrA[j]){
+    //                 arrB.splice(i,1);
+    //             }
+    //         }
+    //     }
+    //     for (let i = 0; i <arrB.length-1 ; i++) {
+    //         for (let j = i+1; j <arrB.length ; j++) {
+    //             if(arrB[i]===arrB[j]){
+    //                 arrB.splice(i,1);
+    //             }
+    //         }
+    //     }
+    //     missingValue.push(arrB);
+    //     return missingValue;
+    // }
+    // let check=value(arrayA, arrayB);
+    // alert(check);
+    // --------------bài 3-------------------
+    // let tuSo=[1, 4, 6, 8];
+    // let mauSo=[2, 3, 7, 2];
+    // function maxPhanTo(tuso, mauso){
+    //     let index;
+    //     let max=(tuso[0]/mauso[0]);
+    //     for (let i = 0; i <tuso.length ; i++) {
+    //         if (tuso[i] / mauso[i] > max) {
+    //             max = tuso[i] / mauso[i];
+    //              index = i;
+    //         }
+    //     }
+    //     return index;
+    // }
+    // let check=maxPhanTo(tuSo, mauSo);
+    // alert(check);
+    //------------------bài 4--------------------
+    // let nhapSo=parseInt(prompt("nhập số: "));
+    // let array=['không', 'một', 'hai', 'ba', 'bốn', 'năm', 'sáu', 'bảy', 'tám', 'chín'];
+    // let dem='';
+    // let chuyen=nhapSo.toString();
+    // function docSo(arr1, arr2) {
+    //     let dem=Array();
+    //     for (let i = 0; i <arr1.length ; i++) {
+    //         for (let j = 0; j <arr2.length ; j++) {
+    //             if(arr1[i]==j){
+    //                 dem.push(arr2[j]);
+    //             }
+    //         }
+    //     }
+    //     alert(dem.join(""));
+    //     return dem;
+    // }
+    // let check=docSo(chuyen, array);
+    // alert(check);
+    //bài
+    let array=[];
+    let array3=[10000, 15000, 20000, 23000, 5000, 17000];
+    function giaCa1() {
+        alert("cafe: "+10000+"vnd");
+    }
+    function giaCa2() {
+        alert("cam vắt: "+15000+"vnd");
+    }
+    function giaCa3() {
+        alert("nước ép cà rốt: "+20000+"vnd");
+    }
+    function giaCa4() {
+        alert("nước ép cà chua: "+23000+"vnd");
+    }
+    function giaCa5() {
+        alert("nước lọc: "+5000+"vnd");
+    }
+    function giaCa6() {
+        alert("nước dừa: "+17000+"vnd");
+    }
+    function hienThiGia() {
+        let chonMon=document.getElementById("mon").value;
+        let soLuong=document.getElementById("soLuong").value;
+        let tinhTien='';
+        let tong=0;
+            for (let j =0; j < array3.length; j++) {
+                if((j+1)==chonMon)
+                     tinhTien=soLuong*array3[j];
+            }
+        document.getElementById("mon").value="";
+        document.getElementById("soLuong").value="";
+        //document.getElementById("ok").innerHTML=tinhTien;
+        array.push(tinhTien);
+        for (let i=0; i<array.length; i++){
+            tong+=array[i];
+        }
+        alert("tổng số tiền thanh toán là:     "+tong);
+    }
+
+</script>
+</body>
+</html>

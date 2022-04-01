@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label >Xổ số CODEGYM</label>
+<br>
+<br>
+<input type="text" id="so1" size="1">
+<input type="text" id="so2" size="1">
+<input type="text" id="so3" size="1">
+<input type="text" id="so4" size="1">
+<input type="text" id="so5" size="1">
+<input type="text" id="so6" size="1">
+<br>
+<br>
+<input type="button" id="mua" value="mua vé">
+<input type="button" id="ketQua" value="xem kết quả">
+
+<script>
+    let chon=prompt("Bạn có 2 lựa chọn:\n" +
+        "1.Bạn muốn tự chọn số.\n" +
+        "2.Hệ thống tự chọn.");
+    let array=[]
+    class VietLot{
+        constructor(n1, n2, n3, n4, n5, n6) {
+            this.number1=n1;
+            this.number2=n2;
+            this.number3=n3;
+            this.number4=n4;
+            this.number5=n5;
+            this.number6=n6;
+        }
+        getNum(){
+            return this.number;
+        }
+        setNum(number){
+            this.number=number;
+        }
+        mua(){
+
+        }
+    }
+
+</script>
+</body>
+</html>

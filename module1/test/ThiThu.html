@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--<input type="text" id="mamay"placeholder="mã máy" size="10">-->
+<!--<input type="text" id="tenmay"placeholder="tên máy" size="10">-->
+<!--<input type="text" id="hang"placeholder="hãng sản xuất" size="10">-->
+<!--<input type="text" id="gia"placeholder="giá bán" size="10">-->
+<!--<input type="button" value="Thêm mới" onclick="themMoi()">-->
+<!--<p id="hienThi"></p>-->
+<script>
+    //--------------bài 1--------------------
+    // let n;
+    // let array1=[];
+    // let array2=[];
+    // let sum=0;
+    // let trungBinhCong;
+    // do {
+    //     n=parseInt(prompt("nhập n:"));
+    // }while (n<0||n>=50);
+    // for (let i = 0; i <n ; i++) {
+    //     array1[i]=parseInt(prompt("nhập"));
+    // }
+    // document.write("array1:   "+array1);
+    // document.write("<br>")
+    // for (let i = 0; i <n ; i++) {
+    //     if(array1[i]%5==0&&i%3==0){
+    //         sum+=array1[i];
+    //         array2.push(array1[i]);
+    //     }
+    // }
+    // document.write("array2:   "+array2);
+    // document.write("<br>")
+    // trungBinhCong=sum/(array2.length);
+    // document.write("Điểm trung bình:  "+trungBinhCong);
+    //----------------bài 2-----------------
+    // let array="object     Oriented     programming ";
+    // function vietTat(str) {
+    //    let a=[];
+    //    let b=[];
+    //    str=str.toLowerCase();
+    //    a=str.split(" ");
+    //    for (let i=0; i<a.length; i++){
+    //        if(a[i]!=""){
+    //            b.push(a[i]);
+    //        }
+    //    }
+    //    if(b.length<2){
+    //        return alert("Chuỗi chỉ có 1 từ nên không cần viết tắc");
+    //    }else {
+    //        for (let i = 0; i <b.length ; i++) {
+    //            b[i]=b[i][0].toUpperCase() + b[i].substring(1,1);
+    //        }
+    //        return b.join("");
+    //    }
+    // }
+    // alert(vietTat(array));
+    //--------------bài 3--------------
+    // let t=prompt();
+    // let array=[1,5,6,13,9,12,8,0,5,1];
+    // let a=[];
+    // function isFibo(n){
+    //     let a1 = 0, a2 = 1, a, s=0;
+    //     for (let i = 1; i <=n ; i++) {
+    //         s+=a1;
+    //         a = a1 + a2;
+    //         a1 = a2;
+    //         a2 = a;
+    //     }
+    //     return a1;
+    // }
+    // function fibo(n) {
+    //     let arr=[];
+    //     for (let i = 0; i <n ; i++) {
+    //         arr.push(isFibo(i));
+    //     }
+    //     return arr;
+    // }
+    // let check=fibo(t);
+    //
+    // for (let i = 0; i <check.length-1 ; i++) {
+    //     for (let j = i+1; j <check.length ; j++) {
+    //         if(check[i]==check[j]){
+    //             check.splice(j, 1);
+    //             j--;
+    //         }
+    //     }
+    // }
+    // for (let i = 0; i <array.length ; i++) {
+    //     for (let j = 0; j < check.length; j++) {
+    //         if (array[i] == check[j]) {
+    //             a.push(array[i]);
+    //         }
+    //     }
+    // }
+    // for (let i = 0; i <a.length ; i++) {
+    //     for (let j = i+1; j <a.length ; j++) {
+    //         if(a[i]>a[j]){
+    //             let dem=a[i];
+    //             a[i]=a[j];
+    //             a[j]=dem;
+    //         }
+    //     }
+    // }
+    // alert(a);
+    //-----------------bài 4-------------------
+    // class MayTinh{
+    //     constructor(maMay, tenMay, tenHangSanXuat, giaBan) {
+    //         this.maMay=maMay;
+    //         this.tenMay=tenMay;
+    //         this.tenHangSanXuat=tenHangSanXuat;
+    //         this.giaBan=giaBan;
+    //     }
+    //     getMaMay(){
+    //         return this.maMay;
+    //     }
+    //     setMaMay(maMay){
+    //         this.maMay=maMay;
+    //     }
+    //     getTenMay(){
+    //         return this.tenMay;
+    //     }
+    //     setTenMay(tenMay){
+    //         this.tenMay=tenMay;
+    //     }
+    //     getTenHangSanXuat(){
+    //         return this.tenHangSanXuat;
+    //     }
+    //     setTenHangSanXuat(tenHangSanXuat){
+    //         this.tenHangSanXuat=tenHangSanXuat;
+    //     }
+    //     getGiaBan(){
+    //         return this.giaBan;
+    //     }
+    //     setGiaBan(giaBan){
+    //         this.giaBan=giaBan;
+    //     }
+    // }
+    // let array1=new MayTinh(123, "756-i3", "dell", "15tr" );
+    // let array2=new MayTinh(230, "645-i8", "acer", "17tr" );
+    // let array3=new MayTinh(332, "342-i5", "lenovo", "11tr" );
+    // let array4=new MayTinh(330, "126-i3", "hp", "25tr" );
+    // let danhSachMay=[array1, array2, array3, array4];
+    // hienThi(danhSachMay);
+    // function hienThi(danhSach) {
+    //     let tablestr='<table border="1">\n' +
+    //         '    <tr>\n' +
+    //         '        <th>STT</th>\n' +
+    //         '        <th>Mã máy</th>\n' +
+    //         '        <th>Tên máy</th>\n' +
+    //         '        <th>Tên hãng sản xuất</th>\n' +
+    //         '        <th>Giá bán</th>\n' +
+    //         '    </tr>'
+    //     for (let i = 0; i <danhSach.length ; i++) {
+    //         tablestr+='<tr>\n' +
+    //             '        <td>'+i+'</td>\n' +
+    //             '        <td>'+danhSach[i].getMaMay()+'</td>\n' +
+    //             '        <td>'+danhSach[i].getTenMay()+'</td>\n' +
+    //             '        <td>'+danhSach[i].getTenHangSanXuat()+'</td>\n' +
+    //             '        <td>'+danhSach[i].getGiaBan()+'</td>\n' +
+    //             '    </tr>'
+    //     }
+    //     tablestr+='</table>';
+    //     document.getElementById("hienThi").innerHTML=tablestr;
+    // }
+    // function themMoi(n) {
+    //     let maMay=document.getElementById("mamay").value;
+    //     let tenMay=document.getElementById("tenmay").value;
+    //     let tenHangSanXuat=document.getElementById("hang").value;
+    //     let giaBan=document.getElementById("gia").value;
+    //     let array=new MayTinh(maMay, tenMay, tenHangSanXuat, giaBan);
+    //     danhSachMay.push(array);
+    //     document.getElementById("mamay").value="";
+    //     document.getElementById("tenmay").value="";
+    //     document.getElementById("hang").value="";
+    //     document.getElementById("gia").value="";
+    //     hienThi(danhSachMay);
+    // }
+    // let a = 5;
+    // let b=a++ +a++;
+    // if (number++ > 5) {
+    //     number += 1;
+    // } else {
+    //     number -= 1;
+    //  }
+    // alert(number);
+    // let c=8;
+    //  c++;
+    //  while (c++>15){
+    //      c--;
+    //  }
+     //alert(b);
+    // let count = 0;
+    // while (count++ < 10) {
+    //     count++;
+    // }
+    //  alert(count);
+    // let x = 4;
+    // if(++x <= 7) {
+    //     x++;
+    // }
+    // document.write(x);
+</script>
+</body>
+</html>

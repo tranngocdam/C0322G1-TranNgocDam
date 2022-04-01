@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    //------------------- bài 1------------------
+    // let array=[];
+    // let arr1=[];
+    // let m=parseInt(prompt("nhập m: "));
+    // let n=parseInt(prompt("nhập n: "));
+    // for(let i=0; i<m; i++){
+    //       for(let j=0; j<n; j++){
+    //       arr1.push(parseInt(prompt()));
+    //       }
+    //     array.push(arr1);
+    //     arr1=[];
+    // }
+    // console.log(array);
+    // function sum(arr) {
+    //     let tong=0;
+    //     for (let i = 0; i < m; i++) {
+    //         for (let j = 0; j < n; j++) {
+    //             if(arr[i][j]%2===0){
+    //                 tong+=arr[i][j];
+    //             }
+    //         }
+    //     }
+    //     return tong;
+    // }
+    //   let t=sum(array);
+    //  alert(t);
+    //----------------bài 2----------------
+    // function soNguyenTo(n) {
+    //     if (n < 2) {
+    //         return false;
+    //     } else {
+    //         for (let i = 2; i < n; i++) {
+    //             if (n % i == 0) {
+    //                 return false;
+    //             }
+    //         }
+    //     }
+    //     return true;
+    // }
+    // let m=parseInt(prompt("nhập hàng"));
+    // let n=parseInt(prompt("nhập cột:"));
+    //     let arr=[];
+    //     let arr1=[];
+    //     let arr2=[];
+    //     let dem=0;
+    //     for (let i = 0; i <m ; i++) {
+    //         for (let j = 0; j <n ; j++) {
+    //             arr1.push(prompt("nhập"));
+    //         }
+    //         arr.push(arr1);
+    //         arr1=[];
+    //     }
+    //     console.log(arr);
+    // for (let i = 0; i <m ; i++) {
+    //     for (let j = 0; j <n ; j++) {
+    //         if(soNguyenTo(arr[i][j])===true){
+    //             arr2.push(arr[i][j]);
+    //             dem++;
+    //         }
+    //     }
+    // }
+    // console.log(arr2);
+    // console.log(dem);
+    // --------------bài 3-------------
+    //
+    // let m=parseInt(prompt("nhập hàng"));
+    // let n=parseInt(prompt("nhập cột:"));
+    //     let arr=[];
+    //     let arr1=[];
+    //     for (let i = 0; i <m ; i++) {
+    //         for (let j = 0; j <n ; j++) {
+    //             arr1.push(prompt("nhập"));
+    //         }
+    //         arr.push(arr1);
+    //         arr1=[];
+    //     }
+    //     console.log(arr);
+    //
+    // function timMin(array, m, n) {
+    //     let min=array[0][0];
+    //     for (let i = 0; i<m; i++) {
+    //         for (let j = 0; j<n ; j++) {
+    //             if(array[i][j]<min){
+    //                 min=array[i][j];
+    //             }
+    //         }
+    //     }
+    //     return min;
+    // }
+    // function timMax(arr, m ,n) {
+    //     let max=arr[0][0];
+    //     for (let i = 0; i <m ; i++) {
+    //         for (let j = 0; j <n ; j++) {
+    //             if(arr[i][j]>max){
+    //                 max=arr[i][j];
+    //             }
+    //         }
+    //     }
+    //     return max;
+    // }
+    // console.log(timMin(arr, m, n));
+    // console.log(timMax(arr, m, n));
+    let array=[1,5,2,14,22];
+    array.sort(function (a,b) {
+    return b-a;
+    })
+    alert(array);
+</script>
+</body>
+</html>

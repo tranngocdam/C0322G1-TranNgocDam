@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+//---------------bài 1------------
+    let arr="tRuong    TaN                 HAI";
+    //alert(arr.split(" "));
+    function chuyen(str) {
+    let a = [];
+    let b = [];
+    str = str.toLowerCase();
+    a = str.split(" "); // split chuyển chuỗi thành mảng
+    for (let i = 0; i < a.length; i++) {
+        if (a[i] != "") {
+            b.push(a[i]);
+        }
+    }
+    for (let i = 0; i < b.length; i++) {
+        b[i] = b[i][0].toUpperCase() + b[i].substring(1);
+    }
+    return b.join(" ");// chuyển mảng thành 1 chuỗi có thể thêm thay đổi khoảng cách giữa các kí tự
+}
+alert(chuyen(arr));
+//     ----------------bài 2-----------------
+//     let s= "cabcaad";
+//     function demChuoi(arr) {
+//         arr=arr.split("");
+//         let arr1=Array();
+//         for (let i = 0; i <arr.length-1 ; i++) {
+//             for (let j = i+1; j <arr.length ; j++) {
+//                 if(arr[i]==arr[j]){
+//                    arr.splice(j, 1);
+//                    j--;
+//                 }
+//             }
+//         }
+//         arr1.push(arr)
+//         let t=arr.length;
+//         return t;
+//     }
+//     alert(demChuoi(s));
+//     -------------------bài 3----------------
+//     let s1 = "aabcc";
+//     let s2 = "adcaa";
+//     function tim(arr1, arr2) {
+//         arr1=arr1.split("");
+//         arr2=arr2.split("");
+//         let arr=[];
+//         for (let i = 0; i <arr1.length; i++) {
+//             for (let j = 0; j < arr2.length; j++) {
+//                 if (arr1[i] == arr2[j]) {
+//                     arr.push(arr1[i]);
+//                     arr2.splice(j,1);
+//                     break;
+//                 }
+//             }
+//         }
+//         // for (let i = 0; i <arr.length-1; i++) {
+//         //     for (let j = i+1; j <arr.length; j++) {
+//         //         if(arr[i]===arr[j]){
+//         //                 arr.splice(j,1);
+//         //         }
+//         //     }
+//         // }
+//         return arr;
+//     }
+//     let check=tim(s1, s2);
+//     document.write(check);
+
+</script>
+</body>
+</html>

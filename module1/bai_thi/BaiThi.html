@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài thi</title>
+</head>
+<body>
+<input type="text" placeholder="mã sổ" id="maSo">
+<input type="text" placeholder="loại tiết kiệm" id="loaiTietKiem">
+<input type="text" placeholder="họ tên khách hàng" id="hoTen">
+<input type="text" placeholder="chứng minh nhân dân" id="chungMinh">
+<input type="text" placeholder="ngày mở sổ" id="ngay">
+<input type="text" placeholder="số tiền gửi" id="tien">
+<input type="button"value="Thêm sổ tiết kiệm" onclick="themSo()">
+<input type="button"value="xóa" onclick="xoa()">
+<p id="hienThi"></p>
+<script>
+//bài 1
+//     let n;
+//     let a=[];
+//     let b=[];
+//     do {
+//         n=parseInt(prompt("nhập n:"));
+//     }while (n<0||n>=50);
+//     for (let i = 0; i <n ; i++) {
+//         a[i]=parseInt(prompt("nhập phần tử:"));
+//     }
+//     alert("Mảng a["+a+"]");
+//     a.push(4);
+//     alert("Mảng a["+a+"]");
+// function soNguyenTo(n) {
+//     if (n < 2) {
+//         return false;
+//     } else {
+//         for (let i = 2; i < n; i++) {
+//             if (n % i == 0) {
+//                 return false;
+//             }
+//         }
+//     }
+//     return true;
+// }
+// for (let i = 0; i <a.length ; i++) {
+//     if(soNguyenTo(a[i])==true){
+//         b.push(a[i]);
+//     }
+// }
+// alert("Mảng b["+b+"]");
+// bài 2
+// let tuSo1=parseInt(prompt("nhập tử số:"));
+// let tuSo2=parseInt(prompt("nhập tử số:"));
+// let mauSo1=parseInt(prompt("nhập mẫu số:"));
+// let mauSo2=parseInt(prompt("nhập mẫu số:"));
+// function soSanh(a, b, c, d) {
+//
+//     if(a*d==b*c){
+//         alert("hai phân số bằng nhau");
+//     }else {
+//         alert("hai phân số không bằng nhau");
+//     }
+// }
+// alert(soSanh(tuSo1,mauSo1,tuSo2, mauSo2));
+//bài 3
+class SoTietKiem{
+    constructor(maSo, loaiTietKiem, hoTenKhachHang, chungMinhNhanDan, ngayMoSo, soTienGui) {
+        this.maSo=maSo;
+        this.loaiTietKiem=loaiTietKiem;
+        this.hoTenKhachHang=hoTenKhachHang;
+        this.chungMinhNhanDan=chungMinhNhanDan;
+        this.ngayMoSo=ngayMoSo;
+        this.soTienGui=soTienGui;
+    }
+    getMaSo(){
+        return this.maSo;
+    }
+    setMaSo(maSo){
+        this.maSo=maSo;
+    }
+    getLoaiTietKiem(){
+        return this.loaiTietKiem;
+    }
+    setLoaiTietKiem(loaiTietKiem){
+        this.loaiTietKiem=loaiTietKiem;
+    }
+    getHoTenKhachHang(){
+        return this.hoTenKhachHang;
+    }
+    setHoTenKhachHang(hoTenKhachHang){
+        this.hoTenKhachHang=hoTenKhachHang;
+    }
+    getChungMinhNhanDan(){
+        return this.chungMinhNhanDan;
+    }
+    setChungMinhNhanDan(chungMinhNhanDan){
+        this.chungMinhNhanDan=chungMinhNhanDan;
+    }getNgayMoSo(){
+        return this.ngayMoSo;
+    }
+    setNgayMoSo(ngayMoSo){
+        this.ngayMoSo=ngayMoSo;
+    }
+    getSoTienGui(){
+        return this.soTienGui;
+    }
+    setSoTienGui(soTienGui){
+        this.soTienGui=soTienGui;
+    }
+}
+
+let array1=new SoTietKiem("s94", 2, "hùng", 205628, "21/2/2003", "13tr");
+let array2=new SoTietKiem("s39", 5, "tùng", 203268, "21/2/2033", "123tr");
+let array3=new SoTietKiem("s39", 6, "hào", 209987, "1/2/2013", "100tr");
+let array=[array1, array2, array3];
+
+soTietKiem(array);
+
+function soTietKiem(danhsach) {
+    let tablestring='<table border="1">\n' +
+        '    <tr>\n' +
+        '        <th>STT</th>\n' +
+        '        <th>Mã sổ</th>\n' +
+        '        <th>Loại tiết kiệm</th>\n' +
+        '        <th>Họ tên khách hàng</th>\n' +
+        '        <th>Chứng minh nhân dân</th>\n' +
+        '        <th>Ngày mở sổ</th>\n' +
+        '        <th>Số tiền gửi</th>\n' +
+        '    </tr>';
+    for (let i = 0; i <danhsach.length ; i++) {
+        tablestring+=' <tr>\n' +
+            '        <td>'+i+'</td>\n' +
+            '        <td>'+danhsach[i].getMaSo()+'</td>\n' +
+            '        <td>'+danhsach[i].getLoaiTietKiem()+'</td>\n' +
+            '        <td>'+danhsach[i].getHoTenKhachHang()+'</td>\n' +
+            '        <td>'+danhsach[i].getChungMinhNhanDan()+'</td>\n' +
+            '        <td>'+danhsach[i].getNgayMoSo()+'</td>\n' +
+            '        <td>'+danhsach[i].getSoTienGui()+'</td>\n' +
+            // '        <td><input type="button" value="Xóa" onclick="xoa('+i+')"></td>\n' +
+            '    </tr>';
+    }
+    tablestring+='</table>';
+    document.getElementById("hienThi").innerHTML=tablestring;
+}
+function themSo() {
+        let maSo=document.getElementById("maSo").value;
+        let loaiTietKiem=document.getElementById("loaiTietKiem").value;
+        let hoTen=document.getElementById("hoTen").value;
+        let chungMinh=document.getElementById("chungMinh").value;
+        let ngayMo=document.getElementById("ngay").value;
+        let soTienGui=document.getElementById("tien").value;
+        let array4=new SoTietKiem(maSo, loaiTietKiem, hoTen, chungMinh, ngayMo, soTienGui)
+        array.push(array4);
+        soTietKiem(array);
+        document.getElementById("maSo").value="";
+        document.getElementById("loaiTietKiem").value="";
+        document.getElementById("hoTen").value="";
+        document.getElementById("chungMinh").value="";
+        document.getElementById("ngay").value="";
+        document.getElementById("tien").value="";
+        alert("Thêm mới thành công");
+}
+function xoa(n) {
+    let maSo=prompt("Nhập mã sổ");
+    for (let i = 0; i <array.length ; i++) {
+        if(maSo==danhsach[i].getMaSo()){
+            array.splice(n, 1);
+        }
+    }
+    soTietKiem(array);
+ }
+</script>
+</body>
+</html>

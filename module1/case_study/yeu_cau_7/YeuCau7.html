@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // let n=parseInt(prompt(" nhập "));
+    // let array=[];
+    // for (let i = 0; i <n ; i++) {
+    //     array[i]=parseInt(prompt("Nhập phần tử:"))
+    // }
+    // //alert(array);
+    // let array1=array.sort();
+    // //alert(array1);
+     let a=[1,2,2,3,5,5,5,6];
+    function xoa(arr) {
+        for (let i = 0; i <arr.length-1 ; i++) {
+            for (let j = i+1; j <arr.length ; j++) {
+                if(arr[i]===arr[j]){
+                    arr.splice(j, 1);
+                    j--;
+                }
+            }
+        }
+        return arr;
+    }
+    //alert(xoa(a));
+    let ar=xoa(a);
+    alert(ar);
+    // let a=[1,2,2,3,5,5,5,6];
+    // let ar=[1,2,3,5,6];
+    function demSoPhanTu(ar1, ar2) {
+        let ar3=[];
+        let dem=0;
+        for (let i = 0; i < ar1.length; i++) {
+            for (let j = 0; j < ar2.length; j++) {
+                if (ar1[i] === ar2[j]) {
+                    dem += 1;
+                }
+            }
+            ar3.push(dem);
+            dem = 0;
+        }
+        return ar3;
+    }
+    //alert(demSoPhanTu(ar, a));
+    // for (let i = 0; i <ar.length ; i++) {
+    //     document.write("Số    "+ar[i]+"   xuất hiện    "+demSoPhanTu(ar, a)[i]);
+    //     document.write("<br>");
+    // }
+</script>
+</body>
+</html>
