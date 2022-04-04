@@ -3,8 +3,9 @@ import java.util.Scanner;
 public class KiemTraNamNhuan {
     public static void main(String[] args) {
         Scanner scanner=new Scanner(System.in);
+        int year;
         System.out.print("Nhập năm:");
-        int year=scanner.nextInt();
+        year=scanner.nextInt();
         if(year%4==0){
             if (year%100==0){
                 if (year%400==0){

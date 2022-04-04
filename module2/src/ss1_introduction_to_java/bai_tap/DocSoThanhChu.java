@@ -3,9 +3,11 @@ import java.util.Scanner;
 public class DocSoThanhChu {
     public static void main(String[] args) {
         Scanner scanner=new Scanner(System.in);
-        System.out.println("Nhập a: ");
-        int a = scanner.nextInt();
-        String string="";
+        int a, k, tens, ones, tram, chuc, donVi;
+        String string;
+        System.out.print("Nhập a: ");
+         a = scanner.nextInt();
+         string="";
         if(a<10&&a>=0){
             switch (a){
                 case 0:
@@ -40,7 +42,7 @@ public class DocSoThanhChu {
                     break;
             }
         }else if(a>=10&&a<20){
-            int k=a%10;
+             k=a%10;
             switch (k){
                 case 0:
                     System.out.println("ten");
@@ -74,8 +76,8 @@ public class DocSoThanhChu {
                     break;
             }
         }else if(a>=20&&a<100){
-            int tens=a/10;
-            int ones=a%10;
+             tens=a/10;
+             ones=a%10;
             switch (tens){
                 case 2 :
                     string="twenty";
@@ -107,38 +109,38 @@ public class DocSoThanhChu {
                     string+="";
                     break;
                 case 1:
-                    string+="one";
+                    string+=" one";
                     break;
                 case 2:
-                    string+="tow";
+                    string+=" tow";
                     break;
                 case 3:
-                    string+="three";
+                    string+=" three";
                     break;
                 case 4:
-                    string+="four";
+                    string+=" four";
                     break;
                 case 5:
-                    string+="five";
+                    string+=" five";
                     break;
                 case 6:
-                    string+="six";
+                    string+=" six";
                     break;
                 case 7:
-                    string+="seven";
+                    string+=" seven";
                     break;
                 case 8:
-                    string+="eight";
+                    string+=" eight";
                     break;
                 case 9:
-                    string+="nine";
+                    string+=" nine";
                     break;
             }
-            //System.out.printf(string);
+            System.out.printf(string);
         }else if(a>=100&&a<1000){
-            int tram=a/100;
-            int chuc=(a%100)/10;
-            int donVi=(a%100)%10;
+             tram=a/100;
+             chuc=(a%100)/10;
+             donVi=(a%100)%10;
             switch (tram){
                 case 1:
                     string="one hundred";
@@ -170,7 +172,7 @@ public class DocSoThanhChu {
             }
             switch (chuc){
                 case 0:
-                    string+="";
+                    string+=" and";
                     break;
                 case 1:
                     string+=" and ten";

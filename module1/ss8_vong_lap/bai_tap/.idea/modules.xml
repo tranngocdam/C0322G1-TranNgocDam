@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/bai_tap.iml" filepath="$PROJECT_DIR$/.idea/bai_tap.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../ss9_mang/thuc_hanh/dao_nguoc_cac_phan_tu_mang/.idea/dao_nguoc_cac_phan_tu_mang.iml" filepath="$PROJECT_DIR$/../../ss9_mang/thuc_hanh/dao_nguoc_cac_phan_tu_mang/.idea/dao_nguoc_cac_phan_tu_mang.iml" />
+    </modules>
+  </component>
+</project>

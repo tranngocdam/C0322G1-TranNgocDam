@@ -3,8 +3,9 @@ import java.util.Scanner;
 public class TinhSoNgay {
     public static void main(String[] args) {
         Scanner scanner=new Scanner(System.in);
+        int month;
         System.out.print("Nhập tháng: ");
-        int month=scanner.nextInt();
+        month=scanner.nextInt();
         switch (month) {
             case 2:
                 System.out.print("The month '2' has 28 or 29 days!");
