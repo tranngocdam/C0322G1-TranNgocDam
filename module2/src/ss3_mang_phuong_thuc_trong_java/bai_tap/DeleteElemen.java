@@ -3,10 +3,11 @@ import java.util.Scanner;
 public class DeleteElemen {
     public static void main(String[] args) {
         int element, i;
+        int array[];
         Scanner input=new Scanner(System.in);
-        int array[]={1, 2, 3, 4, 5, 6, 7, 8, 9};
+        array=new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9};
         System.out.print("Enter the a element: ");
-        element=input.nextInt();
+        element=Integer.parseInt(input.nextLine());
         for (i=0; i<array.length;i++){
             if(array[i]==element){
                 for (int j = i; j < array.length-1 ; j++) {

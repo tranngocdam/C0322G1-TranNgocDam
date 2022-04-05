@@ -2,10 +2,11 @@ package ss3_mang_phuong_thuc_trong_java.thuc_hanh;
 import java.util.Scanner;
 public class FinStudent {
     public static void main(String[] args) {
-        Scanner input=new Scanner(System.in);
-        String student[]={"tuấn", "tú", "cường", "linh", "hin", "minh", "liễu", "dũng", "anh"};
+        String student[];
         String name;
         boolean check=false;
+        Scanner input=new Scanner(System.in);
+        student=new String[]{"tuấn", "tú", "cường", "linh", "hin", "minh", "liễu", "dũng", "anh"};
         System.out.print("Nhập tên: ");
         name=input.nextLine();
         int i;
