@@ -10,22 +10,17 @@ public class Fan {
         private String color="blue";
         public Fan(){
         }
-        public Fan(int speed, double radius, String color){
-            this.speed=speed;
-            this.radius=radius;
-            this.color=color;
-        }
         public int getSpeed() {
             return speed;
         }
         public void setSpeed(int speed) {
             this.speed = speed;
         }
+        public boolean getOn(){
+            return on;
+        }
         public void setOn(boolean on) {
             this.on = on;
-        }
-        public void setOff(boolean off){
-            this.on = off;
         }
         public double getRadius() {
             return radius;
@@ -41,13 +36,13 @@ public class Fan {
         }
         public String toString(){
         if (this.on) {
-            return "quạt đang bật: " +
+            return "fan is on: " +
                     "speed=" + speed+
                     "     radius:" + radius+
                     "     color:"+ color +"\t";
 
         }else {
-            return "quạt đang tắt: " +
+            return "fan is off: " +
                     "speed=" + speed+
                     "     radius:" + radius+
                     "     color:"+ color +"\t";
