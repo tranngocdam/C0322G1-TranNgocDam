@@ -1,5 +1,5 @@
-package ss4_lop_doi_tuong_trong_java.bai_tap;
-import java.util.Scanner;
+package ss4_lop_doi_tuong_trong_java.bai_tap.StopWatch;
+
 import java.util.*;
 public class MainStopWatch {
     public static void main(String[] args) {

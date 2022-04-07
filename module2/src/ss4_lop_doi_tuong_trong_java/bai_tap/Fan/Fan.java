@@ -1,4 +1,4 @@
-package ss4_lop_doi_tuong_trong_java.bai_tap;
+package ss4_lop_doi_tuong_trong_java.bai_tap.Fan;
 
 public class Fan {
         final int SLOW=1;
