@@ -8,13 +8,13 @@ public class Student {
     public String getName() {
         return name;
     }
-    protected void setName(String name){
+    public void setName(String name){
         this.name=name;
     }
      String getClasses() {
         return classes;
     }
-     void setClasses(String classes) {
+     public void setClasses(String classes) {
         this.classes = classes;
     }
     public String toString(){

@@ -1,8 +1,8 @@
 package ss6_ke_thua.bai_tap.PointMoveablePoint;
 
 public class MoveablePoint extends Point {
-    protected float xSpeed=0.0f;
-    protected float ySpeed=0.0f;
+    private float xSpeed=0.0f;
+    private float ySpeed=0.0f;
 
     public MoveablePoint() {
     }
