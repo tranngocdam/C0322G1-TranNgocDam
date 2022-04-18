@@ -1,23 +1,29 @@
 package bai_tap_oop.model;
 
 public class Oto extends Xe{
-    private int soChoNgoi;
+//    Số chỗ ngồi, kiểu xe (du lịch, xe khách).
+    private Integer soChoNgoi;
     private String kieuXe;
 
     public Oto() {
     }
 
-    public Oto(String bienKiemSat, String benHangSanXuat, int namSanXuat, String chuSoHuu, int soChoNgoi, String kieuXe) {
-        super(bienKiemSat, benHangSanXuat, namSanXuat, chuSoHuu);
+    public Oto(Integer soChoNgoi, String kieuXe) {
         this.soChoNgoi = soChoNgoi;
         this.kieuXe = kieuXe;
     }
 
-    public int getSoChoNgoi() {
+    public Oto(String bienKiemSat, String tenHangSanXuat, Integer namSanXuat, String chuSoHuu, Integer soChoNgoi, String kieuXe) {
+        super(bienKiemSat, tenHangSanXuat, namSanXuat, chuSoHuu);
+        this.soChoNgoi = soChoNgoi;
+        this.kieuXe = kieuXe;
+    }
+
+    public Integer getSoChoNgoi() {
         return soChoNgoi;
     }
 
-    public void setSoChoNgoi(int soChoNgoi) {
+    public void setSoChoNgoi(Integer soChoNgoi) {
         this.soChoNgoi = soChoNgoi;
     }
 
@@ -30,19 +36,11 @@ public class Oto extends Xe{
     }
 
     @Override
-    public void add() {
-
-    }
-
-    @Override
     public String toString() {
-        return "Oto{" +
+        return "Oto{ " +
+                "" + super.toString() +
                 "soChoNgoi=" + soChoNgoi +
                 ", kieuXe='" + kieuXe + '\'' +
-                ", bienKiemSat='" + bienKiemSat + '\'' +
-                ", benHangSanXuat='" + tenHangSanXuat + '\'' +
-                ", namSanXuat=" + namSanXuat +
-                ", chuSoHuu='" + chuSoHuu + '\'' +
                 '}';
     }
 }

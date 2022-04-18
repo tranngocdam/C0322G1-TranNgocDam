@@ -1,37 +1,30 @@
 package bai_tap_oop.model;
 
 public class XeTai extends Xe{
-    private int trongTai;
+//    Trọng tải
+    private Double trongTai;
 
     public XeTai() {
     }
 
-    public XeTai(String bienKiemSat, String tenHangSanXuat, int namSanXuat, String chuSoHuu, int trongTai) {
+    public XeTai(String bienKiemSat, String tenHangSanXuat, Integer namSanXuat, String chuSoHuu, Double trongTai) {
         super(bienKiemSat, tenHangSanXuat, namSanXuat, chuSoHuu);
         this.trongTai = trongTai;
     }
 
-    public int getTrongTai() {
+    public Double getTrongTai() {
         return trongTai;
     }
 
-    public void setTrongTai(int trongTai) {
+    public void setTrongTai(Double trongTai) {
         this.trongTai = trongTai;
     }
 
     @Override
-    public void add() {
-
-    }
-
-    @Override
     public String toString() {
-        return "XeTai{" +
-                "bienKiemSat='" + bienKiemSat + '\'' +
-                ", tenHangSanXuat='" + tenHangSanXuat + '\'' +
-                ", namSanXuat=" + namSanXuat +
-                ", chuSoHuu='" + chuSoHuu + '\'' +
-                ", trongTai=" + trongTai +
+        return "XeTai{ " +
+                "" + super.toString()+
+                "trongTai=" + trongTai +
                 '}';
     }
 }

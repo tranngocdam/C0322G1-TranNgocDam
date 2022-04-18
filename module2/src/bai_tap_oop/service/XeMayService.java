@@ -1,4 +1,6 @@
 package bai_tap_oop.service;
 
-public interface XeMayService extends IService{
+import bai_tap_oop.model.XeMay;
+
+public interface XeMayService extends IService<XeMay>{
 }

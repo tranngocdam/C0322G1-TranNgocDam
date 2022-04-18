@@ -1,4 +1,6 @@
 package bai_tap_oop.service;
 
-public interface OtoService extends IService{
+import bai_tap_oop.model.Oto;
+
+public interface OtoService extends IService<Oto>{
 }

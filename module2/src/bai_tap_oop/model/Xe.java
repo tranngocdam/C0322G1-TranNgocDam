@@ -1,15 +1,16 @@
 package bai_tap_oop.model;
 
 public abstract class Xe {
-    protected String bienKiemSat;
-    protected String tenHangSanXuat;
-    protected int namSanXuat;
-    protected String chuSoHuu;
+//    Biển kiểm soát , tên hãng sản xuất, năm sản xuất, chủ sở hữu.
+    private String bienKiemSat;
+    private String tenHangSanXuat;
+    private Integer namSanXuat;
+    private String chuSoHuu;
 
     public Xe() {
     }
 
-    public Xe(String bienKiemSat, String tenHangSanXuat, int namSanXuat, String chuSoHuu) {
+    public Xe(String bienKiemSat, String tenHangSanXuat, Integer namSanXuat, String chuSoHuu) {
         this.bienKiemSat = bienKiemSat;
         this.tenHangSanXuat = tenHangSanXuat;
         this.namSanXuat = namSanXuat;
@@ -32,11 +33,11 @@ public abstract class Xe {
         this.tenHangSanXuat = tenHangSanXuat;
     }
 
-    public int getNamSanXuat() {
+    public Integer getNamSanXuat() {
         return namSanXuat;
     }
 
-    public void setNamSanXuat(int namSanXuat) {
+    public void setNamSanXuat(Integer namSanXuat) {
         this.namSanXuat = namSanXuat;
     }
 
@@ -47,14 +48,12 @@ public abstract class Xe {
     public void setChuSoHuu(String chuSoHuu) {
         this.chuSoHuu = chuSoHuu;
     }
-    public abstract void add();
 
+    @Override
     public String toString() {
-        return "Xe{" +
-                "bienKiemSat='" + bienKiemSat + '\'' +
-                ", hangSanXuat='" + tenHangSanXuat + '\'' +
+        return "bienKiemSat='" + bienKiemSat + '\'' +
+                ", tenHangSanXuat='" + tenHangSanXuat + '\'' +
                 ", namSanXuat=" + namSanXuat +
-                ", chuSoHuu='" + chuSoHuu + '\'' +
-                '}';
+                ", chuSoHuu='" + chuSoHuu + '\'';
     }
 }
