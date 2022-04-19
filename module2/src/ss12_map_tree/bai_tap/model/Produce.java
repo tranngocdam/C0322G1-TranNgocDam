@@ -1,14 +1,14 @@
-package ss12_map_tree.bai_tap;
+package ss12_map_tree.bai_tap.model;
 
 public class Produce {
     private String id;
     private String nameProduce;
-    private double giaCa;
+    private int giaCa;
 
     public Produce() {
     }
 
-    public Produce(String id, String nameProduce, double giaCa) {
+    public Produce(String id, String nameProduce, int giaCa) {
         this.id = id;
         this.nameProduce = nameProduce;
         this.giaCa = giaCa;
@@ -30,11 +30,11 @@ public class Produce {
         this.nameProduce = nameProduce;
     }
 
-    public double getGiaCa() {
+    public int getGiaCa() {
         return giaCa;
     }
 
-    public void setGiaCa(double giaCa) {
+    public void setGiaCa(int giaCa) {
         this.giaCa = giaCa;
     }
 

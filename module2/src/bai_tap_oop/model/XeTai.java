@@ -24,7 +24,7 @@ public class XeTai extends Xe{
     public String toString() {
         return "XeTai{ " +
                 "" + super.toString()+
-                "trongTai=" + trongTai +
+                ", trongTai=" + trongTai +
                 '}';
     }
 }

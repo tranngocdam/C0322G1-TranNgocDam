@@ -28,7 +28,7 @@ public class XeMay extends Xe{
     public String toString() {
         return "XeMay{ " +
                 "" + super.toString()+
-                "congSuat=" + congSuat +
+                ", congSuat=" + congSuat +
                 '}';
     }
 }

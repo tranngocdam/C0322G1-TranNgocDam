@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class XeMayServiceImpl implements XeMayService {
-    private static List<XeMay>danhSachXeMay=new ArrayList<>();
+    protected static List<XeMay>danhSachXeMay=new ArrayList<>();
     //static List<HangSanXuat> hangSanXuat=new ArrayList<>();
     private static Scanner scanner=new Scanner(System.in);
     static {
@@ -22,15 +22,15 @@ public class XeMayServiceImpl implements XeMayService {
 
     @Override
     public void add() {
-        System.out.println("Nhập biển kiểm soát: ");
+        System.out.print("Nhập biển kiểm soát: ");
         String bienKiemSat=scanner.nextLine();
-        System.out.println("Nhập tên hãng sản xuất: ");
+        System.out.print("Nhập tên hãng sản xuất: ");
         String tenHangSanXuat=scanner.nextLine();
-        System.out.println("Nhập năm sản xuất: ");
+        System.out.print("Nhập năm sản xuất: ");
         Integer namSanXuat=Integer.parseInt(scanner.nextLine());
-        System.out.println("Nhập chủ sở hữu: ");
+        System.out.print("Nhập chủ sở hữu: ");
         String chuSoHuu=scanner.nextLine();
-        System.out.println("Nhập công suất: ");
+        System.out.print("Nhập công suất: ");
         Double congSuat=Double.parseDouble(scanner.nextLine());
         XeMay xeMay=new XeMay(bienKiemSat, tenHangSanXuat, namSanXuat, chuSoHuu, congSuat);
         danhSachXeMay.add(xeMay);
@@ -41,15 +41,5 @@ public class XeMayServiceImpl implements XeMayService {
         for (XeMay xemay: danhSachXeMay) {
             System.out.println(xemay);
         }
-    }
-
-    @Override
-    public void delete() {
-
-    }
-
-    @Override
-    public void find() {
-
     }
 }

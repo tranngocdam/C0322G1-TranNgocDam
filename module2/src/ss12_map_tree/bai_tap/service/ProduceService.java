@@ -1,4 +1,4 @@
-package ss12_map_tree;
+package ss12_map_tree.bai_tap.service;
 
 public interface ProduceService {
     void themMoi();
@@ -6,4 +6,5 @@ public interface ProduceService {
     void sua();
     void xoa();
     void timKiem();
+    void sapXep();
 }

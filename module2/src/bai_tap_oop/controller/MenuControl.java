@@ -2,9 +2,11 @@ package bai_tap_oop.controller;
 
 import bai_tap_oop.service.OtoService;
 import bai_tap_oop.service.XeMayService;
+import bai_tap_oop.service.XeService;
 import bai_tap_oop.service.XeTaiService;
 import bai_tap_oop.service.impl.OtoServiceImpl;
 import bai_tap_oop.service.impl.XeMayServiceImpl;
+import bai_tap_oop.service.impl.XeServiceImpl;
 import bai_tap_oop.service.impl.XeTaiServiceImpl;
 
 import java.util.Scanner;
@@ -13,6 +15,7 @@ public class MenuControl {
     private static XeMayService xeMayService=new XeMayServiceImpl();
     private static XeTaiService xeTaiService=new XeTaiServiceImpl();
     private static OtoService otoService=new OtoServiceImpl();
+    private static XeService xeService=new XeServiceImpl();
     public static Scanner scanner=new Scanner(System.in);
     public static void mainDisplay(){
         int choose;
@@ -35,8 +38,10 @@ public class MenuControl {
                     hienThiXe(xeMayService, xeTaiService, otoService, scanner);
                     break;
                 case 3:
+                    xeService.delete();
                     break;
                 case 4:
+                    xeService.find();
                     break;
                 case 5:
                     System.exit(0);
