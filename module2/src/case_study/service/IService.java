@@ -1,4 +1,6 @@
 package case_study.service;
 
-public interface IService {
+public interface IService<T>{
+    void add();
+    void display();
 }
