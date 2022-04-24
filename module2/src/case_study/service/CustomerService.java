@@ -1,4 +1,7 @@
 package case_study.service;
 
-public interface CustomerService extends IService{
+import case_study.model.Customer;
+
+public interface CustomerService extends IService<Customer>{
+    void edit();
 }

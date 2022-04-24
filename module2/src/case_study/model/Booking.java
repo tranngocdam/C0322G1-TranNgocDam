@@ -1,6 +1,8 @@
 package case_study.model;
 
-public class Booking {
+import java.util.Objects;
+
+public class Booking implements Comparable {
 //    mã booking, ngày bắt đầu, ngày kết thúc, mã khách hàng, tên dịch vụ, loại dịch vụ.
     private String maBooking;
     private String ngayBatDau;
@@ -67,5 +69,35 @@ public class Booking {
 
     public void setLoaiDichVu(String loaiDichVu) {
         this.loaiDichVu = loaiDichVu;
+    }
+
+    @Override
+    public String toString() {
+        return "Booking{" +
+                "maBooking='" + maBooking + '\'' +
+                ", ngayBatDau='" + ngayBatDau + '\'' +
+                ", ngayKetThuc='" + ngayKetThuc + '\'' +
+                ", maKhachHang='" + maKhachHang + '\'' +
+                ", tenDichVu='" + tenDichVu + '\'' +
+                ", loaiDichVu='" + loaiDichVu + '\'' +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Booking booking = (Booking) o;
+        return maBooking.equals(booking.maBooking) && ngayBatDau.equals(booking.ngayBatDau) && ngayKetThuc.equals(booking.ngayKetThuc) && maKhachHang.equals(booking.maKhachHang) && tenDichVu.equals(booking.tenDichVu) && loaiDichVu.equals(booking.loaiDichVu);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(maBooking, ngayBatDau, ngayKetThuc, maKhachHang, tenDichVu, loaiDichVu);
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        return 0;
     }
 }

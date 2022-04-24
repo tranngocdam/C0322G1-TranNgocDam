@@ -1,5 +1,7 @@
 package case_study.model;
 
+import java.util.Objects;
+
 public class Villa extends Facility{
 //    Tiêu chuẩn phòng, Diện tích hồ bơi, Số tầng.
     private String tieuChuanPhong;
@@ -9,8 +11,8 @@ public class Villa extends Facility{
     public Villa() {
     }
 
-    public Villa(String tenDichVu, Double dienTichSuDung, Double chiPhiThue, Integer soLuongNguoi, Double kieuThue, String tieuChuanPhong, Double dienTichHoBoi, Integer soTang) {
-        super(tenDichVu, dienTichSuDung, chiPhiThue, soLuongNguoi, kieuThue);
+    public Villa(String maDichVu, String tenDichVu, Double dienTichSuDung, Double chiPhiThue, Integer soLuongNguoi, String kieuThue, String tieuChuanPhong, Double dienTichHoBoi, Integer soTang) {
+        super(maDichVu, tenDichVu, dienTichSuDung, chiPhiThue, soLuongNguoi, kieuThue);
         this.tieuChuanPhong = tieuChuanPhong;
         this.dienTichHoBoi = dienTichHoBoi;
         this.soTang = soTang;
@@ -48,5 +50,19 @@ public class Villa extends Facility{
                 ", dienTichHoBoi=" + dienTichHoBoi +
                 ", soTang=" + soTang +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Villa villa = (Villa) o;
+        return tieuChuanPhong.equals(villa.tieuChuanPhong) && dienTichHoBoi.equals(villa.dienTichHoBoi) && soTang.equals(villa.soTang);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), tieuChuanPhong, dienTichHoBoi, soTang);
     }
 }

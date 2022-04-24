@@ -1,5 +1,7 @@
 package case_study.model;
 
+import java.util.Objects;
+
 public class House extends Facility{
 //    Tiêu chuẩn phòng, Số tầng.
     private String tieuChuanPhong;
@@ -8,8 +10,8 @@ public class House extends Facility{
     public House() {
     }
 
-    public House(String tenDichVu, Double dienTichSuDung, Double chiPhiThue, Integer soLuongNguoi, Double kieuThue, String tieuChuanPhong, Integer soTang) {
-        super(tenDichVu, dienTichSuDung, chiPhiThue, soLuongNguoi, kieuThue);
+    public House(String maDichVu, String tenDichVu, Double dienTichSuDung, Double chiPhiThue, Integer soLuongNguoi, String kieuThue, String tieuChuanPhong, Integer soTang) {
+        super(maDichVu, tenDichVu, dienTichSuDung, chiPhiThue, soLuongNguoi, kieuThue);
         this.tieuChuanPhong = tieuChuanPhong;
         this.soTang = soTang;
     }
@@ -37,5 +39,19 @@ public class House extends Facility{
                 ", tieuChuanPhong='" + tieuChuanPhong + '\'' +
                 ", soTang=" + soTang +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        House house = (House) o;
+        return tieuChuanPhong.equals(house.tieuChuanPhong) && soTang.equals(house.soTang);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), tieuChuanPhong, soTang);
     }
 }

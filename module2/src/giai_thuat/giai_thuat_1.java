@@ -23,5 +23,29 @@ public class giai_thuat_1 {
 //            }
 //            System.out.println("");
 //        }
+        int[] arr={10, 20, 30};
+        int index;
+        int element=0;
+        try{
+            System.out.print("Nhập vị trí index:");
+            index=Integer.parseInt(input.nextLine());
+            element=arr[index];
+            //return;
+        }catch (NumberFormatException e){
+            index=0;
+            element=arr[index];
+            System.out.println("lỗi nhập");
+        }catch (ArrayIndexOutOfBoundsException e){
+            System.out.println("lỗi truy cập ngoài mảng");
+        index=arr.length-1;
+        element=arr[index];
+        }
+//        catch (Exception e){
+//            System.out.println("lỗi");
+//            index=arr.length-1;
+//            element=arr[index];
+//            e.printStackTrace();
+//        }
+        System.out.println("phần tử "+index+": "+element);
     }
 }
