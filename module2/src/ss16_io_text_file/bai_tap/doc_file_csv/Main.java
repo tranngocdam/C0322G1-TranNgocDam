@@ -11,7 +11,8 @@ public class Main {
         BufferedReader br = null;
         try {
             String line;
-            br = new BufferedReader(new FileReader("src/ss16_IO_text_file/bai_tap/doc_file_csv/countries.csv"));
+            FileReader fileReader=new FileReader("src/ss16_IO_text_file/bai_tap/doc_file_csv/countries.csv");
+            br = new BufferedReader(fileReader);
 
             while ((line = br.readLine()) != null) {
                 printCountry(parseCsvLine(line));

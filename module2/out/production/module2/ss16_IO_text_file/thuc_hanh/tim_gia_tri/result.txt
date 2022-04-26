@@ -1,1 +1,1 @@
-Giá trị lớn nhất là: 15
+giá trị: 43

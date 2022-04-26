@@ -30,7 +30,6 @@ public class FuramaController {
             System.out.print("Please select: ");
             int choise = Integer.parseInt(scanner.nextLine());
             switch (choise) {
-
                 case 1:
                     boolean check1=true;
                     while (check1) {
@@ -86,7 +85,7 @@ public class FuramaController {
                 case 3:
                     boolean check3=true;
                     while (check3) {
-                        System.out.println("Facility Management \n" +
+                        System.out.println("Facility Management\n" +
                                 "1\tDisplay list facility\n" +
                                 "2\tAdd new facility\n" +
                                 "3\tDisplay list facility maintenance\n" +

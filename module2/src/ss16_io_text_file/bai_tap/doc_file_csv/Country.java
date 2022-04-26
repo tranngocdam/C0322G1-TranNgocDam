@@ -38,12 +38,12 @@ public class Country {
         this.name = name;
     }
 
-    @Override
-    public String toString() {
-        return "Country{" +
-                "id=" + id +
-                ", code='" + code + '\'' +
-                ", name='" + name + '\'' +
-                '}';
-    }
+//    @Override
+//    public String toString() {
+//        return "Country{" +
+//                "id=" + id +
+//                ", code='" + code + '\'' +
+//                ", name='" + name + '\'' +
+//                '}';
+//    }
 }

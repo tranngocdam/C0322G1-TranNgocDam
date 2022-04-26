@@ -8,14 +8,13 @@ public class ReadFileExample {
         try {
             // Đọc file theo đường dẫn
             File file = new File(filePath);
-
             // Kiểm tra nếu file không tồn tại thì ném ra ngoại lệ.
             if (!file.exists()) {
                 throw new FileNotFoundException();
             }
-
             // Đọc từng dòng của file và tiến hành cộng tổng lại
-            BufferedReader br = new BufferedReader(new FileReader(file));
+            FileReader fileReader=new FileReader(filePath);
+            BufferedReader br = new BufferedReader(fileReader);
             String line = "";
             int sum = 0;
             while ((line = br.readLine()) != null) {
@@ -23,7 +22,6 @@ public class ReadFileExample {
                 sum += Integer.parseInt(line);
             }
             br.close();
-
             // Hiển thị ra màn hình tổng các số nguyên trong file
             System.out.println("Tổng = " + sum);
         } catch (Exception e) {

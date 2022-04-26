@@ -21,7 +21,7 @@ public class ReadAndWriteFile {
             br.close();
         } catch (Exception e) {
             e.printStackTrace();
-            System.err.println("Fie không tồn tại or nội dung có lỗi!");
+            System.err.println("File không tồn tại or nội dung có lỗi!");
         }
         return strings;
     }
