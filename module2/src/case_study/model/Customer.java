@@ -5,6 +5,18 @@ public class Customer extends Person{
     private String loaiKhach;
     private String diaChi;
 
+    @Override
+    public void display() {
+        System.out.println(
+                "Customer{" +
+                        "" + super.toString() +
+                        ", maKhachHang= " + maKhachHang +
+                        ", loaiKhach= " + loaiKhach +
+                        ", diaChi= " + diaChi +
+                        '}'
+        );
+    }
+
     public Customer() {
     }
 
@@ -43,9 +55,12 @@ public class Customer extends Person{
     public String toString() {
         return "Customer{" +
                 "" + super.toString() +
-                ", maKhachHang='" + maKhachHang + '\'' +
-                ", loaiKhach='" + loaiKhach + '\'' +
-                ", diaChi='" + diaChi + '\'' +
+                ", maKhachHang='" + maKhachHang +
+                ", loaiKhach='" + loaiKhach +
+                ", diaChi='" + diaChi +
                 '}';
+    }
+    public String getCustomer(){
+        return getHoTen()+","+getNgaySinh()+","+getGioiTinh()+","+getSoCMND()+","+getSoDienThoai()+","+getEmail()+","+getMaKhachHang()+","+getLoaiKhach()+","+getDiaChi();
     }
 }

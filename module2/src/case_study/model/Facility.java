@@ -77,8 +77,7 @@ public abstract class Facility {
                 ", dienTichSuDung=" + dienTichSuDung +
                 ", chiPhiThue=" + chiPhiThue +
                 ", soLuongNguoi=" + soLuongNguoi +
-                ", kieuThue=" + kieuThue +
-                '}';
+                ", kieuThue=" + kieuThue;
     }
 
     @Override

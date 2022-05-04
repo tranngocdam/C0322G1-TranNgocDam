@@ -6,6 +6,17 @@ public class Employee extends Person{
     private String viTri;
     private Double luong;
 
+    @Override
+    public void display() {
+        System.out.println("Employee{" +
+                "" + super.toString() +
+                ", maNhanVien='" + maNhanVien +
+                ", trinhDo='" + trinhDo +
+                ", viTri='" + viTri +
+                ", luong=" + luong +
+                '}');
+    }
+
     public Employee() {
     }
 
@@ -58,5 +69,8 @@ public class Employee extends Person{
                 ", viTri='" + viTri + '\'' +
                 ", luong=" + luong +
                 '}';
+    }
+    public String getIn(){
+        return getHoTen()+","+getNgaySinh()+","+getGioiTinh()+","+getSoCMND()+","+getSoDienThoai()+","+getEmail()+","+getMaNhanVien()+","+getTrinhDo()+","+getViTri()+","+getLuong();
     }
 }

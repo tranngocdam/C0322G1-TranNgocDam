@@ -9,6 +9,8 @@ public abstract class Person {
     private Integer soDienThoai;
     private String email;
 
+    public abstract void display();
+
     public Person() {
     }
 
@@ -71,12 +73,11 @@ public abstract class Person {
 
     @Override
     public String toString() {
-        return  "hoTen='" + hoTen + '\'' +
-                ", ngaySinh='" + ngaySinh + '\'' +
-                ", gioiTinh='" + gioiTinh + '\'' +
+        return  "hoTen='" + hoTen +
+                ", ngaySinh=" + ngaySinh +
+                ", gioiTinh=" + gioiTinh +
                 ", soCMND=" + soCMND +
                 ", soDienThoai=" + soDienThoai +
-                ", email='" + email + '\'' +
-                '}';
+                ", email=" + email ;
     }
 }

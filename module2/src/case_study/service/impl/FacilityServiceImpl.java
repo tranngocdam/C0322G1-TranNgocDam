@@ -1,5 +1,8 @@
 package case_study.service.impl;
 
+import case_study.common.exception.FacilityCodeFormatException;
+import case_study.common.exception.LimitMenuException;
+import case_study.common.math.MathCommon;
 import case_study.model.Facility;
 import case_study.model.House;
 import case_study.model.Room;
@@ -9,104 +12,327 @@ import case_study.service.FacilityService;
 import java.util.LinkedHashMap;
 import java.util.Scanner;
 import java.util.Set;
+import java.util.regex.Pattern;
 
 public class FacilityServiceImpl implements FacilityService {
-    private static Scanner scanner=new Scanner(System.in);
-    public static LinkedHashMap<Facility,Integer>linkedHashMap=new LinkedHashMap<>();
+    private static Scanner scanner = new Scanner(System.in);
+    public static LinkedHashMap<Facility, Integer> linkedHashMap = new LinkedHashMap<>();
+
     static {
-        linkedHashMap.put(new Room("RoomM1","Thuê room", 234.2, 45533.5, 5, "day","coca"),1);
-        linkedHashMap.put(new House("HouseH1","Thuê house", 123.4, 576.5, 12, "day","5 sao",3),7);
-        linkedHashMap.put(new Villa("VillaV1","Thuê villla", 784.2, 123.3, 6, "day","6 sao",223.2,5),9);
+        linkedHashMap.put(new Room("SVRO-1232", "Thueroom", 34.2, 453.5,
+                5, "Day", "coca"), 1);
+
+        linkedHashMap.put(new House("SVHO-2321", "Thuehouse", 123.4, 576.5,
+                12, "Month", "3sao", 3), 7);
+
+        linkedHashMap.put(new Villa("SVVL-3483", "Thuevilla", 84.2, 123.3,
+                6, "Time", "5sao", 223.2, 5), 9);
 
     }
+
     @Override
     public void add() {
-        System.out.println("Mời chọn dịch vụ\n" +
-                "1. Add New Villa\n" +
-                "2. Add new House\n" +
-                "3. Add new Room\n" +
-                "4. Back to menu\n");
-        int choice=Integer.parseInt(scanner.nextLine());
-        switch (choice){
+        int choice;
+        while (true) {
+            System.out.println("1. Add New Villa\n" +
+                    "2. Add new House\n" +
+                    "3. Add new Room\n" +
+                    "4. Back to menu");
+            try {
+                System.out.println("Nhập lựa chọn: ");
+                choice = Integer.parseInt(scanner.nextLine());
+                if (choice < 1 || choice > 4) {
+                    throw new LimitMenuException("Lựa chọn không hợp lệ");
+                }
+                break;
+            } catch (LimitMenuException e) {
+                System.out.println(e.getMessage());
+            } catch (Exception e) {
+                System.err.println("Không nhập kí tự ");
+            }
+        }
+        switch (choice) {
             case 1:
-                System.out.println("Nhập mã dịch vụ: ");
-                String maDichVu=scanner.nextLine();
-                System.out.print("Nhập tên dịch vụ: ");
-                String tenDichVu=scanner.nextLine();
-                System.out.println("Nhập diện tích sử dụng: ");
-                Double dienTichSuDung=Double.parseDouble(scanner.nextLine());
-                System.out.println("Nhập chi phí thuê: ");
-                Double chiPhiThue=Double.parseDouble(scanner.nextLine());
-                System.out.println("Nhập số người: ");
-                Integer soLuongNguoi=Integer.parseInt(scanner.nextLine());
-                System.out.println("Nhập kiểu thuê: ");
-                String kieuThue=scanner.nextLine();
-                System.out.println("Nhập tiêu chuẩn phòng: ");
-                String tieuChuanPhong=scanner.nextLine();
-                System.out.println("Nhập diện tích hồ bơi: ");
-                Double dienTichHoBoi=Double.parseDouble(scanner.nextLine());
-                System.out.println("Nhập số tầng: ");
-                Integer soTang=Integer.parseInt(scanner.nextLine());
-                Villa villa=new Villa(maDichVu,tenDichVu, dienTichSuDung, chiPhiThue, soLuongNguoi, kieuThue, tieuChuanPhong, dienTichHoBoi, soTang);
-                linkedHashMap.put(villa,0);
+                String maDichVu;
+                while (true) {
+                    System.out.print("Nhập mã dịch vụ: ");
+                    maDichVu = scanner.nextLine();
+                    try {
+                        if (!maDichVu.matches("^SVVL\\-[0-9]{4}$")) {
+                            throw new FacilityCodeFormatException("Mã dịch vụ không hợp lệ, SVVL-YYYY");
+                        }
+                        break;
+                    } catch (FacilityCodeFormatException e) {
+                        System.out.println(e.getMessage());
+                    }
+                }
+                String tenDichVu;
+                while (true) {
+                    System.out.print("Nhập tên dịch vụ: ");
+                    tenDichVu = scanner.nextLine();
+                    try {
+                        if (!tenDichVu.matches("^[A-Z][a-z]{2,}$")) {
+                            throw new FacilityCodeFormatException("Không hợp lệ,phải viết hoa kí tự đầu các kí tự sau viết thường");
+                        }
+                        break;
+                    } catch (FacilityCodeFormatException e) {
+                        System.out.println(e.getMessage());
+                    }
+                }
+                System.out.print("Nhập diện tích sử dụng: ");
+                Double dienTichSuDung = MathCommon.getDouble();
+
+                System.out.print("Nhập chi phí thuê: ");
+                Double chiPhiThue = MathCommon.getDouble1();
+
+                System.out.print("Nhập số người: ");
+                Integer soLuongNguoi = MathCommon.getInteger();
+
+                String kieuThue = null;
+                System.out.println("Kiểu thuê\n" +
+                        "1. Year\n" +
+                        "2. Month\n" +
+                        "3. Day\n" +
+                        "4. Time");
+                int choice1;
+                while (true) {
+                    try {
+                        System.out.print("Chọn kiểu thuê: ");
+                        choice1 = Integer.parseInt(scanner.nextLine());
+                        if (choice1 < 1 || choice1 > 4) {
+                            throw new LimitMenuException("Lựa chọn không hợp lệ");
+                        }
+                        break;
+                    } catch (LimitMenuException e) {
+                        System.out.println(e.getMessage());
+                    } catch (Exception e) {
+                        System.out.println("Không nhập kí tự");
+                    }
+                }
+                switch (choice1) {
+                    case 1:
+                        kieuThue = "Year";
+                        break;
+                    case 2:
+                        kieuThue = "Month";
+                        break;
+                    case 3:
+                        kieuThue = "Day";
+                        break;
+                    case 4:
+                        kieuThue = "Time";
+                }
+
+                String tieuChuanPhong;
+                while (true) {
+                    System.out.print("Nhập tiêu chuẩn phòng: ");
+                    tieuChuanPhong = scanner.nextLine();
+                    try {
+                        if (!tieuChuanPhong.matches("^[1-5](.[1-9]+)?[a-z]{2,}$")) {
+                            throw new FacilityCodeFormatException("Lỗi vd(3sao, 5sao)");
+                        }
+                        break;
+                    } catch (FacilityCodeFormatException e) {
+                        System.out.println(e.getMessage());
+                    }
+                }
+
+                System.out.print("Nhập diện tích hồ bơi: ");
+                Double dienTichHoBoi = MathCommon.getDouble();
+
+                System.out.print("Nhập số tầng: ");
+                Integer soTang = MathCommon.getInteger1();
+                Villa villa = new Villa(maDichVu, tenDichVu, dienTichSuDung, chiPhiThue, soLuongNguoi, kieuThue, tieuChuanPhong, dienTichHoBoi, soTang);
+                linkedHashMap.put(villa, 0);
                 break;
             case 2:
-                System.out.println("Nhập mã dịch vụ: ");
-                String maDichVu1=scanner.nextLine();
-                System.out.print("Nhập tên dịch vụ: ");
-                String tenDichVu1=scanner.nextLine();
-                System.out.println("Nhập diện tích sử dụng: ");
-                Double dienTichSuDung1=Double.parseDouble(scanner.nextLine());
-                System.out.println("Nhập chi phí thuê: ");
-                Double chiPhiThue1=Double.parseDouble(scanner.nextLine());
-                System.out.println("Nhập số người: ");
-                Integer soLuongNguoi1=Integer.parseInt(scanner.nextLine());
-                System.out.println("Nhập kiểu thuê: ");
-                String kieuThue1=scanner.nextLine();
-                System.out.println("Nhập tiêu chuẩn phòng: ");
-                String tieuChuanPhong1=scanner.nextLine();
-                System.out.println("Nhập số tầng: ");
-                Integer soTang1=Integer.parseInt(scanner.nextLine());
-                House house=new House(maDichVu1,tenDichVu1, dienTichSuDung1, chiPhiThue1, soLuongNguoi1, kieuThue1, tieuChuanPhong1, soTang1);
-                linkedHashMap.put(house,0);
+                String maDichVu1;
+                while (true) {
+                    System.out.print("Nhập mã dịch vụ: ");
+                    maDichVu1 = scanner.nextLine();
+                    try {
+                        if (!maDichVu1.matches("^SVHO\\-[0-9]{4}$")) {
+                            throw new FacilityCodeFormatException("Mã không hợp lệ, SVHO-YYYY");
+                        }
+                        break;
+                    } catch (FacilityCodeFormatException e) {
+                        System.out.println(e.getMessage());
+                    }
+                }
+                String tenDichVu1;
+                while (true) {
+                    System.out.print("Nhập tên dịch vụ: ");
+                    tenDichVu1 = scanner.nextLine();
+                    try {
+                        if (!tenDichVu1.matches("^[A-Z][a-z]{2,}$")) {
+                            throw new FacilityCodeFormatException("Lỗi, viết hoa chữ cái đầu các kí tự sau viết thường ");
+                        }
+                        break;
+                    } catch (FacilityCodeFormatException e) {
+                        System.out.println(e.getMessage());
+                    }
+                }
+
+                System.out.print("Nhập diện tích sử dụng: ");
+                Double dienTichSuDung1 = MathCommon.getDouble();
+
+                System.out.print("Nhập chi phí thuê: ");
+                Double chiPhiThue1 = MathCommon.getDouble1();
+
+                System.out.print("Nhập số người: ");
+                Integer soLuongNguoi1 = MathCommon.getInteger();
+                int choice2;
+                System.out.println("Nhập kiểu thuê\n" +
+                        "1. Year\n" +
+                        "2. Month\n" +
+                        "3. Day\n" +
+                        "4. Time");
+                while (true) {
+                    try {
+                        System.out.println("Chọn kiểu thuê: ");
+                        choice2 = Integer.parseInt(scanner.nextLine());
+                        if (choice2 < 1 || choice > 4) {
+                            throw new LimitMenuException("Lựa chọn không hợp lệ");
+                        }
+                        break;
+                    } catch (LimitMenuException e) {
+                        System.out.println(e.getMessage());
+                    } catch (Exception e) {
+                        System.out.println("Không nhập kí tự");
+                    }
+                }
+                String kieuThue1 = null;
+                switch (choice2) {
+                    case 1:
+                        kieuThue1 = "Year";
+                        break;
+                    case 2:
+                        kieuThue1 = "Month";
+                        break;
+                    case 3:
+                        kieuThue1 = "Day";
+                        break;
+                    case 4:
+                        kieuThue1 = "Time";
+                }
+
+                String tieuChuanPhong1;
+                while (true) {
+                    System.out.print("Nhập tiêu chuẩn phòng: ");
+                    tieuChuanPhong1 = scanner.nextLine();
+                    try {
+                        if (!tieuChuanPhong1.matches("^[1-5](.[1-9]+)?[a-z]{2,}$")) {
+                            throw new FacilityCodeFormatException("Lỗi vd(3sao, 5sao)");
+                        }
+                        break;
+                    } catch (FacilityCodeFormatException e) {
+                        System.out.println(e.getMessage());
+                    }
+                }
+
+                System.out.print("Nhập số tầng: ");
+                Integer soTang1 = MathCommon.getInteger1();
+
+                House house = new House(maDichVu1, tenDichVu1, dienTichSuDung1, chiPhiThue1, soLuongNguoi1, kieuThue1, tieuChuanPhong1, soTang1);
+                linkedHashMap.put(house, 0);
                 break;
             case 3:
-                System.out.println("Nhập mã dịch vụ: ");
-                String maDichVu2=scanner.nextLine();
-                System.out.print("Nhập tên dịch vụ: ");
-                String tenDichVu2=scanner.nextLine();
-                System.out.println("Nhập diện tích sử dụng: ");
-                Double dienTichSuDung2=Double.parseDouble(scanner.nextLine());
-                System.out.println("Nhập chi phí thuê: ");
-                Double chiPhiThue2=Double.parseDouble(scanner.nextLine());
-                System.out.println("Nhập số người: ");
-                Integer soLuongNguoi2=Integer.parseInt(scanner.nextLine());
-                System.out.println("Nhập kiểu thuê: ");
-                String kieuThue2=scanner.nextLine();
-                System.out.println("Nhập dịch vụ miễn phí");
-                String dichVuMienPhi2=scanner.nextLine();
-                Room room=new Room(maDichVu2,tenDichVu2, dienTichSuDung2, chiPhiThue2, soLuongNguoi2, kieuThue2, dichVuMienPhi2);
-                linkedHashMap.put(room,0);
+                String maDichVu2;
+                while (true) {
+                    System.out.print("Nhập mã dịch vụ: ");
+                    maDichVu2 = scanner.nextLine();
+                    try {
+                        if (!maDichVu2.matches("^SVRO\\-[0-9]{4}$")) {
+                            throw new FacilityCodeFormatException("Lỗi, SVRO-YYYY");
+                        }
+                        break;
+                    } catch (FacilityCodeFormatException e) {
+                        System.out.println(e.getMessage());
+                    }
+                }
+
+                String tenDichVu2;
+                while (true) {
+                    System.out.print("Nhập tên dịch vụ: ");
+                    tenDichVu2 = scanner.nextLine();
+                    try {
+                        if (!tenDichVu2.matches("^[A-Z][a-z]+$")) {
+                            throw new FacilityCodeFormatException("Lỗi, viết hoa chữ cái đầu các chữ sau viết thường");
+                        }
+                        break;
+                    } catch (FacilityCodeFormatException e) {
+                        System.out.println(e.getMessage());
+                    }
+                }
+                System.out.print("Nhập diện tích sử dụng: ");
+                Double dienTichSuDung2 = MathCommon.getDouble();
+
+                System.out.print("Nhập chi phí thuê: ");
+                Double chiPhiThue2 = MathCommon.getDouble1();
+
+                System.out.print("Nhập số người: ");
+                Integer soLuongNguoi2 = MathCommon.getInteger();
+
+                String kieuThue2 = null;
+                System.out.print("Kiểu thuê:\n" +
+                        "1. Year\n" +
+                        "2. Month\n" +
+                        "3. Day\n" +
+                        "4. Time\n");
+                int choice3;
+                while (true) {
+                    try {
+                        System.out.print("Chọn kiểu thuê: ");
+                        choice3 = Integer.parseInt(scanner.nextLine());
+                        if (choice3 < 1 || choice3 > 4) {
+                            throw new LimitMenuException("Lựa chọn quá giới hạn");
+                        }
+                        break;
+                    } catch (LimitMenuException e) {
+                        System.out.println(e.getMessage());
+                    } catch (Exception e) {
+                        System.out.println("Không nhập kí tự");
+                    }
+                }
+                switch (choice3) {
+                    case 1:
+                        kieuThue2 = "Year";
+                        break;
+                    case 2:
+                        kieuThue2 = "Month";
+                        break;
+                    case 3:
+                        kieuThue2 = "Day";
+                        break;
+                    case 4:
+                        kieuThue2 = "Time";
+                }
+                System.out.print("Nhập dịch vụ miễn phí: ");
+                String dichVuMienPhi2 = scanner.nextLine();
+
+                Room room = new Room(maDichVu2, tenDichVu2, dienTichSuDung2, chiPhiThue2, soLuongNguoi2, kieuThue2, dichVuMienPhi2);
+                linkedHashMap.put(room, 0);
                 break;
         }
     }
 
     @Override
     public void display() {
-        Set<Facility> set=linkedHashMap.keySet();
-        for (Facility f: set) {
+        Set<Facility> set = linkedHashMap.keySet();
+        for (Facility f : set) {
             System.out.println(f);
         }
     }
 
     @Override
     public void displayMainTenance() {
-        Set<Facility> set=linkedHashMap.keySet();
-        for (Facility f: set) {
-            if (linkedHashMap.get(f)>=5){
+        Set<Facility> set = linkedHashMap.keySet();
+        for (Facility f : set) {
+            if (linkedHashMap.get(f) >= 5) {
                 System.out.println(f);
             }
 
         }
     }
+
 }

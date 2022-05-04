@@ -17,7 +17,6 @@ public class Main {
             while ((line = br.readLine()) != null) {
                 printCountry(parseCsvLine(line));
             }
-
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
