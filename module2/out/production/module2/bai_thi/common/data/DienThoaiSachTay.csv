@@ -1,0 +1,3 @@
+DienThoaiSachTay{, ID='1', tenDienThoai='Iphone', giaBan=3232.2, soLuong=45, nhaSanXuat='Iphone', quocGiaSachTay=' USA', trangThai=1}
+DienThoaiSachTay{, ID='3', tenDienThoai='LG', giaBan=562.2, soLuong=9, nhaSanXuat='LG', quocGiaSachTay='Japna', trangThai=2}
+DienThoaiSachTay{, ID='4', tenDienThoai='Iphone', giaBan=23362.2, soLuong=12, nhaSanXuat='Iphone', quocGiaSachTay='Japna', trangThai=1}

@@ -73,7 +73,8 @@ public abstract class Facility {
 
     @Override
     public String toString() {
-        return  "tenDichVu='" + tenDichVu + '\'' +
+        return  ", maDichVu=" + maDichVu+
+                ", tenDichVu=" + tenDichVu +
                 ", dienTichSuDung=" + dienTichSuDung +
                 ", chiPhiThue=" + chiPhiThue +
                 ", soLuongNguoi=" + soLuongNguoi +

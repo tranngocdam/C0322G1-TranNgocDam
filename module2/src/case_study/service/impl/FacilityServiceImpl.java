@@ -3,31 +3,44 @@ package case_study.service.impl;
 import case_study.common.exception.FacilityCodeFormatException;
 import case_study.common.exception.LimitMenuException;
 import case_study.common.math.MathCommon;
+import case_study.common.read_writer.Read;
+import case_study.common.read_writer.Write;
 import case_study.model.Facility;
 import case_study.model.House;
 import case_study.model.Room;
 import case_study.model.Villa;
 import case_study.service.FacilityService;
 
-import java.util.LinkedHashMap;
-import java.util.Scanner;
-import java.util.Set;
+import java.util.*;
 import java.util.regex.Pattern;
 
 public class FacilityServiceImpl implements FacilityService {
     private static Scanner scanner = new Scanner(System.in);
-    public static LinkedHashMap<Facility, Integer> linkedHashMap = new LinkedHashMap<>();
+    public static Map<Facility, Integer> linkedHashMap = new LinkedHashMap<>();
+    private static Map<Villa, Integer> villaIntegerLinkedHashMap = new LinkedHashMap<>();
+    private static Map<Room, Integer> roomIntegerLinkedHashMap = new LinkedHashMap<>();
+    private static Map<House, Integer> houseIntegerLinkedHashMap = new LinkedHashMap<>();
+
 
     static {
         linkedHashMap.put(new Room("SVRO-1232", "Thueroom", 34.2, 453.5,
                 5, "Day", "coca"), 1);
-
+        roomIntegerLinkedHashMap.put(new Room("SVRO-1232", "Thueroom", 34.2, 453.5,
+                5, "Day", "coca"), 1);
+        Write.writeToCSVRoom(roomIntegerLinkedHashMap, false);
+        //roomIntegerLinkedHashMap = Read.readToCSVRoom();
         linkedHashMap.put(new House("SVHO-2321", "Thuehouse", 123.4, 576.5,
                 12, "Month", "3sao", 3), 7);
-
+        houseIntegerLinkedHashMap.put(new House("SVHO-2321", "Thuehouse", 123.4, 576.5,
+                12, "Month", "3sao", 3), 7);
+        Write.writeToCSVHouse(houseIntegerLinkedHashMap, false);
+        //houseIntegerLinkedHashMap = Read.readToCSVHouse();
         linkedHashMap.put(new Villa("SVVL-3483", "Thuevilla", 84.2, 123.3,
                 6, "Time", "5sao", 223.2, 5), 9);
-
+        villaIntegerLinkedHashMap.put(new Villa("SVVL-3483", "Thuevilla", 84.2, 123.3,
+                6, "Time", "5sao", 223.2, 5), 9);
+        Write.writeToCSVVilla(villaIntegerLinkedHashMap, false);
+        //villaIntegerLinkedHashMap = Read.readToCSVVilla();
     }
 
     @Override
@@ -58,7 +71,7 @@ public class FacilityServiceImpl implements FacilityService {
                     System.out.print("Nhập mã dịch vụ: ");
                     maDichVu = scanner.nextLine();
                     try {
-                        if (!maDichVu.matches("^SVVL\\-[0-9]{4}$")) {
+                        if (!maDichVu.matches("^(SVVL)(\\-[0-9]{4})$")) {
                             throw new FacilityCodeFormatException("Mã dịch vụ không hợp lệ, SVVL-YYYY");
                         }
                         break;
@@ -71,7 +84,7 @@ public class FacilityServiceImpl implements FacilityService {
                     System.out.print("Nhập tên dịch vụ: ");
                     tenDichVu = scanner.nextLine();
                     try {
-                        if (!tenDichVu.matches("^[A-Z][a-z]{2,}$")) {
+                        if (!tenDichVu.matches("^([A-Z][a-z]{2,})$")) {
                             throw new FacilityCodeFormatException("Không hợp lệ,phải viết hoa kí tự đầu các kí tự sau viết thường");
                         }
                         break;
@@ -128,8 +141,8 @@ public class FacilityServiceImpl implements FacilityService {
                     System.out.print("Nhập tiêu chuẩn phòng: ");
                     tieuChuanPhong = scanner.nextLine();
                     try {
-                        if (!tieuChuanPhong.matches("^[1-5](.[1-9]+)?[a-z]{2,}$")) {
-                            throw new FacilityCodeFormatException("Lỗi vd(3sao, 5sao)");
+                        if (!tieuChuanPhong.matches("^([1-5])(.[1-9]+)?[a-z]{2,}$")) {
+                            throw new FacilityCodeFormatException("Lỗi, tiêu chuẩn từ 0-5 sao(vd 3sao, 5sao)");
                         }
                         break;
                     } catch (FacilityCodeFormatException e) {
@@ -144,6 +157,14 @@ public class FacilityServiceImpl implements FacilityService {
                 Integer soTang = MathCommon.getInteger1();
                 Villa villa = new Villa(maDichVu, tenDichVu, dienTichSuDung, chiPhiThue, soLuongNguoi, kieuThue, tieuChuanPhong, dienTichHoBoi, soTang);
                 linkedHashMap.put(villa, 0);
+                villaIntegerLinkedHashMap.put(villa, 0);
+                for (Map.Entry<Villa, Integer> villaIntegerEntry:villaIntegerLinkedHashMap.entrySet()) {
+                    if (maDichVu.equals(villaIntegerEntry.getKey().getMaDichVu())){
+                        villaIntegerEntry.setValue(villaIntegerEntry.getValue()+1);
+                    }
+                }
+
+                Write.writeToCSVVilla(villaIntegerLinkedHashMap, false);
                 break;
             case 2:
                 String maDichVu1;
@@ -230,11 +251,13 @@ public class FacilityServiceImpl implements FacilityService {
                     }
                 }
 
-                System.out.print("Nhập số tầng: ");
+                System.out.println("Nhập số tầng: ");
                 Integer soTang1 = MathCommon.getInteger1();
 
                 House house = new House(maDichVu1, tenDichVu1, dienTichSuDung1, chiPhiThue1, soLuongNguoi1, kieuThue1, tieuChuanPhong1, soTang1);
                 linkedHashMap.put(house, 0);
+                houseIntegerLinkedHashMap.put(house, 0);
+                Write.writeToCSVHouse(houseIntegerLinkedHashMap, false);
                 break;
             case 3:
                 String maDichVu2;
@@ -253,7 +276,7 @@ public class FacilityServiceImpl implements FacilityService {
 
                 String tenDichVu2;
                 while (true) {
-                    System.out.print("Nhập tên dịch vụ: ");
+                    System.out.println("Nhập tên dịch vụ: ");
                     tenDichVu2 = scanner.nextLine();
                     try {
                         if (!tenDichVu2.matches("^[A-Z][a-z]+$")) {
@@ -312,27 +335,40 @@ public class FacilityServiceImpl implements FacilityService {
 
                 Room room = new Room(maDichVu2, tenDichVu2, dienTichSuDung2, chiPhiThue2, soLuongNguoi2, kieuThue2, dichVuMienPhi2);
                 linkedHashMap.put(room, 0);
+                roomIntegerLinkedHashMap.put(room, 0);
+                Write.writeToCSVRoom(roomIntegerLinkedHashMap, false);
                 break;
         }
     }
 
     @Override
     public void display() {
-        Set<Facility> set = linkedHashMap.keySet();
-        for (Facility f : set) {
-            System.out.println(f);
+
+        for (Map.Entry<Facility, Integer> mapIntegerMap : linkedHashMap.entrySet()) {
+            System.out.println(mapIntegerMap.getKey() + ", " + mapIntegerMap.getValue());
         }
+//        Set<Facility> set = linkedHashMap.keySet();
+//        for (Facility f : set) {
+//            System.out.println(f);
+//        }
     }
 
     @Override
     public void displayMainTenance() {
-        Set<Facility> set = linkedHashMap.keySet();
-        for (Facility f : set) {
-            if (linkedHashMap.get(f) >= 5) {
-                System.out.println(f);
+        for (Map.Entry<Facility, Integer> mapIntegerMap : linkedHashMap.entrySet()) {
+            if (mapIntegerMap.getValue() >= 5) {
+                System.out.println(mapIntegerMap.getKey() + ", " + mapIntegerMap.getValue());
+                mapIntegerMap.setValue(0);
             }
 
         }
+//        Set<Facility> set = linkedHashMap.keySet();
+//        for (Facility f : set) {
+//            if (linkedHashMap.get(f) >= 5) {
+//                System.out.println(f);
+//                linkedHashMap.get(0);
+//            }
+//        }
+//        System.out.println("ok");
     }
-
 }

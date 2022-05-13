@@ -1,68 +1,93 @@
 package case_study.service.impl;
 
-import case_study.common.exception.CustomerCodeFormatException;
-import case_study.common.exception.EmployeeCodeFormatException;
-import case_study.common.exception.LimitMenuException;
+import case_study.common.exception.*;
 import case_study.common.math.MathCommon;
+import case_study.common.read_writer.Read;
 import case_study.common.read_writer.Write;
 import case_study.model.Employee;
 import case_study.service.EmployeeService;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class EmployeeServiceImpl implements EmployeeService {
-    private static Scanner scanner=new Scanner(System.in);
-    private static List<Employee>employees=new ArrayList<>();
+    private static Scanner scanner = new Scanner(System.in);
+    private static List<Employee> employees = new ArrayList<>();
 
-    static {
-        employees.add(new Employee("Tran Nam", "3/5/1999","nam", 205456, 98755
-                , "trannam@gmail", "TN3", "đại học", "chuyên viên", 560000.0));
-        employees.add(new Employee("Nguyen Vi", "8/9/2011","nu", 234563, 23556
-                , "vi@gmail", "NV8", "trung cấp", "lễ tân", 340000.0));
-        Write.writeToCSVEmployee(employees,false);
-    }
+//    static {
+//        employees.add(new Employee("Tran Nam", "3/5/1999", "nam", 205456, 98755
+//                , "trannam@gmail", "TN3", "đại học", "chuyên viên", 560000.0));
+//        employees.add(new Employee("Nguyen Vi", "8/9/2011", "nu", 234563, 23556
+//                , "vi@gmail", "NV8", "trung cấp", "lễ tân", 340000.0));
+//        Write.writeToCSVEmployee(employees, false);
+////        employees = Read.readToCSVEmployee();
+//    }
 
     @Override
     public void add() {
-
+        employees = Read.readToCSVEmployee();
         String hoTen;
-        while (true){
+        while (true) {
             System.out.print("Nhập họ tên: ");
-            hoTen=scanner.nextLine();
+            hoTen = scanner.nextLine();
             try {
-                if(!hoTen.matches("^([A-Z][a-z]{1,})\\s([A-Z][a-z]{0,})+(\\s([A-Z][a-z]{0,}+))?$")){
+                if (!hoTen.matches("^([A-Z][a-z]{1,})\\s([A-Z][a-z]{0,})+(\\s([A-Z][a-z]{0,}+))?$")) {
                     throw new EmployeeCodeFormatException("Lỗi cú pháp(vd:Nguyen Van A, Nguyen A)");
                 }
                 break;
-            }catch (EmployeeCodeFormatException e){
+            } catch (EmployeeCodeFormatException e) {
                 System.out.println(e.getMessage());
             }
         }
 
-        System.out.print("Nhập ngày sinh: ");
-        String ngaySinh=scanner.nextLine();
+
+        String ngaySinh;
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        while (true) {
+            System.out.print("Nhập ngày sinh dd/MM/yyyy: ");
+            ngaySinh = scanner.nextLine();
+            try {
+                LocalDate localDate = LocalDate.parse(ngaySinh, formatter);
+                LocalDate now = LocalDate.now();
+                now = now.plusYears(-18);
+                if (localDate.isAfter(now)) {
+                    throw new NotYet18YearOldException("Chưa đủ 18 tuổi");
+                }
+                now = now.plusYears(-82);
+                if (localDate.isBefore(now)) {
+                    throw new Over100YearsOldException("Hơn 100 tuổi");
+                }
+                break;
+            } catch (NotYet18YearOldException | Over100YearsOldException e) {
+                System.out.println(e.getMessage());
+            } catch (DateTimeParseException e) {
+                System.out.println("không đúng định dạng");
+            }
+        }
 
         String gioiTinh;
-        while (true){
+        while (true) {
             try {
                 System.out.print("Nhập giới tính: ");
-                gioiTinh=scanner.nextLine();
-                if(!gioiTinh.matches("^nam|nu$")){
+                gioiTinh = scanner.nextLine();
+                if (!gioiTinh.matches("^nam|nu$")) {
                     throw new EmployeeCodeFormatException("Lỗi, giới tính viết không dấu(nam or nu)");
                 }
                 break;
-            }catch (EmployeeCodeFormatException e){
+            } catch (EmployeeCodeFormatException e) {
                 System.out.println(e.getMessage());
             }
         }
 
         System.out.print("Nhập số CMND: ");
-        Integer soCMND= MathCommon.getSoCMND();
+        Integer soCMND = MathCommon.getSoCMND();
 
         System.out.print("Nhập số ĐT: ");
-        Integer soDienThoai=MathCommon.getSoDienThoai();
+        Integer soDienThoai = MathCommon.getSoDienThoai();
 
         String email;
         while (true) {
@@ -79,37 +104,37 @@ public class EmployeeServiceImpl implements EmployeeService {
         }
 
         String maNhanVien;
-        while (true){
+        while (true) {
             try {
                 System.out.print("Nhập mã nhân viên: ");
-                maNhanVien=scanner.nextLine();
-                if(!maNhanVien.matches("^[A-Z]{1,}[0-9]{1,}$")){
+                maNhanVien = scanner.nextLine();
+                if (!maNhanVien.matches("^[A-Z]{1,}[0-9]{1,}$")) {
                     throw new CustomerCodeFormatException("Lỗi cú pháp(vd VH09, V09)");
                 }
                 break;
-            }catch (CustomerCodeFormatException e){
+            } catch (CustomerCodeFormatException e) {
                 System.out.println(e.getMessage());
             }
         }
 
-        String trinhDo=null;
+        String trinhDo = null;
         System.out.print("Nhập trình độ\n" +
                 "1. Trung cấp\n" +
                 "2. Cao đẳng\n" +
                 "3. Đại học\n" +
                 "4. Sau đại học\n");
         int choice1;
-        while(true){
+        while (true) {
             try {
                 System.out.print("Chọn bậc: ");
                 choice1 = Integer.parseInt(scanner.nextLine());
-                if(choice1<1||choice1>4){
+                if (choice1 < 1 || choice1 > 4) {
                     throw new LimitMenuException("Nhập sai lựa chọn");
                 }
                 break;
-            }catch (LimitMenuException e){
+            } catch (LimitMenuException e) {
                 System.out.println(e.getMessage());
-            } catch (Exception e){
+            } catch (Exception e) {
                 System.err.print("Không nhập kí tự");
             }
         }
@@ -128,7 +153,7 @@ public class EmployeeServiceImpl implements EmployeeService {
                 break;
         }
 
-        String viTri=null;
+        String viTri = null;
         System.out.print("Vị trí:\n" +
                 "1. Lễ tân\n" +
                 "2. Phục vụ\n" +
@@ -137,51 +162,52 @@ public class EmployeeServiceImpl implements EmployeeService {
                 "5. Quản lí\n" +
                 "6. Giám đốc\n");
         int choice2;
-        while(true){
+        while (true) {
             try {
                 System.out.print("Chọn vị trí: ");
                 choice2 = Integer.parseInt(scanner.nextLine());
-                if (choice2<1||choice2>6){
+                if (choice2 < 1 || choice2 > 6) {
                     throw new EmployeeCodeFormatException("Nhập sai lựa chọn");
                 }
                 break;
-            }catch (EmployeeCodeFormatException e){
+            } catch (EmployeeCodeFormatException e) {
                 System.out.println(e.getMessage());
-            } catch (Exception e){
+            } catch (Exception e) {
                 System.err.print("Không nhập kí tự");
             }
         }
-        switch (choice2){
+        switch (choice2) {
             case 1:
-                viTri="Lễ tân";
+                viTri = "Lễ tân";
                 break;
             case 2:
-                viTri="Phục vụ";
+                viTri = "Phục vụ";
                 break;
             case 3:
-                viTri="Chuyên viên";
+                viTri = "Chuyên viên";
                 break;
             case 4:
-                viTri="Giám sát";
+                viTri = "Giám sát";
                 break;
             case 5:
-                viTri="Quản lí";
+                viTri = "Quản lí";
                 break;
             case 6:
-                viTri="Giám đốc";
+                viTri = "Giám đốc";
                 break;
         }
         System.out.print("Nhập lương: ");
-        Double luong=Double.parseDouble(scanner.nextLine());
+        Double luong = Double.parseDouble(scanner.nextLine());
 
-        Employee employee=new Employee(hoTen, ngaySinh, gioiTinh, soCMND, soDienThoai, email, maNhanVien, trinhDo, viTri, luong);
+        Employee employee = new Employee(hoTen, ngaySinh, gioiTinh, soCMND, soDienThoai, email, maNhanVien, trinhDo, viTri, luong);
         employees.add(employee);
-        Write.writeToCSVEmployee(employees,false);
+        Write.writeToCSVEmployee(employees, false);
     }
 
     //@Override
     public void display() {
-        for (Employee epl:employees) {
+        employees = Read.readToCSVEmployee();
+        for (Employee epl : employees) {
             //System.out.println(epl);
             epl.display();
         }
@@ -189,15 +215,17 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public void edit() {
-        boolean check=false;
-        int index=-1;
+        employees = Read.readToCSVEmployee();
+        boolean check = false;
+        int index = -1;
         //Employee employee=null;
         System.out.print("Nhập mã nhân viên: ");
-        String maNhanVien=scanner.nextLine();;
+        String maNhanVien = scanner.nextLine();
+        ;
         for (int i = 0; i < employees.size(); i++) {
             if (maNhanVien.equals(employees.get(i).getMaNhanVien())) {
                 check = true;
-                index=i;
+                index = i;
                 break;
             }
         }
@@ -206,44 +234,66 @@ public class EmployeeServiceImpl implements EmployeeService {
             return;
         }
         String hoTen;
-        while (true){
+        while (true) {
             System.out.print("Nhập họ tên: ");
-            hoTen=scanner.nextLine();
+            hoTen = scanner.nextLine();
             try {
-                if(!hoTen.matches("^([A-Z][a-z]{1,})\\s([A-Z][a-z]{0,})+(\\s([A-Z][a-z]{1,}+))?$")){
+                if (!hoTen.matches("^([A-Z][a-z]{1,})\\s([A-Z][a-z]{0,})+(\\s([A-Z][a-z]{1,}+))?$")) {
                     throw new CustomerCodeFormatException("Lỗi họ tên(vd Nguyen Van A, Nguyen A)");
                 }
                 break;
-            }catch (CustomerCodeFormatException e){
+            } catch (CustomerCodeFormatException e) {
                 System.out.println(e.getMessage());
-            }
-            catch (Exception e){
+            } catch (Exception e) {
                 System.out.println("Không nhập chữ số");
             }
         }
 
-        System.out.print("Nhập ngày sinh: ");
-        String ngaySinh=scanner.nextLine();
+
+        String ngaySinh;
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        while (true) {
+            System.out.print("Nhập ngày sinh dd/MM/yyyy: ");
+            ngaySinh = scanner.nextLine();
+            try {
+                LocalDate localDate = LocalDate.parse(ngaySinh, formatter);
+                LocalDate now = LocalDate.now();
+                now = now.plusYears(-18);
+                if (localDate.isAfter(now)) {
+                    throw new NotYet18YearOldException("Chưa đủ 18 tuổi");
+                }
+                now = now.plusYears(-82);
+                if (localDate.isBefore(now)) {
+                    throw new Over100YearsOldException("Hơn 100 tuổi");
+                }
+                break;
+            } catch (NotYet18YearOldException | Over100YearsOldException e) {
+                System.out.println(e.getMessage());
+            } catch (DateTimeParseException e) {
+                System.out.println("không đúng định dạng");
+            }
+
+        }
 
         String gioiTinh;
-        while (true){
+        while (true) {
             try {
                 System.out.print("Nhập giới tính: ");
-                gioiTinh=scanner.nextLine();
-                if(!gioiTinh.matches("^nam|nu$")){
+                gioiTinh = scanner.nextLine();
+                if (!gioiTinh.matches("^nam|nu$")) {
                     throw new CustomerCodeFormatException("Lỗi, viết không dấu(nam or nu)");
                 }
                 break;
-            }catch (CustomerCodeFormatException e){
+            } catch (CustomerCodeFormatException e) {
                 System.out.println(e.getMessage());
             }
         }
 
         System.out.print("Nhập số CMND: ");
-        Integer soCMND=MathCommon.getSoCMND();
+        Integer soCMND = MathCommon.getSoCMND();
 
         System.out.print("Số điện thoại: ");
-        Integer soDienThoai=MathCommon.getSoDienThoai();
+        Integer soDienThoai = MathCommon.getSoDienThoai();
 
         String email;
         while (true) {
@@ -265,21 +315,21 @@ public class EmployeeServiceImpl implements EmployeeService {
                 "3. Đại học\n" +
                 "4. Sau đại học\n");
         int choice1;
-        while(true){
+        while (true) {
             try {
                 System.out.print("Chọn bậc: ");
                 choice1 = Integer.parseInt(scanner.nextLine());
-                if(choice1<1||choice1>4){
+                if (choice1 < 1 || choice1 > 4) {
                     throw new LimitMenuException("Nhập sai lựa chọn");
                 }
                 break;
-            }catch (LimitMenuException e){
+            } catch (LimitMenuException e) {
                 System.out.println(e.getMessage());
-            } catch (Exception e){
+            } catch (Exception e) {
                 System.err.print("Không nhập kí tự");
             }
         }
-        String trinhDo=null;
+        String trinhDo = null;
         switch (choice1) {
             case 1:
                 trinhDo = "Trung cấp";
@@ -303,46 +353,47 @@ public class EmployeeServiceImpl implements EmployeeService {
                 "5. Quản lí\n" +
                 "6. Giám đốc\n");
         int choice2;
-        while(true){
+        while (true) {
             try {
                 System.out.print("Chọn vị trí: ");
                 choice2 = Integer.parseInt(scanner.nextLine());
-                if (choice2<1||choice2>6){
+                if (choice2 < 1 || choice2 > 6) {
                     throw new EmployeeCodeFormatException("Nhập sai lựa chọn");
                 }
                 break;
-            }catch (EmployeeCodeFormatException e){
+            } catch (EmployeeCodeFormatException e) {
                 System.out.println(e.getMessage());
-            } catch (Exception e){
+            } catch (Exception e) {
                 System.err.print("Không nhập kí tự");
             }
         }
-        String viTri=null;
-        switch (choice2){
+        String viTri = null;
+        switch (choice2) {
             case 1:
-                viTri="Lễ tân";
+                viTri = "Lễ tân";
                 break;
             case 2:
-                viTri="Phục vụ";
+                viTri = "Phục vụ";
                 break;
             case 3:
-                viTri="Chuyên viên";
+                viTri = "Chuyên viên";
                 break;
             case 4:
-                viTri="Giám sát";
+                viTri = "Giám sát";
                 break;
             case 5:
-                viTri="Quản lí";
+                viTri = "Quản lí";
                 break;
             case 6:
-                viTri="Giám đốc";
+                viTri = "Giám đốc";
                 break;
         }
         System.out.print("Nhập lương: ");
-        Double luong=Double.parseDouble(scanner.nextLine());
+        Double luong = MathCommon.getDouble1();
 
-        Employee employee1=new Employee(hoTen, ngaySinh, gioiTinh, soCMND, soDienThoai, email, maNhanVien, trinhDo, viTri, luong );
-        employees.set(index,employee1);
+        Employee employee1 = new Employee(hoTen, ngaySinh, gioiTinh, soCMND, soDienThoai, email, maNhanVien, trinhDo, viTri, luong);
+        employees.set(index, employee1);
+        Write.writeToCSVEmployee(employees, false);
 //write
     }
 }

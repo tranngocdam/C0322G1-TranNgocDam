@@ -8,6 +8,6 @@ public class CompatorProduce implements Comparator<Produce> {
 
     @Override
     public int compare(Produce p1, Produce p2) {
-        return p1.getGiaCa()-p2.getGiaCa();
+        return p1.getGiaCa()>p2.getGiaCa()?1:-1;
     }
 }

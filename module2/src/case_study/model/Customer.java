@@ -20,8 +20,8 @@ public class Customer extends Person{
     public Customer() {
     }
 
-    public Customer(String hoTen, String ngaySinh, String gioiTinh, Integer soCMND, Integer soDienThoai, String email, String maKhachHang, String loaiKhach, String diaChi) {
-        super(hoTen, ngaySinh, gioiTinh, soCMND, soDienThoai, email);
+    public Customer(String hoTen, String ngaySinh, Integer gioiTinh, Integer soCMND, Integer soDienThoai, String email, String maKhachHang, String loaiKhach, String diaChi) {
+       // super(hoTen, ngaySinh, gioiTinh, soCMND, soDienThoai, email);
         this.maKhachHang = maKhachHang;
         this.loaiKhach = loaiKhach;
         this.diaChi = diaChi;
@@ -55,9 +55,9 @@ public class Customer extends Person{
     public String toString() {
         return "Customer{" +
                 "" + super.toString() +
-                ", maKhachHang='" + maKhachHang +
-                ", loaiKhach='" + loaiKhach +
-                ", diaChi='" + diaChi +
+                ", maKhachHang=" + maKhachHang +
+                ", loaiKhach=" + loaiKhach +
+                ", diaChi=" + diaChi +
                 '}';
     }
     public String getCustomer(){

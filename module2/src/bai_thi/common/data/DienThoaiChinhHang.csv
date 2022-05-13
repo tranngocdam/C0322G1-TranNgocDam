@@ -1,0 +1,3 @@
+DienThoaiChinhHang{, ID='1', tenDienThoai='Samsung', giaBan=34434.4, soLuong=5, nhaSanXuat='Samsung', thoiGianBaoHanh='365', phamViBaoHanh=1}
+DienThoaiChinhHang{, ID='3', tenDienThoai='LG', giaBan=34342.3, soLuong=9, nhaSanXuat='LG', thoiGianBaoHanh='100', phamViBaoHanh=2}
+DienThoaiChinhHang{, ID='4', tenDienThoai='Iphone', giaBan=21222.3, soLuong=9, nhaSanXuat='Iphone', thoiGianBaoHanh='100', phamViBaoHanh=2}

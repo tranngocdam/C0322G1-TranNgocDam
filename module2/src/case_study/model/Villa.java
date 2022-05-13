@@ -46,7 +46,7 @@ public class Villa extends Facility{
     public String toString() {
         return "Villa{" +
                 "" + super.toString()+
-                ", tieuChuanPhong='" + tieuChuanPhong + '\'' +
+                ", tieuChuanPhong='" + tieuChuanPhong +
                 ", dienTichHoBoi=" + dienTichHoBoi +
                 ", soTang=" + soTang +
                 '}';

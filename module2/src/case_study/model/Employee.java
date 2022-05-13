@@ -10,10 +10,10 @@ public class Employee extends Person{
     public void display() {
         System.out.println("Employee{" +
                 "" + super.toString() +
-                ", maNhanVien='" + maNhanVien +
-                ", trinhDo='" + trinhDo +
-                ", viTri='" + viTri +
-                ", luong=" + luong +
+                ", maNhanVien= " + maNhanVien +
+                ", trinhDo= " + trinhDo +
+                ", viTri= " + viTri +
+                ", luong= " + luong +
                 '}');
     }
 

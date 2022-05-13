@@ -8,7 +8,7 @@ import java.util.*;
 
 public class BookingServiceImpl implements BookingService {
     private static Scanner scanner=new Scanner(System.in);
-    private static TreeSet<Booking>treeSet=new TreeSet<>();
+    public static TreeSet<Booking>treeSet=new TreeSet<>();
     static {
         treeSet.add(new Booking("MB1","2001/8/6","2001/8/21","HK6", "KJH","Room"));
         treeSet.add(new Booking("MB2","2011/1/6","2011/1/21","VA1", "VAl","Villa"));
@@ -47,4 +47,5 @@ public class BookingServiceImpl implements BookingService {
             System.out.println(b);
         }
     }
+
 }

@@ -66,8 +66,8 @@ public class ProductManager implements ProduceService {
                 produces.remove(i);
                 break;
             }
-
         }
+        System.out.println("Mã không tồn tại ");
     }
 
     @Override
