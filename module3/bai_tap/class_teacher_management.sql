@@ -7,16 +7,16 @@ class_id int NOT NULL primary key,
 class_name varchar(50) );
 
 CREATE TABLE student (
-student_id int NOT NULL,
+id int NOT NULL primary key,
 student_name varchar(50),
-student_age int NULL,
-student_country varchar(45) NULL,
+age int NULL,
+country varchar(45) NULL,
 class_id int,
 FOREIGN KEY (class_id) REFERENCES class(class_id));
 DROP TABLE student;
 
 CREATE TABLE teacher (
-teacher_id int NOT NULL,
+teacher_id int NOT NULL primary key,
 teacher_name varchar(50),
 teacher_age int NULL,
 teacher_country varchar(50),
