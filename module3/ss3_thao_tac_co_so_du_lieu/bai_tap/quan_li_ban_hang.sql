@@ -3,32 +3,32 @@ create database quan_ly_ban_hang;
 use quan_ly_ban_hang;
 
 create table customer(
-cID int,
-cName varchar(50),
-cAge int,
-primary key(cID));
+c_id int,
+c_name varchar(50),
+c_age int,
+primary key(c_id));
 
 create table `order`(
-oID int,
-cID int,
-oDate date,
-oTotalPrime double,
-primary key(oID),
-foreign key (cID) references customer(cID));
+o_id int,
+c_id int,
+o_date date,
+o_total_prime double,
+primary key(o_id),
+foreign key (c_id) references customer(c_id));
 
 create table product(
-pID int,
-pName varchar(50),
-pPrime double,
-primary key(pID));
+p_id int,
+p_name varchar(50),
+p_prime double,
+primary key(p_id));
 
-create table orderDetail(
-oID int,
-pID int,
-odQTy int,
-primary key(oID, pID),
-foreign key (oID) references `order`(oID),
-foreign key (pID) references product(pID));
+create table order_detail(
+o_id int,
+p_id int,
+od_QTy int,
+primary key(o_id, p_id),
+foreign key (o_id) references `order`(o_id),
+foreign key (p_id) references product(p_id));
 
 insert into customer
 value(1, 'Minh Quan', 10), (2, 'Ngoc Anh', 20), (3, 'Hong Ha', 50);
@@ -39,28 +39,28 @@ value(1, 1 , '2006-03-21', null), (2, 2, '2006-03-23', null), (3, 1, '2006-03-16
 insert into product
 value(1, 'May Giac', 3), (2, 'Tu Lanh', 5), (3, 'Dieu Hoa', 7), (4, 'Quat', 1), (5, 'Bep Dien', 2);
 
-insert into orderDetail
+insert into order_detail
 value(1, 1, 3), (1, 3, 7), (1, 4, 2), (2, 1, 1), (3, 1, 8), (2, 5, 4), (2, 3, 3);
 
-select `order`.oID, `order`.oDate, product.pPrime from `order`
-join  orderDetail on `order`.oID = orderDetail.oID
-join product on product.pID = orderDetail.pID;
+select `order`.o_id, `order`.o_date, product.p_prime from `order`
+join  order_detail on `order`.o_id = order_detail.o_id
+join product on product.p_id = order_detail.p_id;
 
-select customer.cID, customer.cName, product.pName from customer
-join `order` on customer.cID = `order`.cID
-join orderDetail on `order`.oID = orderDetail.oID
-join product on product.pID = orderDetail.pID;
+select customer.c_id, customer.c_name, product.p_name from customer
+join `order` on customer.c_id = `order`.c_id
+join order_detail on `order`.o_id = order_detail.o_id
+join product on product.p_id = order_detail.p_id;
 
-select cName from customer
-where cName not in (
-	select customer.cName from customer 
-	join `order` on customer.cID = `order`.cID
-	join orderDetail on `order`.oID = orderDetail.oID
-	join product on product.pID = orderDetail.pID
-	group by customer.cName
+select c_name from customer
+where c_name not in (
+	select customer.c_name from customer 
+	join `order` on customer.c_id = `order`.c_id
+	join order_detail on `order`.o_id = order_detail.o_id
+	join product on product.p_id = order_detail.p_id
+	group by customer.c_name
 );
 
-select `order`.oID, `order`.oDate, sum(orderDetail.odQTy*product.pPrime) as oTotalPrime from `order`
-join orderDetail on `order`.oID = orderDetail.oID
-join product on product.pID = orderDetail.pID
-group by `order`.oID
+select `order`.o_id, `order`.o_date, sum(order_detail.od_QTy*product.p_prime) as o_total_prime from `order`
+join order_detail on `order`.o_id = order_detail.o_id
+join product on product.p_id = order_detail.p_id
+group by `order`.o_id
