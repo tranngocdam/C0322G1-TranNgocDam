@@ -67,6 +67,7 @@ tieu_chuan_phong varchar(45),
 mo_ta_tien_nghi_khac varchar(45),
 dien_tich_ho_boi double,
 so_tang int,
+-- primary key(ma,  ten),
 foreign key (ma_loai_dich_vu) references loai_dich_vu(ma_loai_dich_vu),
 foreign key (ma_kieu_thue) references kieu_thue(ma_kieu_thue));
 

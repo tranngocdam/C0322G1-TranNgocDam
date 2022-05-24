@@ -1,0 +1,26 @@
+.text-center{
+    text-align:center;
+    justify-content: center;
+    font-weight: bold
+}
+.text{
+    width: 30%;
+}
+.text-b{
+    font-weight: bold;
+}
+.text-jmg{
+    display: flex;
+}
+img {
+    margin: 13px;
+}
+table{
+    width: 100%;
+}
+.text-c{
+   color: green;
+}
+.text-d{
+    font-style: italic;
+}

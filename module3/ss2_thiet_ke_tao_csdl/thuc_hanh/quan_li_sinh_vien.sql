@@ -50,7 +50,7 @@ value
 -- insert into student(studen_id, student_name, student_address, student_phone, status, class_id)
 -- value 
 
-
+ 
 insert into subject
 value
 (1, 'CF', 5, 1), 
