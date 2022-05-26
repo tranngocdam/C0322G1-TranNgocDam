@@ -23,4 +23,24 @@ table{
 }
 .text-d{
     font-style: italic;
+    color: brown;
+}
+.text-ct{
+    text-align:center;
+}
+a{
+    text-decoration: none;
+}
+div{
+ border-style: ridge;
+}
+#header{
+    background: khaki;
+    height: 180px;
+    width: 100%;
+}
+#main{
+    background: chocolate;
+    height: 300px;
+    width: 99.2%;
 }

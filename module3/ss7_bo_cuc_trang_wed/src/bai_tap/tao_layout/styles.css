@@ -1,0 +1,19 @@
+header, footer {
+    padding: 10px;
+    color: white;
+    background-color: black;
+}
+nav ul li {
+    display: inline;
+    margin: 5px;
+}
+section {
+    margin: 5px;
+    padding: 10px;
+    background-color: lightgrey;
+}
+article {
+    margin: 5px;
+    padding: 10px;
+    background-color: green;
+}

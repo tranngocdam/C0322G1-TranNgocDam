@@ -1,0 +1,145 @@
+body{
+    font-family: Arial, Tahoma;
+    font-size: 12px;
+}
+
+#main{
+    width: 90%;
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.head{
+    height: 60px;
+    background-color: #F5F5F5;
+    border: 1px solid #CDCDCD;
+    margin-bottom:5px;
+}
+
+.head-link{
+    height: 30px;
+    line-height: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid #CDCDCD;
+    background-color: coral;
+    margin-bottom:5px;
+    clear: both;
+}
+
+.left{
+    width: 30%;
+    min-height: 250px;
+    border: 1px solid #CDCDCD;
+    float:left;
+    background-color: antiquewhite;
+    margin-bottom: 5px;
+}
+
+.content{
+    width: 60%;
+    min-height: 270px;
+    border: 1px solid #CDCDCD;
+    float:left;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.row {
+    display: flex;
+}
+
+.header {
+    display: flex;
+    height: 50px;
+    background-color: #f5f5f5;
+    margin: auto 0;
+}
+.menu {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    height: 40px;
+    background-color:#f5f5f5;
+    margin: 2px 0 8px;
+}
+
+.menu a {
+    color: #3a3b3c;
+    text-decoration: none;
+    font-weight: 600;
+    margin: auto 0;
+}
+
+.seperate {
+    border-left: solid 1px #3a3b3c;
+    height: 10px;
+    margin: auto 5px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.left-nav iframe {
+    margin: 10px;
+}
+
+.main-page {
+    text-align: center;
+    border: solid 5px white;
+}
+
+.video-heading {
+    text-align: left;
+    margin-left: 50px;
+}
+
+.description {
+    text-align: left;
+    margin-left: 50px;
+}
+
+.footer {
+    display: flex;
+    text-align: center;
+    background-color: #f5f5f5;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.footer h4 {
+    text-align: center;
+}
+.logo{
+    font-family: "Agency FB";
+    font-size: 20px;
+    color: red;
+    /*border-radius: 100px;*/
+}
+span{
+    display: inline-block;
+    margin: 0 10px;
+    padding-top: 18px;
+
+    text-align: center;
+}
+.text{
+    text-decoration: none;
+}
+/*.header-logo {*/
+/* *!*/
+/*    height: 30px;*/
+/*    margin: auto 20px;*/
+/*}*/
+/*.left-nav {*/
+/* *!*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    text-align: center;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    background-color: #e2e5e9;*/
+/*    border: solid 2px white;*/
+/*    border-radius: 15px;*/
+/*}*/
