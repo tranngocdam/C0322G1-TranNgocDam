@@ -40,7 +40,8 @@ div{
     width: 100%;
 }
 #main{
-    background: chocolate;
+    background: darkgreen;
     height: 300px;
     width: 99.2%;
+    margin: 2px;
 }

@@ -12,9 +12,15 @@ body{
 
 #head{
     height: 40px;
-    background-color: #F5F5F5;
+    /*background-color: #F5F5F5;*/
     border: 1px solid #CDCDCD;
     margin-bottom:5px;
+    position: fixed;
+    z-index: 2;
+    background: gray;
+    left: 0;
+    right: 0;
+    top: 0;
 }
 
 #left{
@@ -191,4 +197,79 @@ display: inline;
     position: absolute;
     top: 259px;
     left: 53px;
+}
+.right1{
+    margin: 0px 5px;
+    position: relative;
+    top: 15px;
+    font-size: 12px;
+}
+.right2{
+    padding: 15px;
+    position: absolute;
+    top: 70px;
+    left: 825px;
+    font-size: 17px;
+}
+.right3{
+    padding: 15px;
+    position: absolute;
+    top: 72px;
+    left: 845px;
+    font-size: 13px;
+}
+.right4{
+    padding: 15px;
+    position: absolute;
+    top: 130px;
+    left: 815px;
+    font-size: 13px;
+}.right5{
+    padding: 15px;
+    position: absolute;
+    top: 160px;
+    left: 815px;
+    font-size: 13px;
+}
+.right6{
+    padding: 15px;
+    position: absolute;
+    top: 220px;
+    left: 815px;
+    font-size: 13px;
+}
+.right7{
+    padding: 15px;
+    position: absolute;
+    top: 280px;
+    left: 815px;
+    font-size: 13px;
+}
+.right8{
+    padding: 15px;
+    position: absolute;
+    top: 340px;
+    left: 815px;
+    font-size: 13px;
+}
+.right9{
+    padding: 15px;
+    position: absolute;
+    top: 400px;
+    left: 815px;
+    font-size: 13px;
+}
+.center1{
+    padding: 15px;
+    position: absolute;
+    top: 230px;
+    left: 215px;
+    font-size: 13px;
+}
+.center2{
+    padding: 15px;
+    position: absolute;
+    top: 230px;
+    left: 255px;
+    font-size: 13px;
 }

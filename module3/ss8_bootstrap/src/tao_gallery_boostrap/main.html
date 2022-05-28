@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <style>
+        .image-grid {
+            padding: 5px;
+        }
+
+        .image-grid:hover {
+            box-shadow: 0 0 20px #888888;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            Responsive Image Gallery
+        </a>
+    </div>
+</nav>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <p class="text-left mt-2 bg-light fw-bold">Resize your browser to see the effect</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3 col-md-6 col-sm-1 image-grid ">
+        <a><img style="width: 100%; height: 200px" src="img_fjords.jpg" class="img-fluid" alt="Add a description of the image here"/></a>
+            <div class="description text-center fw-bold p-3 border border-2">Add a description of the image here</div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-1 image-grid">
+            <a><img style="width: 100%; height: 200px" src="img_forest.jpg" class="img-fluid" alt="Add a description of the image here"/></a>
+            <div class="description text-center fw-bold p-3 border border-2">Add a description of the image here</div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-1 image-grid">
+            <a><img style="width: 100%; height: 200px" src="img_lights.jpg" class="img-fluid" alt="Add a description of the image here"/></a>
+            <div class="description text-center fw-bold p-3 border border-2">Add a description of the image here</div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-1 image-grid">
+            <a><img style="width: 100%; height: 200px" src="img_mountains.jpg" class="img-fluid" alt="Add a description of the image here"/></a>
+            <div class="description text-center fw-bold p-3 border border-2">Add a description of the image here</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <p>This example use media queries to re-arrange the images on different screen sizes: for screens larger
+                than 700px wide, it will show four images side by side, for screens smaller than 700px, it will show two
+                images side by side. For screens smaller than 500px, the images will stack vertically (100%).</p>
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="../../bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
+</html>
