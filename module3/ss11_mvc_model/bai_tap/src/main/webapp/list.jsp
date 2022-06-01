@@ -10,7 +10,6 @@
 <html>
 <head>
     <title>Title</title>
-
 </head>
 <body>
 <div class="container">
@@ -36,7 +35,8 @@
     </table>
     <a href="products?actionUser=create"><button type="submit">Create New Product</button></a>
     <a href="products?actionUser=edit"><button type="submit">Edit the Product</button></a>
-    <a href="products?actionUser=delete"><button  type="submit">Delete the Product</button></a>
+    <a href="products?actionUser=delete"><button type="submit">Delete the Product</button></a>
+    <a href="products?actionUser=find"><button type="submit">Find the Product</button></a>
 </div>
 </body>
 </html>

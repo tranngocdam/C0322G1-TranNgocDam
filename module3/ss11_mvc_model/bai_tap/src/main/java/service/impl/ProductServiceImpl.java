@@ -36,4 +36,8 @@ public class ProductServiceImpl implements IProductService {
         this.iProductRepository.remove(id);
     }
 
+    @Override
+    public void find(String name) {
+        this.iProductRepository.find(name);
+    }
 }

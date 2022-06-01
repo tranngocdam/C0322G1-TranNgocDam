@@ -28,11 +28,11 @@
     </div>
     <div>
         <label>Product Name</label>
-        <input type="text" name="productName" placeholder="Enter Product Name">
+        <input type="text" name="name" placeholder="Enter Product Name">
     </div>
     <div>
         <label>Product Price</label>
-        <input type="text" name="productPrice" placeholder="Enter Product Price">
+        <input type="text" name="price" placeholder="Enter Product Price">
     </div>
     <div>
         <label>Product Description</label>

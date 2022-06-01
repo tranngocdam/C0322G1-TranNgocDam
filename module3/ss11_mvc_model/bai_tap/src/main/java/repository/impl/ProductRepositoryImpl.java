@@ -40,4 +40,9 @@ public class ProductRepositoryImpl implements IProductRepository {
     public void remove(int id) {
         productMap.remove(id);
     }
+
+    @Override
+    public void find(String name) {
+        productMap.get(name);
+    }
 }
