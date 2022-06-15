@@ -1,15 +1,14 @@
 package service.impl;
 
 import model.User;
-import repository.IUserDAO;
-import repository.impl.UserDAO;
-import service.IUserService;
+import repository.IUserService;
+import repository.impl.UserRepositoryImpl;
 
 import java.sql.SQLException;
 import java.util.List;
 
-public class UserServiceImpl implements IUserService {
-    private IUserDAO iUserDAO=new UserDAO();
+public class UserServiceImpl implements service.IUserService {
+    private IUserService iUserDAO=new UserRepositoryImpl();
 
     @Override
     public void insertUser(User user) throws SQLException {

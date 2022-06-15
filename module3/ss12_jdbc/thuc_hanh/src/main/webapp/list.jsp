@@ -10,9 +10,10 @@
 <html>
 <head>
     <title>Title</title>
+    <link rel="stylesheet" href="/bootstrap-5.0.2-dist.">
 </head>
 <body>
-<
+
 <center>
     <h1>User Management</h1>
     <h2>
@@ -24,9 +25,11 @@
     <input type="text" name="search" placeholder="search">
     <input  type="submit" value="search">
 </form>
+
 <form action="/users?action=sort"  method="post" >
     <input  type="submit" value="sort">
 </form>
+
 <div align="center">
     <table border="1" cellpadding="5">
         <caption><h2>List of Users</h2></caption>
@@ -35,7 +38,6 @@
             <th>Name</th>
             <th>Email</th>
             <th>Country</th>
-            <th>Actions</th>
         </tr>
         <c:forEach var="user" items="${listUser}">
             <tr>

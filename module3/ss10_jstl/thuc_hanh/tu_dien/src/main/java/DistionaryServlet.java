@@ -22,10 +22,7 @@ public class DistionaryServlet extends HttpServlet {
 //        } else {
 //            result = "Not Found";
 //        }
-        if (dic.containsKey(search)) {
-            result = dic.get(search);
-
-        } else {
+   c else {
             result = "Not Found";
         }
         request.setAttribute("search", search);
