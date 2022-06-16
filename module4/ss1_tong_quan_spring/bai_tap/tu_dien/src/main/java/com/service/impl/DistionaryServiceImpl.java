@@ -1,14 +1,14 @@
 package com.service.impl;
 
 
-import com.service.IService;
+import com.service.IDistionaryService;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 import java.util.Map;
 
 @Service
-public class DistionaryServiceImpl implements IService {
+public class DistionaryServiceImpl implements IDistionaryService {
     Map<String,String> map = new HashMap<>();
     {
         map.put("book","sách");
