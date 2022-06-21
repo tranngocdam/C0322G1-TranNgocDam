@@ -31,7 +31,7 @@ private final ISongService songService=new ISongServiceImpl();
         return "/create";
     }
     @PostMapping("/song/create")
-    public String addOrUpdate(@ModelAttribute Song song) {
+    public String save(@ModelAttribute Song song) {
         songService.save(song);
         return "redirect:/song";
     }
