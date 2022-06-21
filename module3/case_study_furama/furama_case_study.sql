@@ -25,8 +25,8 @@ password_user varchar(45) null);
 create table user_role(
 role_id int,
 username varchar(45),
-foreign key(role_id) references role(role_id),
-foreign key(username) references user(username));
+foreign key(role_id) references role(role_id) ON DELETE CASCADE,
+foreign key(username) references user(username) ON DELETE CASCADE);
 
 create table employee(
 employee_id int auto_increment primary key,
@@ -40,11 +40,9 @@ employee_address varchar(45),
 position_id int,
 education_degree_id int,
 division_id int,
-username varchar(45) null,
-foreign key(position_id) references position_employee(position_id),
-foreign key(education_degree_id) references education_degree(education_degree_id),
-foreign key(division_id) references division(division_id),
-foreign key(username) references user(username));
+foreign key(position_id) references position_employee(position_id) ON DELETE CASCADE,
+foreign key(education_degree_id) references education_degree(education_degree_id) ON DELETE CASCADE,
+foreign key(division_id) references division(division_id) ON DELETE CASCADE);
 
 create table customer_type(
 customer_type_id int primary key,
@@ -60,7 +58,7 @@ customer_id_card varchar(45),
 customer_phone varchar(45),
 customer_email varchar(45),
 customer_address varchar(45),
-foreign key(customer_type_id) references customer_type(customer_type_id));
+foreign key(customer_type_id) references customer_type(customer_type_id) ON DELETE CASCADE);
 
 create table service_type(
 service_type_id int primary key,
@@ -83,8 +81,8 @@ standar_room varchar(45),
 description_other_convenience varchar(45),
 pool_area double,
 number_of_floors int,
-foreign key (rent_type_id) references rent_type(rent_type_id),
-foreign key(service_type_id) references service_type(service_type_id));
+foreign key (rent_type_id) references rent_type(rent_type_id) ON DELETE CASCADE,
+foreign key(service_type_id) references service_type(service_type_id) ON DELETE CASCADE);
 
 create table attach_service(
 attach_service_id int primary key,
@@ -102,17 +100,17 @@ contract_total_money double,
 employee_id int,
 customer_id int,
 service_id int,
-foreign key (employee_id) references employee(employee_id),
-foreign key (customer_id) references customer(customer_id),
-foreign key (service_id) references service(service_id));
+foreign key (employee_id) references employee(employee_id)ON DELETE CASCADE,
+foreign key (customer_id) references customer(customer_id) ON DELETE CASCADE,
+foreign key (service_id) references service(service_id)ON DELETE CASCADE);
 
 create table contract_detail(
 contract_detail_id int primary key,
 contract_id int,
 attach_service_id int,
 quantity int,
-foreign key (attach_service_id) references attach_service(attach_service_id),
-foreign key (contract_id) references contract(contract_id));
+foreign key (attach_service_id) references attach_service(attach_service_id) ON DELETE CASCADE,
+foreign key (contract_id) references contract(contract_id)ON DELETE CASCADE);
 
 insert into position_employee
 value(1, "Quản lí"), (2, "Nhân viên");
@@ -132,16 +130,16 @@ insert into user value
 (2, null);
 
 insert into employee value
-(1, "Nguyễn Văn An", "1970-11-07", "456231786", 10000000, "0901234121", "annguyen@gmail.com", "295 Nguyễn Tất Thành, Đà Nẵng", 1, 3, 1, null),
-(2, 'Lê Văn Bình', '1997-04-09', '654231234', 7000000, '934212314', 'binhlv@gmail.com', '22 Yên Bái, Đà Nẵng', 1, 2, 2, null),
-(3, 'Hồ Thị Yến', '1995-12-12', '999231723', 14000000, '412352315', 'thiyen@gmail.com', 'K234/11 Điện Biên Phủ, Gia Lai', 1, 3, 2, null),
-(4, 'Võ Công Toản', '1980-04-04', '123231365', 17000000, '374443232', 'toan0404@gmail.com', '77 Hoàng Diệu, Quảng Trị', 1, 4, 4, null),
-(5, 'Nguyễn Bỉnh Phát', '1999-12-09', '454363232', 6000000, '902341231', 'phatphat@gmail.com', '43 Yên Bái, Đà Nẵng', 2, 1, 1, null),
-(6, 'Khúc Nguyễn An Nghi', '2000-11-08', '964542311', 7000000, '978653213', 'annghi20@gmail.com', '294 Nguyễn Tất Thành, Đà Nẵng', 2, 2, 3, null),
-(7, 'Nguyễn Hữu Hà', '1993-01-01', '534323231', 8000000, '941234553', 'nhh0101@gmail.com', '4 Nguyễn Chí Thanh, Huế', 2, 3, 2, null),
-(8, 'Nguyễn Hà Đông', '1989-09-03', '234414123', 9000000, '642123111', 'donghanguyen@gmail.com', '111 Hùng Vương, Hà Nội', 2, 4, 4, null),
-(9, 'Tòng Hoang', '1982-09-03', '256781231', 6000000, '245144444', 'hoangtong@gmail.com', '213 Hàm Nghi, Đà Nẵng', 2, 4, 4, null),
-(10, 'Nguyễn Công Đạo', '1994-01-08', '755434343', 8000000, '988767111', 'nguyencongdao12@gmail.com', '6 Hoà Khánh, Đồng Nai', 2, 3, 2, null);
+(1, "Nguyễn Văn An", "1970-11-07", "456231786", 10000000, "0901234121", "annguyen@gmail.com", "295 Nguyễn Tất Thành, Đà Nẵng", 1, 3, 1),
+(2, 'Lê Văn Bình', '1997-04-09', '654231234', 7000000, '934212314', 'binhlv@gmail.com', '22 Yên Bái, Đà Nẵng', 1, 2, 2),
+(3, 'Hồ Thị Yến', '1995-12-12', '999231723', 14000000, '412352315', 'thiyen@gmail.com', 'K234/11 Điện Biên Phủ, Gia Lai', 1, 3, 2),
+(4, 'Võ Công Toản', '1980-04-04', '123231365', 17000000, '374443232', 'toan0404@gmail.com', '77 Hoàng Diệu, Quảng Trị', 1, 4, 4),
+(5, 'Nguyễn Bỉnh Phát', '1999-12-09', '454363232', 6000000, '902341231', 'phatphat@gmail.com', '43 Yên Bái, Đà Nẵng', 2, 1, 1),
+(6, 'Khúc Nguyễn An Nghi', '2000-11-08', '964542311', 7000000, '978653213', 'annghi20@gmail.com', '294 Nguyễn Tất Thành, Đà Nẵng', 2, 2, 3),
+(7, 'Nguyễn Hữu Hà', '1993-01-01', '534323231', 8000000, '941234553', 'nhh0101@gmail.com', '4 Nguyễn Chí Thanh, Huế', 2, 3, 2),
+(8, 'Nguyễn Hà Đông', '1989-09-03', '234414123', 9000000, '642123111', 'donghanguyen@gmail.com', '111 Hùng Vương, Hà Nội', 2, 4, 4),
+(9, 'Tòng Hoang', '1982-09-03', '256781231', 6000000, '245144444', 'hoangtong@gmail.com', '213 Hàm Nghi, Đà Nẵng', 2, 4, 4),
+(10, 'Nguyễn Công Đạo', '1994-01-08', '755434343', 8000000, '988767111', 'nguyencongdao12@gmail.com', '6 Hoà Khánh, Đồng Nai', 2, 3, 2);
 
 insert into customer_type
 value
