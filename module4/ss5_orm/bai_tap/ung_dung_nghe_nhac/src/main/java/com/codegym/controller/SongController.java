@@ -36,7 +36,7 @@ private final ISongService songService=new ISongServiceImpl();
         return "redirect:/song";
     }
 
-    @GetMapping("song/edit/{id}")
+    @GetMapping("song/{id}/edit")
     public String showEdit(@PathVariable Integer id, Model model){
         Song song = songService.findById(id);
         model.addAttribute("song",song);
@@ -48,7 +48,8 @@ private final ISongService songService=new ISongServiceImpl();
         songService.edit(song);
         return "redirect:/song";
     }
-    @GetMapping("song/delete/{id}")
+
+    @GetMapping("song/{id}/delete")
     public String delete(@PathVariable Integer id){
         songService.delete(id);
         return "redirect:/song";

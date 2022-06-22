@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
@@ -20,25 +21,35 @@ public class ProductController {
         model.addAttribute("productList", productList);
         return "/list";
     }
+
     @GetMapping("/product/create")
     public String showCreate(Model model) {
-        model.addAttribute("products", new Product());
+        model.addAttribute("product", new Product());
         return "/create";
     }
-    @PostMapping("/product/save")
+    @PostMapping("/product/create")
     public String save(@ModelAttribute Product product) {
         iProductService.save(product);
         return "redirect:/product";
     }
-//@GetMapping("/product/create")
-//public String create(Model model) {
-//    model.addAttribute("products", new Product());
-//    return "/create";
-//}
-//
-//    @PostMapping("/product/save")
-//    public String save(Product product) {
-//        iProductService.save(product);
-//        return "redirect:/product";
-//    }
+
+    @GetMapping("product/{id}/edit")
+    public String showEdit(@PathVariable Integer id, Model model){
+        Product product = iProductService.findById(id);
+        model.addAttribute("product",product);
+        return "/edit";
+    }
+
+    @PostMapping("product/edit")
+    public String edit(@ModelAttribute Product product){
+        iProductService.edit(product);
+        return "redirect:/product";
+    }
+
+    @GetMapping("product/{id}/delete")
+    public String delete(@PathVariable Integer id){
+        iProductService.delete(id);
+        return "redirect:/product";
+    }
+
 }

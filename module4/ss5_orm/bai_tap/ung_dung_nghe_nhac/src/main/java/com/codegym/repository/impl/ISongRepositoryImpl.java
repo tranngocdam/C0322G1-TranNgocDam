@@ -28,7 +28,8 @@ public class ISongRepositoryImpl implements ISongRepository {
 
     @Override
     public Song findById(Integer id) {
-        TypedQuery<Song> typedQuery=BaseRepository.entityManager.createQuery("select s from Song as s where s.id=:id", Song.class);
+        TypedQuery<Song> typedQuery=BaseRepository.entityManager.createQuery
+                ("select s from Song as s where s.id=:id", Song.class);
         typedQuery.setParameter("id", id);
         try {
             return typedQuery.getSingleResult();
@@ -37,26 +38,19 @@ public class ISongRepositoryImpl implements ISongRepository {
         }
     }
 
-
-    @Transactional
     @Override
     public void edit(Song song) {
-        Query query= BaseRepository.entityManager.createQuery("UPDATE Song as s SET s.songName = :songName, " +
-                " s.singer = :singer, s.songType = :songType, s.link = :link WHERE s.id = :id");
-        query.setParameter("id", song.getId());
-        query.setParameter("songName", song.getSongName());
-        query.setParameter("singer", song.getSinger());
-        query.setParameter("songType", song.getSongType());
-        query.setParameter("link", song.getLink());
-
-        query.executeUpdate();
+        EntityTransaction entityTransaction = BaseRepository.entityManager.getTransaction();
+        entityTransaction.begin();
+        BaseRepository.entityManager.merge(song);
+        entityTransaction.commit();
     }
-
-    @Override
-    public void delete(Integer id) {
-        Song song = findById(id);
-        if (song != null){
-            BaseRepository.entityManager.remove(song);
+        @Override
+        public void delete(Integer id) {
+            EntityTransaction entityTransaction = BaseRepository.entityManager.getTransaction();
+            entityTransaction.begin();
+            BaseRepository.entityManager.remove(BaseRepository.entityManager.find(Song.class,id));
+            entityTransaction.commit();
         }
-    }
+
 }

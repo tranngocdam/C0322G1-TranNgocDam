@@ -8,4 +8,10 @@ public interface IProductRepository {
     List<Product> findAll();
 
     void save(Product product);
+
+    Product findById(Integer id);
+
+    void edit (Product product);
+
+    void delete (Integer id);
 }
