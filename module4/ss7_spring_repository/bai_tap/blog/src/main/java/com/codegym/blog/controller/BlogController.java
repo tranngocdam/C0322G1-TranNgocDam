@@ -19,18 +19,20 @@ import java.util.Optional;
 public class BlogController {
     @Autowired
     IBlogService iBlogService;
+    @Autowired
     ICategoryService iCategoryService;
     @GetMapping("/blog")
     public String showHome(Model model){
         List<Blog> blogList=iBlogService.findAll();
         List<Category> categoryList=iCategoryService.findAll();
-        model.addAttribute("blogList", blogList);
+        model.addAttribute("blogList", new Blog());
         model.addAttribute("categoryList", categoryList);
         return "/list";
     }
     @GetMapping("/create")
     public String showCreate(Model model){
         model.addAttribute("blog",new Blog());
+        model.addAttribute("categoryList", this.iCategoryService.findAll());
         return "/create";
     }
 
