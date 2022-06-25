@@ -16,6 +16,7 @@ import java.util.List;
 public class CustomerController {
     @Autowired
     private ICustomerService customerService;
+
     @GetMapping("/customers")
     public ModelAndView listCustomers() {
         List<Customer> customers = customerService.findAll();
