@@ -8,14 +8,16 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface IBlogService {
-    public List<Blog> findAll();
 
-    public Blog findById(Integer id);
+    public Page<Blog> findAll(Pageable pageable);
 
-    void save(Blog blog);
+    public void saveOrUpdate(Blog blog);
 
     public void delete(Integer id);
 
-    //    Page<Blog> findAll(Pageable pageable);
-//    List<Blog> getAllBlogByKeyword(@Param("keyword") String abc);
+    public Blog findById(Integer id);
+
+    public Page<Blog> findAllByAuthorContaining(String keyword,Pageable pageable);
+
+    public Page<Blog> searchByAuthorAndType(String author, Long categoryId, Pageable pageable);
 }

@@ -12,31 +12,29 @@
     <form th:object="${blog}" action="/blog/create" method="post">
         <table>
             <tr>
-                <td><label>Title</label></td>
-                <td><input class="form-control" type="text" th:field="*{title}"></td>
+                <td><label>Tittle</label></td>
+                <td><input class="form-control" type="text" th:field="*{titlle}"></td>
             </tr>
             <tr>
-                <td><label>DayStart</label></td>
-                <td><input class="form-control" type="date" th:field="*{dayStart}"></td>
-            </tr>
-            <tr>
-                <td><label>Content</label></td>
-                <td><input class="form-control" type="text" th:field="*{content}"></td>
+                <td><label>Body</label></td>
+                <td><textarea class="form-control" th:field="*{body}"></textarea></td>
             </tr>
             <tr>
                 <td><label>Author</label></td>
-                <td><input class="form-control" type="text" th:field="*{author}"></td>
+                <td><input class="form-control" th:field="*{author}"></input></td>
+            </tr>
+            <tr>
+                <td><label>Create Date</label></td>
+                <td><input class="form-control" th:field="*{createDate}"></input></td>
             </tr>
             <tr>
                 <td><label>Category</label></td>
-                <td><select th:field="*{category}">
-                    <option th:each="c:${categoryList}"
-                            th:text="${c.name}"
-                            th:value="${c.id}"></option>
+                <td><select th:field="*{categories}">
+                    <option th:each="category : ${categoryList}" th:value="${category.id}" th:text="${category.name}"></option>
                 </select></td>
             </tr>
             <tr>
-                <td colspan="2"><input class="btn btn-success text-center mt-4" type="submit" value="Add Blog"></td>
+                <td colspan="2"><input class="btn btn-success text-center mt-4" type="submit" value="Create Blog"></td>
             </tr>
         </table>
     </form>

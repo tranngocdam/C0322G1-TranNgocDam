@@ -12,5 +12,7 @@ import javax.transaction.Transactional;
 
 @Transactional
 public interface ICategoryRepository extends JpaRepository<Category, Integer> {
-
+    @Query(value = "SELECT * FROM blog_category JOIN blog ON blog.id = blog_category.blog_id " +
+            "JOIN category ON category.id = blog_category.category_id WHERE category_id = :id", nativeQuery = true)
+    public Page<Category> searchById(@Param("id") Long id, Pageable pageable);
 }

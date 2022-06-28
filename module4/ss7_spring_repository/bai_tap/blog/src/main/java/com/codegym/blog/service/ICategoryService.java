@@ -9,11 +9,15 @@ import java.util.List;
 
 public interface ICategoryService {
 
-    public List<Category> findAll();
+    public Page<Category> findAll(Pageable pageable);
+
+    public void saveOrUpdate(Category category);
+
+    public void delete(Integer id);
 
     public Category findById(Integer id);
 
-    void save(Category category);
+    public List<Category> findAll();
 
-    public void delete(Integer id);
+    public Page<Category> searchById(Long id, Pageable pageable);
 }

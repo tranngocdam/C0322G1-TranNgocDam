@@ -12,9 +12,20 @@ import java.util.List;
 public class BlogService implements IBlogService{
     @Autowired
     IBlogRepository iBlogRepository;
+
     @Override
-    public List<Blog> findAll() {
-        return iBlogRepository.findAll();
+    public Page<Blog> findAll(Pageable pageable) {
+        return iBlogRepository.findAll(pageable);
+    }
+
+    @Override
+    public void saveOrUpdate(Blog blog) {
+        iBlogRepository.save(blog);
+    }
+
+    @Override
+    public void delete(Integer id) {
+        iBlogRepository.deleteById(id);
     }
 
     @Override
@@ -23,22 +34,12 @@ public class BlogService implements IBlogService{
     }
 
     @Override
-    public void save(Blog blog) {
-        this.iBlogRepository.save(blog);
+    public Page<Blog> findAllByAuthorContaining(String keyword, Pageable pageable) {
+        return iBlogRepository.findAllByAuthorContaining(keyword, pageable);
     }
 
     @Override
-    public void delete(Integer id) {
-        this.iBlogRepository.deleteById(id);
+    public Page<Blog> searchByAuthorAndType(String author, Long categoryId, Pageable pageable) {
+        return iBlogRepository.searchByAuthorAndType("%"+author+"%", categoryId, pageable);
     }
-
-//    @Override
-//    public List<Blog> getAllBlogByKeyword(String abc) {
-//        return null;
-//    }
-
-//    @Override
-//    public Page<Blog> findAll(Pageable pageable) {
-//        return this.iBlogRepository.findAll(pageable);
-//    }
 }

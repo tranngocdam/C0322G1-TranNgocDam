@@ -7,14 +7,16 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UserService implements IUserService {
     @Autowired
-    IUserRepository iUserRepository;
+    private IUserRepository iUserRepository;
 
     @Override
-    public Page<User> findAll(Pageable pageable) {
-        return iUserRepository.findAll(pageable);
+    public List<User> findAll() {
+        return iUserRepository.findAll();
     }
 
     @Override

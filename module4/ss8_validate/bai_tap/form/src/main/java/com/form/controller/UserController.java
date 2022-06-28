@@ -22,9 +22,9 @@ public class UserController {
     @Autowired
     private IUserService iUserService;
     @GetMapping("/user")
-    public ModelAndView findAll(@PageableDefault(value = 3) Pageable pageable){
+    public ModelAndView findAll(){
         ModelAndView modelAndView=new ModelAndView("/user/list");
-        modelAndView.addObject("userList", iUserService.findAll(pageable));
+        modelAndView.addObject("userList", iUserService.findAll());
         return modelAndView;
     }
     @GetMapping("/user/create")
