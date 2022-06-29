@@ -25,10 +25,8 @@ public class BookController {
 
     @GetMapping("/book")
     public ModelAndView showBooks(@PageableDefault(value = 3) Pageable pageable) {
-
         return new ModelAndView("list", "books", iBookService.findAll(pageable));
     }
-
     @GetMapping("/create")
     public ModelAndView create() {
         return new ModelAndView("create", "book", new Book());
@@ -42,11 +40,10 @@ public class BookController {
     }
 
     @GetMapping("/thuesach/{id}")
-    public ModelAndView thueSach(@PathVariable Integer id) {
+    public ModelAndView borrowBooks(@PathVariable Integer id) {
         Book book = iBookService.findById(id);
         if (book.getUnit() > 0) {
             Optional<DetailBook> detailBookOptional;
-
             long code;
             do {
                 code = (long) (Math.random() * 1000);
@@ -69,12 +66,12 @@ public class BookController {
     }
 
     @GetMapping("/trasach")
-    public ModelAndView traSach() {
+    public ModelAndView returnBook() {
         return new ModelAndView("return_book");
     }
 
     @PostMapping("/trasach")
-    public ModelAndView traSach(@RequestParam String code) {
+    public ModelAndView returnBook(@RequestParam String code) {
         long codeLong = Long.parseLong(code);
         Optional<DetailBook> detailBook = iDetailBookService.findByCode(codeLong);
         if (detailBook.isPresent()) {

@@ -7,40 +7,57 @@
           integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 </head>
 <body>
-<h1>Book list</h1>
 
-<p><a href="/create">create new book</a></p>
-<p><a href="/trasach">tra sach</a></p>
 
-<form>
-    <p><input type="text" name="search"><input type="submit" value="search"></p>
-</form>
-<table border="1">
-    <thead>
-    <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>unit</th>
-        <th>action</th>
-    </tr>
-    </thead>
-    <tbody>
-    <th:block th:each="book : ${books}" >
-        <tr>
-            <td th:text="${book.id}"></td>
-            <td th:text="${book.name}"></td>
-            <td th:text="${book.unit}"></td>
-            <td><a th:href="@{/thuesach/__${book.id}__}">thue sach</a></td>
 
-        </tr>
-    </th:block>
-    </tbody>
-</table>
+<div class="container">
+    <div class="row">
+        <h1><span class="center">Book list</span> </h1>
+        <table class="table table-hover">
 
-<div>
-    <a th:href="@{'/'(page=${books.number - 1})}" th:if="${books.hasPrevious()}">Previous</a>
-    <span th:text="${books.number + 1}"></span>/<span th:text="${books.totalPages}"></span>
-    <a th:href="@{'/'(page=${books.number + 1})}" th:if="${books.hasNext()}">Next</a>
+            <thead>
+            <tr>
+                <td>
+                    <p><input type="text" name="search"><input type="submit" value="search"></p>
+                </td>
+                <td>
+                    <a href="/trasach" class="btn btn-primary">tra sach</a>
+                </td>
+                <td><a href="/create" class="btn btn-primary">create new book</a></td>
+            </tr>
+
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>unit</th>
+                <th>action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <th:block th:each="book : ${books}">
+                <tr>
+                    <td th:text="${book.id}"></td>
+                    <td th:text="${book.name}"></td>
+                    <td th:text="${book.unit}"></td>
+                    <td><a th:href="@{/thuesach/__${book.id}__}">thue sach</a></td>
+                </tr>
+            </th:block>
+            </tbody>
+        </table>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <a th:if="${books.hasPrevious()}"
+               th:href="@{/book/list(page=${books.number - 1})}">Previous</a>
+
+            <span th:text="${books.number + 1}"></span>
+            /
+            <span th:text="${books.totalPages}"></span>
+
+            <a th:if="${books.hasNext()}"
+               th:href="@{/book/list(page=${books.number + 1})}" >Next</a>
+        </div>
+    </div>
 </div>
 </body>
 </html>
