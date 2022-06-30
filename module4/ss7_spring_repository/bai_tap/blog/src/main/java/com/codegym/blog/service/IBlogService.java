@@ -6,6 +6,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.repository.query.Param;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface IBlogService {
 
@@ -15,7 +16,7 @@ public interface IBlogService {
 
     public void delete(Integer id);
 
-    public Blog findById(Integer id);
+    public Optional<Blog> findById(Integer id);
 
     public Page<Blog> findAllByAuthorContaining(String keyword,Pageable pageable);
 

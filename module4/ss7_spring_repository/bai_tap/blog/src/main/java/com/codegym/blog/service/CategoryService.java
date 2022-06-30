@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 
 import javax.persistence.Entity;
 import java.util.List;
+import java.util.Optional;
+
 @Service
 public class CategoryService implements ICategoryService{
     @Autowired
@@ -30,8 +32,8 @@ public class CategoryService implements ICategoryService{
     }
 
     @Override
-    public Category findById(Integer id) {
-        return iCategoryRepository.findById(id).orElse(null);
+    public Optional<Category> findById(Integer id) {
+        return iCategoryRepository.findById(id);
     }
 
     @Override
@@ -42,5 +44,10 @@ public class CategoryService implements ICategoryService{
     @Override
     public Page<Category> searchById(Long id, Pageable pageable) {
         return iCategoryRepository.searchById(id, pageable);
+    }
+
+    @Override
+    public Page<Category> foundById(Integer id, Pageable pageable) {
+        return iCategoryRepository.foundById(id, pageable);
     }
 }

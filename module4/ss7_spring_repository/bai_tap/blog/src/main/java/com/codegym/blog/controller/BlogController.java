@@ -24,7 +24,7 @@ public class BlogController {
     @Autowired
     ICategoryService iCategoryService;
     @GetMapping("/blog")
-    public String showHomepage(Optional<String> keyword, Optional<Integer> category, Model model, @PageableDefault(size = 2) Pageable pageable) {
+    public String showHomepage(Optional<String> keyword, Optional<Long> category, Model model, @PageableDefault(size = 2) Pageable pageable) {
         Page<Blog> blogList = iBlogService.findAll(pageable);
         model.addAttribute("categoryList", iCategoryService.findAll());
         if (!keyword.isPresent() || keyword.get().equals("")) {
@@ -59,7 +59,7 @@ public class BlogController {
 
     @GetMapping("/blog/edit/{id}")
     public String showEdit(@PathVariable Integer id, Model model) {
-        Blog blog = iBlogService.findById(id);
+        Optional<Blog> blog = iBlogService.findById(id);
         model.addAttribute("blog", blog);
         return "/blog/edit";
     }

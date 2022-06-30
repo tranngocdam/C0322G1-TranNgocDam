@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.util.Optional;
+
 
 @Controller
 public class CategoryController {
@@ -39,12 +41,12 @@ public class CategoryController {
         return "redirect:/category";
     }
 
-    @GetMapping("/category/edit/{id}")
-    public String showEdit(@PathVariable Integer id, Model model) {
-        Category category = categoryService.findById(id);
-        model.addAttribute("category", category);
-        return "/category/edit";
-    }
+//    @GetMapping("/category/edit/{id}")
+//    public String showEdit(@PathVariable Integer id, Model model) {
+//        Category category = categoryService.findById(id);
+//        model.addAttribute("category", category);
+//        return "/category/edit";
+//    }
 
     @GetMapping("/category/delete/{id}")
     public String delete(@PathVariable Integer id, RedirectAttributes redirectAttributes) {
