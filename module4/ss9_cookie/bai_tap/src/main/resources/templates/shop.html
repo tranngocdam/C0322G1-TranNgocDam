@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+          integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <div class="card-group">
+<!--        <th:block th:each="product:${products}">-->
+<!--        <div >-->
+<!--            <a th:href="@{/add/__${product.id}__(action='list')}">Add To Cart</a>-->
+            <div class="card" style="width:40px">
+                <img class="card-img-top" src="1iPhone-13---mini-pik-1.jpg" alt="Card image" style="width:100%">
+                <div class="card-body">
+                    <h4 class="card-title">Iphone 13</h4>
+                    <p class="card-text">Iphone 13 32Gb 12tr</p>
+                    <a href="https://fptshop.com.vn/dien-thoai/iphone-11-128gb?utm_source=PLAS&utm_medium=CPC&utm_campaign=Apple+-+Smart+Shopping+-+Apple+Chung+-+2022+-+Ecom&gclid=Cj0KCQjw8O-VBhCpARIsACMvVLOv8VH550fMCm2ZcaSOxDApUIAfnr6-M-9eN8-F-vy8svCvKV5b4DkaAlYcEALw_wcB" class="btn btn-primary">See Profile</a>
+<!--                    <a th:href="@{/add/__${product.id}__(action='list')}" class="btn btn-primary">Add To Cart</a>-->
+                </div>
+            </div>
+            <div class="card" style="width:40px">
+                <img class="card-img-top" src="91aIe89f3XL._AC_SL1500_.jpg" alt="Card image" style="width:100%">
+                <div class="card-body">
+                    <h4 class="card-title">Iphone 12</h4>
+                    <p class="card-text">Iphone 12 256Gb 32tr</p>
+                    <a href="https://fptshop.com.vn/dien-thoai/iphone-13-pro-max-512gb?utm_source=PLAS&utm_medium=CPC&utm_campaign=Apple+-+Smart+Shopping+-+Apple+Chung+-+2022+-+Ecom&gclid=Cj0KCQjw8O-VBhCpARIsACMvVLNaAO9Yk-m79nxqRZ5uigC1q7IdrI3eiti0IEBzqgR0pEYyKG03rbgaAiHREALw_wcB" class="btn btn-primary">See Profile</a>
+                </div>
+            </div>
+            <div class="card" style="width:40px">
+                <img class="card-img-top" src="iphone-12-pro-blue-1-650x650.png" alt="Card image" style="width:100%">
+                <div class="card-body">
+                    <h4 class="card-title">Iphone 13 Pro</h4>
+                    <p class="card-text">Iphone 13 Pro 128Gb 34tr</p>
+                    <a href="https://fptshop.com.vn/dien-thoai/iphone-13-pro-max-128gb?utm_source=PLAS&utm_medium=CPC&utm_campaign=Apple+-+Smart+Shopping+-+Apple+Chung+-+2022+-+Ecom&gclid=Cj0KCQjw8O-VBhCpARIsACMvVLObKiorWD0BAmxdnb3hOekb1Dog_eLGkPRiDkvzPLbfkgwBw7FebBgaArTkEALw_wcB" class="btn btn-primary">See Profile</a>
+                </div>
+            </div>
+            <div class="card" style="width:40px">
+                <img class="card-img-top" src="HNKZ2_AV1.jpg" alt="Card image" style="width:100%">
+                <div class="card-body">
+                    <h4 class="card-title">Iphone 14</h4>
+                    <p class="card-text">Iphone 14 64Gb 45tr</p>
+                    <a href="https://fptshop.com.vn/dien-thoai/iphone-13-pro-128gb?utm_source=PLAS&utm_medium=CPC&utm_campaign=Apple+-+Smart+Shopping+-+Apple+Chung+-+2022+-+Ecom&gclid=Cj0KCQjw8O-VBhCpARIsACMvVLOHlxcmFVXX0ZvjWFV_xd9t6RadLJksNSeV25T6W1IDKdVgUL7FgcYaAsUFEALw_wcB" class="btn btn-primary">See Profile</a>
+                </div>
+            </div>
+        </div>
+        </th:block>
+
+    </div>
+
+    <!--    <table class="table table-hover">-->
+    <!--        <thead>-->
+    <!--        <tr>-->
+    <!--            <th>Name</th>-->
+    <!--            <th>Price</th>-->
+    <!--            <th>description</th>-->
+    <!--            <th>Add To Cart</th>-->
+    <!--        </tr>-->
+    <!--        </thead>-->
+    <!--        <tbody>-->
+    <!--        <th:block th:each="product:${products}">-->
+    <!--            <tr>-->
+    <!--                <td th:text="${product.name}"></td>-->
+    <!--                <td th:text="${product.price}"></td>-->
+    <!--                <td th:text="${product.description}"></td>-->
+    <!--                <td><a th:href="@{/add/__${product.id}__(action='list')}">Add To Cart</a></td>-->
+    <!--            </tr>-->
+    <!--        </th:block>-->
+    <!--        </tbody>-->
+    <!--    </table>-->
+    <a href="/shopping-cart" class="btn btn-primary">Your cart</a>
+</div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+        crossorigin="anonymous"></script>
+</html>
