@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container mt-4">
+    <div class="row w-50 mx-auto">
+        <div class="col-lg-12">
+            <h2>List smart phone</h2>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">producer</th>
+                    <th scope="col">model</th>
+                    <th scope="col">price</th>
+                    <th scope="col">Edit</th>
+                </tr>
+                </thead>
+                <tbody id="bodySmartPhone">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/mdb.min.js"></script>
+<script>
+    function getSmartPhone(pageNumber) {
+        $.ajax({
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            type: "GET", //GET, DELETE, PUT...
+            url: "http://localhost:8080/smartphones/iter",
+            success: function (smartPhonePage) {
+                let smartPhoneBodyHTML = "";
+                for (let i = 0; i < smartPhonePage.length; i++) {
+                    smartPhoneBodyHTML += `<tr>
+                        <td>${smartPhonePage[i].id}</td>
+                        <td>${smartPhonePage[i].producer}</td>
+                        <td>${smartPhonePage[i].model}</td>
+                        <td>${smartPhonePage[i].price}</td>
+                        <td>
+                            <div class="col-lg-2">
+                                 <button class="updateSmartphone" onclick="showEditPhone(${i})">Edit</button>
+                            </div>
+                        </td>
+                    </tr>`;
+                }
+
+                $("#bodySmartPhone").html(smartPhoneBodyHTML);
+            },
+            error: function (resultError) {
+                console.log('Co loi xay ra');
+            }
+        });
+    }
+    
+    function getSmartphone(smartphone) {
+        return `<tr><td >${smartphone.producer}</td><td >${smartphone.model}</td><td >${smartphone.price}</td>` +
+            `<td><a class="updateSmartphone">Update</a></td></tr>`;
+    }
+
+    $(document).ready(function () {
+        //sư kiện nào thực hiện Ajax
+        $('.updateSmartphone').click(function () {
+            let a = $(this);
+            let smartphoneId = a.attr("href");
+            $.ajax({
+                type: "PUT",
+                url: "http://localhost:8080/smartphones/"+smartphoneId,
+                success: function (data) {
+                    $('#id').val(data.id);
+                    $('#producer').val(data.producer);
+                    $('#model').val(data.model);
+                    $('#price').val(data.price);
+                }
+            });
+            event.preventDefault();
+        });
+    })
+    getSmartPhone(0);
+</script>
+</body>
+</html>
