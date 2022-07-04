@@ -18,7 +18,7 @@ import java.util.Optional;
 public class HomeController {
     @Autowired
     private ISmartphoneService iSmartphoneService;
-    @PostMapping
+    @PostMapping("/create")
     public ResponseEntity<Smartphone> createSmartphone(@RequestBody Smartphone smartphone) {
         return new ResponseEntity<>(iSmartphoneService.save(smartphone), HttpStatus.CREATED);
     }
@@ -28,7 +28,7 @@ public class HomeController {
         modelAndView.addObject("smartphones", iSmartphoneService.findAll());
         return modelAndView;
     }
-    @GetMapping("/iter")
+    @GetMapping
     public ResponseEntity<Iterable<Smartphone>> allPhones() {
         return new ResponseEntity<>(iSmartphoneService.findAll(), HttpStatus.OK);
     }
@@ -49,5 +49,19 @@ public class HomeController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         return new ResponseEntity<>(smartphone.get(), HttpStatus.OK);
+    }
+    @GetMapping("/edit/{id}")
+    public ResponseEntity<Optional<Smartphone>> getPhone(@PathVariable Long id) {
+        Optional<Smartphone> smartphoneOptional = iSmartphoneService.findById(id);
+        if (!smartphoneOptional.isPresent()) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<>(smartphoneOptional, HttpStatus.OK);
+    }
+
+    @PostMapping("/edit")
+    public ResponseEntity<Iterable<Smartphone>> updateSmartphone(@RequestBody Smartphone smartphone) {
+        iSmartphoneService.save(smartphone);
+        return new ResponseEntity<>(iSmartphoneService.findAll(), HttpStatus.NO_CONTENT);
     }
 }
