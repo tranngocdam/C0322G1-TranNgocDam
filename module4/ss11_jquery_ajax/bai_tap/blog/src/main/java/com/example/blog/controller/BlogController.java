@@ -40,7 +40,7 @@ public class BlogController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Blog> findBook(@PathVariable Long id) {
+    public ResponseEntity<Blog> findBlog(@PathVariable Long id) {
         Blog blog = blogService.findById(id);
         if (blog == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
