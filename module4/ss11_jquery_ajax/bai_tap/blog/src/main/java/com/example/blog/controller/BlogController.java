@@ -5,11 +5,11 @@ import com.example.blog.model.Category;
 import com.example.blog.service.IBlogService;
 import com.example.blog.service.ICategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
+import java.util.Optional;
 
 @CrossOrigin
 @RestController
@@ -21,47 +21,41 @@ public class BlogController {
     @Autowired
     private ICategoryService categoryService;
 
-    @GetMapping("/category")
-    public ResponseEntity<List<Category>> findAllCategory() {
-        List<Category> categoryList = categoryService.findAll();
-        if (categoryList.isEmpty()) {
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-        }
-        return new ResponseEntity<>(categoryList, HttpStatus.OK);
+    @GetMapping("")
+    public String showBlog(Model model,
+                           @PageableDefault(value = 2) Pageable pageable,
+                           @RequestParam(name = "keyword") Optional<String> keyword){
+        String keywordVal = keyword.orElse("");
+        model.addAttribute("keywordVal",keywordVal);
+        model.addAttribute("listBlog", this.blogService.findAllByName(keywordVal, pageable));
+        model.addAttribute("listCategory",this.categoryService.findAll());
+        return "/list";
     }
-
-    @GetMapping("/blog1")
-    public ResponseEntity<List<Blog>> findAllBlog() {
-        List<Blog> blogList =blogService.findAll();
-        if (blogList.isEmpty()) {
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-        }
-        return new ResponseEntity<>(blogList, HttpStatus.OK);
+    @GetMapping("/create")
+    public String showCreate(Blog blog, Model model){
+        model.addAttribute("blog",new Blog());
+        model.addAttribute("listCategory",this.categoryService.findAll());
+        return "create";
     }
-
-    @GetMapping("/{id}")
-    public ResponseEntity<Blog> findBlog(@PathVariable Long id) {
-        Blog blog = blogService.findById(id);
-        if (blog == null) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-        return new ResponseEntity<>(blog, HttpStatus.OK);
+    @PostMapping("/create")
+    public String getCreate(Blog blog){
+        this.blogService.save(blog);
+        return "redirect:/blog";
     }
-
-    @GetMapping("/searchByCategory")
-    public ResponseEntity<List<Blog>> findByCategory(@RequestParam("categoryName") String categoryName) {
-        List<Blog> blogList = blogService.findByCategory(categoryName);
-        if (blogList.isEmpty()) {
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-        }
-        return new ResponseEntity<>(blogList, HttpStatus.OK);
+    @GetMapping("{id}/edit")
+    public String showEdit(@PathVariable int id, Model model){
+        model.addAttribute("blog",this.blogService.getBlog(id));
+        model.addAttribute("listCategory",this.categoryService.findAll());
+        return "/edit";
     }
-    @GetMapping("/search")
-    public ResponseEntity<List<Blog>> findByName(@RequestParam("name") String name) {
-        List<Blog> blogList = blogService.findByName(name);
-        if (blogList.isEmpty()) {
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-        }
-        return new ResponseEntity<>(blogList, HttpStatus.OK);
+    @PostMapping("/edit")
+    public String getEdit(Blog blog){
+        this.blogService.update(blog);
+        return "redirect:/blog";
+    }
+    @GetMapping("{id}/delete")
+    public String showDelete(@PathVariable int id){
+        blogService.delete(id);
+        return "redirect:/blog";
     }
 }

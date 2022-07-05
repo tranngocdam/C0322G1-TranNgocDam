@@ -7,7 +7,7 @@ import java.util.Locale;
 public class Blog {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
     private String name;
     private String author;
     private String title;
@@ -27,11 +27,11 @@ public class Blog {
         this.category = category;
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

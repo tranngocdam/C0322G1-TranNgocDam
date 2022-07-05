@@ -3,8 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
 <div class="d-flex">
@@ -25,19 +23,18 @@
     </tr>
     </thead>
     <tbody id="tbBody">
-
     </tbody>
 </table>
-</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
-    function getPageStudent() {
+    function getPageStudent(searchBlog,pageNumber) {
         $.ajax({
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
             type: "GET", //GET, DELETE, PUT...
-            url: "http://localhost:8080/blog/blog1" ,
+            url: "http://localhost:8080/blogRest?page=" + pageNumber + "&keyword=" + searchBlog,
             success: function(blogPage){
                 console.log(blogPage);
                 let blogBodyHTML = "";
@@ -49,6 +46,7 @@
                         <td>${blogPage.content[i].title}</td>
                         <td>${blogPage.content[i].content}</td>
                         <td>${blogPage.content[i].category.name}</td>
+
                         <td>
                             <a href="#">Edit</a>
                         </td>
@@ -65,31 +63,13 @@
             }
         });
     }
-    getPageStudent()
+    getPageStudent("", 0)
 
     $("#btnSearch").click(function () {
         let searchValue = $("#searchValue").val();
         getPageStudent(searchValue, 0)
     })
-    // function foundBlog(id) {
-    //     $("#actionSearch").click(function () {
-    //         let value1 = $('#inputCategory').value();
-    //         let value2 = $('#inputSearch').value();
-    //         console.log(value1)
-    //         console.log(value2)
-    //         $("table").empty();
-    //
-    //         $.ajax({
-    //             url: "http://localhost:8080/blog?keyword=" + value + "&category=1",
-    //             type: "GET",
-    //             dataType: "json",
-    //             success: function (data) {
-    //                 console.log(data)
-    //                 $('table').html(data)
-    //             }
-    //         })
-    //     })
-    // }
+
 </script>
 </body>
 </html>

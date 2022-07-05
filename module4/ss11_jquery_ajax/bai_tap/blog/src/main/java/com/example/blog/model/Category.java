@@ -6,31 +6,32 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import java.util.Set;
+import java.util.List;
+
 
 @Entity
-//@Table(name = "category")
 public class Category {
     @Id
-    private Long id;
+    private Integer id;
     private String name;
     @JsonBackReference
     @OneToMany(mappedBy = "category")
-    Set<Blog> blogs;
+    List<Blog> blogs;
 
     public Category() {
     }
 
-    public Category(String name, Set<Blog> blogs) {
+    public Category(Integer id, String name, List<Blog> blogs) {
+        this.id = id;
         this.name = name;
         this.blogs = blogs;
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -42,11 +43,11 @@ public class Category {
         this.name = name;
     }
 
-    public Set<Blog> getBlogs() {
+    public List<Blog> getBlogs() {
         return blogs;
     }
 
-    public void setBlogs(Set<Blog> blogs) {
+    public void setBlogs(List<Blog> blogs) {
         this.blogs = blogs;
     }
 }
