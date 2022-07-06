@@ -57,6 +57,21 @@ public class Facility {
         this.contractList = contractList;
     }
 
+    public Facility(String name, Integer area, Double cost, Integer maxPeople, String standardRoom, String descriptionOtherConvenience, Double poolArea, Integer numberOfFloors, String facilityFree, RentType rentType, FacilityType facilityType, List<Contract> contractList) {
+        this.name = name;
+        this.area = area;
+        this.cost = cost;
+        this.maxPeople = maxPeople;
+        this.standardRoom = standardRoom;
+        this.descriptionOtherConvenience = descriptionOtherConvenience;
+        this.poolArea = poolArea;
+        this.numberOfFloors = numberOfFloors;
+        this.facilityFree = facilityFree;
+        this.rentType = rentType;
+        this.facilityType = facilityType;
+        this.contractList = contractList;
+    }
+
     public Integer getId() {
         return id;
     }
