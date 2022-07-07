@@ -44,7 +44,8 @@ public class CustomerController {
 
     @GetMapping("/delete/{id}")
     public String delete(@PathVariable Integer id){
-
+            iCustomerService.delete(id);
         return "redirect:customer";
     }
+
 }

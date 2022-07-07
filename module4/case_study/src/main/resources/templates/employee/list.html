@@ -14,23 +14,41 @@
     <div class="row">
         <br>
         <br>
+    </div>
+    <div class="row">
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="btn btn-warning" th:href="@{/employee/create}">Create Employee</a>
+                <div class="collapse navbar-collapse" id="mynavbar">
+                    <ul class="navbar-nav me-auto">
+                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="text" placeholder="Search">
+                        <button class="btn btn-primary" type="button">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="row">
+        <br>
         <br>
     </div>
     <div class="row">
-        <div class="container">
-            <table class="table table-striped table-hover">
-                <tr>
+        <div class="container table-responsive">
+            <table class="table table-striped table-hover table-bordered">
+                <tr class="bg-info">
                     <th>ID</th>
                     <th>Name</th>
-                    <th>dayOfBirth</th>
-                    <th>idCard</th>
-                    <th>salary</th>
-                    <th>phoneNumber</th>
-                    <th>email</th>
-                    <th>address</th>
-                    <th>position</th>
-                    <th>educationDegree</th>
-                    <th>division</th>
+                    <th>Day Of Birth</th>
+                    <th>Id Card</th>
+                    <th>Salary</th>
+                    <th>Phone Number</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                    <th>Position</th>
+                    <th>Education Degree</th>
+                    <th>Division</th>
                     <th>Edit</th>
                     <th>Delete</th>
                 </tr>
@@ -39,14 +57,14 @@
                     <td th:text="${e.name}"></td>
                     <td th:text="${e.dayOfBirth}"></td>
                     <td th:text="${e.idCard}"></td>
-                    <td th:text="${e.salary}"></td>
+                    <td th:text="${#numbers.formatDecimal(e.salary, 0, 'DEFAULT', 0, 'DEFAULT')}"></td>
                     <td th:text="${e.phoneNumber}"></td>
                     <td th:text="${e.email}"></td>
                     <td th:text="${e.address}"></td>
                     <td th:text="${e.position.name}"></td>
                     <td th:text="${e.educationDegree.name}"></td>
                     <td th:text="${e.division.name}"></td>
-                    <td><a class="btn btn-warning" th:href="@{/customer/edit/__${e.id}__}">Update</a></td>
+                    <td><a class="btn btn-warning" th:href="@{/employee/edit/__${e.id}__}">Update</a></td>
                     <td>
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             Delete
@@ -56,11 +74,11 @@
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                        <h5 class="modal-title" id="exampleModalLabel">Delete Employee</h5>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        ...
+                                       Do you want employee?
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -72,6 +90,7 @@
                     </td>
             </table>
         </div>
+    </div>
     <br>
     <br>
     <br>
@@ -80,4 +99,7 @@
     </div>
 </div>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
 </html>

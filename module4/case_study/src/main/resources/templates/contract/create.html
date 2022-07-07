@@ -15,74 +15,46 @@
         <br>
     </div>
     <div class="row">
-        <h1 class="text-center my-5">Create Employee</h1>
+        <h1 class="text-center my-5">Create Contract</h1>
         <form>
             <div class="container">
                 <table class="table table-striped">
                     <tr>
-                        <td><label>Name</label></td>
+                        <td><label>Start Day</label></td>
                         <td><input class="form-control" type="text"></td>
                     </tr>
                     <tr>
-                        <td><label>Day Of Birth</label></td>
+                        <td><label>End Day</label></td>
                         <td><input class="form-control" type="text"></td>
                     </tr>
                     <tr>
-                        <td><label>Id Card</label></td>
+                        <td><label>Deposit</label></td>
                         <td><input class="form-control" type="text"></td>
                     </tr>
                     <tr>
-                        <td><label>Salary</label></td>
+                        <td><label>Employee</label></td>
                         <td><input class="form-control" type="text"></td>
                     </tr>
                     <tr>
-                        <td><label>Phone Number</label></td>
+                        <td><label>Customer</label></td>
                         <td><input class="form-control" type="text"></td>
                     </tr>
                     <tr>
-                        <td><label>Email</label></td>
+                        <td><label>facility</label></td>
                         <td><input class="form-control" type="text"></td>
-                    </tr>
-                    <tr>
-                        <td><label>Address</label></td>
-                        <td><input class="form-control" type="text"></td>
-                    </tr>
-
-                    <tr>
-                        <td><label>Position</label></td>
-                        <td><select class="form-select">
-                            <option value="1">Quản lí</option>
-                            <option value="2">Nhân viên</option>
-                        </select></td>
-                    </tr>
-                    <tr>
-                        <td><label>Education Degree</label></td>
-                        <td><select class="form-select">
-                            <option value="1">Trung cấp</option>
-                            <option value="2">Cao đẳng</option>
-                            <option value="3">Đại học</option>
-                            <option value="4">Sau đại học</option>
-                        </select></td>
-                    </tr>
-                    <tr>
-                        <td><label>Division</label></td>
-                        <td><select class="form-select">
-                            <option value="1">Sale-Marketing</option>
-                            <option value="2">Hành chính</option>
-                            <option value="3">Phục vụ</option>
-                            <option value="4">Quản lí</option>
-                        </select></td>
                     </tr>
                     <tr>
                         <td>
                             <button type="submit" class="btn btn-primary">Submit</button>
-                            <a class="btn btn-primary" href="/employee">Back</a></td>
+                            <a class="btn btn-primary" href="/contract">Back</a></td>
                         </td>
                     </tr>
                 </table>
             </div>
         </form>
     </div>
+    <br>
+    <br>
     <br>
     <div class="row">
         <div th:replace="~{/view::footer}"></div>

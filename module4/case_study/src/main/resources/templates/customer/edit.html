@@ -17,64 +17,60 @@
         <br>
     </div>
     <div class="row">
-        <h1 class="text-center my-5">Create Vills</h1>
-        <!--        <form th:object="${facilitys}" action="/facility/editHouse" method="post">-->
-        <table class="table table-striped">
-            <tr>
-                <td><label>Name</label></td>
-                <td><input class="form-control" type="text"></td>
-            </tr>
-            <tr>
-                <td><label>Area</label></td>
-                <td><input class="form-control" type="text" ></td>
-            </tr>
-            <tr>
-                <td><label>Cost</label></td>
-                <td><input class="form-control" type="text"></td>
-            </tr>
-            <tr>
-                <td><label>Max people</label></td>
-                <td><input class="form-control" type="text"></td>
-            </tr>
-            <tr>
-                <td><label>Standard Room</label></td>
-                <td><select class="form-select">
-                    <option value="1">vip</option>
-                    <option value="2">normal</option>
-                </select></td>
-            </tr>
-            <tr>
-                <td><label>Description Other Convenience</label></td>
-                <td><input class="form-control" type="text"></td>
-            </tr>
-            <tr>
-                <td><label>Pool Area</label></td>
-                <td><input class="form-control" type="text"></td>
-            </tr>
-            <tr>
-                <td><label>Number Of Floors</label></td>
-                <td><input class="form-control" type="text"></td>
-            </tr>
-            <!--                <tr>-->
-            <!--                    <td><label>Ren Type id</label></td>-->
-            <!--                    <td><select th:field="*{rentType}" class="form-select">-->
-            <!--                        <option th:each="rentType : ${iRentTypeService}" th:value="${rentType.id}"-->
-            <!--                                th:text="${rentType.name}"></option>-->
-            <!--                    </select></td>-->
-            <!--                </tr>-->
-            <!--                <tr>-->
-            <!--                    <td><label>Facility Type id</label></td>-->
-            <!--                    <td><select th:field="*{facilityType}" class="form-select">-->
-            <!--                        <option th:each="facilityType : ${iFacilityTypeService}" th:value="${facilityType.id}"-->
-            <!--                                th:text="${facilityType.name}"></option>-->
-            <!--                    </select></td>-->
-            <!--                </tr>-->
-            <tr>
-                <td colspan="2"><input class="btn btn-success text-center mt-4" type="submit"
-                                       value="Edit House"></td>
-            </tr>
-        </table>
-        <!--        </form>-->
+        <h1 class="text-center my-5">Edit Customer</h1>
+        <form>
+            <div class="container">
+                <table class="table table-striped">
+                    <tr>
+                        <td><label>Name</label></td>
+                        <td><input class="form-control" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Day Of Birth</label></td>
+                        <td><input class="form-control" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Gender</label></td>
+                        <td><select class="form-select">
+                            <option value="1">Nam</option>
+                            <option value="0">Nữ</option>
+                        </select></td>
+                    </tr>
+                    <tr>
+                        <td><label>Id Card</label></td>
+                        <td><input class="form-control" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Phone Number</label></td>
+                        <td><input class="form-control" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Email</label></td>
+                        <td><input class="form-control" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Address</label></td>
+                        <td><input class="form-control" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Customer Type</label></td>
+                        <td><select class="form-select">
+                            <option value="1">Diamond</option>
+                            <option value="2">Platinium</option>
+                            <option value="3">Gold</option>
+                            <option value="4">Sliver</option>
+                            <option value="5">Member</option>
+                        </select></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <a class="btn btn-primary" href="/customer">Back</a></td>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </form>
     </div>
     <br>
     <br>
@@ -84,4 +80,7 @@
     </div>
 </div>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
 </html>

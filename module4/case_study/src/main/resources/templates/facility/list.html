@@ -14,28 +14,37 @@
     <div class="row">
         <br>
         <br>
+    </div>
+    <div class="row">
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+            <div class="container-fluid">
+                <button type="button" class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown">
+                    Create Facility
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="/facility/createHouse">House</a></li>
+                    <li><a class="dropdown-item" href="/facility/createRoom">Room</a></li>
+                    <li><a class="dropdown-item" href="/facility/createVilla">Villa</a></li>
+                </ul>
+                <div class="collapse navbar-collapse" id="mynavbar">
+                    <ul class="navbar-nav me-auto">
+                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="text" placeholder="Search">
+                        <button class="btn btn-primary" type="button">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="row">
+        <br>
         <br>
     </div>
     <div class="row">
-        <div class="dropdown">
-            <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
-                Create Facility
-            </button>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="/facility/createHouse">House</a></li>
-                <li><a class="dropdown-item" href="/facility/createRoom">Room</a></li>
-                <li><a class="dropdown-item" href="/facility/createVilla">Villa</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="row">
-        <br>
-        <br>
-    </div>
-    <div class="row">
-        <div class="container">
-            <table class="table table-striped table-hover">
-                <tr>
+        <div class="container table-responsive">
+            <table class="table table-striped table-hover table-bordered">
+                <tr class="bg-info">
                     <th>ID</th>
                     <th>Name</th>
                     <th>Area</th>
@@ -47,7 +56,7 @@
                     <th>Floors</th>
                     <th>Free</th>
                     <th>Rent Type</th>
-                    <th>facilityType</th>
+                    <th>facility Type</th>
                     <th>Edit</th>
                     <th>Delete</th>
                 </tr>
@@ -67,22 +76,26 @@
                     <td th:text="${facility.facilityType.name}"></td>
                     <td><a class="btn btn-warning" th:href="@{/facility/edit/__${facility.id}__}">Update</a></td>
                     <td>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal">
                             Delete
                         </button>
                         <!-- Modal -->
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                             aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        <h5 class="modal-title" id="exampleModalLabel">Delete Facility</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        ...
+                                        Do you delete facility?
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close
+                                        </button>
                                         <button type="button" class="btn btn-primary">Save changes</button>
                                     </div>
                                 </div>
@@ -92,8 +105,6 @@
             </table>
         </div>
     </div>
-    <br>
-    <br>
     <br>
     <div class="row">
         <div th:replace="~{/view::footer}"></div>
