@@ -18,43 +18,47 @@
     </div>
     <div class="row">
         <h1 class="text-center my-5">Edit Customer</h1>
-        <form>
+        <form method="post" action="/customer/edit" th:object="${customer}">
             <div class="container">
                 <table class="table table-striped">
+                    <tr hidden>
+                        <td><label>Id</label></td>
+                        <td><input class="form-control" type="text" th:field="*{id}"></td>
+                    </tr>
                     <tr>
                         <td><label>Name</label></td>
-                        <td><input class="form-control" type="text"></td>
+                        <td><input class="form-control" type="text" th:field="*{name}"></td>
                     </tr>
                     <tr>
                         <td><label>Day Of Birth</label></td>
-                        <td><input class="form-control" type="text"></td>
+                        <td><input class="form-control" type="text" th:field="*{dayOfBirth}"></td>
                     </tr>
                     <tr>
                         <td><label>Gender</label></td>
-                        <td><select class="form-select">
+                        <td><select class="form-select" th:field="*{gender}">
                             <option value="1">Nam</option>
                             <option value="0">Nữ</option>
                         </select></td>
                     </tr>
                     <tr>
                         <td><label>Id Card</label></td>
-                        <td><input class="form-control" type="text"></td>
+                        <td><input class="form-control" type="text" th:field="*{idCard}"></td>
                     </tr>
                     <tr>
                         <td><label>Phone Number</label></td>
-                        <td><input class="form-control" type="text"></td>
+                        <td><input class="form-control" type="text" th:field="*{phoneNumber}"></td>
                     </tr>
                     <tr>
                         <td><label>Email</label></td>
-                        <td><input class="form-control" type="text"></td>
+                        <td><input class="form-control" type="text" th:field="*{email}"></td>
                     </tr>
                     <tr>
                         <td><label>Address</label></td>
-                        <td><input class="form-control" type="text"></td>
+                        <td><input class="form-control" type="text" th:field="*{address}"></td>
                     </tr>
                     <tr>
                         <td><label>Customer Type</label></td>
-                        <td><select class="form-select">
+                        <td><select class="form-select" th:field="*{customerType}">
                             <option value="1">Diamond</option>
                             <option value="2">Platinium</option>
                             <option value="3">Gold</option>

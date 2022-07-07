@@ -24,7 +24,7 @@ public class ContractController {
     @GetMapping
     public String showCustomer(Model model) {
         model.addAttribute("iContractService", iContractService.findAll());
-        model.addAttribute("iCustomerService", iCustomerService.findAll());
+//        model.addAttribute("iCustomerService", iCustomerService.findAll());
         model.addAttribute("iEmployeeService", iEmployeeService.findAll());
         model.addAttribute("iFacilityService", iFacilityService.findAll());
         return "contract/list";

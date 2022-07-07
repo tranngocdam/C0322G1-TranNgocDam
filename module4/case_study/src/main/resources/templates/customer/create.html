@@ -16,49 +16,58 @@
     </div>
     <div class="row">
         <h1 class="text-center my-5">Create Customer</h1>
-        <form>
+        <form th:object="${customer}" action="/customer/create" method="post">
             <div class="container">
                 <table class="table table-striped">
                     <tr>
                         <td><label>Name</label></td>
-                        <td><input class="form-control" type="text"></td>
+                        <td><input class="form-control" type="text" th:field="*{name}"></td>
                     </tr>
                     <tr>
                         <td><label>Day Of Birth</label></td>
-                        <td><input class="form-control" type="text"></td>
+                        <td><input class="form-control" type="date" th:field="*{dayOfBirth}"></td>
                     </tr>
                     <tr>
                         <td><label>Gender</label></td>
-                        <td><select class="form-select">
+                        <td><select class="form-select" th:field="*{gender}">
                             <option value="1">Nam</option>
                             <option value="0">Nữ</option>
                         </select></td>
                     </tr>
                     <tr>
                         <td><label>Id Card</label></td>
-                        <td><input class="form-control" type="text"></td>
+                        <td><input class="form-control" type="text" th:field="*{idCard}"></td>
                     </tr>
                     <tr>
                         <td><label>Phone Number</label></td>
-                        <td><input class="form-control" type="text"></td>
+                        <td><input class="form-control" type="text" th:field="*{phoneNumber}"></td>
                     </tr>
                     <tr>
                         <td><label>Email</label></td>
-                        <td><input class="form-control" type="text"></td>
+                        <td><input class="form-control" type="text" th:field="*{email}"></td>
                     </tr>
                     <tr>
                         <td><label>Address</label></td>
-                        <td><input class="form-control" type="text"></td>
+                        <td><input class="form-control" type="text" th:field="*{address}"></td>
                     </tr>
                     <tr>
                         <td><label>Customer Type</label></td>
-                        <td><select class="form-select">
-                            <option value="1">Diamond</option>
-                            <option value="2">Platinium</option>
-                            <option value="3">Gold</option>
-                            <option value="4">Sliver</option>
-                            <option value="5">Member</option>
+<!--                        <td><select class="form-select">-->
+<!--                            <option value="1">Diamond</option>-->
+<!--                            <option value="2">Platinium</option>-->
+<!--                            <option value="3">Gold</option>-->
+<!--                            <option value="4">Sliver</option>-->
+<!--                            <option value="5">Member</option>-->
+<!--                        </select></td>-->
+                        <td><select th:field="*{customerType}" class="form-select">
+                            <option th:each="c : ${customerType}" th:value="${c.id}"
+                                    th:text="${c.name}"></option>
                         </select></td>
+
+<!--                        <td><label>Category</label></td>-->
+<!--                        <td><select th:field="*{categories}">-->
+<!--                            <option th:each="category : ${categoryList}" th:value="${category.id}" th:text="${category.name}"></option>-->
+<!--                        </select></td>-->
                     </tr>
                     <tr>
                         <td>

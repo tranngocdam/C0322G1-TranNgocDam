@@ -46,8 +46,11 @@
         </tr>
     </table>
     <div class="text-center ">
-        <a class="btn btn-primary" th:href="@{'blog'(page=${blogList.number - 1})}" th:if="${blogList.hasPrevious()}">Previous</a>
-        &nbsp<span th:text="${blogList.number}"></span> / <span th:text="${blogList.totalPages}"></span>&nbsp
+        <a class="btn btn-primary" th:href="@{'blog'(page=${blogList.number - 1})}"
+           th:if="${blogList.hasPrevious()}">Previous</a>
+        <span th:text="${blogList.number}"></span>
+        /
+        <span th:text="${blogList.totalPages}"></span>&nbsp
         <a class="btn btn-primary" th:href="@{'/blog'(page=${blogList.number + 1})}"
            th:if="${blogList.hasNext()}">Next</a>
     </div>
