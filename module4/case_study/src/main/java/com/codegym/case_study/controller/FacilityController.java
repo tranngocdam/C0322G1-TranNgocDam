@@ -5,6 +5,8 @@ import com.codegym.case_study.service.IFacilityService;
 import com.codegym.case_study.service.IFacilityTypeService;
 import com.codegym.case_study.service.IRentTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -24,10 +26,12 @@ public class FacilityController {
     private IRentTypeService iRentTypeService;
 
     @GetMapping
-    public String showFacility(Model model) {
-        model.addAttribute("iFacilityService", iFacilityService.findAll());
+    public String showFacility(@RequestParam Optional<String>keyword ,@PageableDefault(value = 5)Pageable pageable, Model model) {
+        String keywordVal=keyword.orElse("");
+        model.addAttribute("facilitys", this.iFacilityService.findFacilityByName(keywordVal, pageable));
         model.addAttribute("iFacilityTypeService", iFacilityTypeService.findAll());
         model.addAttribute("iRentTypeService", iRentTypeService.findAll());
+        model.addAttribute("keyword", keywordVal);
         return "facility/list";
     }
     @GetMapping(value = "/createHouse")
@@ -70,13 +74,21 @@ public class FacilityController {
     }
     @GetMapping("/edit/{id}")
     public String showEdit(@PathVariable Integer id, Model model) {
-//        Optional<Facility> facility = iFacilityService.findById(id);
-//        model.addAttribute("facility", facility);
-        return "facility/editHouse";
+        Facility facility=iFacilityService.findById(id);
+        model.addAttribute("facilitys", facility);
+        model.addAttribute("facilityType", iFacilityTypeService);
+        model.addAttribute("rentType", iRentTypeService);
+        return "facility/edit";
+    }
+
+    @PostMapping("/edit")
+    public String Edit(@ModelAttribute("facility") Facility facility){
+        iFacilityService.save(facility);
+        return "redirect:/facility";
     }
     @GetMapping("/delete/{id}")
     public String delete(@PathVariable Integer id){
         iFacilityService.delete(id);
-        return "redirect:facility";
+        return "redirect:/facility";
     }
 }

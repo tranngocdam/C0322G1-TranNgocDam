@@ -43,6 +43,7 @@
                     <th>Start Day</th>
                     <th>End Day</th>
                     <th>Deposit</th>
+                    <th>Total Money</th>
                     <th colspan="2">Facility Type</th>
                     <th>Delete</th>
                 </tr>
@@ -54,12 +55,14 @@
                     <td th:text="${c.startDay}"></td>
                     <td th:text="${c.endDay}"></td>
                     <td th:text="${c.deposit}"></td>
+                    <td></td>
                     <td>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                th:data-bs-target="'#creatContractModal'+${c.id}">
                             +
                         </button>
                         <!-- Modal -->
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        <div class="modal fade" id="'exampleModal'+${c.id}" tabindex="-1" aria-labelledby="exampleModalLabel"
                              aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
@@ -97,11 +100,12 @@
                         </div>
                     </td>
                     <td>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                th:data-bs-target="'#displayModal'+${c.id}">
                             Service accompanied
                         </button>
                         <!-- Modal -->
-                        <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        <div class="modal fade" th:id="'displayModal2'+${c.id}" tabindex="-1" aria-labelledby="exampleModalLabel"
                              aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
@@ -119,12 +123,12 @@
                                                 <th>Unit</th>
                                                 <th>status</th>
                                             </tr>
-                                            <tr th:each="c : ${iCustomerService}">
-                                                <td th:text="${c.id}"></td>
-                                                <td th:text="${c.name}"></td>
-                                                <td th:text="${c.dayOfBirth}"></td>
-                                                <td th:text="${c.gender}"></td>
-                                            </tr>
+<!--                                            <tr th:each="c : ${iCustomerService}">-->
+<!--                                                <td th:text="${c.id}"></td>-->
+<!--                                                <td th:text="${c.name}"></td>-->
+<!--                                                <td th:text="${c.dayOfBirth}"></td>-->
+<!--                                                <td th:text="${c.gender}"></td>-->
+<!--                                            </tr>-->
                                         </table>
                                     </div>
                                     <div class="modal-footer">

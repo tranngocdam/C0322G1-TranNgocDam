@@ -46,7 +46,7 @@ public class CustomerController {
     }
 
     @GetMapping("/edit/{id}")
-    public String showEdit(@PathVariable Integer id, Model model, Pageable pageable) {
+    public String showEdit(@PathVariable Integer id, Model model) {
         Customer customer=iCustomerService.findById(id);
         model.addAttribute("customer",customer);
         model.addAttribute("customerType", iCustomerTypeService);

@@ -16,8 +16,8 @@ public class FacilityServiceImpl implements IFacilityService {
     private IFacilityRepository iFacilityRepository;
 
     @Override
-    public List<Facility> findAll() {
-        return iFacilityRepository.findAll();
+    public Page<Facility> findAll(Pageable pageable) {
+        return iFacilityRepository.findAll(pageable);
     }
     @Override
     public void save(Facility facility) {
@@ -25,7 +25,17 @@ public class FacilityServiceImpl implements IFacilityService {
     }
 
     @Override
+    public Facility findById(Integer id) {
+        return iFacilityRepository.findById(id).orElse(null);
+    }
+
+    @Override
     public void delete(Integer id) {
         iFacilityRepository.deleteById(id);
+    }
+
+    @Override
+    public Page<Facility> findFacilityByName(String keyword, Pageable pageable) {
+        return iFacilityRepository.findByNameContaining(keyword, pageable);
     }
 }

@@ -29,9 +29,9 @@
                 <div class="collapse navbar-collapse" id="mynavbar">
                     <ul class="navbar-nav me-auto">
                     </ul>
-                    <form class="d-flex">
-                        <input class="form-control me-2" type="text" placeholder="Search">
-                        <button class="btn btn-primary" type="button">Search</button>
+                    <form class="d-flex" action="/facility">
+                        <input class="form-control me-2" type="text" placeholder="Search" name="keyword">
+                        <button class="btn btn-primary" type="submit" value="Search">Search</button>
                     </form>
                 </div>
             </div>
@@ -57,11 +57,11 @@
                     <th>Free</th>
                     <th>Rent Type</th>
                     <th>facility Type</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
+                    <th>Updete</th>
+                    <th>Dedete</th>
                 </tr>
                 </tr>
-                <tr th:each="facility : ${iFacilityService}">
+                <tr th:each="facility : ${facilitys}">
                     <td th:text="${facility.id}"></td>
                     <td th:text="${facility.name}"></td>
                     <td th:text="${facility.area}"></td>
@@ -74,14 +74,14 @@
                     <td th:text="${facility.facilityFree}"></td>
                     <td th:text="${facility.rentType.name}"></td>
                     <td th:text="${facility.facilityType.name}"></td>
-                    <td><a class="btn btn-warning" th:href="@{/facility/edit/__${facility.id}__}">Update</a></td>
+                    <td><a class="btn btn-warning" th:href="@{/facility/edit/{id}(id=${facility.id})}">Update</a></td>
                     <td>
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal">
+                                th:data-bs-target="'#deleteModal'+${facility.id}">
                             Delete
                         </button>
                         <!-- Modal -->
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        <div class="modal fade" th:id="'deleteModal'+${facility.id}" tabindex="-1" aria-labelledby="exampleModalLabel"
                              aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
@@ -96,13 +96,22 @@
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close
                                         </button>
-                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                        <a class="btn btn-danger" style="text-decoration: none" th:href="@{/facility/delete/{id}(id=${facility.id})}">Delete</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </td>
             </table>
+            <div class="text-center">
+                <a class="btn btn-secondary" th:href="@{'facility'(page=${facilitys.number - 1})}"
+                   th:if="${facilitys.hasPrevious()}">Previous</a>
+                <span th:text="${facilitys.number+1}"></span>
+                /
+                <span th:text="${facilitys.totalPages}"></span>
+                <a class="btn btn-secondary" th:href="@{'/facility'(page=${facilitys.number + 1})}"
+                   th:if="${facilitys.hasNext()}">Next</a>
+            </div>
         </div>
     </div>
     <br>

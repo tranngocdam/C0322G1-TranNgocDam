@@ -5,6 +5,7 @@ import com.codegym.case_study.service.ICustomerService;
 import com.codegym.case_study.service.IEmployeeService;
 import com.codegym.case_study.service.IFacilityService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,11 +23,11 @@ public class ContractController {
     @Autowired
     private IFacilityService iFacilityService;
     @GetMapping
-    public String showCustomer(Model model) {
+    public String showCustomer(Model model, Pageable pageable) {
         model.addAttribute("iContractService", iContractService.findAll());
-//        model.addAttribute("iCustomerService", iCustomerService.findAll());
+        model.addAttribute("iCustomerService", iCustomerService.findAll(pageable));
         model.addAttribute("iEmployeeService", iEmployeeService.findAll());
-        model.addAttribute("iFacilityService", iFacilityService.findAll());
+        model.addAttribute("iFacilityService", iFacilityService.findAll(pageable));
         return "contract/list";
     }
     @GetMapping(value = "/create")

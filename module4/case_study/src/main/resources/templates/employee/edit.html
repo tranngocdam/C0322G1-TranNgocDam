@@ -17,7 +17,7 @@
     </div>
     <div class="row">
         <h1 class="text-center my-1">Edit Employee</h1>
-        <form th:object="${facilitys}" action="/facility/editHouse" method="post">
+        <form th:object="${employees}" action="/facility/edit" method="post">
             <div class="container">
                 <table class="table table-striped">
                     <tr>
@@ -83,6 +83,91 @@
                 </table>
             </div>
         </form>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#updateModal">
+            Update
+        </button>
+        <!-- Modal -->
+        <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="updateModalLabel">Update Employee</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="container">
+                                <table class="table table-striped">
+                                    <tr>
+                                        <td><label>Name</label></td>
+                                        <td><input class="form-control" type="text"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label>Day Of Birth</label></td>
+                                        <td><input class="form-control" type="text"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label>Id Card</label></td>
+                                        <td><input class="form-control" type="text"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label>Salary</label></td>
+                                        <td><input class="form-control" type="text"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label>Phone Number</label></td>
+                                        <td><input class="form-control" type="text"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label>Email</label></td>
+                                        <td><input class="form-control" type="text"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label>Address</label></td>
+                                        <td><input class="form-control" type="text"></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><label>Position</label></td>
+                                        <td><select class="form-select">
+                                            <option value="1">Quản lí</option>
+                                            <option value="2">Nhân viên</option>
+                                        </select></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label>Education Degree</label></td>
+                                        <td><select class="form-select">
+                                            <option value="1">Trung cấp</option>
+                                            <option value="2">Cao đẳng</option>
+                                            <option value="3">Đại học</option>
+                                            <option value="4">Sau đại học</option>
+                                        </select></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label>Division</label></td>
+                                        <td><select class="form-select">
+                                            <option value="1">Sale-Marketing</option>
+                                            <option value="2">Hành chính</option>
+                                            <option value="3">Phục vụ</option>
+                                            <option value="4">Quản lí</option>
+                                        </select></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                            <a class="btn btn-primary" href="/employee">Back</a></td>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </form></div>
+                    <!--                                    <div class="modal-footer">-->
+                    <!--                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>-->
+                    <!--                                        <button type="button" class="btn btn-primary">Save changes</button>-->
+                    <!--                                    </div>-->
+                </div>
+            </div>
+        </div>
     </div>
     <br>
     <div class="row">

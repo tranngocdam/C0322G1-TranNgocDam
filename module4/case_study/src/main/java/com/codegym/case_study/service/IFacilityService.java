@@ -8,9 +8,13 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 public interface IFacilityService {
-     List<Facility> findAll();
+     Page<Facility> findAll(Pageable pageable);
 
      void save(Facility facility);
 
+     Facility findById(Integer id);
+
      void delete(Integer id);
+
+     Page<Facility> findFacilityByName(String keyword, Pageable pageable);
 }
