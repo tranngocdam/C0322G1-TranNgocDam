@@ -39,4 +39,9 @@ public class CustomerServiceImpl implements ICustomerService {
     public Page<Customer> findCustomerByName(String keyword, Pageable pageable) {
         return iCustomerRepository.findAllByNameContaining(keyword, pageable);
     }
+
+    @Override
+    public Page<Customer> findAllByDate( Pageable pageable) {
+        return iCustomerRepository.findAllByDate( pageable);
+    }
 }

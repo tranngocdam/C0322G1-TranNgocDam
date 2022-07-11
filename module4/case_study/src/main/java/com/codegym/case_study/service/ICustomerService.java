@@ -18,4 +18,6 @@ public interface ICustomerService {
     Customer findById(Integer id);
 
     Page<Customer> findCustomerByName(String keyword, Pageable pageable);
+
+    Page<Customer> findAllByDate( Pageable pageable);
 }

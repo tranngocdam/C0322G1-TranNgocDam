@@ -1,18 +1,24 @@
 package com.codegym.case_study.controller;
 
+import com.codegym.case_study.dto.CustomerDto;
 import com.codegym.case_study.model.Customer;
+import com.codegym.case_study.model.CustomerType;
 import com.codegym.case_study.model.Facility;
 import com.codegym.case_study.service.ICustomerService;
 import com.codegym.case_study.service.ICustomerTypeService;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.util.List;
 import java.util.Optional;
 
 @Controller
@@ -34,13 +40,21 @@ public class CustomerController {
 
     @GetMapping(value = "/create")
     public String showCreateCustomer(Model model){
-        model.addAttribute("customer", new Customer());
-        model.addAttribute("customerType", iCustomerTypeService.findAll());
+        List<CustomerType> customerTypeList = iCustomerTypeService.findAll();
+        model.addAttribute("customerDto", new CustomerDto());
+        model.addAttribute("customerType", customerTypeList);
         return "/customer/create";
     }
 
     @PostMapping("/create")
-    public String createCustomer(@ModelAttribute Customer customer, RedirectAttributes redirectAttributes) {
+    public String createCustomer(@Validated @ModelAttribute CustomerDto customerDto,
+                                 BindingResult bindingResult, RedirectAttributes redirectAttributes) {
+        new CustomerDto().validate(customerDto, bindingResult);
+        if(bindingResult.hasFieldErrors()){
+            return "customer/create";
+        }
+        Customer customer=new Customer();
+        BeanUtils.copyProperties(customerDto, customer);
         iCustomerService.save(customer);
         redirectAttributes.addFlashAttribute("createSC",  "Create Sucessfully!");
         return "redirect:/customer";
@@ -67,5 +81,4 @@ public class CustomerController {
         redirectAttributes.addFlashAttribute("deleteSD","Delete Sucessfully!");
         return "redirect:/customer";
     }
-
 }
