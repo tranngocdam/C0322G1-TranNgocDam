@@ -52,134 +52,135 @@
                     <th>Edit</th>
                     <th>Delete</th>
                 </tr>
-                <div th:each="e : ${iEmployeeService}">
-                    <tr>
-                        <td th:text="${e.id}"></td>
-                        <td th:text="${e.name}"></td>
-                        <td th:text="${e.dayOfBirth}"></td>
-                        <td th:text="${e.idCard}"></td>
-                        <td th:text="${#numbers.formatDecimal(e.salary, 0, 'DEFAULT', 0, 'DEFAULT')}"></td>
-                        <td th:text="${e.phoneNumber}"></td>
-                        <td th:text="${e.email}"></td>
-                        <td th:text="${e.address}"></td>
-                        <td th:text="${e.position.name}"></td>
-                        <td th:text="${e.educationDegree.name}"></td>
-                        <td th:text="${e.division.name}"></td>
-                        <td>
-                            <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                    th:data-bs-target="'#updateModal'+${e.id}">
-                                Update
-                            </button>
-                            <!-- Modal -->
-                            <div class="modal fade" th:id="'updateModal'+${e.id}" tabindex="-1" aria-labelledby="exampleModalLabel"
-                                 aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Delete Employee</h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <form>
-                                                <div class="container">
-                                                    <table class="table table-striped">
-                                                        <tr>
-                                                            <td><label>Name</label></td>
-                                                            <td><input class="form-control" type="text"></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td><label>Day Of Birth</label></td>
-                                                            <td><input class="form-control" type="text"></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td><label>Id Card</label></td>
-                                                            <td><input class="form-control" type="text"></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td><label>Salary</label></td>
-                                                            <td><input class="form-control" type="text"></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td><label>Phone Number</label></td>
-                                                            <td><input class="form-control" type="text"></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td><label>Email</label></td>
-                                                            <td><input class="form-control" type="text"></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td><label>Address</label></td>
-                                                            <td><input class="form-control" type="text"></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td><label>Position</label></td>
-                                                            <td><select class="form-select">
-                                                                <option value="1">Quản lí</option>
-                                                                <option value="2">Nhân viên</option>
-                                                            </select></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td><label>Education Degree</label></td>
-                                                            <td><select class="form-select">
-                                                                <option value="1">Trung cấp</option>
-                                                                <option value="2">Cao đẳng</option>
-                                                                <option value="3">Đại học</option>
-                                                                <option value="4">Sau đại học</option>
-                                                            </select></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td><label>Division</label></td>
-                                                            <td><select class="form-select">
-                                                                <option value="1">Sale-Marketing</option>
-                                                                <option value="2">Hành chính</option>
-                                                                <option value="3">Phục vụ</option>
-                                                                <option value="4">Quản lí</option>
-                                                            </select></td>
-                                                        </tr>
-                                                    </table>
-                                                </div>
-                                            </form>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close
-                                            </button>
-                                            <button type="button" class="btn btn-primary">Save changes</button>
-                                        </div>
+                <tr th:each="e : ${iEmployeeService}">
+                    <td th:text="${e.id}"></td>
+                    <td th:text="${e.name}"></td>
+                    <td th:text="${e.dayOfBirth}"></td>
+                    <td th:text="${e.idCard}"></td>
+                    <td th:text="${#numbers.formatDecimal(e.salary, 0, 'DEFAULT', 0, 'DEFAULT')}"></td>
+                    <td th:text="${e.phoneNumber}"></td>
+                    <td th:text="${e.email}"></td>
+                    <td th:text="${e.address}"></td>
+                    <td th:text="${e.position.name}"></td>
+                    <td th:text="${e.educationDegree.name}"></td>
+                    <td th:text="${e.division.name}"></td>
+                    <td>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                th:data-bs-target="'#updateModal'+${e.id}">
+                            Update
+                        </button>
+                        <!-- Modal -->
+                        <div class="modal fade" th:id="'updateModal'+${e.id}" tabindex="-1"
+                             aria-labelledby="exampleModalLabel"
+                             aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Delete Employee</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form>
+                                            <div class="container">
+                                                <table class="table table-striped">
+                                                    <tr>
+                                                        <td><label>Name</label></td>
+                                                        <td><input class="form-control" type="text"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><label>Day Of Birth</label></td>
+                                                        <td><input class="form-control" type="text"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><label>Id Card</label></td>
+                                                        <td><input class="form-control" type="text"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><label>Salary</label></td>
+                                                        <td><input class="form-control" type="text"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><label>Phone Number</label></td>
+                                                        <td><input class="form-control" type="text"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><label>Email</label></td>
+                                                        <td><input class="form-control" type="text"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><label>Address</label></td>
+                                                        <td><input class="form-control" type="text"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><label>Position</label></td>
+                                                        <td><select class="form-select">
+                                                            <option value="1">Quản lí</option>
+                                                            <option value="2">Nhân viên</option>
+                                                        </select></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><label>Education Degree</label></td>
+                                                        <td><select class="form-select">
+                                                            <option value="1">Trung cấp</option>
+                                                            <option value="2">Cao đẳng</option>
+                                                            <option value="3">Đại học</option>
+                                                            <option value="4">Sau đại học</option>
+                                                        </select></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><label>Division</label></td>
+                                                        <td><select class="form-select">
+                                                            <option value="1">Sale-Marketing</option>
+                                                            <option value="2">Hành chính</option>
+                                                            <option value="3">Phục vụ</option>
+                                                            <option value="4">Quản lí</option>
+                                                        </select></td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close
+                                        </button>
+                                        <button type="button" class="btn btn-primary">Save changes</button>
                                     </div>
                                 </div>
                             </div>
-                        </td>
-                        <td>
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                    th:data-bs-target="'#deleteModal'+${e.id}">
-                                Delete
-                            </button>
-                            <!-- Modal -->
-                            <div class="modal fade" th:id="'deleteModal'+${e.id}" tabindex="-1" aria-labelledby="exampleModalLabel"
-                                 aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Delete Employee</h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                    aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            Do you want employee?
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                                                Close
-                                            </button>
-                                            <button type="button" class="btn btn-primary">Save changes</button>
-                                        </div>
+                        </div>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                th:data-bs-target="'#deleteModal'+${e.id}">
+                            Delete
+                        </button>
+                        <!-- Modal -->
+                        <div class="modal fade" th:id="'deleteModal'+${e.id}" tabindex="-1"
+                             aria-labelledby="exampleModalLabel"
+                             aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Delete Employee</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Do you want employee?
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                            Close
+                                        </button>
+                                        <button type="button" class="btn btn-primary">Save changes</button>
                                     </div>
                                 </div>
                             </div>
-                        </td>
-                    </tr>
-                </div>
+                        </div>
+                    </td>
+                </tr>
             </table>
         </div>
     </div>

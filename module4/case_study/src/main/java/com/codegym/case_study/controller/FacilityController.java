@@ -44,6 +44,7 @@ public class FacilityController {
     @PostMapping("/createHouse")
     public String createHouse(@ModelAttribute Facility facility, RedirectAttributes redirectAttributes) {
         iFacilityService.save(facility);
+        redirectAttributes.addFlashAttribute("createSC", "Create Sucessfully!");
         return "redirect:/facility";
     }
 
@@ -57,6 +58,7 @@ public class FacilityController {
     @PostMapping("/createRoom")
     public String createRoom(@ModelAttribute Facility facility, RedirectAttributes redirectAttributes) {
         iFacilityService.save(facility);
+        redirectAttributes.addFlashAttribute("createSC", "Create Sucessfully!");
         return "redirect:/facility";
     }
 
@@ -70,25 +72,28 @@ public class FacilityController {
     @PostMapping("/createVilla")
     public String createVilla(@ModelAttribute Facility facility, RedirectAttributes redirectAttributes) {
         iFacilityService.save(facility);
+        redirectAttributes.addFlashAttribute("createSC", "Create Sucessfully!");
         return "redirect:/facility";
     }
     @GetMapping("/edit/{id}")
     public String showEdit(@PathVariable Integer id, Model model) {
         Facility facility=iFacilityService.findById(id);
         model.addAttribute("facilitys", facility);
-        model.addAttribute("facilityType", iFacilityTypeService);
-        model.addAttribute("rentType", iRentTypeService);
+//        model.addAttribute("facilityType", iFacilityTypeService);
+//        model.addAttribute("rentType", iRentTypeService);
         return "facility/edit";
     }
 
     @PostMapping("/edit")
-    public String Edit(@ModelAttribute("facility") Facility facility){
+    public String Edit(@ModelAttribute("facility") Facility facility, RedirectAttributes redirectAttributes){
         iFacilityService.save(facility);
+        redirectAttributes.addFlashAttribute("editSE", "Edit Sucessfully!");
         return "redirect:/facility";
     }
     @GetMapping("/delete/{id}")
-    public String delete(@PathVariable Integer id){
+    public String delete(@PathVariable Integer id, RedirectAttributes redirectAttributes){
         iFacilityService.delete(id);
+        redirectAttributes.addFlashAttribute("deleteSD", "Delete Sucessfully!");
         return "redirect:/facility";
     }
 }

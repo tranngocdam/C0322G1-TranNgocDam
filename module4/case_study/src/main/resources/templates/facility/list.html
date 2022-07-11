@@ -65,7 +65,7 @@
                     <td th:text="${facility.id}"></td>
                     <td th:text="${facility.name}"></td>
                     <td th:text="${facility.area}"></td>
-                    <td th:text="${facility.cost}"></td>
+                    <td th:text="${#numbers.formatDecimal(facility.cost, 0, 'DEFAULT', 0, 'DEFAULT')}"></td>
                     <td th:text="${facility.maxPeople}"></td>
                     <td th:text="${facility.standardRoom}"></td>
                     <td th:text="${facility.descriptionOtherConvenience}"></td>
@@ -91,7 +91,7 @@
                                                 aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        Do you delete facility?
+                                        <p th:text="'Do you delete facility '+${facility.name}+' ?'"></p>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close
@@ -103,6 +103,9 @@
                         </div>
                     </td>
             </table>
+            <h2 style="color: rgb(205,8,8)" th:text="${createSC}"></h2>
+            <h2 style="color: rgb(205,8,8)" th:text="${editSE}"></h2>
+            <h2 style="color: rgb(205,8,8)" th:text="${deleteSD}"></h2>
             <div class="text-center">
                 <a class="btn btn-secondary" th:href="@{'facility'(page=${facilitys.number - 1})}"
                    th:if="${facilitys.hasPrevious()}">Previous</a>

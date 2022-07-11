@@ -1,5 +1,6 @@
 package com.codegym.case_study.controller;
 
+import com.codegym.case_study.model.Employee;
 import com.codegym.case_study.model.Facility;
 import com.codegym.case_study.service.IDivisionService;
 import com.codegym.case_study.service.IEducationDegreeService;
@@ -38,8 +39,9 @@ public class EmployeeController {
     }
 
     @PostMapping("/create")
-    public String createHouse(@ModelAttribute Facility facility, RedirectAttributes redirectAttributes) {
-
+    public String createHouse(@ModelAttribute Employee employee, RedirectAttributes redirectAttributes) {
+        iEmployeeService.save(employee);
+        redirectAttributes.addFlashAttribute("createSC", "Create Sucessfully!");
         return "redirect:/employee";
     }
 

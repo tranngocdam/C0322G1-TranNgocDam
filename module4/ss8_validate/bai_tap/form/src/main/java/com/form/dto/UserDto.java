@@ -5,6 +5,7 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
 public class UserDto implements Validator {
+
     private Integer id;
     private String firstName;
     private String lastName;

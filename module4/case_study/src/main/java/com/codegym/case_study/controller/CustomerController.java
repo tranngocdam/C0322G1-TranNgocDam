@@ -40,8 +40,9 @@ public class CustomerController {
     }
 
     @PostMapping("/create")
-    public String createCustomer(@ModelAttribute Customer customer) {
-            iCustomerService.save(customer);
+    public String createCustomer(@ModelAttribute Customer customer, RedirectAttributes redirectAttributes) {
+        iCustomerService.save(customer);
+        redirectAttributes.addFlashAttribute("createSC",  "Create Sucessfully!");
         return "redirect:/customer";
     }
 
@@ -49,19 +50,21 @@ public class CustomerController {
     public String showEdit(@PathVariable Integer id, Model model) {
         Customer customer=iCustomerService.findById(id);
         model.addAttribute("customer",customer);
-        model.addAttribute("customerType", iCustomerTypeService);
+//        model.addAttribute("customerType", iCustomerTypeService);
         return "customer/edit";
     }
 
     @PostMapping("/edit")
-    public String Edit(@ModelAttribute("customer") Customer customer){
+    public String Edit(@ModelAttribute("customer") Customer customer, RedirectAttributes redirectAttributes){
         iCustomerService.save(customer);
+        redirectAttributes.addFlashAttribute("editSE","Edit Sucessfully!");
         return "redirect:/customer";
     }
 
     @PostMapping("/delete/{id}")
-    public String delete(@PathVariable("id") Integer id){
+    public String delete(@PathVariable("id") Integer id, RedirectAttributes redirectAttributes){
         iCustomerService.delete(id);
+        redirectAttributes.addFlashAttribute("deleteSD","Delete Sucessfully!");
         return "redirect:/customer";
     }
 

@@ -16,32 +16,100 @@
     </div>
     <div class="row">
         <h1 class="text-center my-5">Create Contract</h1>
-        <form>
+        <form action="/contract/create" method="post" th:object="${contract}">
             <div class="container">
                 <table class="table table-striped">
                     <tr>
-                        <td><label>Start Day</label></td>
-                        <td><input class="form-control" type="text"></td>
-                    </tr>
-                    <tr>
-                        <td><label>End Day</label></td>
-                        <td><input class="form-control" type="text"></td>
-                    </tr>
-                    <tr>
-                        <td><label>Deposit</label></td>
-                        <td><input class="form-control" type="text"></td>
-                    </tr>
-                    <tr>
-                        <td><label>Employee</label></td>
-                        <td><input class="form-control" type="text"></td>
+                        <td><label>Facility</label></td>
+                        <td><select th:field="*{facility}" class="form-select">
+                            <option th:each="f : ${facilitys}" th:value="${f.id}"
+                                    th:text="${f.name}"></option>
+                        </select> </td>
                     </tr>
                     <tr>
                         <td><label>Customer</label></td>
+                        <td><select th:field="*{customer}" class="form-select">
+                            <option th:each="c :${customers}" th:value="${c.id}"
+                                    th:text="${c.name}"></option>
+                        </select> </td>
+                    </tr>
+                    <tr>
+                        <td><label>Employee</label></td>
+                        <td><select th:field="*{employee}" class="form-select">
+                            <option th:each="e :${employees}" th:value="${e.id}"
+                                    th:text="${e.name}"></option>
+                        </select> </td>
+                    </tr>
+                    <tr>
+                        <td><label>Start Day</label></td>
+                        <td><input class="form-control" type="date" th:field="*{startDay}"></td>
+                    </tr>
+                    <tr>
+                        <td><label>End Day </label></td>
+                        <td><input class="form-control" type="date" th:field="*{endDay}"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Deposit</label></td>
+                        <td><input class="form-control" type="text" th:field="*{deposit}"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Total Money</label></td>
                         <td><input class="form-control" type="text"></td>
                     </tr>
                     <tr>
-                        <td><label>facility</label></td>
-                        <td><input class="form-control" type="text"></td>
+                        <td><label>Attach Facility</label></td>
+                        <td>
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                    th:data-bs-target="'#displayModal'">
+                                +
+                            </button>
+                            <!-- Modal -->
+                            <div class="modal fade" th:id="'displayModal'" tabindex="-1"
+                                 aria-labelledby="exampleModalLabel"
+                                 aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel2"></h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <h1 class="text-center my-5">Create Contract Detail</h1>
+
+                                            <form action="/contract/createDetail" method="post" th:object="${attachDetails}">
+                                                <div class="container">
+                                                    <table class="table table-striped">
+                                                        <tr>
+                                                            <td><label>Name</label></td>
+                                                            <td><input class="form-control" type="text" th:field="*{name}"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><label>Cost</label></td>
+                                                            <td><input class="form-control" type="text" th:field="*{cost}"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><label>Unit</label></td>
+                                                            <td><input class="form-control" type="text" th:field="*{unit}"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><label>Status</label></td>
+                                                            <td><input class="form-control" type="text" th:field="*{status}"></td>
+                                                        </tr>
+                                                    </table>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close
+                                                        </button>
+                                                        <button type="submit" class="btn btn-primary">Save changes</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
                     </tr>
                     <tr>
                         <td>

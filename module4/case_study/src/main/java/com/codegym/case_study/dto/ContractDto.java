@@ -1,41 +1,30 @@
-package com.codegym.case_study.model;
+package com.codegym.case_study.dto;
 
+import com.codegym.case_study.model.ContractDetail;
+import com.codegym.case_study.model.Customer;
+import com.codegym.case_study.model.Employee;
+import com.codegym.case_study.model.Facility;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
 import java.util.List;
 
-@Entity
-public class Contract {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class ContractDto {
     private Integer id;
-    @Column(name = "start_day", columnDefinition = "date")
     private String startDay;
-    @Column(name = "end_day", columnDefinition = "date")
     private String endDay;
     private Double deposit;
-
-    @ManyToOne
-    @JoinColumn(name = "employee_id", referencedColumnName = "id")
     private Employee employee;
-
-    @ManyToOne
-    @JoinColumn(name = "customer_id", referencedColumnName = "id")
     private Customer customer;
-
-    @ManyToOne
-    @JoinColumn(name = "facility_id", referencedColumnName = "id")
     private Facility facility;
-
-    @JsonBackReference
-    @OneToMany(mappedBy = "contract")
     private List<ContractDetail> contractDetailList;
+    private Integer total;
 
-    public Contract() {
+
+    public ContractDto() {
     }
 
-    public Contract(Integer id, String startDay, String endDay, Double deposit, Employee employee, Customer customer, Facility facility, List<ContractDetail> contractDetailList) {
+    public ContractDto(Integer id, String startDay, String endDay, Double deposit, Employee employee, Customer customer, Facility facility, List<ContractDetail> contractDetailList, Integer total) {
         this.id = id;
         this.startDay = startDay;
         this.endDay = endDay;
@@ -44,6 +33,7 @@ public class Contract {
         this.customer = customer;
         this.facility = facility;
         this.contractDetailList = contractDetailList;
+        this.total = total;
     }
 
     public Integer getId() {
@@ -108,5 +98,13 @@ public class Contract {
 
     public void setContractDetailList(List<ContractDetail> contractDetailList) {
         this.contractDetailList = contractDetailList;
+    }
+
+    public Integer getTotal() {
+        return total;
+    }
+
+    public void setTotal(Integer total) {
+        this.total = total;
     }
 }

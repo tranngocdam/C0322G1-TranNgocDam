@@ -8,6 +8,4 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface IAttachFacilityRepository extends JpaRepository<AttachFacility, Integer> {
-    @Query(value="select * from contract", nativeQuery=true)
-    public List<AttachFacility> findAll();
 }

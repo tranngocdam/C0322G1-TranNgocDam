@@ -81,7 +81,7 @@
                                                 aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        Do you delete customer?
+                                        <p th:text="'Do you delete customer '+${c.name}+' ?'"></p>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close
@@ -94,7 +94,11 @@
                             </div>
                         </div>
                     </td>
+                </tr>
             </table>
+            <h2 style="color: rgb(205,8,8)" th:text="${createSC}"></h2>
+            <h2 style="color: rgb(205,8,8)" th:text="${editSE}"></h2>
+            <h2 style="color: rgb(205,8,8)" th:text="${deleteSD}"></h2>
             <div class="text-center">
                 <a class="btn btn-secondary" th:href="@{'customer'(page=${customers.number - 1})}"
                    th:if="${customers.hasPrevious()}">Previous</a>
