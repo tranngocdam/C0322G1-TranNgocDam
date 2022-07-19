@@ -8,26 +8,47 @@
 </head>
 <body>
 
-<a href="/create">Add New Blog</a>
-<table border="1">
-    <caption>Blog List</caption>
-    <tr>
-        <th>ID</th>
-        <th>Title</th>
-        <th>Content</th>
-        <th>Edit</th>
-        <th>Delete</th>
-    </tr>
-    <tr th:each="row : ${blogList}">
-        <td th:text="${row.getId}"></td>
-        <td th:text="${row.getTitle()}"></td>
-        <td th:text="${row.getContent()}"></td>
-        <td><a th:href="@{/blog/{id}/edit(id=${row.getId()})}">edit</a></td>
-        <td><a th:href="@{/blog/{id}/delete(id=${row.getId()})}">delete</a></td>
+<!--<a href="/create">Add New Blog</a>-->
+<!--<table border="1">-->
+<div class="container-fluid mt-3">
+    <div class="row">
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+            <div class="container-fluid">
+                <li class="nav-item">
+                    <a class="btn btn-primary" th:href="@{/create}">Create</a>
+                </li>
+<!--                <div class="collapse navbar-collapse" id="mynavbar">-->
+<!--                    <ul class="navbar-nav me-auto"></ul>-->
+<!--                    <form class="d-flex" th:action="@{/song/found}">-->
+<!--                        <input class="form-control me-2" type="text" placeholder="Enter name" name="name">-->
+<!--                        <input class="btn btn-primary" type="submit" value="Search">Search</input>-->
+<!--                    </form>-->
+<!--                </div>-->
+            </div>
+        </nav>
+    </div>
+    <br>
+    <div class="row">
+        <table class="table table-striped table-hover table-bordered">
+            <tr class="bg-info">
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Content</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            <tr th:each="row : ${blogList}">
+                <td th:text="${row.getId}"></td>
+                <td th:text="${row.getTitle()}"></td>
+                <td th:text="${row.getContent()}"></td>
+                <td><a th:href="@{/blog/edit/{id}(id=${row.getId()})}">edit</a></td>
+                <td><a th:href="@{/blog/{id}/delete(id=${row.getId()})}">delete</a></td>
 
-    </tr>
-</table>
-
+            </tr>
+        </table>
+    </div>
+</div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"

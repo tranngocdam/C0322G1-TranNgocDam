@@ -7,10 +7,10 @@
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 <body>
-<div class="container d-flex flex-column align-items-center">
-    <h1 class="text-center my-5">Edit Form</h1>
+<div class="container mt-3">
+    <h1 class="text-center my-5">Edit Song</h1>
     <form th:object="${song}" action="/song/edit" method="post">
-        <table>
+        <table class="table table-hover">
             <tr hidden>
                 <td><label>ID</label></td>
                 <td><input class="form-control" type="text" th:field="*{id}"></td>
@@ -32,7 +32,10 @@
                 <td><input class="form-control" type="text" th:field="*{link}"></td>
             </tr>
             <tr>
-                <td colspan="2"><input class="btn btn-success text-center mt-4" type="submit" value="Edit Song"></td>
+                <td>
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <a class="btn btn-primary" href="/song">Back</a>
+                </td>
             </tr>
         </table>
     </form>

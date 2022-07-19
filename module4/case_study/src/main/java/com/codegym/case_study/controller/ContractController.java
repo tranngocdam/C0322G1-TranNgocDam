@@ -49,10 +49,11 @@ public class ContractController {
     public String showCreate(Model model, Pageable pageable){
         model.addAttribute("contract", new Contract());
 //        model.addAttribute("contract", iContractService.findAll(pageable));
+        model.addAttribute("contractDetail", new ContractDetail());
         model.addAttribute("customers", iCustomerService.findAll(pageable));
         model.addAttribute("employees", iEmployeeService.findAll());
         model.addAttribute("facilitys", iFacilityService.findAll(pageable));
-        model.addAttribute("attachDetails", new AttachFacility());
+        model.addAttribute("attachDetails",iAttachFacilityService.findAll());
         return "/contract/create";
     }
     @PostMapping(value = "/create")
@@ -65,5 +66,10 @@ public class ContractController {
     public String createContractDetail(@ModelAttribute ContractDetail contractDetail ){
         iContractDetailService.save(contractDetail);
         return "redirect:/contract";
+    }
+    @PostMapping(value = "/createDetails")
+    public String createContractDetails(@ModelAttribute ContractDetail contractDetail ){
+        iContractDetailService.save(contractDetail);
+        return "redirect:/contract/list";
     }
 }

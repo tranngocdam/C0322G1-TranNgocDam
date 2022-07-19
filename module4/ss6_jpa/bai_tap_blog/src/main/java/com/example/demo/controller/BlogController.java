@@ -33,7 +33,7 @@ public class BlogController {
         return "redirect:/blog";
     }
 
-    @GetMapping("/blog/{id}/edit")
+    @GetMapping("/blog/edit/{id}")
     public String showEdit(@PathVariable Integer id, Model model){
         Blog blog = iBlogService.findById(id);
         model.addAttribute("blog",blog);

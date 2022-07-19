@@ -1,14 +1,20 @@
 package com.codegym.case_study.controller;
 
+import com.codegym.case_study.dto.FacilityDto;
 import com.codegym.case_study.model.Facility;
+import com.codegym.case_study.model.FacilityType;
+import com.codegym.case_study.model.RentType;
 import com.codegym.case_study.service.IFacilityService;
 import com.codegym.case_study.service.IFacilityTypeService;
 import com.codegym.case_study.service.IRentTypeService;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -36,13 +42,26 @@ public class FacilityController {
     }
     @GetMapping(value = "/createHouse")
     public String showCreateHouse(Model model){
-        model.addAttribute("facilitys", new Facility());
-        model.addAttribute("iFacilityTypeService", iFacilityTypeService.findAll());
-        model.addAttribute("iRentTypeService", iRentTypeService.findAll());
+        List<FacilityType>facilityTypes=iFacilityTypeService.findAll();
+        List<RentType>rentTypes=iRentTypeService.findAll();
+        model.addAttribute("facilityDto", new FacilityDto());
+        model.addAttribute("facilityType", facilityTypes);
+        model.addAttribute("rentType", rentTypes);
         return "/facility/createHouse";
     }
     @PostMapping("/createHouse")
-    public String createHouse(@ModelAttribute Facility facility, RedirectAttributes redirectAttributes) {
+    public String createHouse(@Validated @ModelAttribute FacilityDto facilityDto,
+                              BindingResult bindingResult, RedirectAttributes redirectAttributes, Model model) {
+        new FacilityDto().validate(facilityDto, bindingResult);
+        if(bindingResult.hasFieldErrors()){
+            List<FacilityType>facilityTypes=iFacilityTypeService.findAll();
+            List<RentType>rentTypes=iRentTypeService.findAll();
+            model.addAttribute("facilityType", facilityTypes);
+            model.addAttribute("rentType", rentTypes);
+            return "facility/createHouse";
+        }
+        Facility facility=new Facility();
+        BeanUtils.copyProperties(facilityDto, facility);
         iFacilityService.save(facility);
         redirectAttributes.addFlashAttribute("createSC", "Create Sucessfully!");
         return "redirect:/facility";

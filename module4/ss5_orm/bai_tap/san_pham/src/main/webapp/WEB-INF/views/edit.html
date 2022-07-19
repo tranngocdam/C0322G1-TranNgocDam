@@ -10,21 +10,21 @@
 <div class="container d-flex flex-column align-items-center">
     <h1 class="text-center my-5">Edit Form</h1>
     <form th:object="${product}" action="/product/edit" method="post">
-        <table>
+        <table class="table table-striped table-hover table-bordered">
             <tr hidden>
                 <td><label>ID</label></td>
                 <td><input class="form-control" type="text" th:field="*{id}"></td>
             </tr>
             <tr>
-                <td><label>Song Name</label></td>
+                <td><label> Name</label></td>
                 <td><input class="form-control" type="text" th:field="*{name}"></td>
             </tr>
             <tr>
-                <td><label>Singer</label></td>
+                <td><label>Price</label></td>
                 <td><input class="form-control" type="text" th:field="*{price}"></td>
             </tr>
             <tr>
-                <td><label>Song Type</label></td>
+                <td><label>Producer</label></td>
                 <td><input class="form-control" type="text" th:field="*{producer}"></td>
             </tr>
             <tr>

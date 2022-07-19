@@ -24,21 +24,21 @@
                         <td><select th:field="*{facility}" class="form-select">
                             <option th:each="f : ${facilitys}" th:value="${f.id}"
                                     th:text="${f.name}"></option>
-                        </select> </td>
+                        </select></td>
                     </tr>
                     <tr>
                         <td><label>Customer</label></td>
                         <td><select th:field="*{customer}" class="form-select">
                             <option th:each="c :${customers}" th:value="${c.id}"
                                     th:text="${c.name}"></option>
-                        </select> </td>
+                        </select></td>
                     </tr>
                     <tr>
                         <td><label>Employee</label></td>
                         <td><select th:field="*{employee}" class="form-select">
                             <option th:each="e :${employees}" th:value="${e.id}"
                                     th:text="${e.name}"></option>
-                        </select> </td>
+                        </select></td>
                     </tr>
                     <tr>
                         <td><label>Start Day</label></td>
@@ -60,11 +60,11 @@
                         <td><label>Attach Facility</label></td>
                         <td>
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                    th:data-bs-target="'#displayModal'">
+                                    th:data-bs-target="'#displayModal'+${contract.id}">
                                 +
                             </button>
                             <!-- Modal -->
-                            <div class="modal fade" th:id="'displayModal'" tabindex="-1"
+                            <div class="modal fade" th:id="'displayModal'+${contract.id}" tabindex="-1"
                                  aria-labelledby="exampleModalLabel"
                                  aria-hidden="true">
                                 <div class="modal-dialog">
@@ -76,35 +76,42 @@
                                         </div>
                                         <div class="modal-body">
                                             <h1 class="text-center my-5">Create Contract Detail</h1>
-
-                                            <form action="/contract/createDetail" method="post" th:object="${attachDetails}">
+                                            <form action="/contract/createDetails" method="post"
+                                                  th:object="${contractDetail}">
                                                 <div class="container">
+
                                                     <table class="table table-striped">
                                                         <tr>
-                                                            <td><label>Name</label></td>
-                                                            <td><input class="form-control" type="text" th:field="*{name}"></td>
+                                                            <td>Contract</td>
+                                                            <td><select th:field="*{contract}" class="form-control"hidden>
+                                                                <option th:value="${c.id}"></option>
+                                                            </select></td>
                                                         </tr>
                                                         <tr>
-                                                            <td><label>Cost</label></td>
-                                                            <td><input class="form-control" type="text" th:field="*{cost}"></td>
+                                                            <td><label>Attach Facility</label></td>
+                                                            <td><select th:field="*{attachFacility}"
+                                                                        class="form-select">
+                                                                <option th:each="c : ${attachDetails}"
+                                                                        th:value="${c.id}"
+                                                                        th:text="${c.name}"></option>
+                                                            </select></td>
                                                         </tr>
                                                         <tr>
-                                                            <td><label>Unit</label></td>
-                                                            <td><input class="form-control" type="text" th:field="*{unit}"></td>
+                                                            <td><label>Quantity</label></td>
+                                                            <td><input class="form-control" type="text"
+                                                                       th:field="*{quantity}"></td>
                                                         </tr>
-                                                        <tr>
-                                                            <td><label>Status</label></td>
-                                                            <td><input class="form-control" type="text" th:field="*{status}"></td>
-                                                        </tr>
+
                                                     </table>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close
-                                                        </button>
-                                                        <button type="submit" class="btn btn-primary">Save changes</button>
-                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary"
+                                                            data-bs-dismiss="modal">
+                                                        Close
+                                                    </button>
+                                                    <button type="submit" class="btn btn-primary">Save changes</button>
                                                 </div>
                                             </form>
-
                                         </div>
                                     </div>
                                 </div>

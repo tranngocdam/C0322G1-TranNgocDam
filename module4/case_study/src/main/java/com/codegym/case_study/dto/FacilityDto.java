@@ -6,30 +6,29 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 
 public class FacilityDto implements Validator {
     private Integer id;
-    @NotBlank
+    @NotBlank(message = "name is blank")
     private String name;
     @NotBlank
     private String area;
     @NotBlank
     private String cost;
-    @NotBlank
     private Integer maxPeople;
-    @NotBlank
+    @NotBlank(message = "standardRoom is blank")
     private String standardRoom;
-    @NotBlank
+    @NotBlank(message = "descriptionOtherConvenience is blank")
     private String descriptionOtherConvenience;
-    @NotBlank
     private Double poolArea;
     @NotBlank
     private String numberOfFloors;
-    @NotBlank
+    @NotBlank(message = "facilityFree is blank")
     private String facilityFree;
-    @NotBlank
+
     private RentType rentType;
-    @NotBlank
+
     private FacilityType facilityType;
 
     public FacilityDto() {
@@ -154,12 +153,6 @@ public class FacilityDto implements Validator {
     @Override
     public void validate(Object target, Errors errors) {
         FacilityDto facilityDto=(FacilityDto) target;
-        this.name = name;
-        this.area = area;
-        this.cost = cost;
-        this.numberOfFloors = numberOfFloors;
-
-
         String name=facilityDto.getName();
         if (!name.matches("^\\w{5,45}$")){
             errors.rejectValue("name", "name.rejected", "Kí tự đầu tiên của mỗi từ phải viết hoa");

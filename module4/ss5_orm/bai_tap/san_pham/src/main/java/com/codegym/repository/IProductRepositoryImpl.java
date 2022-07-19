@@ -13,7 +13,8 @@ import java.util.List;
 public class IProductRepositoryImpl implements IProductRepository {
     @Override
     public List<Product> findAll() {
-        TypedQuery<Product> typedQuery= BaseRepository.entityManager.createQuery("select s from Product s", Product.class);
+        TypedQuery<Product> typedQuery= BaseRepository.entityManager.createQuery
+                ("select s from Product s", Product.class);
         return typedQuery.getResultList();
     }
 

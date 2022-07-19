@@ -8,9 +8,9 @@
 </head>
 <body>
 <div class="container d-flex flex-column align-items-center">
-    <h1 class="text-center my-5">Create Product</h1>
+    <h1 class="text-center my-5">Create Song</h1>
     <form th:object="${song}" action="/song/create" method="post">
-        <table>
+        <table class="table table-hover">
             <tr>
                 <td><label>Song Name</label></td>
                 <td><input class="form-control" type="text" th:field="*{songName}"></td>
@@ -28,7 +28,11 @@
                 <td><input class="form-control" type="text" th:field="*{link}"></td>
             </tr>
             <tr>
-                <td colspan="2"><input class="btn btn-success text-center mt-4" type="submit" value="Add Song"></td>
+                <td>
+<!--                    <input class="btn btn-success text-center mt-4" type="submit" value="Add Song">-->
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <a class="btn btn-primary" href="/song">Back</a></td>
+                </td>
             </tr>
         </table>
     </form>

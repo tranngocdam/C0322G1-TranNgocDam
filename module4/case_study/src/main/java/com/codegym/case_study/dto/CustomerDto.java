@@ -5,24 +5,23 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 
 public class CustomerDto implements Validator {
     private Integer id;
-    @NotBlank
+    @NotBlank(message = "name is blank")
     private String name;
-    @NotBlank
+    @NotBlank(message = "dayOfBirth is blank")
     private String dayOfBirth;
-    @NotBlank
     private Integer gender;
-    @NotBlank
+    @NotBlank(message = "idCard is blank")
     private String idCard;
-    @NotBlank
+    @NotBlank(message = "phoneNumber is blank")
     private String phoneNumber;
-    @NotBlank
+    @NotBlank(message = "email is blank")
     private String email;
-    @NotBlank
+    @NotBlank(message = "address is blank")
     private String address;
-    @NotBlank
     private CustomerType customerType;
 
     public CustomerDto() {
