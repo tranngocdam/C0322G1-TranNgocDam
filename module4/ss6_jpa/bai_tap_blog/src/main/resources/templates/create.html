@@ -9,14 +9,19 @@
 <body>
 <div class="container d-flex flex-column align-items-center">
     <h1 class="text-center my-5">Create Blog</h1>
-    <form th:object="${blog}" action="/blog/create" method="post">
+    <form th:object="${blog}" th:action="@{/blog/create}" method="post">
         <table>
+            <tr>
                 <td><label>title</label></td>
                 <td><input class="form-control" type="text" th:field="*{title}"></td>
             </tr>
             <tr>
                 <td><label>content</label></td>
                 <td><input class="form-control" type="text" th:field="*{content}"></td>
+            </tr>
+            <tr>
+                <td><label>Day start</label></td>
+                <td><input class="form-control" type="date" th:field="*{dayStart}"></td>
             </tr>
             <tr>
                 <td colspan="2"><input class="btn btn-success text-center mt-4" type="submit" value="Add Blog"></td>

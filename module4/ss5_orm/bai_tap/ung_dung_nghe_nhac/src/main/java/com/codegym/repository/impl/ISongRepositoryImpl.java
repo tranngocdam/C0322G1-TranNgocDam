@@ -4,7 +4,6 @@ import com.codegym.model.Song;
 import com.codegym.repository.BaseRepository;
 import com.codegym.repository.ISongRepository;
 import org.springframework.stereotype.Repository;
-
 import javax.persistence.*;
 import javax.transaction.Transactional;
 import java.util.List;
@@ -14,7 +13,9 @@ public class ISongRepositoryImpl implements ISongRepository {
 
     @Override
     public List<Song> findAll() {
-        TypedQuery<Song> typedQuery= BaseRepository.entityManager.createQuery("select s from Song s", Song.class);
+        BaseRepository.entityManager.clear();
+        TypedQuery<Song> typedQuery= BaseRepository.entityManager.createQuery
+                ("select s from Song s", Song.class);
         return typedQuery.getResultList();
     }
 
@@ -28,8 +29,7 @@ public class ISongRepositoryImpl implements ISongRepository {
 
     @Override
     public Song findById(Integer id) {
-        TypedQuery<Song> typedQuery=BaseRepository.entityManager.createQuery
-                ("select s from Song as s where s.id=:id", Song.class);
+        TypedQuery<Song> typedQuery=BaseRepository.entityManager.createQuery("select s from Song as s where s.id=:id", Song.class);
         typedQuery.setParameter("id", id);
         try {
             return typedQuery.getSingleResult();

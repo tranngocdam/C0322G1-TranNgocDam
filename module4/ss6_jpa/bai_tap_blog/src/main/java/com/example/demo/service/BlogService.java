@@ -9,10 +9,11 @@ import java.util.List;
 @Service
 public class BlogService implements IBlogService {
     @Autowired
-    IBlogRepository iBlogRepository;
+    private IBlogRepository iBlogRepository;
+
     @Override
     public List<Blog> findAll() {
-        return iBlogRepository.findAll();
+        return iBlogRepository.findAllBlog();
     }
 
     @Override
@@ -24,11 +25,6 @@ public class BlogService implements IBlogService {
     public void save(Blog blog) {
         iBlogRepository.save(blog);
     }
-
-//    @Override
-//    public void edit(Blog blog) {
-//        iBlogRepository.findById()
-//    }
 
     @Override
     public void delete(Integer id) {

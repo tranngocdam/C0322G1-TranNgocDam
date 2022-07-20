@@ -7,18 +7,19 @@ import javax.persistence.Id;
 @Entity
 public class Blog {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String title;
     private String content;
-
+    private String dayStart;
     public Blog() {
     }
 
-    public Blog(Integer id, String title, String content) {
+    public Blog(Integer id, String title, String content, String dayStart) {
         this.id = id;
         this.title = title;
         this.content = content;
+        this.dayStart = dayStart;
     }
 
     public Integer getId() {
@@ -43,5 +44,13 @@ public class Blog {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public String getDayStart() {
+        return dayStart;
+    }
+
+    public void setDayStart(String dayStart) {
+        this.dayStart = dayStart;
     }
 }

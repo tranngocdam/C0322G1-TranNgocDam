@@ -7,9 +7,6 @@
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 <body>
-
-<!--<a href="/create">Add New Blog</a>-->
-<!--<table border="1">-->
 <div class="container-fluid mt-3">
     <div class="row">
         <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
@@ -17,13 +14,13 @@
                 <li class="nav-item">
                     <a class="btn btn-primary" th:href="@{/create}">Create</a>
                 </li>
-<!--                <div class="collapse navbar-collapse" id="mynavbar">-->
-<!--                    <ul class="navbar-nav me-auto"></ul>-->
-<!--                    <form class="d-flex" th:action="@{/song/found}">-->
-<!--                        <input class="form-control me-2" type="text" placeholder="Enter name" name="name">-->
-<!--                        <input class="btn btn-primary" type="submit" value="Search">Search</input>-->
-<!--                    </form>-->
-<!--                </div>-->
+                <div class="collapse navbar-collapse" id="mynavbar">
+                    <ul class="navbar-nav me-auto"></ul>
+                    <form class="d-flex" th:action="@{/song/found}">
+                        <input class="form-control me-2" type="text" placeholder="Enter name" name="name">
+                        <input class="btn btn-primary" type="submit" value="Search">Search</input>
+                    </form>
+                </div>
             </div>
         </nav>
     </div>
@@ -35,16 +32,17 @@
                 <th>ID</th>
                 <th>Title</th>
                 <th>Content</th>
+                <th>Day start</th>
                 <th>Edit</th>
                 <th>Delete</th>
             </tr>
             <tr th:each="row : ${blogList}">
-                <td th:text="${row.getId}"></td>
-                <td th:text="${row.getTitle()}"></td>
-                <td th:text="${row.getContent()}"></td>
-                <td><a th:href="@{/blog/edit/{id}(id=${row.getId()})}">edit</a></td>
-                <td><a th:href="@{/blog/{id}/delete(id=${row.getId()})}">delete</a></td>
-
+                <td th:text="${row.id}"></td>
+                <td th:text="${row.title}"></td>
+                <td th:text="${row.content}"></td>
+                <td th:text="${row.dayStart}"></td>
+                <td><a th:href="@{/blog/edit/{id}(id=${row.id})}">edit</a></td>
+                <td><a th:href="@{/blog/delete/{id}(id=${row.id})}">delete</a></td>
             </tr>
         </table>
     </div>

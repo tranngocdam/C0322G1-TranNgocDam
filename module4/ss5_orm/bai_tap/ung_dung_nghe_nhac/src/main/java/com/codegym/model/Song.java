@@ -8,9 +8,10 @@ public class Song {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-//    @Column(songName = "song_name")
+    @Column(name = "songName",columnDefinition = "song_name")
     private String songName;
     private String singer;
+    @Column(name = "songType",columnDefinition = "song_type")
     private String songType;
     private String link;
 

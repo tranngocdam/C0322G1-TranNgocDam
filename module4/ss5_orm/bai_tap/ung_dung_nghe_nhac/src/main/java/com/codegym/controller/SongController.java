@@ -2,25 +2,23 @@ package com.codegym.controller;
 
 import com.codegym.model.Song;
 import com.codegym.service.ISongService;
-import com.codegym.service.impl.ISongServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 
 import java.util.List;
 
 @Controller
+@RequestMapping
 public class SongController {
+    @Autowired
+    private ISongService iSongService;
 
-private final ISongService songService=new ISongServiceImpl();
-
-    @GetMapping("/song")
+    @GetMapping(value = "/song")
     public String findAll(Model model) {
-        List<Song> songList = songService.findAll();
+        List<Song> songList = iSongService.findAll();
         model.addAttribute("songList", songList);
         return "/list";
     }
@@ -30,28 +28,29 @@ private final ISongService songService=new ISongServiceImpl();
         model.addAttribute("song", new Song());
         return "/create";
     }
+
     @PostMapping("/song/create")
     public String save(@ModelAttribute Song song) {
-        songService.save(song);
+        iSongService.save(song);
         return "redirect:/song";
     }
 
     @GetMapping("song/{id}/edit")
-    public String showEdit(@PathVariable Integer id, Model model){
-        Song song = songService.findById(id);
-        model.addAttribute("song",song);
+    public String showEdit(@PathVariable Integer id, Model model) {
+        Song song = iSongService.findById(id);
+        model.addAttribute("song", song);
         return "/edit";
     }
 
     @PostMapping("song/edit")
-    public String edit(@ModelAttribute Song song){
-        songService.edit(song);
+    public String edit(@ModelAttribute Song song) {
+        iSongService.edit(song);
         return "redirect:/song";
     }
 
     @GetMapping("song/{id}/delete")
-    public String delete(@PathVariable Integer id){
-        songService.delete(id);
+    public String delete(@PathVariable Integer id) {
+        iSongService.delete(id);
         return "redirect:/song";
     }
 }

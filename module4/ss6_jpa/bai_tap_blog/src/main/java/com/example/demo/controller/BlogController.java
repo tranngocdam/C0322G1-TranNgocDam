@@ -7,8 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @Controller
 
 public class BlogController {
@@ -17,8 +15,7 @@ public class BlogController {
 
     @GetMapping("/blog")
     public String showHome(Model model){
-        List<Blog> blogList=iBlogService.findAll();
-        model.addAttribute("blogList", blogList);
+        model.addAttribute("blogList",iBlogService.findAll());
         return "/list";
     }
     @GetMapping("/create")
@@ -35,8 +32,8 @@ public class BlogController {
 
     @GetMapping("/blog/edit/{id}")
     public String showEdit(@PathVariable Integer id, Model model){
-        Blog blog = iBlogService.findById(id);
-        model.addAttribute("blog",blog);
+//        Blog blog = iBlogService.findById(id);
+        model.addAttribute("blog",iBlogService.findById(id));
         return "/edit";
     }
     @PostMapping("/blog/edit")
@@ -45,7 +42,7 @@ public class BlogController {
         return "redirect:/blog";
     }
 
-    @GetMapping("blog/{id}/delete")
+    @GetMapping("blog/delete/{id}")
     public String delete(@PathVariable Integer id){
         iBlogService.delete(id);
         return "redirect:/blog";

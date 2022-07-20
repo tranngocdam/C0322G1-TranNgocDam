@@ -9,7 +9,7 @@
 <body>
 <div class="container d-flex flex-column align-items-center">
     <h1 class="text-center my-5">Edit Form</h1>
-    <form th:object="${blog}" action="/blog/edit" method="post">
+    <form th:object="${blog}" th:action="@{/blog/edit}" method="post">
         <table>
             <tr hidden>
                 <td><label>ID</label></td>
@@ -22,6 +22,10 @@
             <tr>
                 <td><label>content</label></td>
                 <td><input class="form-control" type="text" th:field="*{content}"></td>
+            </tr>
+            <tr>
+                <td><label>Day Start</label></td>
+                <td><input class="form-control" type="date" th:field="*{dayStart}"></td>
             </tr>
             <tr>
                 <td colspan="2"><input class="btn btn-success text-center mt-4" type="submit" value="Edit Blog"></td>
