@@ -18,12 +18,13 @@ public class BlogService implements IBlogService {
 
     @Override
     public Blog findById(Integer id) {
-        return iBlogRepository.findById(id).orElse(null);
+//        return iBlogRepository.findById(id).orElse(null);
+        return iBlogRepository.findByIdBlog(id);
     }
 
     @Override
     public void save(Blog blog) {
-        iBlogRepository.save(blog);
+        iBlogRepository.saveBlog(blog);
     }
 
     @Override

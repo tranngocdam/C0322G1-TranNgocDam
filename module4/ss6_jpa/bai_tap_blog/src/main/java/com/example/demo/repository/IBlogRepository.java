@@ -16,13 +16,13 @@ public interface IBlogRepository extends JpaRepository<Blog, Integer> {
     @Query(value = "select * from blog ", nativeQuery = true)
     List<Blog> findAllBlog();
 
-//    @Modifying
-//    @Transactional
-//    @Query(value = "insert into blog (id, title, content, day_start) " +
-//            "values (:#{#blog.id}, :#{#blog.title},:#{#blog.content}, :#{#blog.dayStart})", nativeQuery = true)
-//    void saveBlog(Blog blog);
-//
-//    @Query(value="select * from blog where id like ?", nativeQuery=true)
-//    Blog findByIdBlog(@Param("id") Integer id );
+    @Modifying
+    @Transactional
+    @Query(value = "insert into blog (id, title, content, day_start) " +
+            "values (:#{#blog.id}, :#{#blog.title}, :#{#blog.content}, :#{#blog.dayStart})", nativeQuery = true)
+    void saveBlog(Blog blog);
+
+    @Query(value="select * from blog p where p.id =:id", nativeQuery=true)
+    Blog findByIdBlog(@Param("id") Integer id);
 
 }

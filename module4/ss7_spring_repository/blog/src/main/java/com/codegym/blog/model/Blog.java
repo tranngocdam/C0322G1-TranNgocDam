@@ -4,32 +4,24 @@ import javax.persistence.*;
 @Entity
 public class Blog {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String title;
     private String dayStart;
-    private String content;
     private String author;
     @ManyToOne
-    @JoinColumn(name = "class_id", referencedColumnName = "id")
+    @JoinColumn(name = "category_id", referencedColumnName = "id")
     private Category category;
+
     public Blog() {
     }
 
-    public Category getCategory() {
-        return category;
-    }
-
-    public void setCategory(Category category) {
-        this.category = category;
-    }
-
-    public Blog(Integer id, String title, String dayStart, String content, String author) {
+    public Blog(Integer id, String title, String dayStart, String author, Category category) {
         this.id = id;
         this.title = title;
         this.dayStart = dayStart;
-        this.content = content;
         this.author = author;
+        this.category = category;
     }
 
     public Integer getId() {
@@ -56,19 +48,19 @@ public class Blog {
         this.dayStart = dayStart;
     }
 
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
-    }
-
     public String getAuthor() {
         return author;
     }
 
     public void setAuthor(String author) {
         this.author = author;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 }
