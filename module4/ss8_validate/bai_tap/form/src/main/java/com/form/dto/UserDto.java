@@ -1,16 +1,24 @@
 package com.form.dto;
 
-import com.sun.istack.NotNull;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
+
+import javax.validation.constraints.*;
 
 public class UserDto implements Validator {
 
     private Integer id;
+    @NotBlank(message = "first name blank")
     private String firstName;
+    @NotBlank(message = "last name blank")
     private String lastName;
+    @NotBlank(message = "phone blank")
     private String phone;
+    @Min(value = 18, message = "age must be more than 18")
+    @Max(value=100, message = "age must be less than 18")
     private Integer age;
+    @NotBlank(message = "email blank")
+    @Email
     private String email;
 
     public UserDto() {
@@ -95,14 +103,14 @@ public class UserDto implements Validator {
             errors.rejectValue("phone", "phone.rejected", "Phone Number must has 10 digits and begin with 0");
         }
 
-        Integer age = userDto.getAge();
-        if (!(age >= 18)) {
-            errors.rejectValue("age", "age.rejected", "Age must higher than 18");
-        }
+//        Integer age = userDto.getAge();
+//        if (!(age >= 18)) {
+//            errors.rejectValue("age", "age.rejected", "Age must higher than 18");
+//        }
 
-        String email = userDto.getEmail();
-        if (!email.matches("^([\\w]+){5,20}@gmail.com$")) {
-            errors.rejectValue("email", "email.rejected", "Email must has at least 5 and maximum 5 characters");
-        }
+//        String email = userDto.getEmail();
+//        if (!email.matches("^([\\w]+){5,20}@gmail.com$")) {
+//            errors.rejectValue("email", "email.rejected", "Email must has at least 5 and maximum 5 characters");
+//        }
     }
 }

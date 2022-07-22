@@ -10,9 +10,9 @@ import java.util.List;
 
 @Repository
 public interface IUserRepository extends JpaRepository<User, Integer> {
-    @Query(value = " select *  from user ", nativeQuery = true)
-    List<User> findAll();
-
-    @Query(value = " select * from user u where u.id = :id", nativeQuery = true)
-    User findById(@Param("id") int id);
+//    @Query(value = " select *  from user ", nativeQuery = true)
+//    List<User> findAll();
+//
+//    @Query(value = " select * from user u where u.id = :id", nativeQuery = true)
+//    User findById(@Param("id") int id);
 }

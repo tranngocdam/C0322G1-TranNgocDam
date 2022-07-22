@@ -14,25 +14,26 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
+@RequestMapping(value = "/user")
 public class UserController {
     @Autowired
     private IUserService iUserService;
-    @GetMapping("/user")
-    public ModelAndView findAll(){
-        ModelAndView modelAndView=new ModelAndView("/user/list");
-        modelAndView.addObject("userList", iUserService.findAll());
-        return modelAndView;
+
+    @GetMapping("")
+    public String findAll(Model model){
+       model.addAttribute("userList",iUserService.findAll());
+        return "user/list";
     }
-    @GetMapping("/user/create")
+    @GetMapping("create")
     public String showCreate(Model model) {
         model.addAttribute("userDto", new UserDto());
         return "user/create";
     }
-    @PostMapping("/user/create")
+    @PostMapping("/create")
     public String create(@Validated @ModelAttribute UserDto userDto, BindingResult bindingResult, RedirectAttributes redirectAttributes){
         new UserDto().validate(userDto, bindingResult);
         if (bindingResult.hasFieldErrors()){
