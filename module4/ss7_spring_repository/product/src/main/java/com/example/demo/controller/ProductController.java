@@ -31,12 +31,13 @@ public class ProductController {
 
     @GetMapping(value = "/create")
     public String createShow(Model model){
-        model.addAttribute("product", new Product());
+        model.addAttribute("productDto", new ProductDto());
         return "create";
     }
 
     @PostMapping(value = "/create")
-    public String saveCreate(@ModelAttribute @Validated ProductDto productDto, BindingResult bindingResult){
+    public String saveCreate(@Validated @ModelAttribute ProductDto productDto,
+                             BindingResult bindingResult){
         new ProductDto().validate(productDto, bindingResult);
         if(bindingResult.hasFieldErrors()){
             return "create";

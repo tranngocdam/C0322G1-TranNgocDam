@@ -1,16 +1,16 @@
 public class GiaiThuat {
     public static void main(String[] args) {
 //        bai1
-        int[] nums = {1,2,7,0,1,3,11};
-        int sum1 = 0;
-        boolean flag = false;
-        for (int i = 0; i < nums.length-2 ; i++) {
-         sum1+=nums[i];
-            if(sum1==nums[nums.length-1]){
-                flag = true;
-            }
-        }
-        System.out.printf(String.valueOf(flag));
+//        int[] nums = {1,2,7,0,1,3,11};
+//        int sum1 = 0;
+//        boolean flag = false;
+//        for (int i = 0; i < nums.length-2 ; i++) {
+//         sum1+=nums[i];
+//            if(sum1==nums[nums.length-1]){
+//                flag = true;
+//            }
+//        }
+//        System.out.printf(String.valueOf(flag));
 //        --------------------------------------
 //        bai2
 //        for (int i = 0; i < 2; i++) {
@@ -48,9 +48,9 @@ public class GiaiThuat {
 //        System.out.println(i + "," + j);
 //----------------------------------------------
 //        boolean x = false;
-//        boolean y = !x;
-//        System.out.print (!x || x==y);
-//        System.out.print(x || x==y);
+//        boolean y = !x;//true
+//        System.out.print (!x || x==y);//true||false->true
+//        System.out.print(x || x==y);//false||false=>false
 //-----------------------------------------------
 //        char i = 'b';
 //        switch (i) {
@@ -66,15 +66,15 @@ public class GiaiThuat {
 //        }
 //        ------------------------------
 //        boolean x = false;
-//        boolean y = false || true;
-//        System.out.print (x&&y || x==y);
-//        System.out.print(x || y || x==y);
+//        boolean y = false || true;//true
+//        System.out.print (x&&y || x==y);//false||false=>false
+//        System.out.print(x || y || x==y);//true||false=>true
 //--------------------------------------------------
 //        int x = 10;
 //        int y = 20;
 //        int z =  y % x / 2;
 //        System.out.println(z);
-//----------------------------------------
+////----------------------------------------
 //        int a, b;
 //        a = 100;
 //        b = (a == 200) ? 100 : 300;
@@ -89,6 +89,6 @@ public class GiaiThuat {
 //        } else
 //            --hand;
 //        System.out.println(hand);
-
-    }
+//
+//    }
 }

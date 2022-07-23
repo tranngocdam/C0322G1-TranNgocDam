@@ -12,8 +12,8 @@ public class ProductDto implements Validator {
     @NotBlank
     @Pattern(regexp = "^(\\w\\s?){0,29}\\w$")
     private String name;
-    @NotEmpty
-    @Pattern(regexp = "^[0-9]{2,}$")
+    @NotBlank
+    @Pattern(regexp = "^[0-9]{4,}$")
     private String price;
     @NotBlank
     @Pattern(regexp = "^(\\w\\s?){0,99}\\w$")

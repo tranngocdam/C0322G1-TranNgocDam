@@ -34,7 +34,8 @@ public class UserController {
         return "user/create";
     }
     @PostMapping("/create")
-    public String create(@Validated @ModelAttribute UserDto userDto, BindingResult bindingResult, RedirectAttributes redirectAttributes){
+    public String create(@Validated @ModelAttribute UserDto userDto,
+                         BindingResult bindingResult, RedirectAttributes redirectAttributes){
         new UserDto().validate(userDto, bindingResult);
         if (bindingResult.hasFieldErrors()){
             return "user/create";

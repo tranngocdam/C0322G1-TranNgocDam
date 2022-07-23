@@ -9,7 +9,7 @@
 <body>
 <div class="container d-flex flex-column align-items-center">
     <h1 class="text-center my-5">Create Product</h1>
-    <form th:object="${product}" action="/product/create" method="post">
+    <form th:object="${productDto}" action="/product/create" method="post">
         <table>
             <tr>
                 <td><label>Name</label></td>
