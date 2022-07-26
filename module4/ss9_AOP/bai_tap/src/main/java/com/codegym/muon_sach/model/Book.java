@@ -10,7 +10,7 @@ public class Book {
     private Integer id;
     private String name;
     private String content;
-    private int unit;
+    private int quantity;
 
     @OneToMany(mappedBy = "book")
     private List<DetailBook> detailBookList;
@@ -42,12 +42,12 @@ public class Book {
         this.content = content;
     }
 
-    public int getUnit() {
-        return unit;
+    public int getQuantity() {
+        return quantity;
     }
 
-    public void setUnit(int unit) {
-        this.unit = unit;
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
     public List<DetailBook> getDetailBookList() {

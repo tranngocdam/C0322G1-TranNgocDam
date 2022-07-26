@@ -1,4 +1,5 @@
 public class GiaiThuat {
+    static boolean b1, b2;
     public static void main(String[] args) {
 //        bai1
 //        int[] nums = {1,2,7,0,1,3,11};
@@ -90,5 +91,146 @@ public class GiaiThuat {
 //            --hand;
 //        System.out.println(hand);
 //
-//    }
+//        ------------------------------------
+//        int i = 1, j = -1;
+//        switch (i){
+//            case 0, 1:
+//            case 1:
+//                j = 1;
+//            case 2:
+//                j = 2;
+//            default:
+//                j = 0;
+//        }
+//        System.out.println("j = " + j);
+//---------------------------------------------------
+
+//        int x = 15;
+//        int y = 1;
+//        if (x = y) {
+//            System.out.println("x =" + x);
+//        }
+//          => x==y
+//        -------------------
+//        int value = 0;
+//        boolean b1 = true;
+//        boolean b2 = false, b;
+//        b = (b1 | ((value++) == 0));
+//        b = (b2 | ((value += 1) > 0));
+//        System.out.print(value);
+//        System.out.println(b);
+//        -----------------------------
+//        for (int i = 0; i < 2; i++) {
+//            switch (i++) {
+//                case 0:
+//                    break;
+//                case 1:
+//                    System.out.print("one1 ");
+//                case 2:
+//                    System.out.print("two2");
+//                case 3:
+//                    System.out.print("three3 ");
+//            }
+//        }
+//        System.out.println("done4");
+//        --------------------------------------------
+//        int x=200;
+//        double y=200.1;
+//        boolean b=(x=y);//boolean trả về true, false
+//        System.out.println(b);
+//        -----------------------------------------------
+//        int a=10, b=5;
+//        while (b--){
+//            //trong while bthuc dkien
+//            a++;
+//        }
+//        System.out.println("a="+a+ "b="+b);
+//        --------------------------------------------------
+//        for (int i = 1; i <=10 ; i++) {
+//            if(i>6){
+//                continue;
+//            }
+//            System.out.println(i);
+//        }
+//        -------------------------------------
+//        boolean x = false && false;//false
+//        boolean y = false || true;//true
+//        System.out.print (x&&y || x==y);//false||false=>false
+//        System.out.print(x || y || x==y);//true||false=>true
+//        ---------------------------------------
+//        int x = 1;
+//        int y = 2;
+//        int z = x + y % x / 2;//1
+//        System.out.println(z);
+//        -----------------------------------------
+//            boolean done=false;
+//            long x=2000;
+//            while (!done){
+//                x=x/10;
+//                if(x<10){
+//                    done=true;
+//                }
+//                done=false;
+//            }
+//        System.out.println(x);
+//        ------------------------------------
+//        int a,b;
+//        a=100;
+//        b=(a==100)?200:300;
+//        System.out.println(b);
+//        ----------------------------------------
+//        int n = 5;
+//        for (int i = 1; i <= 5; i++) {
+//            for (int j = 1; j <= 5; j++) {
+//                if (i == 1 || i == n || j == n) {
+//                    System.out.print("*");
+//                } else {
+//                    System.out.print(" ");
+//                }
+//            }
+//            System.out.println("");
+//        }
+//-------------------------------------------
+//        int i = 10;
+//        do {
+//            i++;
+//            System.out.print(i);
+//        } while (i == i);
+//        ----------------------------------------
+//        float f = 10F;
+//        System.out.println(f);
+//        int i = 1, j = 3;
+//        for (; (i < 3) && (j++ < 6); i++) {
+//            System.out.print(" " + i + " " + j);
+//        }
+//        System.out.print(" " + i + " " + j);
+//------------------------------------------------------
+
+//        int x = 1;
+//        if (!b1) {
+//            if (!b2) {
+//                b1 = true;
+//                x++;
+//                if (5 > 6) {
+//                    x++;
+//                }
+//                if (!b1)
+//                    x = x + 10;
+//                else if (b2 = true)
+//                    x = x + 100;
+//                else if (b1 | b2)
+//                    x = x + 1000;
+//            }
+//        }
+//        System.out.println(x);
+//-------------------------------------
+        int value = 0;
+        boolean b1 = true;
+        boolean b2 = false, b;
+        b = (b1 | ((value++) == 0));
+        b = (b2 | ((value += 2) > 0));
+        System.out.println(value);
+
+    }
+
 }

@@ -8,14 +8,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.util.List;
 import java.util.Optional;
 
 @Controller
+@RequestMapping("/book")
 public class BookController {
     @Autowired
     private IBookService iBookService;
@@ -23,7 +22,7 @@ public class BookController {
     @Autowired
     private IDetailBookService iDetailBookService;
 
-    @GetMapping("/book")
+    @GetMapping("")
     public ModelAndView showBooks(@PageableDefault(value = 3) Pageable pageable) {
         return new ModelAndView("list", "books", iBookService.findAll(pageable));
     }
@@ -39,10 +38,10 @@ public class BookController {
 
     }
 
-    @GetMapping("/thuesach/{id}")
+    @GetMapping("/bookrental/{id}")
     public ModelAndView borrowBooks(@PathVariable Integer id) {
         Book book = iBookService.findById(id);
-        if (book.getUnit() > 0) {
+        if (book.getQuantity() > 0) {
             Optional<DetailBook> detailBookOptional;
             long code;
             do {
@@ -51,7 +50,7 @@ public class BookController {
 
             } while (detailBookOptional.isPresent());
 
-            book.setUnit(book.getUnit() - 1);
+            book.setQuantity(book.getQuantity() - 1);
             iBookService.save(book);
             DetailBook detailBook = new DetailBook();
             detailBook.setBook(book);
@@ -65,19 +64,19 @@ public class BookController {
         }
     }
 
-    @GetMapping("/trasach")
+    @GetMapping("/returnbook")
     public ModelAndView returnBook() {
         return new ModelAndView("return_book");
     }
 
-    @PostMapping("/trasach")
+    @PostMapping("/returnbook")
     public ModelAndView returnBook(@RequestParam String code) {
-        long codeLong = Long.parseLong(code);
-        Optional<DetailBook> detailBook = iDetailBookService.findByCode(codeLong);
+        Long codeBook = Long.parseLong(code);
+        Optional<DetailBook> detailBook = iDetailBookService.findByCode(codeBook);
         if (detailBook.isPresent()) {
-            int unit = detailBook.get().getBook().getUnit();
-            detailBook.get().getBook().setUnit(unit + 1);
-            iDetailBookService.deleteByCode(codeLong);
+            int quantity = detailBook.get().getBook().getQuantity();
+            detailBook.get().getBook().setQuantity(quantity + 1);
+            iDetailBookService.deleteByCode(codeBook);
             return new ModelAndView("book", "code", false);
         } else {
             return new ModelAndView("error");

@@ -1,4 +1,6 @@
 package com.codegym.muon_sach.model;
+import org.springframework.beans.factory.annotation.Value;
+
 import javax.persistence.*;
 
 @Entity

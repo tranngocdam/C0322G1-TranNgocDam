@@ -14,5 +14,5 @@ public interface IDetailBookService {
 
     void deleteByCode(Long code);
 
-    void deleteById(Long id);
+    void deleteById(Integer id);
 }

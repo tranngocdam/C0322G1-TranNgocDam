@@ -1,7 +1,10 @@
-package com.codegym.muon_sach.service;
+package com.codegym.muon_sach.service.impl;
 
 import com.codegym.muon_sach.model.Book;
+import com.codegym.muon_sach.model.DetailBook;
 import com.codegym.muon_sach.repository.IBookRepository;
+import com.codegym.muon_sach.repository.IDetailBookRepository;
+import com.codegym.muon_sach.service.IBookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
