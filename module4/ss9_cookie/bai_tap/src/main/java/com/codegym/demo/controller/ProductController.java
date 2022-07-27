@@ -1,11 +1,13 @@
 package com.codegym.demo.controller;
+import com.codegym.demo.dto.ProductDto;
 import com.codegym.demo.model.Cart;
 import com.codegym.demo.model.Product;
 import com.codegym.demo.service.IProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Optional;
 
@@ -16,28 +18,54 @@ public class ProductController {
     private IProductService productService;
 
     @ModelAttribute("cart")
-    public Cart setupCart() {
+    public Cart initCart() {
         return new Cart();
     }
 
     @GetMapping("/shop")
-    public ModelAndView showShop() {
-        ModelAndView modelAndView = new ModelAndView("/shop");
-        modelAndView.addObject("products", productService.findAll());
-        return modelAndView;
+    public String showShop(Model model, Pageable pageable) {
+        model.addAttribute("productList", productService.findAll(pageable));
+        return "view";
     }
 
-    @GetMapping("/add/{id}")
+    @GetMapping(path = {"/cart/add/{id}", "/product/detail/cart/add/{id}"})
     public String addToCart(@PathVariable Long id, @ModelAttribute Cart cart, @RequestParam("action") String action) {
         Optional<Product> productOptional = productService.findById(id);
         if (!productOptional.isPresent()) {
-            return "/error.404";
+            return "error404";
         }
-        if (action.equals("show")) {
-            cart.addProduct(productOptional.get());
+        if (action.equals("increase")) {
+            cart.addToCart(productOptional.get());
             return "redirect:/shopping-cart";
         }
-        cart.addProduct(productOptional.get());
+        if (action.equals("decrease")) {
+            cart.decreaseFromCart(productOptional.get());
+            return "redirect:/shopping-cart";
+        }
+        cart.addToCart(productOptional.get());
         return "redirect:/shop";
+    }
+
+    @GetMapping("product/detail/{id}")
+    public String showDetail(@PathVariable Long id, Model model) {
+        Optional<Product> productOptional = productService.findById(id);
+        if (productOptional.isPresent()) {
+            model.addAttribute("product", productOptional.get());
+            return "detail";
+        } else {
+            return "error404";
+        }
+    }
+
+    @GetMapping("cart/remove/{id}")
+    public String removeProduct(@PathVariable Long id, @ModelAttribute Cart cart) {
+        Optional<Product> productOptional = productService.findById(id);
+        if (productOptional.isPresent()) {
+            cart.removeFromCart(productOptional.get());
+            return "redirect:/shopping-cart";
+        } else {
+            return "error404";
+        }
+
     }
 }

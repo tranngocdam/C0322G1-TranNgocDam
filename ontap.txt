@@ -1,0 +1,100 @@
+1	Các tính chất của OOP?
+2	Tính đa hình là gì?
+3	Override và Overload khác nhau gì?
+4	Override và overload trong java?
+5	phân biệt Comparabe và Comparator? 
+6	2 hàm cùng tên nhưng khác kiểu trả về có gọi là Overload ko?
+7	Sự khác nhau giữa Kiều dữ liệu nguyên thủy và kiểu Object?
+8	Để so sánh 2 biến kiểu Object?
+9	Em biết gì về Heap và stack?
+10	phân biệt toán tử "==" và equals()?
+11	So sánh do-while và while
+12	- List , Set , Map
+13	Phân biệt class và object
+14	- Địa chỉ vùng nhớ
+15	Từ khóa static dùng được ở đâu?
+16	Em biết những collection nào trong java?
+17	,
+18	"- Throws Exception ; Exception
+- Thuật toán vẽ 1 tam giác cân
+- Request , Session , Cookie
+- JSP : CHuyển dữ liệu 1 từ một trang này tới trang kia"
+19	"- Thuật toán 
+- RegExr"
+20	- Bộ nhớ
+21	"- Thuật toán đảo chuổi
+- Tìm mảng đối xứng
+- Access modifier của thuộc tính và của lớp"
+22	"- Mãng 2 chiều . Đường chéo mảng 2 chiều
+- Static"
+23	- Try Catch :
+24	Thuật toán: swap giá trị của a và b mà ko dùng biến tạm?
+25	
+26	viết config kết nối database ở đâu?
+27	controller trong springboot viết như thế nào?
+28	API là gì?
+29	@requestmapping để làm gì?
+30	Phương thức POST và GET khác nhau như thế nào.
+31	Em hiểu mô hình MVC là như thế nào. Nêu ưu điểm của mô hình MVC.
+32	Session và cookie là gì? Sự khác nhau của 2 cái này.
+33	Session được lưu cụ thể ở đâu trên server
+34	Api trả về kiểu dữ liệu gì?
+35	
+36	Các loại join?
+37	Em hiểu Port là gì? My SQL chạy port bao nhiêu.
+38	Sự khác nhau giữa các câu lệnh TRUNCATE, DELETE và DROP?
+39	khóa chính và khóa phụ là gì?
+40	Bây giờ anh có 1 danh sách học sinh gồm 1000 học sinh. Anh muốn lấy ra 100 record từ 300 đến 400 mà không sử dụng câu lệnh Where theo kiểu Where id>300 and id<400. Thì làm như thế nào?
+41	"- SQL : 1 to many . many to one
+- Các thuật toán sắp xếp"
+42	
+43	Jquery là gì. Em có thể sử dụng Jquery không?
+44	selector trong css?
+45	2way biding trong angular?
+46	class và ID trong css?
+47	selector trong css?
+48	câu giải thuật : tìm giá trị lớn thứ 2 (nhỏ hơn số lớn nhất)
+49	thuật toán sắp xếp mảng
+50	hỏi về Group By , OrderBy ,Union, Union All
+51	làm 2 bài sql : tìm theo điều kiện , số lượng sản phẩm A bán ra ngày hôm qua
+52	map và hastmap : nếu put vào 2 giá trị cùng key vào hastmap thì sao
+53	khác nhau giữa abstrac với interface
+54	overload và override
+55	nếu trong 1 trang có 2 thành phần cùng id thì như thế nào.kết quả ra sao
+56	hỏi về dự án đã làm , dùng công nghệ gì , chia task
+57	biết Ajax và jquery ko
+58	Chẳng hạn chiếc máy tính, đâu là thuộc tính, đâu là hành vi
+59	Ví dụ rõ về triễn khai Interface trong thực tế, và override
+61	HTML có thành phần cơ bản gì.
+60	Câu lệnh đầy đủ của SQL, họ cho một cái bảng bảo lấy theo điều kiện Having thì làm thế nào, dự án của mình có lấy điều kiện having không thì ko cần họ cho bản.
+62	Thẻ Form có những thành phần nào (trọng tâm vào  action)
+63	Javascprit dùng để làm gì. Ví dụ trong bài làm của mình một đoạn code javascprit đã làm (chức năng chính)
+64	Phần mình làm trong dự án thì có bao nhiêu file HTML(làm web thông thường không phải angular) đã tạo. 
+65	Trình bày flow của chương trình web có thể lấy ví dụ từ dự án của mình
+66	phân biệt jquery và javaScript?
+67	Phân biệt 2 selector( ID và class ) cho ví dụ minh họa
+68	Phân biết Overloading và overrriding
+69	Hash map ? cho ví dụ input vào 2 giá trị cùng key =1 thì khi get key =1 thì giá trị là bao nhiêu?
+	
+70	Ngoại lệ là gì? có mấy loại ngoại lệ? các loại thông báo lỗi mà ngoại lệ thường hay đưa ra?
+71	Unique Key?
+72	Cho biết một câu truy vấn đầy đủ? phân biết where và having?cho ví dụ minh họa?
+73	Cho bảng bill (gồm MãHĐ, Ngày bán) Bảng chi tiết hóa đơn(Mã Hóa Đơn, Mã Sản phẩm, Số lượng) Đếm số lượng hóa đơn bán trong ngày hôm qua? Tìm số lượng sp có Mã sản phẩm "Laptop" bán được trong ngày hôm qua?
+74	Hỏi về dự án đã làm, dùng công nghệ gì? (ví dụ chức năng search thì khi test mình sẽ test chức năng này như thế nào)?
+75	Thứ tự mình sẽ làm gì khi mình được giao một chức năng trong dự án?
+74	Hỏi biết test Case không?
+75	vòng đời của spring.
+74	validation spring thì ntn? áp dụng chỗ nào là hiệu quả nhất.
+75	vòng đời của MVC (từ khi request từ người dùng gửi đi và server gửi response về )
+	
+76	Java do cty nào viết ra? Java 8 khác gì so với Java 7?
+77	Để chạy 1 file Java thì mình cần môi trường như thế nào?
+78	Khách hàng muốn chạy 1 class Java bình thường thì cần những gì?
+79	Phân biệt Class/Object?
+80	Static dùng để làm gì? Làm thế nào để gọi 1 phương thức static bên ngoài Class?
+81	Nêu 1 số Interface có sẵn trong Java
+82	Session vs Cookie
+83	So sánh phương thức GET vs POST
+84	Từ khóa GROUP BY dùng để làm gì? Viết 1 câu SQL có sử dụng GROUP BY
+85	Giới thiệu Project đang thực hiện bằng Tiếng Anh
+86	Hỏi 1 số câu Tiếng Anh liên quan đến thanh toán Paypal, tập trung vào phần chức năng của mình trong Project Team

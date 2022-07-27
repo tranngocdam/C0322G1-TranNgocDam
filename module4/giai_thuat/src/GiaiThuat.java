@@ -224,13 +224,48 @@ public class GiaiThuat {
 //        }
 //        System.out.println(x);
 //-------------------------------------
-        int value = 0;
-        boolean b1 = true;
-        boolean b2 = false, b;
-        b = (b1 | ((value++) == 0));
-        b = (b2 | ((value += 2) > 0));
-        System.out.println(value);
-
+//        int value = 0;
+//        boolean b1 = true;
+//        boolean b2 = false, b;
+//        b = (b1 | ((value++) == 0));
+//        b = (b2 | ((value += 2) > 0));
+//        System.out.println(value);
+//-----------------------------------------
+//        for (int i = 0; i <7 ; i++) {
+//            for (int j = 0; j < 7; j++) {
+//                if(i==j||j==0||i==6){
+//                    System.out.print("+");
+//                }else {
+//                    System.out.print(" ");
+//                }
+//            }
+//            System.out.println("");
+//        }
+//        ----------------------------------
+//        for (int i = 0; i <5 ; i++) {
+//            for (int j = 0; j <5 ; j++) {
+//                if(j==0||i==4||j==4){
+//                    System.out.print("+");
+//                }else {
+//                    System.out.print(" ");
+//                }
+//            }
+//            System.out.println("");
+//        }
+//        ---------------------------------
+//        int j;
+//        for (int i = 1; i <=6 ; i++) {
+//            for (j = 1; j <=6 ; j++) {
+//                if(i==1||i==6||(j==(7-i))){
+//                    System.out.print("+");
+//                }else {
+//                    System.out.print(" ");
+//                }
+//            }
+//            System.out.println("");
+//        }
+//        -----------------------------------
+        int arr[]={1, 3, 5, 12, 64};
     }
 
 }

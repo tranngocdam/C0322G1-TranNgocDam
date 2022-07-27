@@ -1,26 +1,21 @@
-package com.codegym.demo.model;
+package com.codegym.demo.dto;
 
-import javax.persistence.*;
 import java.util.Objects;
 
-@Entity
-public class Product {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class ProductDto {
     private Long id;
     private String name;
-    private Long price;
+    private double price;
     private String description;
-    private String image;
 
-    public Product() {
+    public ProductDto() {
     }
 
-    public Product(String name, Long price, String description, String image) {
+    public ProductDto(Long id, String name, double price, String description) {
+        this.id = id;
         this.name = name;
         this.price = price;
         this.description = description;
-        this.image = image;
     }
 
     public Long getId() {
@@ -39,11 +34,11 @@ public class Product {
         this.name = name;
     }
 
-    public Long getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(Long price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
@@ -55,20 +50,12 @@ public class Product {
         this.description = description;
     }
 
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Product product = (Product) o;
-        return id.equals(product.id);
+        ProductDto that = (ProductDto) o;
+        return Objects.equals(id, that.id);
     }
 
     @Override

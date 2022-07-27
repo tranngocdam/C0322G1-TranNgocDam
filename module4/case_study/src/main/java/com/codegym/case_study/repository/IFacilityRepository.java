@@ -10,7 +10,7 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface IFacilityRepository extends JpaRepository<Facility, Integer> {
-    @Query(value="select * from faccility where name like: keyword", nativeQuery=true)
+    @Query(value="select * from facility where name like: keyword", nativeQuery=true)
     List<Facility> findFacilityByName(@Param("keyword") String nameFacility);
     Page<Facility> findByNameContaining(String keyword, Pageable pageable);
 
