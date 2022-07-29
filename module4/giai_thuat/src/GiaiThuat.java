@@ -1,5 +1,5 @@
 public class GiaiThuat {
-    static boolean b1, b2;
+    //    static boolean b1, b2;
     public static void main(String[] args) {
 //        bai1
 //        int[] nums = {1,2,7,0,1,3,11};
@@ -265,7 +265,27 @@ public class GiaiThuat {
 //            System.out.println("");
 //        }
 //        -----------------------------------
-        int arr[]={1, 3, 5, 12, 64};
+        int arr[] = {1, 3, 5, 9, 3, 6, 23, 13};
+
+        for (int i = 0; i < arr.length; i++) {
+            if (soNguyenTo(arr[i]) == true) {
+                System.out.print(arr[i] + ", ");
+            }
+        }
+        
+    }
+
+    public static boolean soNguyenTo(int n) {
+        if (n < 2) {
+            return false;
+        } else {
+            for (int i = 2; i < n; i++) {
+                if (n % i == 0) {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 
 }

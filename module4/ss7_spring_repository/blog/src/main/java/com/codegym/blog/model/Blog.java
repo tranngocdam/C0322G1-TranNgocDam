@@ -1,5 +1,9 @@
 package com.codegym.blog.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import org.springframework.web.bind.annotation.CrossOrigin;
+
 import javax.persistence.*;
 @Entity
 public class Blog {
@@ -10,6 +14,7 @@ public class Blog {
     private String dayStart;
     private String author;
     @ManyToOne
+    @JsonManagedReference
     @JoinColumn(name = "category_id", referencedColumnName = "id")
     private Category category;
 
