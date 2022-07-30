@@ -32,8 +32,8 @@ public class BlogServiceImpl implements IBlogService {
     }
 
     @Override
-    public Page<Blog> findTitle(String title, Pageable pageable) {
-        return iBlogRepository.findTitleBlog(title, pageable);
+    public List<Blog> findTitle(String title) {
+        return iBlogRepository.findTitleBlog(title);
     }
 
     @Override

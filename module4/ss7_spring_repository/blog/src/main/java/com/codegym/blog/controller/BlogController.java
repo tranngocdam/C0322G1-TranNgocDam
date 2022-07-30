@@ -26,7 +26,7 @@ public class BlogController {
     public String showAll( @PageableDefault(value = 4) @SortDefault(value = "day_start", direction = Sort.Direction.ASC)
                             Pageable pageable,
                            @RequestParam(name = "name", defaultValue = "") String title,Model model){
-        Page<Blog> blogs=iBlogService.findTitle(title, pageable);
+//        Page<Blog> blogs=iBlogService.findTitle(title, pageable);
         model.addAttribute("blog", iBlogService.findAll(pageable));
         model.addAttribute("category", iCategoryService.findAll());
         return "list";

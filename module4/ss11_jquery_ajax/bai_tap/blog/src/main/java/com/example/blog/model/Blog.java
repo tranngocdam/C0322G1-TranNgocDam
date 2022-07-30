@@ -1,13 +1,13 @@
 package com.example.blog.model;
 
 import javax.persistence.*;
-import java.util.Locale;
+
 
 @Entity
 public class Blog {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Interger id;
     private String name;
     private String author;
     private String title;

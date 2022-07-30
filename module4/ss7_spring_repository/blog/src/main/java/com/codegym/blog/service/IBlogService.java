@@ -13,7 +13,7 @@ public interface IBlogService {
 
     void save(Blog blog);
 
-    Page<Blog> findTitle(String title, Pageable pageable);
+    List<Blog> findTitle(String title);
 
     Blog findById(Integer id);
 

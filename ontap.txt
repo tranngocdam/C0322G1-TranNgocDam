@@ -18,7 +18,7 @@ dung các phương thức đã có ở lớp cha.		|cùng tên nhưng khác tham
 		comparable			|		comparator
 -class phải implements giao tiếp Comparable	|- class KHÔNG phải implements giao 				
 cho lớp đối tượng cần được so sánh.		| tiếp Comparator cho lớp đối tượng cần được so sánh.	
--Comparable cung cấp phương thứccompareTo() 	|- Comparator cung cấp phương thức compare() 
+-Comparable cung cấp phương thức compareTo() 	|- Comparator cung cấp phương thức compare() 
 để sắp xếp các phần tử.				|để sắp xếp các phần tử.
 - Comparable thuộc về java.lang package.	|- Comparator thuộc về java.util package.
 - Sắp xếp các phần tử của kiểu Comparable	|- sắp xếp các phần tử của kiểu Comparator bởi phương

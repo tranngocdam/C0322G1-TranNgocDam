@@ -16,8 +16,8 @@ public class SmartphoneService implements ISmartphoneService{
     }
 
     @Override
-    public Optional<Smartphone> findById(Long id) {
-        return iSmartphoneRepository.findById(id);
+    public Smartphone findById(Long id) {
+        return iSmartphoneRepository.findById(id).orElse(null);
     }
 
     @Override

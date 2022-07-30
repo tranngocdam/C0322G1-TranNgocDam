@@ -10,6 +10,8 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Repository
 public interface IBlogRepository extends JpaRepository<Blog, Integer> {
     @Query(value="select * from blog", nativeQuery=true)
@@ -24,6 +26,6 @@ public interface IBlogRepository extends JpaRepository<Blog, Integer> {
                   @Param("title") String title,
                   @Param("category") Integer category);
 
-    @Query(value="select * from blog where `title` like :title", nativeQuery=true)
-    Page<Blog>findTitleBlog(@Param("title") String title, Pageable pageable);
+    @Query(value="select * from blog b where b.title like :=title", nativeQuery=true)
+    List<Blog> findTitleBlog(@Param("title") String title);
 }
