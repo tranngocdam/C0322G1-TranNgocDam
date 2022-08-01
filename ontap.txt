@@ -1,3 +1,4 @@
+
 1	Các tính chất của OOP
 - Có 4 tính chất: bao đóng(encapsulation), kế thừa(inheritance), trừu tượng(abstruct), đa hình(polymorphism)
 
@@ -32,24 +33,32 @@ bởi phương thức Collections.sort(List) .	|thức Collections.sort(List,Com
 -heap:lưu giá trị của đối tượng, lưu nội dung của phương thức, class.
 
 10	phân biệt toán tử "==" và equals()?
+- Phép so sánh == sẽ so sánh 2 object có cùng trỏ vào 1 ô nhớ hay không. Nếu đúng thì trả về true, sai sẽ trả về false.
+- Phương thức equals() sẽ so sánh 2 object nhưng chỉ so sánh về mặt giá trị. Nếu giá trị bằng nhau thì sẽ trả về true, ngược lại sẽ trả về false.
+
 11	So sánh do-while và while
 12	Phân biệt List , Set , Map?
 - List là interface danh sách có cấu trúc dữ liệu tuyến tính. Các phần tử được sắp xếp theo một thứ tự nhất định, lưu các phần tử trùng lặp.
 - Set cũng là 1 interface tập các phân tử không trùng lặp, các phần tử chưa sắp xếp thứ tự thêm vào.
 - Map là 1 interface dùng để lưu, truy xuất dữ liệu dạng key-value, mỗi cặp key-value được gọi là entry, key không được phép trùng, 
 key có 1 key null, value có thể có nhiều value null.
+
 13	Phân biệt class và object
-			class 			| 		object
-- class được định nghĩa bằng từ khóa class.	|- Object được tạo ra khi dùng từ khóa new.
-- Trong pagkage có thể tạo ra nhiều class trùng	|- Trong 1 class có thể tạo ra nhiều đối tượng.
-- class là khuôn mẫu thể hiện đặc điểm hành vi 	|- Đối tượng thể hiện cụ thể của 1 class có đặc điểm và hành vi cụ thể.
-của 1 nhóm đối tượng.				|
-tên
+			class 				| 		object
+- class được định nghĩa bằng từ khóa class.		|- Object được tạo ra khi dùng từ khóa new.
+- Trong pagkage có thể tạo ra nhiều class trùng tên	|- Trong 1 class có thể tạo ra nhiều đối tượng.
+- class là khuôn mẫu thể hiện đặc điểm hành vi 		|- Đối tượng thể hiện cụ thể của 1 class có đặc điểm và hành vi cụ thể.
+của 1 nhóm đối tượng.					|
+
 14	- Địa chỉ vùng nhớ
 15	"- Throws Exception ; Exception
 16	- Thuật toán vẽ 1 tam giác cân
 17	- Request , Session , Cookie
-18	- JSP : CHuyển dữ liệu 1 từ một trang này tới trang kia"
+- Request là thông tin người dùng gửi lên server.
+- Session là thành phần lưu trữ thông tin tạm thời của người dùng phía server và kết thúc khi: tắt server, login, timeout, hết thời gian.
+- Cookie: là thành phần lưu trữ thông tin tạm thời  của người dùng phía client và kết thúc khi: setMaxAge, người dùng vào client xóa lịch sử cookie.
+
+18	- JSP : Chuyển dữ liệu 1 từ một trang này tới trang kia"
 19	"- Thuật toán - RegExr"
 20	- Bộ nhớ
 21	"- Thuật toán đảo chuổi
@@ -64,10 +73,21 @@ tên
 
 30	Phương thức POST và GET khác nhau như thế nào.
 31	Em hiểu mô hình MVC là như thế nào. Nêu ưu điểm của mô hình MVC.
+- MVC viết tắt của model-view-controller.
+	+ Model: biểu diễn dữ liệu và các logic nghiệp vụ. 
+	+ View: hiển thị dữ liệu và là giao diện tương tác với người dùng.
+	+ controller: sử lí thao tác từ người dùng, kết nối giữ model và view.
+
 32	Session và cookie là gì? Sự khác nhau của 2 cái này.
+- Session là thành phần lưu trữ dữ liệu tạm thời của người dùng phía server, kết thúc khi tắt trình duyệt, login, tắt server, timeout.
+- Cookie là phần thành lưu trữ dữ liệu tạm thời của người dùng phía client, kết thúc khi setMaxAge, người dùng tắt lịch sử cookie.
 33	Session được lưu cụ thể ở đâu trên server
 34	Api trả về kiểu dữ liệu gì?
+- xml và json.
 36	Các loại join?
+- inner join
+- outer join
+
 37	Em hiểu Port là gì? My SQL chạy port bao nhiêu.
 38	Sự khác nhau giữa các câu lệnh TRUNCATE, DELETE và DROP?
 39	khóa chính và khóa phụ là gì?
@@ -85,6 +105,8 @@ tên
 50	Hỏi về Group By , OrderBy ,Union, Union All?
 - Group by dùng để gộp các record theo 1 tiêu chí nào đó.
 - OderBy dùng để sắp xếp 1 tiêu chí nào đó mặc định tăng dần ASC, giảm dần DESC.
+- Union: dùng để kết hợp 2 câu lệnh query lại với nhau và cho ra 1 kết quả duy nhất và các record không bị trùng lặp.
+- Union all: dùng để kết hợp 2 câu query lại với nhau và cho ra 1 kết quả duy nhất và các kết quả trùng lặp sẽ không bị gộp lại. 
 51	làm 2 bài sql : tìm theo điều kiện , số lượng sản phẩm A bán ra ngày hôm qua
 52	map và hashmap : nếu put vào 2 giá trị cùng key vào hashmap thì sao
 53	Khác nhau giữa abstract với interface
@@ -102,7 +124,7 @@ tên
 66	phân biệt jquery và javaScript?
 67	Phân biệt 2 selector( ID và class ) cho ví dụ minh họa
 69	Hash map ? cho ví dụ input vào 2 giá trị cùng key =1 thì khi get key =1 thì giá trị là bao nhiêu?
-	
+	-
 70	Ngoại lệ là gì? có mấy loại ngoại lệ? các loại thông báo lỗi mà ngoại lệ thường hay đưa ra?
 71	Unique Key?
 72	Cho biết một câu truy vấn đầy đủ? phân biết where và having?cho ví dụ minh họa?
