@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+<body>
+<div class="container-fluid mt-3">
+    <div class="row">
+        <div th:replace="~{/layout::head}"></div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="row">
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+            <div class="container-fluid">
+                <button type="button" class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown">
+                    Create Facility
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="/facility/house">House</a></li>
+                    <li><a class="dropdown-item" href="/facility/room">Room</a></li>
+                    <li><a class="dropdown-item" href="/facility/villa">Villa</a></li>
+                </ul>
+                <div class="collapse navbar-collapse" id="mynavbar">
+                    <ul class="navbar-nav me-auto">
+                    </ul>
+                    <form class="d-flex" action="/facility">
+                        <input class="form-control me-2" type="text" placeholder="Search" name="keyword">
+                        <button class="btn btn-primary" type="submit" value="Search">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <br>
+    <br>
+    <div class="row">
+        <div class="container table-responsive">
+            <table class="table table-striped table-hover table-bordered" style="text-align: center">
+                <tr class="bg-info">
+                    <th>No</th>
+                    <th>Name</th>
+                    <th>Area</th>
+                    <th>Cost</th>
+                    <th>People</th>
+                    <th>Standard</th>
+                    <th>Description</th>
+                    <th>Pool Area</th>
+                    <th>Floors</th>
+                    <th>Free</th>
+                    <th>Rent Type</th>
+                    <th>Facility Type</th>
+                    <th colspan="2" >Action</th>
+                </tr>
+                <tr th:each="f : ${facilitys}">
+                    <td th:text="${f.id}"></td>
+                    <td th:text="${f.name}"></td>
+                    <td th:text="${f.area}"></td>
+                    <td th:text="${f.cost}"></td>
+                    <td th:text="${f.maxPeople}"></td>
+                    <td th:text="${f.standardRoom}"></td>
+                    <td th:text="${f.descriptionOtherConvenience}"></td>
+                    <td th:text="${f.poolArea}"></td>
+                    <td th:text="${f.numberOfFloors}"></td>
+                    <td th:text="${f.facilityFree}"></td>
+                    <td th:text="${f.rentType.name}"></td>
+                    <td th:text="${f.facilityType.name}"></td>
+                    <td><a class="btn btn-warning" th:href="@{/facility/edit/{id}(id=${f.id})}">Edit</a></td>
+                    <td><!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            Delete
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Delete facility</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        ...
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="text-center">
+            <a class="btn btn-secondary" th:href="@{'facility'(page=${facilitys.number - 1})}"
+               th:if="${facilitys.hasPrevious()}">Previous</a>
+            <span th:text="${facilitys.number+1}"></span>
+            /
+            <span th:text="${facilitys.totalPages}"></span>
+            <a class="btn btn-secondary" th:href="@{'/facility'(page=${facilitys.number + 1})}"
+               th:if="${facilitys.hasNext()}">Next</a>
+        </div>
+    </div>
+<div th:replace="~{/layout::footer}"></div>
+</div>
+
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</html>

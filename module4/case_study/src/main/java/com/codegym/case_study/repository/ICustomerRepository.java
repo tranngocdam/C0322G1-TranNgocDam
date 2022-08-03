@@ -17,6 +17,7 @@ public interface ICustomerRepository extends JpaRepository<Customer, Integer> {
 
     @Query(value="select * from customer", nativeQuery=true)
     public Page<Customer> findAll(Pageable pageable);
+
     @Query(value = "SELECT * FROM customer\n" +
             "JOIN contract ON contract.customer_id = customer.customer_id\n" +
             "JOIN service ON service.service_id = contract.service_id\n" +

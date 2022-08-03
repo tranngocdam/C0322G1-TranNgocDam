@@ -25,7 +25,7 @@ public class EmployeeController {
     private IDivisionService iDivisionService;
 
     @GetMapping
-    public String showCustomer(Model model) {
+    public String showEmployee(Model model) {
         model.addAttribute("iEmployeeService", iEmployeeService.findAll());
         model.addAttribute("iPositionService", iPositionService.findAll());
         model.addAttribute("iEducationDegreeService", iEducationDegreeService.findAll());
@@ -34,12 +34,12 @@ public class EmployeeController {
     }
 
     @GetMapping(value = "/create")
-    public String showCreateHouse(Model model){
+    public String showCreateEmployee(Model model){
         return "/employee/create";
     }
 
     @PostMapping("/create")
-    public String createHouse(@ModelAttribute Employee employee, RedirectAttributes redirectAttributes) {
+    public String createEmployee(@ModelAttribute Employee employee, RedirectAttributes redirectAttributes) {
         iEmployeeService.save(employee);
         redirectAttributes.addFlashAttribute("createSC", "Create Sucessfully!");
         return "redirect:/employee";

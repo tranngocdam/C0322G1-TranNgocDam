@@ -1,4 +1,4 @@
-
+0
 1	Các tính chất của OOP
 - Có 4 tính chất: bao đóng(encapsulation), kế thừa(inheritance), trừu tượng(abstruct), đa hình(polymorphism)
 
@@ -7,14 +7,60 @@
 - Đa hình trong java thể hiện ở overloading và overriding.
 
 3	Override và Overload khác nhau gì?
-		Overloading			| 			Overriding
-- Là cơ chế cho phép lớp con định nghĩa lại nội |- Là cơ chế cho phép trong 1 lớp có thể định nghĩa ra nhiều phương thức
-dung các phương thức đã có ở lớp cha.		|cùng tên nhưng khác tham số truyền vào.
-- Đa hình tại thời điểm thực thi CT.		|- Đa hình tại thời điểm biên dịch.
-- Xảy ra trong cùng 1 class.			|- Xảy ra trong mối quan hệ kế thừa.
-- Cùng tên phương thức, khác tham số trả về.	|- Cùng tên, cùng tham số, cùng kiểu dữ liệu trả về.
+		Overriding				| 			Overloading
+- Là cơ chế cho phép lớp con định nghĩa lại nội 	|- Là cơ chế cho phép trong 1 lớp có thể định nghĩa ra nhiều phương thức
+dung các phương thức đã có ở lớp cha.			|cùng tên nhưng khác tham số truyền vào.
+- Đa hình tại thời điểm thực thi CT.			|- Đa hình tại thời điểm biên dịch.
+-  Xảy ra trong mối quan hệ kế thừa.			|- Xảy ra trong cùng 1 class.
+- Cùng tên, cùng tham số, cùng kiểu dữ liệu trả về.	|- Cùng tên phương thức, khác tham số.
+vd: 
+-Overloading:
+public class PhepCongHaiSo {
+    public int add(int a, int b) {
+        return a + b;
+    }
+     
+    public int add(int a, int b, int c) {
+        return a + b + c;
+    }
+     
+}
+-Overriding:
+public class Superclass {
+     
+    public void hienThi() {
+        System.out.println("Đây là phương thức hiển thị của lớp cha Superclass.");
+    }
+     
+}
+public class Subclass extends Superclass {
+ 
+    @Override
+    public void hienThi() {
+        System.out.println("Đây là phương thức hiển thị của lớp con Subclass.");
+    }
+ 
+}
+public class TestOverriding {
+     
+    public static void main(String[] args) {
+        // khai báo đối tượng của lớp Superclass
+        Superclass superclass = new Superclass();
+         
+        // khai báo đối tượng có bản chất là Superclass
+        // nhưng đóng vai trò là 1 Subclass
+        // vì vậy sẽ chạy những hàm của Subclass
+        Superclass subclass = new Subclass();
+         
+        // gọi phương thức hienThi() của lớp cha
+        superclass.hienThi();
+         
+        // gọi phương thức hienThi() của lớp con
+        subclass.hienThi();
+    }
+     
+}
 
-4	Override và overload trong java?
 5	phân biệt Comparable và Comparator? 
 		comparable			|		comparator
 -class phải implements giao tiếp Comparable	|- class KHÔNG phải implements giao 				
@@ -53,7 +99,7 @@ của 1 nhóm đối tượng.					|
 14	- Địa chỉ vùng nhớ
 15	"- Throws Exception ; Exception
 16	- Thuật toán vẽ 1 tam giác cân
-17	- Request , Session , Cookie
+17	- Request, Session , Cookie
 - Request là thông tin người dùng gửi lên server.
 - Session là thành phần lưu trữ thông tin tạm thời của người dùng phía server và kết thúc khi: tắt server, login, timeout, hết thời gian.
 - Cookie: là thành phần lưu trữ thông tin tạm thời  của người dùng phía client và kết thúc khi: setMaxAge, người dùng vào client xóa lịch sử cookie.
@@ -77,6 +123,7 @@ của 1 nhóm đối tượng.					|
 	+ Model: biểu diễn dữ liệu và các logic nghiệp vụ. 
 	+ View: hiển thị dữ liệu và là giao diện tương tác với người dùng.
 	+ controller: sử lí thao tác từ người dùng, kết nối giữ model và view.
+- Ưu điểm MVC: dễ phát tiển, dễ kiểm thử, dễ quản lí, dễ bảo trì.
 
 32	Session và cookie là gì? Sự khác nhau của 2 cái này.
 - Session là thành phần lưu trữ dữ liệu tạm thời của người dùng phía server, kết thúc khi tắt trình duyệt, login, tắt server, timeout.
@@ -85,21 +132,27 @@ của 1 nhóm đối tượng.					|
 34	Api trả về kiểu dữ liệu gì?
 - xml và json.
 36	Các loại join?
-- inner join
-- outer join
+- inner join: join
+- outer join: left join, right join, full join.
 
 37	Em hiểu Port là gì? My SQL chạy port bao nhiêu.
 38	Sự khác nhau giữa các câu lệnh TRUNCATE, DELETE và DROP?
 39	khóa chính và khóa phụ là gì?
 40	Bây giờ anh có 1 danh sách học sinh gồm 1000 học sinh. Anh muốn lấy ra 100 record từ 300 đến 400 mà không sử dụng câu lệnh Where theo kiểu Where id>300 and id<400.
  Thì làm như thế nào?
-41	"- SQL : 1 to many . many to one
+- sử dụng between and
+41	"- SQL : one to many . many to one
 - Các thuật toán sắp xếp"
 42	
 43	Jquery là gì. Em có thể sử dụng Jquery không?
 44	selector trong css?
-45	2way binding trong angular?
+- #id
+- .class
+- tag
+//45	2way binding trong angular?
 46	class và ID trong css?
+- .class
+- #id
 48	câu giải thuật : tìm giá trị lớn thứ 2 (nhỏ hơn số lớn nhất)
 49	thuật toán sắp xếp mảng
 50	Hỏi về Group By , OrderBy ,Union, Union All?
@@ -108,36 +161,65 @@ của 1 nhóm đối tượng.					|
 - Union: dùng để kết hợp 2 câu lệnh query lại với nhau và cho ra 1 kết quả duy nhất và các record không bị trùng lặp.
 - Union all: dùng để kết hợp 2 câu query lại với nhau và cho ra 1 kết quả duy nhất và các kết quả trùng lặp sẽ không bị gộp lại. 
 51	làm 2 bài sql : tìm theo điều kiện , số lượng sản phẩm A bán ra ngày hôm qua
-52	map và hashmap : nếu put vào 2 giá trị cùng key vào hashmap thì sao
+
 53	Khác nhau giữa abstract với interface
+	abstruct class			|		interface
+- Tương tự class thường.		|- Không phải class(bản thiết kế).
+- Có thể có thuộc tính, methoad		|- Chỉ có thể có abstruct method(jdk 7 trở về trước)
+bình thường.				|từ jdk8 thì có thêm default & static method.
+- Có thể có constructor.		|- Không có constructor.
+- 1 class chỉ extends 1 abstruct	|- 1 class có thể  implement nhiều interface.
+- Không hổ trợ đa kế thừa.		|- Hổ trợ đa kế thừa.
+- Mối quan hệ khi sử dụng abstruct 	|- Mối quan hệ khi sử dụng interface: can-do.
+class: is-a
+
 55	nếu trong 1 trang có 2 thành phần trong HTML cùng id thì như thế nào.kết quả ra sao
 56	hỏi về dự án đã làm , dùng công nghệ gì , chia task
-57	biết Ajax và jquery ko
+//57	biết Ajax và jquery ko
 58	Chẳng hạn chiếc máy tính, đâu là thuộc tính, đâu là hành vi
 59	Ví dụ rõ về triển khai Interface trong thực tế, và override
 61	HTML có thành phần cơ bản gì.
 60	Câu lệnh đầy đủ của SQL, họ cho một cái bảng bảo lấy theo điều kiện Having thì làm thế nào, dự án của mình có lấy điều kiện having không thì ko cần họ cho bản.
-62	Thẻ Form có những thành phần nào (trọng tâm vào  action)
+- Câu lệnh SQL đầy đủ: select->from->join->where->group by-> having->order by->limit
+62	Thẻ Form có những thành phần nào (trọng tâm vào action)
+- action, method, th:object.
 63	Javascprit dùng để làm gì. Ví dụ trong bài làm của mình một đoạn code javascprit đã làm (chức năng chính)
-64	Phần mình làm trong dự án thì có bao nhiêu file HTML(làm web thông thường không phải angular) đã tạo. 
+//64	Phần mình làm trong dự án thì có bao nhiêu file HTML(làm web thông thường không phải angular) đã tạo. 
 65	Trình bày flow của chương trình web có thể lấy ví dụ từ dự án của mình
 66	phân biệt jquery và javaScript?
 67	Phân biệt 2 selector( ID và class ) cho ví dụ minh họa
-69	Hash map ? cho ví dụ input vào 2 giá trị cùng key =1 thì khi get key =1 thì giá trị là bao nhiêu?
-	-
+
+	
 70	Ngoại lệ là gì? có mấy loại ngoại lệ? các loại thông báo lỗi mà ngoại lệ thường hay đưa ra?
-71	Unique Key?
-72	Cho biết một câu truy vấn đầy đủ? phân biết where và having?cho ví dụ minh họa?
+- Ngoại lệ là sự kiện bất thường xảy ra trong quá trình thực thi CT java. Nó phá vỡ luồng thực thi bình thường, có thể làm chết CT
+có thể xử lí được.
+- Có 2 loại ngoại lệ: check exception và unchecked exception.
+- Có 2 loại thông báo lỗi: try/catch, throws
+//71	Unique Key?
+72	Cho biết một câu truy vấn đầy đủ? phân biệt where và having?cho ví dụ minh họa?
+- select-> from -> join -> where -> group by -> having -> order by -> limit
+		where			|		having
+- Không sử dụng hàm gộp.		|- Sử dụng hàm gộp.
+- Trước group by.			|- Sau group by.
+- Kiểm tra từng record -> select.       |- Select tất cả rồi mới kiểm tra từng record.
+
 73	Cho bảng bill (gồm MãHĐ, Ngày bán) Bảng chi tiết hóa đơn(Mã Hóa Đơn, Mã Sản phẩm, Số lượng) Đếm số lượng hóa đơn bán trong ngày hôm qua? Tìm số lượng sp có Mã sản phẩm "Laptop" bán được trong ngày hôm qua?
 74	Hỏi về dự án đã làm, dùng công nghệ gì? (ví dụ chức năng search thì khi test mình sẽ test chức năng này như thế nào)?
 75	Thứ tự mình sẽ làm gì khi mình được giao một chức năng trong dự án?
 74	Hỏi biết test Case không?
 75	vòng đời của spring.
 74	validation spring thì ntn? áp dụng chỗ nào là hiệu quả nhất.
+- Validation kiểm tra tính hợp lệ của dữ liệu đầu vào.
+- Spring hổ trợ ở tầng business.
+
 75	vòng đời của MVC (từ khi request từ người dùng gửi đi và server gửi response về )
 	
 76	Java do cty nào viết ra? Java 8 khác gì so với Java 7?
+-Java được phát triển bởi một nhóm do James Gosling lãnh đạo tại Sun Microsystems. 
+-Sun Microsystems được Oracle mua vào năm 2010.
+
 77	Để chạy 1 file Java thì mình cần môi trường như thế nào?
+- JVM
 78	Khách hàng muốn chạy 1 class Java bình thường thì cần những gì?
 79	Phân biệt Class/Object?
 80	Static dùng để làm gì? Làm thế nào để gọi 1 phương thức static bên ngoài Class?
@@ -149,24 +231,27 @@ của 1 nhóm đối tượng.					|
 86	Hỏi 1 số câu Tiếng Anh liên quan đến thanh toán Paypal, tập trung vào phần chức năng của mình trong Project Team
 	
 87	Flex trong bootstrap.
-88	Phân biệt object và class.
+//88	Phân biệt object và class.
 89	Constructor
 90	Join vs left join
+- join : không chứa record có giá trị null
+- left join hiển thị record có giá trị null.
 91	"where vs having. Vì sao group by sử dụng chung với having mà không dùng với where"
 	
 92	Liệt kê một vài Annotation trong Spring?
 93	@Component, @Service, @Repository được sử dụng ở những đâu? Khác nhau như thế nào ?
-94	Trong Angular binding dữ liệu như thế nào ?
-95	Nếu không sử dụng [(ngModel)] làm sao để binding 2 chiều ? ( Hỏi về ngShow )
+//94	Trong Angular binding dữ liệu như thế nào ?
+//95	Nếu không sử dụng [(ngModel)] làm sao để binding 2 chiều ? ( Hỏi về ngShow )
 96	Cho component A là cha của component B, component B là cha của component C, làm sao để truyền dữ liệu giữa component A và component C
 97	Hỏi về dự án bằng tiếng anh, nhớ nói rõ về function mình làm trong dự án?
 98	Các interface thường sử dụng trong quá trình học?
+- List, Set, Map, Jparepository, crudrepository,
 99	Cách triển khai Comparable?
-100	"Cách triển khải JWT trong dự án mình làm, giả sử trường hợp người dùng 
-login với tên đăng nhập hoặc mật khẩu rổng thì làm sao để bắt được, 
-và trường hợp người dùng login với tên đăng nhập hoặc 
-mật khẩu sai khác với database?"
-101	Cách triển khai login bằng JSP/Serlet và Spring Framework. Khác nhau giữa chúng. Mã hóa password.
+//100	"Cách triển khải JWT trong dự án mình làm, giả sử trường hợp người dùng 
+//login với tên đăng nhập hoặc mật khẩu rổng thì làm sao để bắt được, 
+//và trường hợp người dùng login với tên đăng nhập hoặc 
+//mật khẩu sai khác với database?"
+//101	Cách triển khai login bằng JSP/Serlet và Spring Framework. Khác nhau giữa chúng. Mã hóa password.
 102	"Triển khai comparable và comparator để sắp xếp điểm của học sinh ( tăng hoặc giảm). 
 Nói rõ ràng từ lúc tạo class -> add vào list -> sắp xếp. "
 103	Trình bày về static ( biến, class, phương thức). Ví dụ  phương thức static trong lập trình.
@@ -176,7 +261,7 @@ Nói rõ ràng từ lúc tạo class -> add vào list -> sắp xếp. "
 107	"làm sao Javascript có thể tương tác với một đối tượng(câu hỏi phụ:Là sao javascript biết đó là đối tượng cần tương tác"
 	 
 109	scope trong javascript
-110	phân quyền ở tầng nào trong mvc
+//110	phân quyền ở tầng nào trong mvc
 111	swap 2 số không dùng biến tạm
 112	Luồng đi của chức năng mình làm (Chú ý :phải nói cả từ lúc login phân phân quyền cho tới xử lý)
 113	các loại join sql (xử lý một bài toán left join)
@@ -188,10 +273,10 @@ Nói rõ ràng từ lúc tạo class -> add vào list -> sắp xếp. "
 119	@Aspect dùng để làm gì?
 120	
 121	Trong Java 8, interface có viết hàm có thân hàm được ko?
-122	Enum là gì? Mục đích dùng enum?
+//122	Enum là gì? Mục đích dùng enum?
 123	Native query trong Java viết như thế nào? Transaction trong Java dùng để làm gì và đặt nó ở đâu?
-124	Directive trong Angular là gì? Dùng để làm gì?
-125	Nêu life cycle của 1 ứng dụng Angular?
+//124	Directive trong Angular là gì? Dùng để làm gì?
+//125	Nêu life cycle của 1 ứng dụng Angular?
 126	Having trong MySql là gì? Dùng khi nào?
 127	Trigger là gì? Dùng để làm gì?
 128	Viết log ra 1 file trong Java như thế nào?
@@ -199,13 +284,12 @@ Nói rõ ràng từ lúc tạo class -> add vào list -> sắp xếp. "
 130	Hỏi kỹ về tham chiếu và tham trị
 131	Ứng dụng tham chiếu và tham trị đối với vùng nhớ heap và stack , biến static
 132	Hỏi về đồng bộ và bất đồng bộ trong java
-133	"Transaction trong db và mối liên hệ với transaction trong java, triển khai transaction trong java như thế nào ?
-"
+133	Transaction trong db và mối liên hệ với transaction trong java, triển khai transaction trong java như thế nào ?
 134	Trình bày cách cấu hình tất cả mọi file trong Spring MVC ( Đọc code rõ ràng) ?
 135	Trình bày bằng code lưu 1 đối tượng vào file text ?
+
+138	Các câu lệnh rằng buộc dữ liêu trong sql
+52	map và hashmap : nếu put vào 2 giá trị cùng key vào hashmap thì sao
+69	Hash map ? cho ví dụ input vào 2 giá trị cùng key =1 thì khi get key =1 thì giá trị là bao nhiêu?
 136	Tìm số lớn thứ 3 trong mảng số nguyên( Lưu ý đọc code vòng lặp rõ ràng) ?
 137	Hai bảng không có liên kết với nhau(không có khóa ngoại) làm cách nào để liên kết lại với nhau
-
-	Tháng 6 năm 2022 :
-138	Các câu lệnh rằng buộc dữ liêu trong sql
-1

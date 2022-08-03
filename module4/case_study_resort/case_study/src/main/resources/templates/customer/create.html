@@ -7,27 +7,24 @@
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 <body>
-<div class="container-fluid mt-3">
+<div class="container-fuild mt-3">
     <div class="row">
-        <div th:replace="~{/view::head}"></div>
+        <div th:replace="~{layout::head}"></div>
     </div>
+    <br>
+    <br>
     <div class="row">
-        <br>
-    </div>
-    <div class="row">
-        <h1 class="text-center my-5">Create Customer</h1>
-        <form th:object="${customerDto}" action="/customer/create" method="post">
+        <h2 class="text-center my-5">Create customer</h2>
+        <form th:action="@{/customer/createCustomer}" method="post" th:object="${customers}">
             <div class="container">
                 <table class="table table-striped">
                     <tr>
                         <td><label>Name</label></td>
                         <td><input class="form-control" type="text" th:field="*{name}"></td>
-                        <td th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></td>
                     </tr>
                     <tr>
-                        <td><label>Day Of Birth</label></td>
+                        <td><label>Day of birth</label></td>
                         <td><input class="form-control" type="date" th:field="*{dayOfBirth}"></td>
-                        <td th:if="${#fields.hasErrors('dayOfBirth')}" th:errors="*{dayOfBirth}"></td>
                     </tr>
                     <tr>
                         <td><label>Gender</label></td>
@@ -37,37 +34,32 @@
                         </select></td>
                     </tr>
                     <tr>
-                        <td><label>Id Card</label></td>
+                        <td><label>Id card</label></td>
                         <td><input class="form-control" type="text" th:field="*{idCard}"></td>
-                        <td th:if="${#fields.hasErrors('idCard')}" th:errors="*{idCard}"></td>
                     </tr>
                     <tr>
-                        <td><label>Phone Number</label></td>
+                        <td><label>Number phone</label></td>
                         <td><input class="form-control" type="text" th:field="*{phoneNumber}"></td>
-                        <td th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}"></td>
-
                     </tr>
                     <tr>
                         <td><label>Email</label></td>
                         <td><input class="form-control" type="text" th:field="*{email}"></td>
-                        <td th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></td>
                     </tr>
                     <tr>
                         <td><label>Address</label></td>
                         <td><input class="form-control" type="text" th:field="*{address}"></td>
-                        <td th:if="${#fields.hasErrors('address')}" th:errors="*{address}"></td>
                     </tr>
                     <tr>
-                        <td><label>Customer Type</label></td>
-                        <td><select th:field="*{customerType}" class="form-select">
-                            <option th:each="c : ${customerType}" th:value="${c.id}"
-                                    th:text="${c.name}"></option>
-                        </select></td>
+                        <td><label>Customer type</label></td>
+                        <td><select class="form-select" th:field="*{customerType}">
+                            <option th:each="item: ${customerTypes}" th:value="${item.id}" th:text="${item.name}">
+                            </option>
+                        </select> </td>
                     </tr>
                     <tr>
                         <td>
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                            <a class="btn btn-primary" href="/customer">Back</a>
+                            <input class="btn btn-success" type="submit" value="Save">
+                            <a class="btn btn-secondary" th:href="@{/customer}">Back</a>
                         </td>
                     </tr>
                 </table>
@@ -76,9 +68,8 @@
     </div>
     <br>
     <br>
-    <br>
     <div class="row">
-        <div th:replace="~{/view::footer}"></div>
+        <div th:replace="~{layout::footer}"></div>
     </div>
 </div>
 </body>
