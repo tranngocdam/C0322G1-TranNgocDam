@@ -16,43 +16,39 @@
     <br>
     <div class="row">
         <h2 class="text-center my-1">Create Room</h2>
-        <form>
+        <form th:object="${facilitys}" th:action="@{/facility/createRoom}" method="post">
             <div class="container pt - 3">
                 <table class="table table-striped">
                     <tr>
                         <td><label>Name</label></td>
-                        <td><input class="form-control" type="text"></td>
+                        <td><input class="form-control" type="text" th:field="*{name}"></td>
                     </tr>
                     <tr>
                         <td><label>Area</label></td>
-                        <td><input class="form-control" type="text"></td>
+                        <td><input class="form-control" type="text" th:field="*{area}"></td>
                     </tr>
                     <tr>
                         <td><label>Cost</label></td>
-                        <td><input class="form-control" type="text"></td>
+                        <td><input class="form-control" type="text" th:field="*{cost}"></td>
                     </tr>
                     <tr>
                         <td><label>Max people</label></td>
-                        <td><input class="form-control" type="text"></td>
+                        <td><input class="form-control" type="text" th:field="*{maxPeople}"></td>
                     </tr>
                     <tr>
                         <td><label>Facility free</label></td>
-                        <td><input class="form-control" type="text"></td>
+                        <td><input class="form-control" type="text" th:field="*{facilityFree}"></td>
                     </tr>
                     <tr>
                         <td><label>Rent type</label></td>
-                        <td><select>
-                            <option value="1"></option>
-                            <option value="2"></option>
-                            <option value="3"></option>
+                        <td><select th:field="*{rentType}" class="form-select">
+                            <option th:each="r : ${rentTypes}" th:value="${r.id}" th:text="${r.name}"></option>
                         </select></td>
                     </tr>
                     <tr>
                         <td><label>Facility type</label></td>
-                        <td><select>
-                            <option value="1"></option>
-                            <option value="2"></option>
-                            <option value="3"></option>
+                        <td><select th:field="*{facilityType}" class="form-select">
+                            <option th:each="f : ${facilityTypes}" th:value="${f.id}" th:text="${f.name}"></option>
                         </select></td>
                     </tr>
                     <tr>

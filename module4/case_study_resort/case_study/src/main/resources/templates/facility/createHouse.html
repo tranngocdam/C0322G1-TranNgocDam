@@ -15,51 +15,51 @@
     <br>
     <div class="row">
         <h1 class="text-center my-1">Create House</h1>
-            <form>
+            <form th:object="${facilitys}" method="post" th:action="@{/facility/createHouse}">
                 <div class="container pt - 3">
                     <table class="table table-striped">
                         <tr>
                             <td><label>Name</label></td>
-                            <td><input class="form-control" type="text"></td>
+                            <td><input class="form-control" type="text" th:field="*{name}"></td>
                         </tr>
                         <tr>
                             <td><label>Area</label></td>
-                            <td><input class="form-control" type="text"></td>
+                            <td><input class="form-control" type="text" th:field="*{area}"></td>
                         </tr>
                         <tr>
                             <td><label>Cost</label></td>
-                            <td><input class="form-control" type="text"></td>
+                            <td><input class="form-control" type="text" th:field="*{cost}"></td>
                         </tr>
                         <tr>
                             <td><label>Max people</label></td>
-                            <td><input class="form-control" type="text"></td>
+                            <td><input class="form-control" type="text" th:field="*{maxPeople}"></td>
                         </tr>
                         <tr>
                             <td><label>Standard Room</label></td>
-                            <td><select class="form-select">
-                                <option value="1">Vip</option>
-                                <option value="2">Normal</option>
+                            <td><select class="form-select" th:field="*{standardRoom}">
+                                <option value="vip">Vip</option>
+                                <option value="normal">Normal</option>
                             </select></td>
                         </tr>
                         <tr>
                             <td><label>Description Other Convenience</label></td>
-                            <td><input class="form-control" type="text"></td>
-                        </tr>
-                        <tr>
-                            <td><label>Pool area</label></td>
-                            <td><input></td>
+                            <td><input class="form-control" type="text" th:field="*{descriptionOtherConvenience}"></td>
                         </tr>
                         <tr>
                             <td><label>Number of floors</label></td>
-                            <td><input></td>
+                            <td><input class="form-control" type="text" th:field="*{numberOfFloors}"></td>
                         </tr>
                         <tr>
                             <td><label>Rent type</label></td>
-                            <td><input></td>
+                            <td><select th:field="*{rentType}" class="form-select">
+                                <option th:each="r : ${rentTypes}" th:value="${r.id}" th:text="${r.name}"></option>
+                            </select></td>
                         </tr>
                         <tr>
                             <td><label>Facility type</label></td>
-                            <td><input></td>
+                            <td><select class="form-select" th:field="*{facilityType}">
+                                <option th:each=" f : ${facilityTypes}" th:value="${f.id}" th:text="${f.name}"></option>
+                            </select></td>
                         </tr>
                         <tr>
                             <td>

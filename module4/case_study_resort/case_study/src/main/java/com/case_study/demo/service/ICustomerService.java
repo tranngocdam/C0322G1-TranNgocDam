@@ -14,5 +14,5 @@ public interface ICustomerService {
 
     void delele(Integer id);
 
-    Page<Customer> searchCustomer(String name, String customerType, Pageable pageable);
+    Page<Customer> searchCustomer(String name, Pageable pageable);
 }

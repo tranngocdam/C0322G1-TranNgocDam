@@ -75,14 +75,18 @@ bởi phương thức Collections.sort(List) .	|thức Collections.sort(List,Com
 7	2 hàm cùng tên nhưng khác kiểu trả về có gọi là Overload ko?
 8	Để so sánh 2 biến kiểu Object?
 9	Em biết gì về Heap và stack?
--stack:lưu kiểu dữ liệu nguyên thủy, lưu tên phương thức, class, biến, vùng nhớ stack tự động giải phóng bộ nhớ, sử dụng theo cấu trúc LIFO.
--heap:lưu giá trị của đối tượng, lưu nội dung của phương thức, class.
+- stack:lưu kiểu dữ liệu nguyên thủy, lưu tên phương thức, class, biến, vùng nhớ stack tự động giải phóng bộ nhớ, sử dụng theo cấu trúc LIFO.
+- heap:lưu giá trị của đối tượng, lưu nội dung của phương thức, class.
 
 10	phân biệt toán tử "==" và equals()?
 - Phép so sánh == sẽ so sánh 2 object có cùng trỏ vào 1 ô nhớ hay không. Nếu đúng thì trả về true, sai sẽ trả về false.
 - Phương thức equals() sẽ so sánh 2 object nhưng chỉ so sánh về mặt giá trị. Nếu giá trị bằng nhau thì sẽ trả về true, ngược lại sẽ trả về false.
 
 11	So sánh do-while và while
+		do-while			|		while
+- Thực hiện ít nhất 1 lần lặp.			| - Tối thiểu không có lần lặp nào.
+- khối lệnh-> điều kiện.			| - Kiểm tra điều kiện-> khối lệnh.
+
 12	Phân biệt List , Set , Map?
 - List là interface danh sách có cấu trúc dữ liệu tuyến tính. Các phần tử được sắp xếp theo một thứ tự nhất định, lưu các phần tử trùng lặp.
 - Set cũng là 1 interface tập các phân tử không trùng lặp, các phần tử chưa sắp xếp thứ tự thêm vào.
@@ -108,11 +112,27 @@ của 1 nhóm đối tượng.					|
 19	"- Thuật toán - RegExr"
 20	- Bộ nhớ
 21	"- Thuật toán đảo chuổi
+public static int[] daoNguocChuoi(int arr[]){
+	int first=0;
+	int last=arr.lenght-1;
+	while(first<last){
+	int dem=arr[first];
+	arr[first]=arr[last];
+	ar[last]=dem;
+	first++;
+	last--;
+}
 	- Tìm mảng đối xứng
+public static int doiXung(int arr[]){
+	for(int i=0; i<arr.length/2; i++){
+	if(arr[i]!=arr[arr.length-1-i]) return -1;
+}
+	return 1;
+}
 	- Access modifier của thuộc tính và của lớp"
 22	Thuật toán: swap giá trị của a và b mà ko dùng biến tạm?
 23	- Try Catch :
-24	Thuật toán: swap giá trị của a và b mà ko dùng biến tạm?	 
+	 
 28	API là gì?
 29	@requestmapping để làm gì?
 - Là khai báo đường dẫn, ánh xạ các request đến các method controller.
@@ -138,6 +158,10 @@ của 1 nhóm đối tượng.					|
 37	Em hiểu Port là gì? My SQL chạy port bao nhiêu.
 38	Sự khác nhau giữa các câu lệnh TRUNCATE, DELETE và DROP?
 39	khóa chính và khóa phụ là gì?
+- Khóa chính (Primary Key, hay ràng buộc khóa chính) được sử dụng để định danh duy nhất mỗi bản ghi (dòng) trong bảng của cơ sở dữ liệu.
+	+ Dữ liệu (value) của field khóa chính phải có tính duy nhất và không chứa các giá trị Null.
+	+ Mỗi bảng chỉ có một khóa chính.
+- Khoá ngoại (foreign key - viết ngắn gọn là FK) là cơ chế để tạo liên kết giữa các bảng trong cùng một cơ sở dữ liệu.
 40	Bây giờ anh có 1 danh sách học sinh gồm 1000 học sinh. Anh muốn lấy ra 100 record từ 300 đến 400 mà không sử dụng câu lệnh Where theo kiểu Where id>300 and id<400.
  Thì làm như thế nào?
 - sử dụng between and
@@ -203,11 +227,12 @@ có thể xử lí được.
 - Trước group by.			|- Sau group by.
 - Kiểm tra từng record -> select.       |- Select tất cả rồi mới kiểm tra từng record.
 
-73	Cho bảng bill (gồm MãHĐ, Ngày bán) Bảng chi tiết hóa đơn(Mã Hóa Đơn, Mã Sản phẩm, Số lượng) Đếm số lượng hóa đơn bán trong ngày hôm qua? Tìm số lượng sp có Mã sản phẩm "Laptop" bán được trong ngày hôm qua?
+73	Cho bảng bill (gồm MãHĐ, Ngày bán) Bảng chi tiết hóa đơn(Mã Hóa Đơn, Mã Sản phẩm, Số lượng) 
+Đếm số lượng hóa đơn bán trong ngày hôm qua? Tìm số lượng sp có Mã sản phẩm "Laptop" bán được trong ngày hôm qua?
 74	Hỏi về dự án đã làm, dùng công nghệ gì? (ví dụ chức năng search thì khi test mình sẽ test chức năng này như thế nào)?
 75	Thứ tự mình sẽ làm gì khi mình được giao một chức năng trong dự án?
 74	Hỏi biết test Case không?
-75	vòng đời của spring.
+
 74	validation spring thì ntn? áp dụng chỗ nào là hiệu quả nhất.
 - Validation kiểm tra tính hợp lệ của dữ liệu đầu vào.
 - Spring hổ trợ ở tầng business.
@@ -221,6 +246,7 @@ có thể xử lí được.
 77	Để chạy 1 file Java thì mình cần môi trường như thế nào?
 - JVM
 78	Khách hàng muốn chạy 1 class Java bình thường thì cần những gì?
+
 79	Phân biệt Class/Object?
 80	Static dùng để làm gì? Làm thế nào để gọi 1 phương thức static bên ngoài Class?
 81	Session vs Cookie
@@ -239,6 +265,7 @@ có thể xử lí được.
 91	"where vs having. Vì sao group by sử dụng chung với having mà không dùng với where"
 	
 92	Liệt kê một vài Annotation trong Spring?
+-@RequestMapping, @Controller, @Component, @Service, @Repository
 93	@Component, @Service, @Repository được sử dụng ở những đâu? Khác nhau như thế nào ?
 //94	Trong Angular binding dữ liệu như thế nào ?
 //95	Nếu không sử dụng [(ngModel)] làm sao để binding 2 chiều ? ( Hỏi về ngShow )
@@ -289,7 +316,15 @@ Nói rõ ràng từ lúc tạo class -> add vào list -> sắp xếp. "
 135	Trình bày bằng code lưu 1 đối tượng vào file text ?
 
 138	Các câu lệnh rằng buộc dữ liêu trong sql
+	+ NOT NULL:là không được null.
+	+ UNIQUE: dữ liệu của trường đó là duy nhất không bị trùng.
+	+ KHÓA CHÍNH: dữ liệu là duy nhất và không được trùng lặp. Trong Table luôn luôn phải có 1 khóa chính.
+	+ KhÓA PHỤ: dùng để tham chiếu tới một bảng khác.
+	+ CHECK: kiểm tra điều kiện nhập vào thỏa thì mới cho nhập, ngược lại không cho.
+	+ DEFAULT: muốn tạo một giá trị mặc định cho một trường.
+	+ INDEX: để đánh các chỉ mục của Table.
 52	map và hashmap : nếu put vào 2 giá trị cùng key vào hashmap thì sao
 69	Hash map ? cho ví dụ input vào 2 giá trị cùng key =1 thì khi get key =1 thì giá trị là bao nhiêu?
 136	Tìm số lớn thứ 3 trong mảng số nguyên( Lưu ý đọc code vòng lặp rõ ràng) ?
 137	Hai bảng không có liên kết với nhau(không có khóa ngoại) làm cách nào để liên kết lại với nhau
+75	vòng đời của spring.

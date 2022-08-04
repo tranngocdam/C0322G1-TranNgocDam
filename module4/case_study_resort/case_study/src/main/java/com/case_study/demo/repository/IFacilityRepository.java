@@ -13,10 +13,12 @@ public interface IFacilityRepository extends JpaRepository<Facility, Integer> {
     @Query(value="select * from facility", nativeQuery=true)
     Page<Facility> findAllFacility(Pageable pageable);
 
-//    @Modifying
-//    @Transactional
+
 //    @Query(value="insert into facility(name, area, cost, maxPeople, standarRoom, descriptionOtherConvenience, poolArea," +
 //            "numberOfFloors, rentType, facilityType)", nativeQuery=true)
 //    Facility saveHouse(@Param("name") String name,
 //                       @Param("area") Integer area)
+
+    @Query(value="select * from facility where `name` like :name ", nativeQuery=true)
+    Page<Facility> findFacility(@Param("name") String name, Pageable pageable);
 }

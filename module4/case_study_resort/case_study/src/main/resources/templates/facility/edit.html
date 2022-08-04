@@ -16,56 +16,62 @@
     <br>
     <div class="row">
         <h1 class="text-center my-1">Edit</h1>
-        <form th:action="@{facility/edit}" method="post" th:object="${facilitys}">
+        <form th:action="@{/facility/edit}" method="post" th:object="${facilitys}">
             <div class="container">
                 <table class="table table-striped">
                     <tr hidden>
                         <th><label>Id</label></th>
-                        <td><input class="form-control" type="text"></td>
+                        <td><input class="form-control" type="text" th:field="*{id}"></td>
                     </tr>
                     <tr>
                         <th><label>Name</label></th>
-                        <td><input class="form-control" type="text"></td>
+                        <td><input class="form-control" type="text" th:field="*{name}"></td>
                     </tr>
                     <tr>
                         <th><label>Area</label></th>
-                        <td><input class="form-control" type="text"></td>
+                        <td><input class="form-control" type="text" th:field="*{area}"></td>
                     </tr>
                     <tr>
                         <th><label>Cost</label></th>
-                        <td><input class="form-control" type="text"></td>
+                        <td><input class="form-control" type="text" th:field="*{cost}"></td>
                     </tr>
                     <tr>
                         <th><label>People</label></th>
-                        <td><input class="form-control" type="text"></td>
+                        <td><input class="form-control" type="text" th:field="*{maxPeople}"></td>
                     </tr>
                     <tr>
                         <th><label>Standard</label></th>
-                        <td><input class="form-control" type="text"></td>
+                        <td><select class="form-select" th:field="*{standardRoom}">
+                            <option value="vip">Vip</option>
+                            <option value="normal">Normal</option>
+                        </select></td>
                     </tr>
                     <tr>
                         <th><label>Description</label></th>
-                        <td><input class="form-control" type="text"></td>
+                        <td><input class="form-control" type="text" th:field="*{descriptionOtherConvenience}"></td>
                     </tr>
                     <tr>
                         <th><label>Pool area</label></th>
-                        <td><input class="form-control" type="text"></td>
+                        <td><input class="form-control" type="text" th:field="*{poolArea}"></td>
                     </tr>
                     <tr>
                         <th><label>Floor</label></th>
-                        <td><input class="form-control" type="text"></td>
+                        <td><input class="form-control" type="text" th:field="*{numberOfFloors}"></td>
                     </tr>
                     <tr>
                         <th><label>Facility free</label></th>
-                        <td><input class="form-control" type="text"></td>
+                        <td><input class="form-control" type="text" th:field="*{facilityFree}"></td>
                     </tr>
                     <tr>
                         <th><label>Rent type</label></th>
-                        <td><input class="form-control" type="text"></td>
+                        <td><select class="form-select" th:field="*{rentType}">
+                            <option th:each="r : ${rentTypes}" th:value="${r.id}" th:text="${r.name}"></option></select></td>
                     </tr>
                     <tr>
                         <th><label>Facility type</label></th>
-                        <td><input class="form-control" type="text"></td>
+                        <td><select class="form-select" th:field="*{facilityType}">
+                            <option th:each="f : ${facilityTypes}" th:value="${f.id}" th:text="${f.name}"></option>
+                        </select></td>
                     </tr>
                     <tr>
                         <td>

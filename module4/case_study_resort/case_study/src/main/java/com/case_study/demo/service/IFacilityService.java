@@ -8,5 +8,11 @@ public interface IFacilityService {
 
     Page<Facility> findAll(Pageable pageable);
 
-    Facility save(Facility facility);
+    void save(Facility facility);
+
+    Facility findById(Integer id);
+
+    void delete(Integer id);
+
+    Page<Facility> findNameFacility(String name, Pageable pageable);
 }

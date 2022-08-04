@@ -12,6 +12,7 @@ public class DaoNguocMang {
             System.out.print(array[i]+", ");
         }
         System.out.println("");
+        String arr1="toiyeuem";
         int c[]=daoNguocMang(array);
         for (int i = 0; i <array.length ; i++) {
             System.out.print(c[i]+", ");

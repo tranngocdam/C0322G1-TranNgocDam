@@ -19,14 +19,9 @@
             <div class="container-fluid">
                 <a class="btn btn-warning" th:href="@{/customer/create}">Create Customer</a>
                 <div class="collapse navbar-collapse" id="mynavbar">
-                    <ul class="navbar-nav me-auto">
-                    </ul>
+                    <ul class="navbar-nav me-auto"></ul>
                     <form class="d-flex" th:action="@{/customer}">
-                        <input class="form-control me-2" type="text" placeholder="name customer" name="name">
-                        <select class="form-select" name="customerType">
-                            <option th:each="ct : ${customerTypes}" th:value="${ct.id}"
-                                    th:text="${ct.name}"></option>
-                        </select>
+                        <input class="form-control me-2" type="text" placeholder="Name customer" name="name">
                         <button class="btn btn-primary" type="submit" value="Search">Search</button>
                     </form>
                 </div>

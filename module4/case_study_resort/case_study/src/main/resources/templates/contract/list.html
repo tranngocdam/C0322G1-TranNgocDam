@@ -17,64 +17,7 @@
     <div class="row">
         <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
             <div class="container-fluid">
-<!--                <a class="btn btn-warning" th:href="@{/contract/create}">Create contract</a>-->
-                <div>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createContract">
-                        Create contract
-                    </button>
-
-                    <!-- Modal -->
-                    <div class="modal fade" id="createContract" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Create contract</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <form>
-                                        <div class="container">
-                                            <table class="table table-striped">
-                                                <tr>
-                                                    <td><label>Day start</label></td>
-                                                    <td><input class="form-control" type="date"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><label>Day end</label></td>
-                                                    <td><input class="form-control" type="date"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><label>Deposits</label></td>
-                                                    <td><input class="form-control" type="text"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><label>Total money</label></td>
-                                                    <td><input class="form-control" type="text"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><label>Employee</label></td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><label>Customer type</label></td>
-                                                    <td><select class="form-select">
-                                                        <option>
-                                                        </option>
-                                                    </select> </td>
-                                                </tr>
-
-                                            </table>
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Save changes</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <a class="btn btn-warning" th:href="@{/contract/createContract}">Create contract</a>
                 <div class="collapse navbar-collapse" id="mynavbar">
                     <ul class="navbar-nav me-auto">
                     </ul>
@@ -95,37 +38,93 @@
                     <th>No</th>
                     <th>Facility</th>
                     <th>Customer</th>
-                    <th>Employee</th>
                     <th>Day started</th>
                     <th>Day end</th>
                     <th>Deposits</th>
                     <th>Total money</th>
                     <th colspan="2">Additional services</th>
+                    <th>Action</th>
                 </tr>
                 <tr th:each="c : ${contracts}">
                     <td th:text="${c.id}"></td>
                     <td th:text="${c.facility.name}"></td>
                     <td th:text="${c.customer.name}"></td>
-                    <td th:text="${c.employee.name}"></td>
                     <td th:text="${c.startDay}"></td>
                     <td th:text="${c.endDay}"></td>
-                    <td ></td>
+                    <td th:text="${c.deposit}"></td>
                     <td ></td>
                     <td>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                th:data-bs-target="'#contractDetailModal'+${c.id}">
                            +
                         </button>
-
                         <!-- Modal -->
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal fade" th:id="'contractDetailModal'+${c.id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Delete facility</h5>
+                                        <h5 class="modal-title" id="exampleModalLabel">Contract detail</h5>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        ...
+                                        <form th:object="${contractDetails}" th:action="@{/contract/contractDetail}"method="post">
+                                            <div class="container">
+                                                <table class="table table-striped">
+                                                    <tr>
+                                                        <td>Contract</td>
+                                                        <td><select th:field="*{contract}" class="form-control"hidden>
+                                                            <option th:value="${c.id}"></option>
+                                                        </select></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><label>Attach Facility</label></td>
+                                                        <td><select class="form-select" th:field="*{attachFacility}">
+                                                            <option th:each="a : ${attachFacilitys}" th:value="${a.id}" th:text="${a.name}"></option>
+                                                        </select></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><label>Quantity</label></td>
+                                                        <td><input class="form-control" type="text"></td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn btn-primary">Save changes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                th:data-bs-target="'#selectModal'+${c.id}">
+                            List of service attachs
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" th:id="'selectModal'+${c.id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">List attach facility</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <table class="table table-striped table-hover table-bordered">
+                                            <tr class="bg-info">
+                                                <th>STT</th>
+                                                <th>Name</th>
+                                                <th>Unit</th>
+                                            </tr>
+                                            <tr th:each="ca, loop : ${c.contractDetailList}">
+                                                <td th:text="${loop.count}"></td>
+                                                <td th:text="${ca.attachFacility.name}"></td>
+                                                <td th:text="${ca.quantity}"></td>
+                                            </tr>
+                                        </table>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -162,6 +161,11 @@
                 </tr>
             </table>
         </div>
+    </div>
+    <br>
+    <br>
+    <div class="row">
+        <div th:replace="~{layout::footer}"></div>
     </div>
 </div>
 </body>

@@ -20,16 +20,11 @@ public class CustomerController {
     private ICustomerTypeService iCustomerTypeService;
 
     @GetMapping("")
-    public String showCustomer(
-//            @RequestParam(name = "name") String name,
-//                               @RequestParam(name = "customerType", defaultValue = "") String customerType,
+    public String showCustomer(@RequestParam(name = "name", defaultValue = "") String name,
                                @PageableDefault(value = 3) Pageable pageable, Model model){
+        Page<Customer>customers=iCustomerService.searchCustomer(name, pageable);
+        model.addAttribute("customers", customers);
 
-//        Page<Customer>customers=iCustomerService.searchCustomer(name, customerType, pageable);
-//        model.addAttribute("name", name);
-//        model.addAttribute("customerType", customerType);
-        model.addAttribute("customers", iCustomerService.findAll(pageable));
-        model.addAttribute("customerTypes", iCustomerTypeService.findAll());
         return "customer/list";
     }
 

@@ -42,7 +42,7 @@ public class ContractServiceImpl implements IContractService {
         Page<ContractDto> contractDtoPage;
         for (int i=0; i<contracts.getContent().size(); i++){
             int total = 0;
-            for (ContractDetail c:contracts.getContent().get(i).getContractDetailList()) {
+            for (ContractDetail c: contracts.getContent().get(i).getContractDetailList()) {
                 total+=c.getQuantity()*c.getAttachFacility().getCost();
             }
             ContractDto contractDto=new ContractDto(
