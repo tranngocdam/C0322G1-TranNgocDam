@@ -21,8 +21,11 @@
                 <div class="collapse navbar-collapse" id="mynavbar">
                     <ul class="navbar-nav me-auto">
                     </ul>
-                    <form class="d-flex" action="/customer">
-                        <input class="form-control me-2" type="text" placeholder="Search" name="keyword">
+                    <form class="d-flex" th:action="@{/contract}">
+                        <select name="keyword" class="form-select">
+                            <option th:each="item : ${customer}" th:value="${item.id}" th:text="${item.name}"></option>
+                        </select>
+<!--                        <input class="form-control me-2" type="text" placeholder="Search" name="keyword">-->
                         <button class="btn btn-primary" type="submit" value="Search">Search</button>
                     </form>
                 </div>
@@ -67,7 +70,7 @@
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        <form th:object="${contractDetails}" th:action="@{/contract/contractDetail}"method="post">
+                                        <form th:object="${contractDetails}" th:action="@{/contract/contractDetail}" method="post">
                                             <div class="container">
                                                 <table class="table table-striped">
                                                     <tr>
@@ -84,15 +87,15 @@
                                                     </tr>
                                                     <tr>
                                                         <td><label>Quantity</label></td>
-                                                        <td><input class="form-control" type="text"></td>
+                                                        <td><input class="form-control" type="text" th:field="*{quantity}"></td>
                                                     </tr>
                                                 </table>
                                             </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                <button type="submit" class="btn btn-primary">Save changes</button>
+                                            </div>
                                         </form>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                        <button type="submit" class="btn btn-primary">Save changes</button>
                                     </div>
                                 </div>
                             </div>
@@ -135,24 +138,25 @@
                         </div>
                     </td>
                     <td>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#selectModal">
-                            List of service attachs
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                th:data-bs-target="'#deleteModal'+${c.id}">
+                            Delete
                         </button>
 
                         <!-- Modal -->
-                        <div class="modal fade" id="selectModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal fade" th:id="'deleteModal'+${c.id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Delete facility</h5>
+                                        <h5 class="modal-title" id="exampleModalLabel">Delete contract</h5>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        ...
+                                        Do you want delete contract of customer <span th:text="${c.customer.name}"></span>?
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                        <a type="submit" class="btn btn-primary" th:href="@{/contract/delete/{id}(id=${c.id})}">Save changes</a>
                                     </div>
                                 </div>
                             </div>
@@ -160,6 +164,15 @@
                     </td>
                 </tr>
             </table>
+        </div>
+        <div class="text-center">
+            <a class="btn btn-secondary" th:href="@{'contract'(page=${contracts.number - 1})}"
+               th:if="${contracts.hasPrevious()}">Previous</a>
+            <span th:text="${contracts.number+1}"></span>
+            /
+            <span th:text="${contracts.totalPages}"></span>
+            <a class="btn btn-secondary" th:href="@{'/contract'(page=${contracts.number + 1})}"
+               th:if="${contracts.hasNext()}">Next</a>
         </div>
     </div>
     <br>

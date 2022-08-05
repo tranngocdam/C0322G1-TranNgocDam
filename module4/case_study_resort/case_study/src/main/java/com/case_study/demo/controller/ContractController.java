@@ -5,13 +5,12 @@ import com.case_study.demo.model.Contract;
 import com.case_study.demo.model.ContractDetail;
 import com.case_study.demo.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/contract")
@@ -29,10 +28,15 @@ public class ContractController {
     @Autowired
     private IAttachFacilityService iAttachFacilityService;
     @GetMapping("")
-    public String showContract(Model model, Pageable pageable){
-        model.addAttribute("contracts", iContractService.findAll(pageable));
+    public String showContract(@RequestParam(value = "keyword", defaultValue = "") String name,
+                                @PageableDefault(value = 2) Pageable pageable, Model model){
+        Page<Contract> contracts=iContractService.findContract(name, pageable);
+        model.addAttribute("contracts", contracts);
+        model.addAttribute("customer", iCustomerService.findAll(pageable));
         model.addAttribute("contractDetails", new ContractDetail());
         model.addAttribute("attachFacilitys", iAttachFacilityService.findAll());
+
+//        model.addAttribute("name", name);
         return "contract/list";
     }
 
@@ -57,9 +61,10 @@ public class ContractController {
         iContractDetailService.save(contractDetail);
         return "redirect:/contract";
     }
-//    @PostMapping(value = "/createDetail")
-//    public String createContractDetails(@ModelAttribute ContractDetail contractDetail ){
-//        iContractDetailService.save(contractDetail);
-//        return "redirect:/contract/list";
-//    }
+
+    @GetMapping("/delete/{id}")
+    public String deleteContract(@PathVariable Integer id){
+        iContractService.delete(id);
+        return "redirect:/contract";
+    }
 }

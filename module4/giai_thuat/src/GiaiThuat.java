@@ -17,14 +17,17 @@ public class GiaiThuat {
 //        for (int i = 0; i < 2; i++) {
 //            switch (i) {
 //                case 0:
-//
+////                    System.out.print("zero0");
+////                    break;
 //                case 1:
-//                    System.out.print("one1 ");
+//                    System.out.print("one1");
+////                    break;
 //                case 2:
-//                    System.out.print("two2 ");
+//                    System.out.print("two2");
 ////                    break;
 //                case 3:
-//                    System.out.print("three3 ");
+//                    System.out.print("three3");
+////                    break;
 //            }
 //        }
 //        System.out.println("done4");
@@ -39,13 +42,13 @@ public class GiaiThuat {
 //        int a = 10, b = 5;
 //        while (b <10) {
 //            a++;
-//            b+=b;
+//            b=b+b;
 //        }
 //        System.out.println("a= " + b+ " b = " + b);
 //        -------------------------------
 //        int i = 3, j = -2;
-//        i += j;
-//        j -= i;
+//        i += j;//i=3-2=1
+//        j -= i;//j=-2-1=-3
 //        System.out.println(i + "," + j);
 //----------------------------------------------
 //        boolean x = false;
@@ -73,7 +76,7 @@ public class GiaiThuat {
 //--------------------------------------------------
 //        int x = 10;
 //        int y = 20;
-//        int z =  y % x / 2;
+//        int z = x + y % x / 2;
 //        System.out.println(z);
 ////----------------------------------------
 //        int a, b;
@@ -90,12 +93,12 @@ public class GiaiThuat {
 //        } else
 //            --hand;
 //        System.out.println(hand);
-//
+//    }
 //        ------------------------------------
 //        int i = 1, j = -1;
 //        switch (i){
-//            case 0, 1:
-//            case 1:
+//            case 0,1:
+////            case 1:
 //                j = 1;
 //            case 2:
 //                j = 2;
@@ -115,8 +118,8 @@ public class GiaiThuat {
 //        int value = 0;
 //        boolean b1 = true;
 //        boolean b2 = false, b;
-//        b = (b1 | ((value++) == 0));
-//        b = (b2 | ((value += 1) > 0));
+//        b = (b1 | ((value++) == 0));//true
+//        b = (b2 | ((value += 1) > 0));//true
 //        System.out.print(value);
 //        System.out.println(b);
 //        -----------------------------
@@ -136,7 +139,7 @@ public class GiaiThuat {
 //        --------------------------------------------
 //        int x=200;
 //        double y=200.1;
-//        boolean b=(x=y);//boolean trả về true, false
+//        boolean b=(x=y);//boolean trả về true, false->lỗi biên dịch
 //        System.out.println(b);
 //        -----------------------------------------------
 //        int a=10, b=5;
@@ -197,8 +200,10 @@ public class GiaiThuat {
 //            System.out.print(i);
 //        } while (i == i);
 //        ----------------------------------------
-//        float f = 10F;
+//        float f = 10f;
+//        double i=10.0;
 //        System.out.println(f);
+//        -------------------------------
 //        int i = 1, j = 3;
 //        for (; (i < 3) && (j++ < 6); i++) {
 //            System.out.print(" " + i + " " + j);
@@ -227,8 +232,8 @@ public class GiaiThuat {
 //        int value = 0;
 //        boolean b1 = true;
 //        boolean b2 = false, b;
-//        b = (b1 | ((value++) == 0));
-//        b = (b2 | ((value += 2) > 0));
+//        b = (b1 | ((value++) == 0));//true
+//        b = (b2 | ((value += 2) > 0));//true
 //        System.out.println(value);
 //-----------------------------------------
 //        for (int i = 0; i <7 ; i++) {
@@ -265,27 +270,27 @@ public class GiaiThuat {
 //            System.out.println("");
 //        }
 //        -----------------------------------
-        int arr[] = {1, 3, 5, 9, 3, 6, 23, 13};
-
-        for (int i = 0; i < arr.length; i++) {
-            if (soNguyenTo(arr[i]) == true) {
-                System.out.print(arr[i] + ", ");
-            }
-        }
-        
-    }
-
-    public static boolean soNguyenTo(int n) {
-        if (n < 2) {
-            return false;
-        } else {
-            for (int i = 2; i < n; i++) {
-                if (n % i == 0) {
-                    return false;
-                }
-            }
-        }
-        return true;
+//        int arr[] = {1, 3, 5, 9, 3, 6, 23, 13};
+//
+//        for (int i = 0; i < arr.length; i++) {
+//            if (soNguyenTo(arr[i]) == true) {
+//                System.out.print(arr[i] + ", ");
+//            }
+//        }
+//
+//    }
+//
+//    public static boolean soNguyenTo(int n) {
+//        if (n < 2) {
+//            return false;
+//        } else {
+//            for (int i = 2; i < n; i++) {
+//                if (n % i == 0) {
+//                    return false;
+//                }
+//            }
+//        }
+//        return true;
     }
 
 }

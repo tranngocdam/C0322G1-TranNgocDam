@@ -8,4 +8,6 @@ public interface IContractDetailService {
     List<ContractDetail> findAll();
 
     void save(ContractDetail contractDetail);
+
+//    void delete(Integer id);
 }

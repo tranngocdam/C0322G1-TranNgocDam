@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 public class ContractService implements IContractService {
     @Autowired
     private IContractRepository iContractRepository;
+
     @Override
     public Page<Contract> findAll(Pageable pageable) {
         return iContractRepository.findAll(pageable);
@@ -20,5 +21,15 @@ public class ContractService implements IContractService {
     @Override
     public void save(Contract contract) {
         iContractRepository.save(contract);
+    }
+
+    @Override
+    public void delete(Integer id) {
+        iContractRepository.deleteById(id);
+    }
+
+    @Override
+    public Page<Contract> findContract(String name, Pageable pageable) {
+        return iContractRepository.findContractByCustomer("%"+name+"%", pageable);
     }
 }
