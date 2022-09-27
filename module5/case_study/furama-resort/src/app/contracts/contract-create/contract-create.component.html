@@ -1,0 +1,114 @@
+<div class="container-fuild">
+  <div class="row" style="display: flex">
+    <div style="width: 20%"></div>
+    <div style="width: 60%">
+      <h1 class="text-center my-5">Create Contract</h1>
+<!--      <form [formGroup]="contractFrom" >-->
+        <div class="container">
+          <table class="table table-striped">
+            <thead>
+            <tr>
+              <th><label>Code</label></th>
+              <td>
+                <input class="form-control" type="date">
+<!--                <p *ngIf="contractFrom.controls.code.hasError('required') &&  contractFrom.controls.code.touched">Không để trống</p>-->
+              </td>
+            </tr>
+            <tr>
+              <th><label>Day start</label></th>
+              <td>
+                <input class="form-control" type="date">
+<!--                <p *ngIf="contractFrom.controls.dayStart.hasError('required') &&  contractFrom.controls.dayStart.touched">Không để trống</p>-->
+              </td>
+            </tr>
+            <tr>
+              <th><label>Day end</label></th>
+              <td>
+                <input class="form-control" type="date">
+<!--                <p *ngIf="contractFrom.controls.dayEnd.hasError('required') &&  contractFrom.controls.dayEnd.touched">Không để trống</p>-->
+              </td>
+            </tr>
+            <tr>
+              <th><label>Deposits</label></th>
+              <td><input class="form-control" type="text"></td>
+            </tr>
+            <tr>
+              <th><label>Total money</label></th>
+              <td><input class="form-control" type="text"></td>
+            </tr>
+            <tr>
+              <th><label>Customer</label></th>
+              <td><select class="form-select">
+                <option>
+                </option>
+              </select></td>
+            </tr>
+            <tr>
+              <th><label>Facility</label></th>
+              <td><select class="form-select">
+                <option>
+                </option>
+              </select></td>
+            </tr>
+            <tr>
+            <tr>
+              <th><label>Attach facility</label></th>
+              <td>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">
+                  +
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                     aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Create contract detail</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <form>
+                          <div class="container">
+                            <table class="table table-striped">
+                              <tr>
+                                <td><label>Attach Facility</label></td>
+                                <td><select class="form-select">
+                                  <option></option>
+                                </select></td>
+                              </tr>
+                              <tr>
+                                <td><label>Quantity</label></td>
+                                <td><input class="form-control" type="text"></td>
+                              </tr>
+                            </table>
+                          </div>
+                        </form>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                          Close
+                        </button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="submit" class="btn btn-success"  value="Save" >
+                <a class="btn btn-secondary" [routerLink]="['/contract-list']">Back</a>
+              </td>
+            </tr>
+            </thead>
+          </table>
+        </div>
+<!--      </form>-->
+    </div>
+  </div>
+  <div style="width: 20%"></div>
+</div>

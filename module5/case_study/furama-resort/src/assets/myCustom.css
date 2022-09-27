@@ -1,0 +1,76 @@
+
+.img1{
+  top: 2px;
+  left: 152px;
+  position: relative;
+}
+.img2{
+  top: 2px;
+  left: 200px;
+  position: relative;
+}
+.img3{
+  top: 6px;
+  position: relative;
+
+}
+.icon1{
+  top: -27px;
+  left:502px;
+  position: relative;
+}
+.p1{
+  top: 9px;
+  left: 506px;
+  position: relative;
+  font-size: 12px;
+}
+.icon2{
+  top: -6px;
+  left:615px;
+  position: relative;
+
+}
+.phone{
+  top: -25px;
+  left:695px;
+  position: relative;
+  font-size: 12px;
+}
+.icon3{
+  top: 10px;
+  left:500px;
+  position: relative;
+}
+.email{
+  top: 17px;
+  left:515px;
+  position: relative;
+  font-size: 12px;
+}
+.label{
+  top: 17px;
+  left:515px;
+  position: relative;
+  font-size: 12px;
+}
+.title1{
+  top: 17px;
+  left:9px;
+  position: relative;
+  font-size: 30px;
+  font-weight: normal;
+  color: orange;
+}
+.from{
+  position: absolute;
+  left: 800px;
+}
+.imgright{
+  position: absolute;
+  left: 10px;
+}
+.listfacitity{
+  position: absolute;
+  left: 650px;
+}

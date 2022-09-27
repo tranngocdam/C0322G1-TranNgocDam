@@ -1,0 +1,16 @@
+<p>calculator works!</p>
+<table>
+  <tr>
+    <td><input type="number" placeholder="Enter number 1" [(ngModel)]="number1" ></td>
+    <td><input type="number" placeholder="Enter number 2" [(ngModel)]="number2"></td>
+  </tr>
+  <tr>
+    <td><button (click)="calculator('+')">cộng</button></td>
+    <td><button (click)="calculator('-')">trừ</button></td>
+    <td><button (click)="calculator('*')">nhân</button></td>
+    <td><button (click)="calculator('/')">chia</button></td>
+  </tr>
+  <tr>
+    <td><input type="text" [(ngModel)]="result"></td>
+  </tr>
+</table>

@@ -23,11 +23,6 @@ public class ContractController {
     @Autowired
     private IRoomService iRoomService;
 
-//    @ModelAttribute("roomList")
-//    private List<Room> getAllRoom() {
-//        return this.iRoomService.getAllRoom();
-//    }
-
     @GetMapping("/contract")
     public String goContractList(Model model) {
         List<Contract> contractList = this.iContractService.findAll();

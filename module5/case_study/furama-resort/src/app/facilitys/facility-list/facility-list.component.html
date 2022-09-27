@@ -1,0 +1,106 @@
+<div class="container-fluid mt-3">
+  <div class="container-fluid">
+    <div class="row">
+      <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: lemonchiffon">
+        <div class="container-fluid">
+          <a class="btn btn-primary" [routerLink]="['/facility-create']">Create facility</a>
+          <h2 class="listfacitity">LIST FACILITY</h2>
+          <div class="collapse navbar-collapse" id="mynavbar">
+            <ul class="navbar me-auto">
+            </ul>
+            <form class="d-flex">
+              <input class="form-control me-2" type="text" placeholder="Search">
+              <button class="btn btn-primary" type="button">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+  <br>
+  <div class="container-fuild" style="display: flex">
+    <div style="width: 10%"></div>
+    <div class="row" style="width: 80% ;display: flex;justify-content: space-between;flex-wrap: wrap">
+      <div class="card" style="width:33%" *ngFor="let f of facilitys">
+        <img [src]="f.img" width="370" height="239">
+        <div class="card-body">
+          <h5 class="card-title" style="text-align: center">{{f.name}}</h5>
+          <nav class="navbar navbar-expand-sm navbar-dark">
+            <ul class="navbar-nav" >
+              <div class="container-fluid">
+                <div class="collapse navbar-collapse" id="mynavbar">
+                  <li class="nav-item">
+                    <a class="nav-link active"></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active"></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active"></a>
+                  </li>
+                  <li class="nav-item">
+                    <p class="card-text">Area: {{f.area}}</p>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active"></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active"></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active"></a>
+                  </li>
+                  <li class="nav-item">
+                    <p class="card-text">Cost: {{f.cost}}</p>
+                  </li>
+                </div>
+              </div>
+            </ul>
+          </nav>
+          <nav class="navbar navbar-expand-sm navbar-dark">
+            <ul class="navbar-nav">
+              <div class="container-fluid">
+                <div class="collapse navbar-collapse" id="mynavbar1">
+                  <li class="nav-item">
+                    <a [routerLink]="['/facilitys/facility-edit', f.id]" class="btn btn-warning">Edit</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active"></a>
+                  </li>
+                  <li class="nav-item">
+<!--                    <a class="btn btn-danger" [routerLink]="['/facilitys/facility-delete',f.id]">Delete</a>-->
+                    <button (click)="getModal(f.id,f.name)" type="button" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#deleteModal">
+                      Delete
+                    </button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                         aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Delete facility</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            Do you want delete facility <span>{{nameModal}}</span> with id <span>{{idModal}}</span> ?
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <a class="btn btn-danger" data-bs-dismiss="modal" [routerLink]="['/facilitys/facility-delete',idModal]">Delete</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </div>
+              </div>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <div style="width: 10%"></div>
+  </div>
+</div>

@@ -19,7 +19,7 @@ public class CustomerDto implements Validator {
     @Pattern(regexp = "^[0-9]{9}$")
     @NotBlank(message = "Blank is card")
     private String idCard;
-    @Pattern(regexp = "^(090)[0-9]{7}|(091)[0-9]{7}|((84)91)[0-9]{7}||((84)90)[0-9]{7}$", message = "Vd:090(7 chữ số 0-9),091(7 chữ số 0-9)")
+    @Pattern(regexp = "^(090)[0-9]{7}|(091)[0-9]{7}|((84)91)[0-9]{7}|((84)90)[0-9]{7}$", message = "Vd:090(7 chữ số 0-9),091(7 chữ số 0-9)")
     @NotBlank(message = "Blank is phone number")
     private String phoneNumber;
     @Pattern(regexp = "^([a-z 0-9]{3,})@gmail.com$")
@@ -27,7 +27,6 @@ public class CustomerDto implements Validator {
     private String email;
     @NotBlank(message = "Blank is address")
     private String address;
-//    @NotBlank(message = "Blank is customer type")
     private CustomerType customerType;
 
     public CustomerDto() {

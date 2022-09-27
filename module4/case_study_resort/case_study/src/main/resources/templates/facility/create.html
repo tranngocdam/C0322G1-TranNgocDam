@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<div class="container-fuild mt-3">
+    <div class="row">
+        <div th:replace="~{layout::head}"></div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="row">
+        <h1 class="text-center my-1">Create facility</h1>
+        <form th:object="${facilityDto}" method="post" th:action="@{/facility/create}">
+            <div class="container">
+                <table class="table table-striped">
+                    <tr>
+                        <th><label>Facility type</label></th>
+                        <td><select class="form-select" th:field="*{facilityType}" id="selectType"
+                                    onchange="getForm()">
+                            <option value="">---Option Type Facility---</option>
+                            <option th:each="f : ${facilityTypes}" th:value="${f.id}" th:text="${f.name}"></option>
+                        </select></td>
+                    </tr>
+                    <tr>
+                        <th><label>Name</label></th>
+                        <td><input class="form-control" type="text" th:field="*{name}"></td>
+                        <td th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></td>
+                    </tr>
+                    <tr>
+                        <th><label>Area</label></th>
+                        <td><input class="form-control" type="text" th:field="*{area}"></td>
+                        <td th:if="${#fields.hasErrors('area')}" th:errors="*{area}"></td>
+                    </tr>
+                    <tr>
+                        <th><label>Cost</label></th>
+                        <td><input class="form-control" type="text" th:field="*{cost}"></td>
+                        <td th:if="${#fields.hasErrors('cost')}" th:errors="*{cost}"></td>
+                    </tr>
+                    <tr>
+                        <th><label>Max people</label></th>
+                        <td><input class="form-control" type="text" th:field="*{maxPeople}"></td>
+                        <td th:if="${#fields.hasErrors('maxPeople')}" th:errors="*{maxPeople}"></td>
+                    </tr>
+                    <tr>
+                        <th><label>Rent type</label></th>
+                        <td><select class="form-select" th:field="*{rentType}">
+                            <option th:each="r : ${rentTypes}" th:value="${r.id}" th:text="${r.name}"></option>
+                        </select></td>
+                    </tr>
+
+                    <table class="table table-striped" id="room-facility" style="display: none">
+                        <tr>
+                            <th><label>Facility free</label></th>
+                            <td><input class="form-control" type="text" th:field="*{facilityFree}"></td>
+                            <td th:if="${#fields.hasErrors('facilityFree')}" th:errors="*{facilityFree}"></td>
+                        </tr>
+                    </table>
+
+                    <table class="table table-striped" id="house-facility" style="display: none">
+                        <tr>
+                            <th><label>Number of floors</label></th>
+                            <td><input class="form-control" type="text" th:field="*{numberOfFloors}"></td>
+                            <td th:if="${#fields.hasErrors('numberOfFloors')}" th:errors="*{numberOfFloors}"></td>
+                        </tr>
+                        <tr>
+                            <th><label>Standard room</label></th>
+                            <td><input class="form-select" th:field="*{standardRoom}"></td>
+                            <td th:if="${#fields.hasErrors('standardRoom')}" th:errors="*{standardRoom}"></td>
+                        </tr>
+                        <tr>
+                            <th><label>Description Other Convenience</label></th>
+                            <td><input class="form-control" type="text" th:field="*{descriptionOtherConvenience}"></td>
+                            <td th:if="${#fields.hasErrors('descriptionOtherConvenience')}"
+                                th:errors="*{descriptionOtherConvenience}"></td>
+                        </tr>
+                    </table>
+
+                    <table class="table table-striped" id="villa-facility" style="display: none">
+                        <tr>
+                            <th><label>Pool area</label></th>
+                            <td><input class="form-control" type="text" th:field="*{poolArea}"></td>
+                            <td th:if="${#fields.hasErrors('poolArea')}" th:errors="*{poolArea}"></td>
+                        </tr>
+                    </table>
+                </table>
+                <tr>
+                    <td>
+                        <input class="btn btn-success" type="submit" value="Save">
+                        <a class="btn btn-secondary" th:href="@{/facility}">Back</a>
+                    </td>
+                </tr>
+
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+<script src="/main.js"></script>
+</html>

@@ -58,13 +58,22 @@ public class CustomerController {
 
     @GetMapping("/edit/{id}")
     public String showEditCustomer(@PathVariable Integer id, Model model) {
-        model.addAttribute("customers", iCustomerService.findById(id));
+        model.addAttribute("customerDto", iCustomerService.findById(id));
         model.addAttribute("customerTypes", iCustomerTypeService.findAll());
         return "customer/edit";
     }
 
     @PostMapping("/edit")
-    public String saveEditCustomer(@ModelAttribute Customer customer) {
+    public String saveEditCustomer(@Validated @ModelAttribute CustomerDto customerDto,
+                                   BindingResult bindingResult, Model model) {
+        new CustomerDto().validate(customerDto, bindingResult);
+        if (bindingResult.hasFieldErrors()) {
+            List<CustomerType> customerTypeList = iCustomerTypeService.findAll();
+            model.addAttribute("customerTypes", customerTypeList);
+            return "customer/edit";
+        }
+        Customer customer=new Customer();
+        BeanUtils.copyProperties(customerDto, customer);
         iCustomerService.save(customer);
         return "redirect:/customer";
     }

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:origin/develop" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="00cb93c1-1e47-4931-884f-1ea31167c272" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../case_study/task1/contract/list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../bai_tap/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../bai_tap/src/Fibonacci.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../bai_tap/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Promise/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Promise/src/main.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Promise/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../dieu_kien_lap/.idea/dieu_kien_lap.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../dieu_kien_lap/src/main.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../dieu_kien_lap/src/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../dieu_kien_lap/src/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kiem_tra_so_nguyen_to/.idea/kiem_tra_so_nguyen_to.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kiem_tra_so_nguyen_to/src/main.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kiem_tra_so_nguyen_to/src/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kiem_tra_so_nguyen_to/src/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../su_dung_bien/.idea/su_dung_bien.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../su_dung_bien/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../su_dung_bien/src/main.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../su_dung_bien/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../case_study/task1/contract/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../case_study/task1/contract/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../case_study/task1/customer/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../case_study/task1/customer/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../case_study/task1/customer/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../case_study/task1/customer/edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../case_study/task1/customer/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../case_study/task1/customer/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../case_study/task1/facility/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../case_study/task1/facility/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../case_study/task1/facility/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../case_study/task1/facility/edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../case_study/task1/facility/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../case_study/task1/facility/list.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/wfda-typescript-shape" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_COMMON_BRANCH" value="main" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/wfda-typescript-shape" />
+  </component>
+  <component name="ProjectId" id="2DFI4SCRSzi8fBrLyrCQb8aP1QB" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2020.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+  </component>
+  <component name="RunManager">
+    <configuration name="main.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/wfda-typescript-shape/src/main.js" working-dir="$PROJECT_DIR$/wfda-typescript-shape/src">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.main.js" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="00cb93c1-1e47-4931-884f-1ea31167c272" name="Default Changelist" comment="" />
+      <created>1660288213063</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1660288213063</updated>
+      <workItem from="1660288214212" duration="1198000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/wfda-typescript-shape/src/shape.js" />
+        <option value="$PROJECT_DIR$/wfda-typescript-shape/src/main.js" />
+        <option value="$PROJECT_DIR$/wfda-typescript-shape/src/rectangle.js" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/develop" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="548" y="154" key="FileChooserDialogImpl" timestamp="1660288811190">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="548" y="154" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1660288811190" />
+    <state width="1515" height="210" key="GridCell.Tab.0.bottom" timestamp="1660297051811">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1660297051811" />
+    <state width="1515" height="210" key="GridCell.Tab.0.center" timestamp="1660297051811">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1660297051811" />
+    <state width="1515" height="210" key="GridCell.Tab.0.left" timestamp="1660297051811">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1660297051811" />
+    <state width="1515" height="210" key="GridCell.Tab.0.right" timestamp="1660297051811">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1660297051811" />
+  </component>
+</project>

@@ -17,14 +17,9 @@
     <div class="row">
         <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
             <div class="container-fluid">
-                <button type="button" class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown">
+                <a class="btn btn-warning" th:href="@{/facility/create}">
                     Create Facility
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="/facility/house">House</a></li>
-                    <li><a class="dropdown-item" href="/facility/room">Room</a></li>
-                    <li><a class="dropdown-item" href="/facility/villa">Villa</a></li>
-                </ul>
+                </a>
                 <div class="collapse navbar-collapse" id="mynavbar">
                     <ul class="navbar-nav me-auto">
                     </ul>
@@ -56,8 +51,8 @@
                     <th>Facility Type</th>
                     <th colspan="2" >Action</th>
                 </tr>
-                <tr th:each="f : ${facilitys}">
-                    <td th:text="${f.id}"></td>
+                <tr th:each="f, loop : ${facilitys}">
+                    <td th:text="${loop.count}"></td>
                     <td th:text="${f.name}"></td>
                     <td th:text="${f.area}"></td>
                     <td th:text="${f.cost}"></td>

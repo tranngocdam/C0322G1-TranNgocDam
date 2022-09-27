@@ -20,7 +20,7 @@
 
                 <div>
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                            data-bs-target="#exampleModal">
+                            th:data-bs-target="#createModal">
                         Create Employee
                     </button>
 
@@ -35,57 +35,60 @@
                                             aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    <form>
+                                    <form th:action="@{/employee/create}" method="post" th:object="${employees}">
                                         <div class="container">
                                             <table class="table table-striped">
                                                 <tr>
                                                     <td><label>Name</label></td>
-                                                    <td><input class="form-control" type="text"></td>
+                                                    <td><input class="form-control" type="text" th:field="*{name}"></td>
                                                 </tr>
                                                 <tr>
                                                     <td><label>Day of birth</label></td>
-                                                    <td><input class="form-control" type="date"></td>
+                                                    <td><input class="form-control" type="date" th:field="*{dayOfBirth}"></td>
                                                 </tr>
                                                 <tr>
                                                     <td><label>Id card</label></td>
-                                                    <td><input class="form-control" type="text"></td>
+                                                    <td><input class="form-control" type="text" th:field="*{idCard}"></td>
                                                 </tr>
                                                 <tr>
                                                     <td><label>Salary</label></td>
-                                                    <td><input class="form-control" type="text"></td>
+                                                    <td><input class="form-control" type="text" th:field="*{}"></td>
                                                 </tr>
                                                 <tr>
                                                     <td><label>Number phone</label></td>
-                                                    <td><input class="form-control" type="text"></td>
+                                                    <td><input class="form-control" type="text" th:field="*{}"></td>
                                                 </tr>
                                                 <tr>
                                                     <td><label>Email</label></td>
-                                                    <td><input class="form-control" type="text"></td>
+                                                    <td><input class="form-control" type="text" th:field="*{}"></td>
                                                 </tr>
                                                 <tr>
                                                     <td><label>Address</label></td>
-                                                    <td><input class="form-control" type="text"></td>
+                                                    <td><input class="form-control" type="text" th:field="*{}"></td>
                                                 </tr>
                                                 <tr>
                                                     <td><label>Position</label></td>
-                                                    <td><select class="form-select">
-<!--                                                        <option th:each="item: ${customerTypes}" th:value="${item.id}" th:text="${item.name}">-->
-<!--                                                        </option>-->
-                                                    </select> </td>
+                                                    <td><select class="form-select" th:field="*{}">
+                                                        <option th:each="item: ${customerTypes}" th:value="${item.id}"
+                                                                th:text="${item.name}">
+                                                        </option>
+                                                    </select></td>
                                                 </tr>
                                                 <tr>
                                                     <td><label>educationDegree</label></td>
-                                                    <td><select class="form-select">
-                                                        <!--                                                        <option th:each="item: ${customerTypes}" th:value="${item.id}" th:text="${item.name}">-->
-                                                        <!--                                                        </option>-->
-                                                    </select> </td>
+                                                    <td><select class="form-select" th:field="*{}">
+                                                        <option th:each="item: ${customerTypes}" th:value="${item.id}"
+                                                                th:text="${item.name}">
+                                                        </option>
+                                                    </select></td>
                                                 </tr>
                                                 <tr>
                                                     <td><label>division</label></td>
-                                                    <td><select class="form-select">
-                                                        <!--                                                        <option th:each="item: ${customerTypes}" th:value="${item.id}" th:text="${item.name}">-->
-                                                        <!--                                                        </option>-->
-                                                    </select> </td>
+                                                    <td><select class="form-select" th:field="*{}">
+                                                        <option th:each="item: ${customerTypes}" th:value="${item.id}"
+                                                                th:text="${item.name}">
+                                                        </option>
+                                                    </select></td>
                                                 </tr>
                                             </table>
                                         </div>
@@ -195,21 +198,21 @@
                                                         <td><select class="form-select">
                                                             <!--                                                        <option th:each="item: ${customerTypes}" th:value="${item.id}" th:text="${item.name}">-->
                                                             <!--                                                        </option>-->
-                                                        </select> </td>
+                                                        </select></td>
                                                     </tr>
                                                     <tr>
                                                         <td><label>Education Degree</label></td>
                                                         <td><select class="form-select">
                                                             <!--                                                        <option th:each="item: ${customerTypes}" th:value="${item.id}" th:text="${item.name}">-->
                                                             <!--                                                        </option>-->
-                                                        </select> </td>
+                                                        </select></td>
                                                     </tr>
                                                     <tr>
                                                         <td><label>Division</label></td>
                                                         <td><select class="form-select">
                                                             <!--                                                        <option th:each="item: ${customerTypes}" th:value="${item.id}" th:text="${item.name}">-->
                                                             <!--                                                        </option>-->
-                                                        </select> </td>
+                                                        </select></td>
                                                     </tr>
                                                 </table>
                                             </div>
@@ -231,7 +234,8 @@
                         </button>
 
                         <!-- Modal -->
-                        <div class="modal fade" th:id="'deleteModal'+${e.id}" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        <div class="modal fade" th:id="'deleteModal'+${e.id}" tabindex="-1"
+                             aria-labelledby="exampleModalLabel"
                              aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">

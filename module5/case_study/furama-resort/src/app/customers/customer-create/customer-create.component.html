@@ -1,0 +1,125 @@
+<div class="container-fuild">
+  <div class="row" style="display: flex">
+    <div style="width: 25%"></div>
+    <div style="width: 50%">
+      <h2 class="text-center my-5">Create customer</h2>
+      <form [formGroup]="customerForm" (ngSubmit)="submit()">
+        <div class="container">
+          <table class="table table-info table-hover">
+            <thead>
+<!--            <tr>-->
+<!--              <th><label>ID</label></th>-->
+<!--              <td>-->
+<!--                <input class="form-control" type="number" formControlName="id">-->
+<!--              </td>-->
+<!--              <td><p *ngIf="customerForm.controls.id.hasError('required') && customerForm.controls.id.touched">Không-->
+<!--                được để trống</p>-->
+<!--              </td>-->
+<!--            </tr>-->
+            <tr>
+              <th><label>Name</label></th>
+              <td>
+                <input class="form-control" type="text" formControlName="name">
+              </td>
+              <td><p *ngIf="customerForm.controls.name.hasError('required') && customerForm.controls.name.touched">Không
+                được để trống</p>
+                <p *ngIf="customerForm.controls.name.hasError('pattern') && customerForm.controls.name.touched">Không
+                  đúng định dạng</p></td>
+            </tr>
+            <tr>
+              <th><label>Day of birth</label></th>
+              <td>
+                <input class="form-control" type="date" formControlName="dayOfBirth">
+              </td>
+              <td>
+                <p
+                  *ngIf="customerForm.controls.dayOfBirth.hasError('required') && customerForm.controls.dayOfBirth.touched">
+                  Không được để trống</p>
+                <p
+                  *ngIf="customerForm.controls.dayOfBirth.hasError('check18') && customerForm.controls.dayOfBirth.touched">
+                  Không đủ 18 tuổi</p>
+              </td>
+            </tr>
+            <tr>
+              <th><label>Gender</label></th>
+              <td><select class="form-select" formControlName="gender">
+                <option value="true">Nam</option>
+                <option value="false">Nữ</option>
+              </select>
+              </td>
+              <td><p *ngIf="customerForm.controls.gender.hasError('required') && customerForm.controls.gender.touched">
+                Không được để trống</p></td>
+            </tr>
+            <tr>
+              <th><label>Id card</label></th>
+              <td>
+                <input class="form-control" type="text" formControlName="idCard">
+
+              </td>
+              <td><p *ngIf="customerForm.controls.idCard.hasError('required') && customerForm.controls.idCard.touched">
+                Không được để trống</p>
+                <p *ngIf="customerForm.controls.idCard.hasError('pattern') && customerForm.controls.idCard.touched">
+                  Không đúng định dạng</p></td>
+            </tr>
+            <tr>
+              <th><label>Number phone</label></th>
+              <td><input class="form-control" type="text" formControlName="phoneNumber">
+
+              </td>
+              <td><p
+                *ngIf="customerForm.controls.phoneNumber.hasError('required') && customerForm.controls.phoneNumber.touched">
+                Không được để trống</p>
+                <p
+                  *ngIf="customerForm.controls.phoneNumber.hasError('pattern') && customerForm.controls.phoneNumber.touched">
+                  Không đúng định dạng</p></td>
+            </tr>
+            <tr>
+              <th><label>Email</label></th>
+              <td><input class="form-control" type="text" formControlName="email">
+
+              </td>
+              <td><p *ngIf="customerForm.controls.email.hasError('required') && customerForm.controls.email.touched">
+                Không được để trống</p>
+                <p
+                  *ngIf="customerForm.controls.email.hasError('email') && customerForm.controls.email.touched">
+                  Không đúng định dạng</p></td>
+            </tr>
+            <tr>
+              <th><label>Address</label></th>
+              <td><input class="form-control" type="text" formControlName="address">
+
+              </td>
+              <td><p
+                *ngIf="customerForm.controls.address.hasError('required') && customerForm.controls.address.touched">
+                Không được để trống</p></td>
+            </tr>
+
+            <tr>
+              <th><label>Customer type</label></th>
+              <td><select class="form-select" formControlName="customerType">
+                <option selected [value]="null" disabled>---Option customer type----</option>
+                <option *ngFor="let ct of customerType" [value]="ct.id">{{ct.name}}</option>
+              </select>
+              </td>
+              <td>
+                <p
+                  *ngIf="customerForm.controls.customerType.hasError('required') && customerForm.controls.customerType.touched">
+                  Không được để trống</p>
+              </td>
+            </tr>
+
+            <tr>
+              <th>
+                <button class="btn btn-success" type="submit" value="Save">Save</button>
+                <a class="btn btn-secondary" [routerLink]="['/customer-list']">Back</a>
+              </th>
+            </tr>
+            </thead>
+          </table>
+        </div>
+      </form>
+    </div>
+    <div style="width: 25%"></div>
+  </div>
+</div>
+

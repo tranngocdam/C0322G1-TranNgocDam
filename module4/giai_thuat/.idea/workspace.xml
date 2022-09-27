@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="64c84221-fae9-4567-bf82-7014f0d775f2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/java/com/case_study/demo/dto/FacilityDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/resources/static/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam/src/main/java/com/exam/controller/TinTucController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam/src/main/java/com/exam/dto/TinTucDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam/src/main/java/com/exam/model/DanhMuc.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam/src/main/java/com/exam/model/TinTuc.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam/src/main/java/com/exam/repository/IDanhMucRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam/src/main/java/com/exam/repository/ITinTucRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam/src/main/java/com/exam/service/IDanhMucService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam/src/main/java/com/exam/service/ITinTucService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam/src/main/java/com/exam/service/impl/DanhMucServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam/src/main/java/com/exam/service/impl/TinTucServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam/src/main/resources/static/product.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam/src/main/resources/templates/create.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam/src/main/resources/templates/detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam/src/main/resources/templates/list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module5/case_study/task1/task1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai_thi/src/main/java/com/codegym/exam/controller/ContractController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../bai_thi/src/main/java/com/codegym/exam/controller/ContractController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study/src/main/resources/templates/customer/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../case_study/src/main/resources/templates/customer/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/java/com/case_study/demo/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/java/com/case_study/demo/controller/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/java/com/case_study/demo/controller/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/java/com/case_study/demo/controller/EmployeeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/java/com/case_study/demo/controller/FacilityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/java/com/case_study/demo/controller/FacilityController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/java/com/case_study/demo/dto/CustomerDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/java/com/case_study/demo/dto/CustomerDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/java/com/case_study/demo/model/Contract.java" beforeDir="false" afterPath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/java/com/case_study/demo/model/Contract.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/java/com/case_study/demo/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/java/com/case_study/demo/model/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/java/com/case_study/demo/model/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/java/com/case_study/demo/model/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/java/com/case_study/demo/repository/IAttachFacilityRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/java/com/case_study/demo/repository/IAttachFacilityRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/java/com/case_study/demo/repository/IContractDetailRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/java/com/case_study/demo/repository/IContractDetailRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/java/com/case_study/demo/repository/IContractRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/java/com/case_study/demo/repository/IContractRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/java/com/case_study/demo/repository/ICustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/java/com/case_study/demo/repository/ICustomerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/java/com/case_study/demo/repository/ICustomerTypeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/java/com/case_study/demo/repository/ICustomerTypeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/java/com/case_study/demo/repository/IDivisionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/java/com/case_study/demo/repository/IDivisionRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/java/com/case_study/demo/repository/IEducationDegreeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/java/com/case_study/demo/repository/IEducationDegreeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/java/com/case_study/demo/repository/IEmployeeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/java/com/case_study/demo/repository/IEmployeeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/java/com/case_study/demo/repository/IFacilityRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/java/com/case_study/demo/repository/IFacilityRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/java/com/case_study/demo/repository/IFacilityTypeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/java/com/case_study/demo/repository/IFacilityTypeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/java/com/case_study/demo/repository/IRentTypeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/java/com/case_study/demo/repository/IRentTypeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/java/com/case_study/demo/service/IEmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/java/com/case_study/demo/service/IEmployeeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/java/com/case_study/demo/service/impl/ContractDetailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/java/com/case_study/demo/service/impl/ContractDetailService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/java/com/case_study/demo/service/impl/EmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/java/com/case_study/demo/service/impl/EmployeeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/resources/static/DA-NANG-FURAMA-RESORT-7.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/resources/static/img/DA-NANG-FURAMA-RESORT-7.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/resources/static/Furama-Resort-da-nang-6.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/resources/static/img/Furama-Resort-da-nang-6.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/resources/static/Furama_Resort_Danang_-_Ocean_Pool_2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/resources/static/img/Furama_Resort_Danang_-_Ocean_Pool_2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/resources/static/HeavenlyPenthouse_Pool.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/resources/static/img/HeavenlyPenthouse_Pool.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/resources/static/furama-da-nang-resort-18.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/resources/static/img/furama-da-nang-resort-18.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/resources/static/furama.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/resources/static/img/furama.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/resources/static/resort.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/resources/static/img/resort.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/resources/templates/customer/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/resources/templates/customer/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/resources/templates/customer/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/resources/templates/customer/edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/resources/templates/customer/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/resources/templates/customer/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/resources/templates/employee/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/resources/templates/employee/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/resources/templates/facility/createHouse.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/resources/templates/facility/createRoom.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/resources/templates/facility/createVilla.html" beforeDir="false" afterPath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/resources/templates/facility/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/resources/templates/facility/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/resources/templates/facility/edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/resources/templates/facility/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/resources/templates/facility/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/resources/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/../case_study_resort/case_study/src/main/resources/templates/layout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/giai_thuat.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/giai_thuat/DaoNguocMang.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/giai_thuat/DoiXung.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/giai_thuat/GiaiThuat.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/giai_thuat/SoLonThuHai.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/giai_thuat/SoNguyenTo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DaoNguocMang.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DoiXung.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GiaiThuat.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SoLonThuHai.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SoNguyenTo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss10_webservice/spring-customer-management-restful" beforeDir="false" afterPath="$PROJECT_DIR$/../ss10_webservice/spring-customer-management-restful" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss13_phan_quyen/thuc_hanh/spring-role-based-authorization" beforeDir="false" afterPath="$PROJECT_DIR$/../ss13_phan_quyen/thuc_hanh/spring-role-based-authorization" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_spring/thuc_hanh/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../ss1_tong_quan_spring/thuc_hanh/customer-management" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss2_spring_controller/thuc_hanh/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../ss2_spring_controller/thuc_hanh/customer-management" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss5_orm/thuc_hanh" beforeDir="false" afterPath="$PROJECT_DIR$/../ss5_orm/thuc_hanh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss9_AOP/thuc_hanh/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../ss9_AOP/thuc_hanh/customer-management" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss9_AOP/thuc_hanh/customer-management1" beforeDir="false" afterPath="$PROJECT_DIR$/../ss9_AOP/thuc_hanh/customer-management1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss0_databinding/bai_tap/.gradle/6.1/executionHistory/executionHistory.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss0_databinding/bai_tap/.gradle/6.1/executionHistory/executionHistory.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss0_databinding/bai_tap/.gradle/6.1/fileChanges/last-build.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss0_databinding/bai_tap/.gradle/6.1/fileContent/fileContent.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss0_databinding/bai_tap/.gradle/6.1/fileHashes/fileHashes.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss0_databinding/bai_tap/.gradle/6.1/fileHashes/fileHashes.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss0_databinding/bai_tap/.gradle/6.1/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss0_databinding/bai_tap/.gradle/6.1/javaCompile/classAnalysis.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss0_databinding/bai_tap/.gradle/6.1/javaCompile/javaCompile.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss0_databinding/bai_tap/.gradle/6.1/javaCompile/taskHistory.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss0_databinding/bai_tap/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss0_databinding/bai_tap/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss0_databinding/bai_tap/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss0_databinding/bai_tap/.gradle/checksums/checksums.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss0_databinding/bai_tap/.gradle/vcs-1/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss0_databinding/bai_tap/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss0_databinding/bai_tap/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss0_databinding/bai_tap/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss0_databinding/bai_tap/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss0_databinding/bai_tap/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss0_databinding/bai_tap/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss0_databinding/bai_tap/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss0_databinding/bai_tap/build/classes/java/main/com/codegym/controller/DeclarationController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss0_databinding/bai_tap/build/classes/java/main/com/codegym/model/Declaration.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss0_databinding/bai_tap/build/classes/java/main/com/codegym/repository/DeclarationRepositoryImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss0_databinding/bai_tap/build/classes/java/main/com/codegym/repository/IDeclarationRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss0_databinding/bai_tap/build/classes/java/main/com/codegym/service/DeclarationServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss0_databinding/bai_tap/build/classes/java/main/com/codegym/service/IDeclarationService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss0_databinding/bai_tap/build/libs/bai_tap-1.0-SNAPSHOT.war" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss0_databinding/bai_tap/build/tmp/war/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss0_databinding/bai_tap/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss0_databinding/bai_tap/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss0_databinding/bai_tap/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss0_databinding/bai_tap/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss0_databinding/bai_tap/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss0_databinding/bai_tap/src/main/java/com/codegym/controller/DeclarationController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss0_databinding/bai_tap/src/main/java/com/codegym/model/Declaration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss0_databinding/bai_tap/src/main/java/com/codegym/repository/DeclarationRepositoryImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss0_databinding/bai_tap/src/main/java/com/codegym/repository/IDeclarationRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss0_databinding/bai_tap/src/main/java/com/codegym/service/DeclarationServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss0_databinding/bai_tap/src/main/java/com/codegym/service/IDeclarationService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss0_databinding/bai_tap/src/main/webapp/WEB-INF/applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss0_databinding/bai_tap/src/main/webapp/WEB-INF/dispatcher-servlet.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss0_databinding/bai_tap/src/main/webapp/WEB-INF/views/create.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss0_databinding/bai_tap/src/main/webapp/WEB-INF/views/edit.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss0_databinding/bai_tap/src/main/webapp/WEB-INF/views/list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss0_databinding/bai_tap/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss0_databinding/bai_tap/src/main/webapp/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap/.gradle/6.1/executionHistory/executionHistory.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap/.gradle/6.1/executionHistory/executionHistory.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap/.gradle/6.1/fileChanges/last-build.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap/.gradle/6.1/fileContent/fileContent.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap/.gradle/6.1/fileHashes/fileHashes.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap/.gradle/6.1/fileHashes/fileHashes.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap/.gradle/6.1/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap/.gradle/6.1/javaCompile/classAnalysis.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap/.gradle/6.1/javaCompile/javaCompile.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap/.gradle/6.1/javaCompile/taskHistory.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap/.gradle/checksums/checksums.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap/.gradle/vcs-1/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap/build/classes/java/main/com/codegym/controller/ProductController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap/build/classes/java/main/com/codegym/model/Product.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap/build/classes/java/main/com/codegym/repository/IProductRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap/build/classes/java/main/com/codegym/repository/ProductRepositoryImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap/build/classes/java/main/com/codegym/service/IProductService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap/build/classes/java/main/com/codegym/service/ProductService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap/build/libs/bai_tap-1.0-SNAPSHOT.war" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap/build/tmp/war/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap/src/main/java/com/codegym/controller/ProductController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap/src/main/java/com/codegym/model/Product.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap/src/main/java/com/codegym/repository/IProductRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap/src/main/java/com/codegym/repository/ProductRepositoryImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap/src/main/java/com/codegym/service/IProductService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap/src/main/java/com/codegym/service/ProductService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap/src/main/webapp/WEB-INF/applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap/src/main/webapp/WEB-INF/dispatcher-servlet.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap/src/main/webapp/WEB-INF/views/create.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap/src/main/webapp/WEB-INF/views/edit.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap/src/main/webapp/WEB-INF/views/layout.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap/src/main/webapp/WEB-INF/views/list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap/src/main/webapp/WEB-INF/views/view.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap/src/main/webapp/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap1/.gradle/6.1/executionHistory/executionHistory.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap1/.gradle/6.1/executionHistory/executionHistory.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap1/.gradle/6.1/fileChanges/last-build.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap1/.gradle/6.1/fileContent/fileContent.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap1/.gradle/6.1/fileHashes/fileHashes.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap1/.gradle/6.1/fileHashes/fileHashes.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap1/.gradle/6.1/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap1/.gradle/6.1/javaCompile/classAnalysis.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap1/.gradle/6.1/javaCompile/javaCompile.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap1/.gradle/6.1/javaCompile/taskHistory.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap1/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap1/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap1/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap1/.gradle/checksums/checksums.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap1/.gradle/vcs-1/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap1/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap1/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap1/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap1/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap1/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap1/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap1/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap1/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap1/build/classes/java/main/com/codegym/controller/ProductController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap1/build/classes/java/main/com/codegym/model/Product.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap1/build/classes/java/main/com/codegym/repository/IProductRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap1/build/classes/java/main/com/codegym/repository/ProductRepositoryImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap1/build/classes/java/main/com/codegym/service/IProductService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap1/build/classes/java/main/com/codegym/service/ProductServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap1/build/libs/bai_tap1-1.0-SNAPSHOT.war" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap1/build/tmp/war/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap1/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap1/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap1/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap1/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap1/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap1/src/main/java/com/codegym/controller/ProductController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap1/src/main/java/com/codegym/model/Product.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap1/src/main/java/com/codegym/repository/IProductRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap1/src/main/java/com/codegym/repository/ProductRepositoryImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap1/src/main/java/com/codegym/service/IProductService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap1/src/main/java/com/codegym/service/ProductServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap1/src/main/webapp/WEB-INF/applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap1/src/main/webapp/WEB-INF/dispatcher-servlet.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap1/src/main/webapp/WEB-INF/views/list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap1/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss1_thymeleaf/bai_tap1/src/main/webapp/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss2_orm/bai_tap/.gradle/6.1/executionHistory/executionHistory.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss2_orm/bai_tap/.gradle/6.1/executionHistory/executionHistory.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss2_orm/bai_tap/.gradle/6.1/fileChanges/last-build.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss2_orm/bai_tap/.gradle/6.1/fileHashes/fileHashes.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss2_orm/bai_tap/.gradle/6.1/fileHashes/fileHashes.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss2_orm/bai_tap/.gradle/6.1/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss2_orm/bai_tap/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss2_orm/bai_tap/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss2_orm/bai_tap/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss2_orm/bai_tap/.gradle/checksums/checksums.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss2_orm/bai_tap/.gradle/vcs-1/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss2_orm/bai_tap/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss2_orm/bai_tap/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss2_orm/bai_tap/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss2_orm/bai_tap/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss2_orm/bai_tap/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss2_orm/bai_tap/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss2_orm/bai_tap/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss2_orm/bai_tap/build/tmp/war/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss2_orm/bai_tap/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss2_orm/bai_tap/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss2_orm/bai_tap/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss2_orm/bai_tap/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss2_orm/bai_tap/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss2_orm/bai_tap/src/main/webapp/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4delay/ss2_orm/thuc_hanh/customer-management" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ontap.txt" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="2Auoc3nYrXkxaUGgFo1jyc2Uybd" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunManager" selected="Application.DemSoPhanTuLap">
+    <configuration name="DaoNguocMang" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="DaoNguocMang" />
+      <module name="giai_thuat" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DemSoPhanTuLap" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="DemSoPhanTuLap" />
+      <module name="giai_thuat" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GiaiThuat" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="GiaiThuat" />
+      <module name="giai_thuat" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SoLonThuHai" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="SoLonThuHai" />
+      <module name="giai_thuat" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SoNguyenTo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="SoNguyenTo" />
+      <module name="giai_thuat" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.DemSoPhanTuLap" />
+        <item itemvalue="Application.DaoNguocMang" />
+        <item itemvalue="Application.SoNguyenTo" />
+        <item itemvalue="Application.GiaiThuat" />
+        <item itemvalue="Application.SoLonThuHai" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="64c84221-fae9-4567-bf82-7014f0d775f2" name="Default Changelist" comment="" />
+      <created>1655868906927</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1655868906927</updated>
+      <workItem from="1655868909467" duration="1148000" />
+      <workItem from="1658239897790" duration="4006000" />
+      <workItem from="1658279571756" duration="33000" />
+      <workItem from="1658306625420" duration="11000" />
+      <workItem from="1658307181274" duration="1415000" />
+      <workItem from="1658534293708" duration="1430000" />
+      <workItem from="1658622422703" duration="3307000" />
+      <workItem from="1658629547747" duration="4452000" />
+      <workItem from="1658647330682" duration="704000" />
+      <workItem from="1658914912629" duration="2299000" />
+      <workItem from="1658938304873" duration="2972000" />
+      <workItem from="1658962683994" duration="2949000" />
+      <workItem from="1659233192663" duration="8044000" />
+      <workItem from="1659325257958" duration="707000" />
+      <workItem from="1659536661478" duration="2124000" />
+      <workItem from="1659575193026" duration="235000" />
+      <workItem from="1659621475559" duration="6379000" />
+      <workItem from="1659661636306" duration="56000" />
+      <workItem from="1660058089843" duration="1886000" />
+      <workItem from="1660099816371" duration="3875000" />
+      <workItem from="1660126251375" duration="23000" />
+      <workItem from="1660838723367" duration="77000" />
+      <workItem from="1660838824941" duration="33000" />
+      <workItem from="1660838891461" duration="27000" />
+      <workItem from="1660838974952" duration="17000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1660838848715">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1660838848715" />
+    <state width="1493" height="313" key="GridCell.Tab.0.bottom" timestamp="1660121446888">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="313" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1660121446888" />
+    <state width="1493" height="313" key="GridCell.Tab.0.center" timestamp="1660121446888">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="313" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1660121446888" />
+    <state width="1493" height="313" key="GridCell.Tab.0.left" timestamp="1660121446888">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="313" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1660121446888" />
+    <state width="1493" height="313" key="GridCell.Tab.0.right" timestamp="1660121446888">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="313" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1660121446888" />
+    <state width="1493" height="257" key="GridCell.Tab.1.bottom" timestamp="1659630818259">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="257" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1659630818259" />
+    <state width="1493" height="257" key="GridCell.Tab.1.center" timestamp="1659630818259">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="257" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1659630818259" />
+    <state width="1493" height="257" key="GridCell.Tab.1.left" timestamp="1659630818259">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="257" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1659630818259" />
+    <state width="1493" height="257" key="GridCell.Tab.1.right" timestamp="1659630818259">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="257" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1659630818259" />
+  </component>
+</project>

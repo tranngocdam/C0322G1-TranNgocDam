@@ -1,0 +1,15 @@
+<p>category-create works!</p>
+<form [formGroup]="categoryForm" (ngSubmit)="submit()">
+  <table>
+    <tr>
+      <td>Tên danh mục:</td>
+      <td><input type="text" formControlName="name"></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <button>Tạo mới</button>
+      </td>
+    </tr>
+  </table>
+</form>

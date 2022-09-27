@@ -1,0 +1,235 @@
+{
+  "customer": [
+    {
+      "customerType": {
+        "id": 3,
+        "name": "Gold"
+      },
+      "name": "Bảo Bình",
+      "dayOfBirth": "2010-10-21",
+      "gender": true,
+      "idCard": "3434343444",
+      "phoneNumber": "090212212",
+      "email": "baobinh23@gmail.com",
+      "address": "34 Nam Cao",
+      "id": 1
+    },
+    {
+      "customerType": {
+        "id": 3,
+        "name": "Gold"
+      },
+      "name": " Lam",
+      "dayOfBirth": "1990-03-22",
+      "gender": false,
+      "idCard": "2321579900",
+      "phoneNumber": "0912323122",
+      "email": "linh90@gmail.com",
+      "address": "120 Âu Cơ",
+      "id": 2
+    },
+    {
+      "customerType": {
+        "id": 2,
+        "name": "Platinium"
+      },
+      "name": "Khoa",
+      "dayOfBirth": "2022-08-12",
+      "gender": "true",
+      "idCard": "333333333",
+      "phoneNumber": "0903333333",
+      "email": "khoa@gmail.com",
+      "address": "54 đn",
+      "id": 6
+    },
+    {
+      "customerType": {
+        "id": 3,
+        "name": "Gold"
+      },
+      "name": "Luan",
+      "dayOfBirth": "2022-08-03",
+      "gender": "false",
+      "idCard": "333333333",
+      "phoneNumber": "0903333333",
+      "email": "luan12@gmail.com",
+      "address": "32 qn",
+      "id": 7
+    },
+    {
+      "name": "Nam",
+      "customerType": {
+        "id": 2,
+        "name": "Platinium"
+      },
+      "dayOfBirth": "2022-08-03",
+      "gender": "false",
+      "idCard": "887888888",
+      "phoneNumber": "0906666666",
+      "email": "nam@gmail.com",
+      "address": "43 hn",
+      "id": 8
+    },
+    {
+      "customerType": {
+        "id": 3,
+        "name": "Gold"
+      },
+      "name": "Hoa Binh",
+      "dayOfBirth": "2022-08-02",
+      "gender": "true",
+      "idCard": "433434343",
+      "phoneNumber": "0903232322",
+      "email": "binh@gmail.com",
+      "address": "43 dn",
+      "id": 9
+    },
+    {
+      "name": "Ta Cong",
+      "customerType": {
+        "id": 2,
+        "name": "Platinium"
+      },
+      "dayOfBirth": "2022-08-04",
+      "gender": "true",
+      "idCard": "323223233",
+      "phoneNumber": "0903333333",
+      "email": "cong@gmail.com",
+      "address": "23 HCM",
+      "id": 10
+    },
+    {
+      "name": "Thanh Tri",
+      "customerType": {
+        "id": 1,
+        "name": "Diamond"
+      },
+      "dayOfBirth": "2022-08-05",
+      "gender": "false",
+      "idCard": "433344444",
+      "phoneNumber": "0904434333",
+      "email": "tri@gmail.com",
+      "address": "193 Nguyen Luong Bang",
+      "id": 11
+    }
+  ],
+  "customerType": [
+    {
+      "id": 1,
+      "name": "Diamond"
+    },
+    {
+      "id": 2,
+      "name": "Platinium"
+    },
+    {
+      "id": 3,
+      "name": "Gold"
+    },
+    {
+      "id": 4,
+      "name": "Sliver"
+    },
+    {
+      "id": 5,
+      "name": "Member"
+    }
+  ],
+  "rentType": [
+    {
+      "id": 1,
+      "name": "year"
+    },
+    {
+      "id": 2,
+      "name": "month"
+    },
+    {
+      "id": 3,
+      "name": "day"
+    },
+    {
+      "id": 4,
+      "name": "hour"
+    }
+  ],
+  "facilityType": [
+    {
+      "id": 1,
+      "name": "Room"
+    },
+    {
+      "id": 2,
+      "name": "House"
+    },
+    {
+      "id": 3,
+      "name": "Villa"
+    }
+  ],
+  "facility": [
+    {
+      "id": 1,
+      "name": "OCEAN STUDIO SUITE",
+      "area": "65.5m2",
+      "cost": "$563",
+      "maxPeople": 5,
+      "rentType": {
+        "id": 2,
+        "name": "month"
+      },
+      "facilityType": {
+        "id": 2,
+        "name": "house"
+      },
+      "standardRoom": "vip",
+      "descriptionOtherConvenience": "có hồ bơi",
+      "poolArea": 32,
+      "numberOfFloods": 3,
+      "facilityFree": "coca",
+      "img": "https://furamavietnam.com/wp-content/uploads/2018/08/Vietnam_Danang_Furama_Garden-Deluxe-twin-bed-F-370x239.jpg"
+    },
+    {
+      "name": "AAAFFFFFFFFF",
+      "area": "32",
+      "cost": "323",
+      "maxPeople": "3",
+      "rentType": {
+        "id": 2,
+        "name": "month"
+      },
+      "facilityType": {
+        "id": 2,
+        "name": "House"
+      },
+      "standardRoom": "fdf",
+      "descriptionOtherConvenience": "fssf",
+      "poolArea": "43",
+      "numberOfFloods": "4",
+      "facilityFree": "4fvdvd",
+      "img": "dfđ",
+      "id": 2
+    },
+    {
+      "name": "AAADDDDDĐ",
+      "area": "32",
+      "cost": "323",
+      "maxPeople": "3",
+      "rentType": {
+        "id": 2,
+        "name": "month"
+      },
+      "facilityType": {
+        "id": 2,
+        "name": "House"
+      },
+      "standardRoom": "fdf",
+      "descriptionOtherConvenience": "fssf",
+      "poolArea": "43",
+      "numberOfFloods": "4",
+      "facilityFree": "4fvdvd",
+      "img": "dfđ",
+      "id": 3
+    }
+  ]
+}

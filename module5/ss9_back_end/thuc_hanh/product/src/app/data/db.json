@@ -1,0 +1,76 @@
+{
+  "category": [
+    {
+      "name": "apple",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "name": "samsung"
+    },
+    {
+      "id": 3,
+      "name": "oppo"
+    },
+    {
+      "name": "lg",
+      "id": 4
+    },
+    {
+      "name": "accer",
+      "id": 6
+    }
+  ],
+  "product": [
+    {
+      "name": "XSmax",
+      "price": 340000,
+      "description": "99%",
+      "category": {
+        "id": 1,
+        "name": "iphone"
+      },
+      "id": 1
+    },
+    {
+      "id": 2,
+      "name": "S9+",
+      "price": 898555,
+      "description": "100%",
+      "category": {
+        "id": 1,
+        "name": "iphone"
+      }
+    },
+    {
+      "name": "12pro",
+      "price": 1201121,
+      "description": "đẹp",
+      "category": {
+        "id": 1,
+        "name": "iphone"
+      },
+      "id": 3
+    },
+    {
+      "name": "nokia",
+      "price": 21212,
+      "description": "100%",
+      "category": {
+        "id": 2,
+        "name": "samsung"
+      },
+      "id": 4
+    },
+    {
+      "name": "lg 999",
+      "price": 6776,
+      "description": "344",
+      "category": {
+        "id": 4,
+        "name": "lg"
+      },
+      "id": 5
+    }
+  ]
+}

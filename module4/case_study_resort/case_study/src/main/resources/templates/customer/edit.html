@@ -15,7 +15,7 @@
     <br>
     <div class="row">
         <h2 class="text-center my-5">Edit customer</h2>
-        <form th:object="${customers}" method="post" th:action="@{/customer/edit}">
+        <form th:object="${customerDto}" method="post" th:action="@{/customer/edit}">
             <div class="container">
                 <table class="table table-striped">
                     <tr hidden>
@@ -33,8 +33,8 @@
                     <tr>
                         <td><label>Gender</label></td>
                         <td><select class="form-select" th:field="*{gender}">
-                            <option value="1">Nam</option>
-                            <option value="0">Nữ</option>
+                            <option value="true">Nam</option>
+                            <option value="false">Nữ</option>
                         </select></td>
                     </tr>
                     <tr>

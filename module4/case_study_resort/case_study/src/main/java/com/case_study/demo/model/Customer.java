@@ -9,8 +9,10 @@ public class Customer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
+    @Column(columnDefinition = "date")
     private String dayOfBirth;
-    private String gender;
+    @Column(columnDefinition = "bit")
+    private Boolean gender;
     private String idCard;
     private String phoneNumber;
     private String email;
@@ -25,7 +27,7 @@ public class Customer {
     public Customer() {
     }
 
-    public Customer(Integer id, String name, String dayOfBirth, String gender, String idCard, String phoneNumber, String email, String address, CustomerType customerType, List<Contract> contractList) {
+    public Customer(Integer id, String name, String dayOfBirth, Boolean gender, String idCard, String phoneNumber, String email, String address, CustomerType customerType, List<Contract> contractList) {
         this.id = id;
         this.name = name;
         this.dayOfBirth = dayOfBirth;
@@ -70,11 +72,11 @@ public class Customer {
         this.dayOfBirth = dayOfBirth;
     }
 
-    public String getGender() {
+    public Boolean getGender() {
         return gender;
     }
 
-    public void setGender(String gender) {
+    public void setGender(Boolean gender) {
         this.gender = gender;
     }
 

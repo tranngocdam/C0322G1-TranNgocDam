@@ -1,0 +1,37 @@
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Đăng nhập
+</button>
+
+<!-- Modal -->
+<form [formGroup]="loginForm" (ngSubmit)="submit1()">
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Form đăng nhập</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="exampleFormControlInput2" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="emailFormControlInput1"
+                   placeholder="name@example.com" formControlName="email">
+            <p *ngIf="loginForm.controls.email.hasError('email') &&  loginForm.controls.email.touched">Email không hợp lệ</p>
+            <p *ngIf="loginForm.controls.email.hasError('required') &&  loginForm.controls.email.touched">Email không để trống</p>
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput2" class="form-label">Password</label>
+            <input type="password" class="form-control" id="passwordFormControlInput1"
+                   placeholder="Enter the password" formControlName="password">
+            <p *ngIf="loginForm.controls.password.hasError('minlength') &&  loginForm.controls.password.touched">password không hợp lệ</p>
+            <p *ngIf="loginForm.controls.password.hasError('required') &&  loginForm.controls.password.touched">password không để trống</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" [disabled]="!loginForm">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

@@ -9,6 +9,7 @@ public class Employee {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
+    @Column(columnDefinition = "date")
     private String dayOfBirth;
     private String idCard;
     private Double salary;
@@ -73,13 +74,7 @@ public class Employee {
         this.dayOfBirth = dayOfBirth;
     }
 
-    public String getIdCard() {
-        return idCard;
-    }
 
-    public void setIdCard(String idCard) {
-        this.idCard = idCard;
-    }
 
     public Double getSalary() {
         return salary;
@@ -87,6 +82,15 @@ public class Employee {
 
     public void setSalary(Double salary) {
         this.salary = salary;
+    }
+
+
+    public String getIdCard() {
+        return idCard;
+    }
+
+    public void setIdCard(String idCard) {
+        this.idCard = idCard;
     }
 
     public String getPhoneNumber() {

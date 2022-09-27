@@ -9,6 +9,7 @@ import org.springframework.data.repository.query.Param;
 
 public interface IContractRepository extends JpaRepository<Contract, Integer> {
 
+
     @Query(value="select * from contract where customer_id like :customer ", nativeQuery=true)
     Page<Contract> findContractByCustomer(@Param("customer") String customer, Pageable pageable);
 }

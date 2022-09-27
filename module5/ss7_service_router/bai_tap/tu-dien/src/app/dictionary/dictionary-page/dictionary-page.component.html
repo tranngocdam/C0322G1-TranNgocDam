@@ -1,0 +1,11 @@
+<p>dictionary-page works!</p>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Word</th>
+  </tr>
+  <tr *ngFor="let dic of dictionaryList; index as i">
+    <td>{{i + 1}}</td>
+    <td><a [routerLink]="['/dictionary/detail',dic.word]">{{dic.word}}</a></td>
+  </tr>
+</table>

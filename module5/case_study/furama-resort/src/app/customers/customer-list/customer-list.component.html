@@ -1,0 +1,103 @@
+<div class="container-fluid mt-3">
+  <div class="container-fluid">
+    <div class="row">
+      <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: lemonchiffon">
+        <div class="container-fluid">
+          <a class="btn btn-primary" [routerLink]="['/customer-create']">Create customer</a>
+          <h2 class="listfacitity">LIST CUSTOMER</h2>
+          <div class="collapse navbar-collapse" id="mynavbar">
+            <ul class="navbar me-auto">
+            </ul>
+            <div style="display:flex;">
+              <select class="form-select" [(ngModel)]="name2">
+                <option [defaultSelected]="" value="" disabled>---Option customer type----</option>
+                <option *ngFor="let ct of customerType" [ngValue]="ct.name">{{ct.name}}</option>
+              </select>
+              <input class="form-control me-2" type="text" placeholder="Search" [(ngModel)]="name1">
+              <button class="btn btn-primary" type="button" (click)="searchCustomer()">Search</button>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="container table-responsive">
+        <table class="table table-striped table-hover table-bordered" style="text-align: center">
+          <thead>
+          <tr class="bg-info">
+            <th>No</th>
+            <th>Name</th>
+            <th>Day of birthday</th>
+            <th>Gender</th>
+            <th>Id card</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Customer type</th>
+            <th colspan="2">Action</th>
+          </tr>
+          <tr *ngFor="let c of customers | paginate:{itemsPerPage: 3, currentPage: p}; index as i">
+            <td>{{i + 1}}</td>
+            <td>{{c.name}}</td>
+            <td>{{c.dayOfBirth}}</td>
+            <td>
+              <span *ngIf="c.gender == true; else elseBlock">Nam</span>
+              <ng-template #elseBlock>Nữ</ng-template>
+            </td>
+            <td>{{c.idCard}}</td>
+            <td>{{c.phoneNumber}}</td>
+            <td>{{c.email}}</td>
+            <td>{{c.address}}</td>
+            <td>{{c.customerType.name}}</td>
+            <td>
+              <button class="btn btn-warning" [routerLink]="['/customers/customer-edit',c.id]">Edit</button>
+            </td>
+            <td>
+              <button type="button" class="btn btn-primary" (click)="getDataForModal(c)" data-bs-toggle="modal"
+                      data-bs-target="#deleteModal">
+                Delete
+              </button>
+            </td>
+            <!-- Modal -->
+            <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                 aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Delete customer</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    Do you want delete customer<p>{{nameModal}}</p>?
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <!--                    <a class="btn btn-danger" data-bs-dismiss="modal"-->
+                    <!--                       [routerLink]="['/customers/customer-delete',idModal]">Delete</a>-->
+                    <a class="btn btn-danger" data-bs-dismiss="modal" (click)="deleteCustomer(idModal)">Delete</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </thead>
+        </table>
+      </div>
+    </div>
+    <div class="container" style="display: flex;justify-content: center;margin-top: 10px">
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+</div>

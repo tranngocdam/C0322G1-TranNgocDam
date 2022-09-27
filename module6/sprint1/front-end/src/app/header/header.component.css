@@ -1,0 +1,33 @@
+.cg{
+  top: 4px;
+  left:150px;
+  position: relative;
+}
+.title{
+  top: 4px;
+  left:490px;
+  position: relative;
+}
+.icon2{
+  top: -3px;
+  left:685px;
+  position: relative;
+
+}
+.phone{
+  top: -21px;
+  left:715px;
+  position: relative;
+  font-size: 12px;
+}
+.icon3{
+  top: 10px;
+  left:615px;
+  position: relative;
+}
+.email{
+  top: 20px;
+  left:629px;
+  position: relative;
+  font-size: 12px;
+}

@@ -7,12 +7,19 @@ public class DienThoaiChinhHang extends DienThoai {
     public DienThoaiChinhHang() {
     }
 
-    public void Display() {
+    public  void Display() {
         System.out.println("DienThoaiChinhHang{" + super.toString() +
                 ", thoiGianBaoHanh='" + thoiGianBaoHanh + '\'' +
                 ", phamViBaoHanh=" + phamViBaoHanh +
                 '}');
     }
+
+//    public DienThoaiChinhHang(String ID, String tenDienThoai, Double giaBan, Integer soLuong, String nhaSanXuat, String thoiGianBaoHanh, Integer phamViBaoHanh) {
+//        super(ID, tenDienThoai, giaBan, soLuong, nhaSanXuat);
+//        this.thoiGianBaoHanh = thoiGianBaoHanh;
+//        this.phamViBaoHanh = phamViBaoHanh;
+//    }
+
 
     public DienThoaiChinhHang(String ID, String tenDienThoai, Double giaBan, Integer soLuong, String nhaSanXuat, String thoiGianBaoHanh, Integer phamViBaoHanh) {
         super(ID, tenDienThoai, giaBan, soLuong, nhaSanXuat);
