@@ -299,7 +299,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../giai_thuat" />
   </component>
   <component name="RunManager" selected="Application.DemSoPhanTuLap">
     <configuration name="DaoNguocMang" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -382,6 +382,7 @@
       <workItem from="1660838824941" duration="33000" />
       <workItem from="1660838891461" duration="27000" />
       <workItem from="1660838974952" duration="17000" />
+      <workItem from="1664206112103" duration="42000" />
     </task>
     <servers />
   </component>
@@ -401,10 +402,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1660838848715">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1664206144087">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1660838848715" />
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1664206144087" />
     <state width="1493" height="313" key="GridCell.Tab.0.bottom" timestamp="1660121446888">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
