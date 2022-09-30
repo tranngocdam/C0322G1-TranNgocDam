@@ -1,0 +1,82 @@
+body {
+  /*margin: 0 auto;*/
+  background-image: url('https://thumbs.dreamstime.com/b/wooden-empty-bookshelf-shelves-warehouse-stock-vector-illustration-136278231.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%
+}
+.img1{
+  top: 24px;
+  left:250px;
+  position: relative;
+}
+.img2{
+  top: 24px;
+  left:350px;
+  position: relative;
+}
+.img3{
+  top: 24px;
+  left:450px;
+  position: relative;
+}
+.img4{
+  top: 24px;
+  left:550px;
+  position: relative;
+}
+.img5{
+  top: 24px;
+  left:650px;
+  position: relative;
+}
+.img6{
+  top: 64px;
+  left:250px;
+  position: relative;
+}
+.img7{
+  top: 64px;
+  left:350px;
+  position: relative;
+}
+.img8{
+  top: 64px;
+  left:450px;
+  position: relative;
+}
+.img9{
+  top: 64px;
+  left:550px;
+  position: relative;
+}
+.img10{
+  top: 64px;
+  left:650px;
+  position: relative;
+}
+.img11{
+  top: 104px;
+  left:250px;
+  position: relative;
+}
+.img12{
+  top: 104px;
+  left:350px;
+  position: relative;
+}
+.img13{
+  top: 104px;
+  left:450px;
+  position: relative;
+}
+.img14{
+  top: 104px;
+  left:550px;
+  position: relative;
+}
+.img15{
+  top: 104px;
+  left:650px;
+  position: relative;
+}
