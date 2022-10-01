@@ -12,6 +12,9 @@
   top: 38px;
   left:170px;
   position: relative;
+  font-style: italic;
+  color: beige;
+  font-family: "Eras Medium ITC";
 }
 .logo{
   top: 10px;
