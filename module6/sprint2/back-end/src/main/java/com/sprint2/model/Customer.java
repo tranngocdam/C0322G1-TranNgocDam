@@ -20,18 +20,24 @@ public class Customer {
     @Column(columnDefinition = "bit(1) default 0")
     private Boolean isDelete;
 
-    @ManyToOne
+
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id", referencedColumnName = "id")
+    @JsonBackReference
     private AppUsers appUsers;
 
     @JsonBackReference
     @OneToMany(mappedBy = "customer")
-    private List<Card> cardList;
+    private List<OrderBook> orderBookList;
+
+    @JsonBackReference
+    @OneToMany(mappedBy = "customer")
+    private List<FeedBack> feedBackList;
 
     public Customer() {
     }
 
-    public Customer(Integer id, String name, LocalDate dayOfBirth, String address, Boolean gender, String phone, String email, Boolean isDelete, AppUsers appUsers, List<Card> cardList) {
+    public Customer(Integer id, String name, LocalDate dayOfBirth, String address, Boolean gender, String phone, String email, Boolean isDelete, AppUsers appUsers, List<OrderBook> orderBookList, List<FeedBack> feedBackList) {
         this.id = id;
         this.name = name;
         this.dayOfBirth = dayOfBirth;
@@ -41,7 +47,8 @@ public class Customer {
         this.email = email;
         this.isDelete = isDelete;
         this.appUsers = appUsers;
-        this.cardList = cardList;
+        this.orderBookList = orderBookList;
+        this.feedBackList = feedBackList;
     }
 
     public Integer getId() {
@@ -116,11 +123,19 @@ public class Customer {
         this.appUsers = appUsers;
     }
 
-    public List<Card> getCardList() {
-        return cardList;
+    public List<OrderBook> getOrderBookList() {
+        return orderBookList;
     }
 
-    public void setCardList(List<Card> cardList) {
-        this.cardList = cardList;
+    public void setOrderBookList(List<OrderBook> orderBookList) {
+        this.orderBookList = orderBookList;
+    }
+
+    public List<FeedBack> getFeedBackList() {
+        return feedBackList;
+    }
+
+    public void setFeedBackList(List<FeedBack> feedBackList) {
+        this.feedBackList = feedBackList;
     }
 }

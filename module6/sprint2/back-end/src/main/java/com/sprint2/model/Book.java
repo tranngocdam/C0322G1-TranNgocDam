@@ -14,16 +14,16 @@ public class Book {
     private String code;
     private LocalDate createDate;
     private String size;
+    @JoinColumn(columnDefinition = "text")
     private String description;
+    private String author;
     private Double price;
+    private Integer amount;
+    @JoinColumn(columnDefinition = "text")
     private String image;
     private Integer numberOfPage;
     @Column(columnDefinition = "bit(1) default 0")
     private Boolean isDelete;
-
-    @ManyToOne
-    @JoinColumn(name = "author_id", referencedColumnName = "id")
-    private Author author;
 
     @ManyToOne
     @JoinColumn(name = "category_id", referencedColumnName = "id")
@@ -39,27 +39,28 @@ public class Book {
 
     @JsonBackReference
     @OneToMany(mappedBy = "book")
-    private List<Card> cardList;
+    private List<OrderBook> orderBookList;
 
     public Book() {
     }
 
-    public Book(Integer id, String name, String code, LocalDate createDate, String size, String description, Double price, String image, Integer numberOfPage, Boolean isDelete, Author author, Category category, Company company, Discount discount, List<Card> cardList) {
+    public Book(Integer id, String name, String code, LocalDate createDate, String size, String description, String author, Double price, Integer amount, String image, Integer numberOfPage, Boolean isDelete, Category category, Company company, Discount discount, List<OrderBook> orderBookList) {
         this.id = id;
         this.name = name;
         this.code = code;
         this.createDate = createDate;
         this.size = size;
         this.description = description;
+        this.author = author;
         this.price = price;
+        this.amount = amount;
         this.image = image;
         this.numberOfPage = numberOfPage;
         this.isDelete = isDelete;
-        this.author = author;
         this.category = category;
         this.company = company;
         this.discount = discount;
-        this.cardList = cardList;
+        this.orderBookList = orderBookList;
     }
 
     public Integer getId() {
@@ -110,12 +111,28 @@ public class Book {
         this.description = description;
     }
 
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
     public Double getPrice() {
         return price;
     }
 
     public void setPrice(Double price) {
         this.price = price;
+    }
+
+    public Integer getAmount() {
+        return amount;
+    }
+
+    public void setAmount(Integer amount) {
+        this.amount = amount;
     }
 
     public String getImage() {
@@ -142,14 +159,6 @@ public class Book {
         isDelete = delete;
     }
 
-    public Author getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(Author author) {
-        this.author = author;
-    }
-
     public Category getCategory() {
         return category;
     }
@@ -174,11 +183,11 @@ public class Book {
         this.discount = discount;
     }
 
-    public List<Card> getCardList() {
-        return cardList;
+    public List<OrderBook> getOrderBookList() {
+        return orderBookList;
     }
 
-    public void setCardList(List<Card> cardList) {
-        this.cardList = cardList;
+    public void setOrderBookList(List<OrderBook> orderBookList) {
+        this.orderBookList = orderBookList;
     }
 }
