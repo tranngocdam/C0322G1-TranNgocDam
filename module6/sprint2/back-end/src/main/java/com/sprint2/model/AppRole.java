@@ -1,6 +1,7 @@
 package com.sprint2.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.util.List;
@@ -12,19 +13,20 @@ public class AppRole {
     private Integer id;
     private String roleName;
     @Column(columnDefinition = "bit(1) default 0")
-    private Boolean isDelete;
+    private Boolean status;
 
-    @JsonBackReference
+//    @JsonBackReference
+@JsonIgnore
     @OneToMany(mappedBy = "appRole")
     private List<UserRole> userRoleList;
 
     public AppRole() {
     }
 
-    public AppRole(Integer id, String roleName, Boolean isDelete, List<UserRole> userRoleList) {
+    public AppRole(Integer id, String roleName, Boolean status, List<UserRole> userRoleList) {
         this.id = id;
         this.roleName = roleName;
-        this.isDelete = isDelete;
+        this.status = status;
         this.userRoleList = userRoleList;
     }
 
@@ -44,12 +46,12 @@ public class AppRole {
         this.roleName = roleName;
     }
 
-    public Boolean getDelete() {
-        return isDelete;
+    public Boolean getStatus() {
+        return status;
     }
 
-    public void setDelete(Boolean delete) {
-        isDelete = delete;
+    public void setStatus(Boolean status) {
+        this.status = status;
     }
 
     public List<UserRole> getUserRoleList() {

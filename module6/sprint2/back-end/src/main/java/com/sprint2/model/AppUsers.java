@@ -1,6 +1,7 @@
 package com.sprint2.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -17,27 +18,29 @@ public class AppUsers {
     private LocalDate createDate;
 
     @Column(columnDefinition = "bit(1) default 0")
-    private Boolean isDelete;
+    private Boolean status;
 
-    @JsonBackReference
+//    @JsonBackReference
+@JsonIgnore
     @OneToMany(mappedBy = "appUsers")
     private List<UserRole> userRoleList;
 
 
     @OneToOne(mappedBy = "appUsers")
-    @JsonBackReference
+//    @JsonBackReference
+    @JsonIgnore
     private Customer customer;
 
     public AppUsers() {
     }
 
-    public AppUsers(Integer id, String username, String password, String email, LocalDate createDate, Boolean isDelete, List<UserRole> userRoleList, Customer customer) {
+    public AppUsers(Integer id, String username, String password, String email, LocalDate createDate, Boolean status, List<UserRole> userRoleList, Customer customer) {
         this.id = id;
         this.username = username;
         this.password = password;
         this.email = email;
         this.createDate = createDate;
-        this.isDelete = isDelete;
+        this.status = status;
         this.userRoleList = userRoleList;
         this.customer = customer;
     }
@@ -82,12 +85,12 @@ public class AppUsers {
         this.createDate = createDate;
     }
 
-    public Boolean getDelete() {
-        return isDelete;
+    public Boolean getStatus() {
+        return status;
     }
 
-    public void setDelete(Boolean delete) {
-        isDelete = delete;
+    public void setStatus(Boolean status) {
+        this.status = status;
     }
 
     public List<UserRole> getUserRoleList() {

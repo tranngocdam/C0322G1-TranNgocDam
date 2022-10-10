@@ -1,6 +1,7 @@
 package com.sprint2.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.util.List;
@@ -13,20 +14,21 @@ public class Company {
     private String name;
     private String address;
     @Column(columnDefinition = "bit(1) default 0")
-    private Boolean isDelete;
+    private Boolean status;
 
-    @JsonBackReference
+//    @JsonBackReference
+@JsonIgnore
     @OneToMany(mappedBy = "company")
     private List<Book> bookList;
 
     public Company() {
     }
 
-    public Company(Integer id, String name, String address, Boolean isDelete, List<Book> bookList) {
+    public Company(Integer id, String name, String address, Boolean status, List<Book> bookList) {
         this.id = id;
         this.name = name;
         this.address = address;
-        this.isDelete = isDelete;
+        this.status = status;
         this.bookList = bookList;
     }
 
@@ -54,12 +56,12 @@ public class Company {
         this.address = address;
     }
 
-    public Boolean getDelete() {
-        return isDelete;
+    public Boolean getStatus() {
+        return status;
     }
 
-    public void setDelete(Boolean delete) {
-        isDelete = delete;
+    public void setStatus(Boolean status) {
+        this.status = status;
     }
 
     public List<Book> getBookList() {

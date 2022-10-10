@@ -8,7 +8,7 @@ public class UserRole {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @Column(columnDefinition = "bit(1) default 0")
-    private Boolean isDelete;
+    private Boolean status;
 
     @ManyToOne
     @JoinColumn(name = "role_id", referencedColumnName = "id")
@@ -21,9 +21,9 @@ public class UserRole {
     public UserRole() {
     }
 
-    public UserRole(Integer id, Boolean isDelete, AppRole appRole, AppUsers appUsers) {
+    public UserRole(Integer id, Boolean status, AppRole appRole, AppUsers appUsers) {
         this.id = id;
-        this.isDelete = isDelete;
+        this.status = status;
         this.appRole = appRole;
         this.appUsers = appUsers;
     }
@@ -36,12 +36,12 @@ public class UserRole {
         this.id = id;
     }
 
-    public Boolean getDelete() {
-        return isDelete;
+    public Boolean getStatus() {
+        return status;
     }
 
-    public void setDelete(Boolean delete) {
-        isDelete = delete;
+    public void setStatus(Boolean status) {
+        this.status = status;
     }
 
     public AppRole getAppRole() {

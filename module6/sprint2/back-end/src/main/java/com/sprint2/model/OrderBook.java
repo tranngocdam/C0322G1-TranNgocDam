@@ -12,7 +12,7 @@ public class OrderBook {
     private Integer amount;
 
     @Column(columnDefinition = "bit(1) default 0")
-    private Boolean isDelete;
+    private Boolean status;
 
     @ManyToOne
     @JoinColumn(name = "book_id", referencedColumnName = "id")
@@ -25,11 +25,11 @@ public class OrderBook {
     public OrderBook() {
     }
 
-    public OrderBook(Integer id, LocalDate createDate, Integer amount, Boolean isDelete, Book book, Customer customer) {
+    public OrderBook(Integer id, LocalDate createDate, Integer amount, Boolean status, Book book, Customer customer) {
         this.id = id;
         this.createDate = createDate;
         this.amount = amount;
-        this.isDelete = isDelete;
+        this.status = status;
         this.book = book;
         this.customer = customer;
     }
@@ -58,12 +58,12 @@ public class OrderBook {
         this.amount = amount;
     }
 
-    public Boolean getDelete() {
-        return isDelete;
+    public Boolean getStatus() {
+        return status;
     }
 
-    public void setDelete(Boolean delete) {
-        isDelete = delete;
+    public void setStatus(Boolean status) {
+        this.status = status;
     }
 
     public Book getBook() {

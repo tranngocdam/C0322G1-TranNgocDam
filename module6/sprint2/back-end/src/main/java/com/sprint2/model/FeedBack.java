@@ -10,12 +10,12 @@ public class FeedBack {
     private Integer id;
     private String content;
     private LocalDate dateFeedBack;
-    @JoinColumn(columnDefinition = "text")
+    @Column(columnDefinition = "text")
     private String text;
-    @JoinColumn(columnDefinition = "text")
+    @Column(columnDefinition = "text")
     private String image;
     @Column(columnDefinition = "bit(1) default 0")
-    private Boolean isDelete;
+    private Boolean status;
 
     @ManyToOne
     @JoinColumn(name = "feedBack_id", referencedColumnName = "id")
@@ -24,13 +24,13 @@ public class FeedBack {
     public FeedBack() {
     }
 
-    public FeedBack(Integer id, String content, LocalDate dateFeedBack, String text, String image, Boolean isDelete, Customer customer) {
+    public FeedBack(Integer id, String content, LocalDate dateFeedBack, String text, String image, Boolean status, Customer customer) {
         this.id = id;
         this.content = content;
         this.dateFeedBack = dateFeedBack;
         this.text = text;
         this.image = image;
-        this.isDelete = isDelete;
+        this.status = status;
         this.customer = customer;
     }
 
@@ -74,12 +74,12 @@ public class FeedBack {
         this.image = image;
     }
 
-    public Boolean getDelete() {
-        return isDelete;
+    public Boolean getStatus() {
+        return status;
     }
 
-    public void setDelete(Boolean delete) {
-        isDelete = delete;
+    public void setStatus(Boolean status) {
+        this.status = status;
     }
 
     public Customer getCustomer() {

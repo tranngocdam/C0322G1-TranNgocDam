@@ -1,6 +1,7 @@
 package com.sprint2.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -18,26 +19,29 @@ public class Customer {
     private String phone;
     private String email;
     @Column(columnDefinition = "bit(1) default 0")
-    private Boolean isDelete;
+    private Boolean status;
 
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id", referencedColumnName = "id")
-    @JsonBackReference
+//    @JsonBackReference
+    @JsonIgnore
     private AppUsers appUsers;
 
-    @JsonBackReference
+//    @JsonBackReference
+@JsonIgnore
     @OneToMany(mappedBy = "customer")
     private List<OrderBook> orderBookList;
 
-    @JsonBackReference
+//    @JsonBackReference
+@JsonIgnore
     @OneToMany(mappedBy = "customer")
     private List<FeedBack> feedBackList;
 
     public Customer() {
     }
 
-    public Customer(Integer id, String name, LocalDate dayOfBirth, String address, Boolean gender, String phone, String email, Boolean isDelete, AppUsers appUsers, List<OrderBook> orderBookList, List<FeedBack> feedBackList) {
+    public Customer(Integer id, String name, LocalDate dayOfBirth, String address, Boolean gender, String phone, String email, Boolean status, AppUsers appUsers, List<OrderBook> orderBookList, List<FeedBack> feedBackList) {
         this.id = id;
         this.name = name;
         this.dayOfBirth = dayOfBirth;
@@ -45,7 +49,7 @@ public class Customer {
         this.gender = gender;
         this.phone = phone;
         this.email = email;
-        this.isDelete = isDelete;
+        this.status = status;
         this.appUsers = appUsers;
         this.orderBookList = orderBookList;
         this.feedBackList = feedBackList;
@@ -107,12 +111,12 @@ public class Customer {
         this.email = email;
     }
 
-    public Boolean getDelete() {
-        return isDelete;
+    public Boolean getStatus() {
+        return status;
     }
 
-    public void setDelete(Boolean delete) {
-        isDelete = delete;
+    public void setStatus(Boolean status) {
+        this.status = status;
     }
 
     public AppUsers getAppUsers() {

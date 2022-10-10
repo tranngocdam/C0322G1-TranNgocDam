@@ -1,53 +1,40 @@
-package com.sprint2.model;
+package com.sprint2.dto;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.sprint2.model.Category;
+import com.sprint2.model.Company;
+import com.sprint2.model.Discount;
+import com.sprint2.model.OrderBook;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import java.time.LocalDate;
 import java.util.List;
 
-@Entity
-public class Book {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class BookDto {
     private Integer id;
     private String name;
     private String code;
     private LocalDate createDate;
     private String size;
-    @Column(columnDefinition = "TEXT")
     private String description;
     private String author;
     private Double price;
     private Integer amount;
-    @Column(columnDefinition = "TEXT")
     private String image;
     private Integer numberOfPage;
-    @Column(columnDefinition = "BIT(1) DEFAULT 0")
     private Boolean status;
-
-    @ManyToOne
-    @JoinColumn(name = "category_id", referencedColumnName = "id")
     private Category category;
-
-    @ManyToOne
-    @JoinColumn(name = "company_id", referencedColumnName = "id")
     private Company company;
-
-    @ManyToOne
-    @JoinColumn(name = "discount_id", referencedColumnName = "id")
     private Discount discount;
-
-//    @JsonBackReference
-@JsonIgnore
-    @OneToMany(mappedBy = "book")
     private List<OrderBook> orderBookList;
 
-    public Book() {
+    public BookDto() {
     }
 
-    public Book(Integer id, String name, String code, LocalDate createDate, String size, String description, String author, Double price, Integer amount, String image, Integer numberOfPage, Boolean status, Category category, Company company, Discount discount, List<OrderBook> orderBookList) {
+    public BookDto(Integer id, String name, String code, LocalDate createDate, String size, String description, String author, Double price, Integer amount, String image, Integer numberOfPage, Boolean status, Category category, Company company, Discount discount, List<OrderBook> orderBookList) {
         this.id = id;
         this.name = name;
         this.code = code;
@@ -84,14 +71,6 @@ public class Book {
 
     public String getCode() {
         return code;
-    }
-
-    public Boolean getStatus() {
-        return status;
-    }
-
-    public void setStatus(Boolean status) {
-        this.status = status;
     }
 
     public void setCode(String code) {
@@ -162,6 +141,13 @@ public class Book {
         this.numberOfPage = numberOfPage;
     }
 
+    public Boolean getStatus() {
+        return status;
+    }
+
+    public void setStatus(Boolean status) {
+        this.status = status;
+    }
 
     public Category getCategory() {
         return category;
