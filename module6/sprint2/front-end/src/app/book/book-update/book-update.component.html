@@ -1,0 +1,98 @@
+<body>
+<div class="container-fluid">
+  <div class="vc_empty_space" style="height: 64px"><span class="vc_empty_space_inner"></span></div>
+  <div class="container">
+    <div class="row formRow">
+      <div class="col-3"></div>
+      <div class="col-6">
+        <form [formGroup]="bookForm" (ngSubmit)="submit(id)">
+          <div class="mb-3 formRow_create_title">
+            <h5><b>Thêm mới sách</b></h5>
+          </div>
+          <hr>
+          <div class="formRow_create_content">
+            <div class="mb-3">
+              <label class="form-label">Tên sách<span class="text-danger">*</span> </label>
+              <input type="text" class="form-control" formControlName="name">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Nhập mã sách<span class="text-danger">*</span></label>
+              <input type="text" class="form-control" formControlName="code">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Nội dung<span class="text-danger">*</span></label>
+              <input type="text" class="form-control" formControlName="description">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Thể loại sách:</label>
+              <select class="form-select" id="inlineFormSelectPref" formControlName="category">
+                <option value="" [selected]="true" [disabled]="true">--Chọn loại sách--</option>
+                <option *ngFor="let p of categorys" [ngValue]="p.id">{{p.name}}</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Nhà xuất bản:</label>
+              <select class="form-select" id="inlineFormSelectPref1" formControlName="company">
+                <option value="" [selected]="true" [disabled]="true">--Chọn nhà xuất bản--</option>
+                <option *ngFor="let p of companys" [ngValue]="p.id">{{p.name}}</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Tỷ lệ giảm giá:</label>
+              <select class="form-select" id="inlineFormSelectPref2" formControlName="discount">
+                <option value="" [selected]="true" [disabled]="true">--Chọn tỉ lệ giảm giá--</option>
+                <option *ngFor="let p of discounts" [ngValue]="p.id">{{p.percent}}</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <div class="row">
+                <div class="col-md">
+                  <label class="form-label">Ngày tạo<span class="text-danger">*</span></label>
+                  <input type="date" class="form-control" formControlName="createDate">
+                </div>
+                <div class="col-md">
+                  <label class="form-label">Kích thước<span class="text-danger">*</span> </label>
+                  <input type="text" class="form-control" formControlName="size">
+                </div>
+              </div>
+              <div class="mb-3">
+                <div class="row">
+                  <div class="col-md">
+                    <label class="form-label">Tác giả<span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" formControlName="author">
+                  </div>
+                  <div class="col-md">
+                    <label class="form-label">Giá bán<span class="text-danger">*</span> </label>
+                    <input type="text" class="form-control" formControlName="price">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md">
+                    <label class="form-label">Số lượng<span class="text-danger">*</span></label>
+                    <input type="number" class="form-control" formControlName="amount">
+                  </div>
+                  <div class="col-md">
+                    <label class="form-label">Số trang<span class="text-danger">*</span> </label>
+                    <input type="number" class="form-control" formControlName="numberOfPage">
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Ảnh<span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" formControlName="image">
+                </div>
+              </div>
+              <div class="d-grid gap-2 d-md-flex justify-content-md-around">
+                <button class="btn btn-outline-danger" routerLink="/book/list"> Quay Lại</button>
+                <button class="btn btn-outline-success" type="submit" [disabled]="bookForm.invalid"> Thêm Mới</button>
+                <button class="btn btn-outline-danger" type="reset"> Nhập Lại</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-3"></div>
+    </div>
+  </div>
+</div>
+</body>
+

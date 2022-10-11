@@ -12,6 +12,7 @@ import {SecurityModule} from './security/security.module';
 import {HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { HomePageComponent } from './home-page/home-page.component';
+import {CardModule} from './card/card.module';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { HomePageComponent } from './home-page/home-page.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     SecurityModule,
-    HttpClientModule
+    HttpClientModule,
+    CardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

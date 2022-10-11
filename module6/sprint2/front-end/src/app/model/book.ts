@@ -14,7 +14,7 @@ export interface Book {
   amount?: number;
   image?: string;
   numberOfPage?: number;
-  isDelete?: boolean;
+  status?: boolean;
   category?: Category;
   company?: Company;
   discount?: Discount;

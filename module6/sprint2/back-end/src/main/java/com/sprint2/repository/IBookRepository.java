@@ -4,6 +4,8 @@ import com.sprint2.model.Book;
 import com.sprint2.model.Category;
 import com.sprint2.model.Company;
 import com.sprint2.model.Discount;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -14,9 +16,11 @@ import java.time.LocalDate;
 import java.util.List;
 
 public interface IBookRepository extends JpaRepository<Book, Integer> {
+//    @Query(value = "select id, amount, author, code, create_date, description, image, `name`, number_of_page, price, `size`, status,  category_id, company_id, discount_id from book where status = 0 and `name` like %:keyword%", nativeQuery = true)
+//    Page<Book> findAllBook(Pageable pageable, @Param("keyword") String keyword);
+
     @Query(value = "select id, amount, author, code, create_date, description, image, `name`, number_of_page, price, `size`, status,  category_id, company_id, discount_id from book where status = 0", nativeQuery = true)
     List<Book> findAllBook();
-
     @Transactional
     @Modifying// cho phép thay đổi dữ liệu
     @Query(value = "update book set status = 1 where id =:id", nativeQuery = true)

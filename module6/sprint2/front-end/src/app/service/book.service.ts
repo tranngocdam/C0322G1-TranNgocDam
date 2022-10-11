@@ -13,6 +13,7 @@ export class BookService {
   private LIST_URL = 'http://localhost:8080/api/public/api/book/list';
   private DEL_URL = 'http://localhost:8080/api/public/api/book/delete/';
   private CREATE_URL = 'http://localhost:8080/api/public/api/book/create';
+  private UPDATE_URL = 'http://localhost:8080/api/public/api/book/update/';
 
   constructor(private http: HttpClient) {
   }
@@ -27,5 +28,41 @@ export class BookService {
 
   saveBook(book: Book): Observable<Book> {
     return this.http.post<Book>(this.CREATE_URL, book);
+  }
+
+  updateBook(id: number, book: Book): Observable<Book> {
+    return this.http.put<Book>(this.UPDATE_URL + id, book);
+  }
+
+  getCards() {
+    let cardJson = sessionStorage.getItem('card');
+    if (cardJson) {
+      return JSON.parse(cardJson);
+    } else {
+      return [];
+    }
+  }
+
+  saveCarts(card: any) {
+    let cardJson = JSON.stringify(card);
+    sessionStorage.setItem('card', cardJson);
+  }
+
+  getTotalCartQuantity(): number {
+    let cardList = this.getCards();
+    let totalQuantity = 0;
+    cardList.forEach((item: any) => {
+      totalQuantity += item.quantity;
+    });
+    return totalQuantity;
+  }
+
+  getTotalCartPrice(): number {
+    let cardList = this.getCards();
+    let totalPrice = 0;
+    cardList.forEach((item: any) => {
+      totalPrice += item.quantity * item.price;
+    });
+    return totalPrice;
   }
 }

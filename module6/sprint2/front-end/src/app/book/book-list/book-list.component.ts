@@ -16,7 +16,7 @@ export class BookListComponent implements OnInit {
   books: Book[] = [];
   nameBook: string;
   idBook: number;
-
+  p = 1;
   constructor(private bookService: BookService,
               private categoryService: CategoryService,
               private companyService: CategoryService,

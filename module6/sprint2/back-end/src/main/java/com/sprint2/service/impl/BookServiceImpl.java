@@ -4,6 +4,8 @@ import com.sprint2.model.Book;
 import com.sprint2.repository.IBookRepository;
 import com.sprint2.service.IBookService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,6 +14,10 @@ import java.util.List;
 public class BookServiceImpl implements IBookService {
     @Autowired
     private IBookRepository iBookRepository;
+//    @Override
+//    public Page<Book> findAllBook(Pageable pageable, String keyword) {
+//        return this.iBookRepository.findAllBook(pageable, keyword);
+//    }
 
     @Override
     public List<Book> findAllBook() {

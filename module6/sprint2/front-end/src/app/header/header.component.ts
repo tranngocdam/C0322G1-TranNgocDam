@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {TokenStorageService} from '../security/token-storage.service';
 import {ShareService} from '../security/share.service';
 
@@ -12,6 +12,7 @@ export class HeaderComponent implements OnInit {
   currentUser: string;
   role: string;
   isLoggedIn = false;
+  keyword: any = '';
 
   constructor(private tokenStorageService: TokenStorageService,
               private shareService: ShareService) {
@@ -35,5 +36,11 @@ export class HeaderComponent implements OnInit {
 
   logout() {
     this.tokenStorageService.signOut();
+  }
+
+  search() {
+    // this.data.changeData({
+    //   keyword: this.keyword;
+    // });
   }
 }
