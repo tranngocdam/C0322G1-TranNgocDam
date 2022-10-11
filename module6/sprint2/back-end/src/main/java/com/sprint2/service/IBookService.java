@@ -8,13 +8,15 @@ import java.util.List;
 
 public interface IBookService {
 
-    List<Book> findAllBook();
+//    List<Book> findAllBook();
 
-//    Page<Book> findAllBook(Pageable pageable, String keyword);
+    Page<Book> findAllBook(Pageable pageable, String keyword);
 
     void delete(Integer id);
 
     void saveBook(Book book);
 
     void updateBook(Integer id, Book book);
+
+    Book findById(Integer id);
 }

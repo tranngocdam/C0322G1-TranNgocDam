@@ -11,17 +11,13 @@ const routes: Routes = [
   {
     path: 'book/list',
     component: BookListComponent
-  },
-  {
+  }, {
     path: 'book/detail',
     component: BookDetailComponent
-  }
-  ,
-  {
+  }, {
     path: 'book/create',
     component: BookCreateComponent
-  },
-  {
+  }, {
     path: 'book/update',
     component: BookUpdateComponent
   }

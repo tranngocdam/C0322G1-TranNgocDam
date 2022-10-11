@@ -14,15 +14,16 @@ import java.util.List;
 public class BookServiceImpl implements IBookService {
     @Autowired
     private IBookRepository iBookRepository;
-//    @Override
-//    public Page<Book> findAllBook(Pageable pageable, String keyword) {
-//        return this.iBookRepository.findAllBook(pageable, keyword);
-//    }
 
     @Override
-    public List<Book> findAllBook() {
-        return iBookRepository.findAllBook();
+    public Page<Book> findAllBook(Pageable pageable, String keyword) {
+        return this.iBookRepository.findAllBook(pageable, keyword);
     }
+
+//    @Override
+//    public List<Book> findAllBook() {
+//        return iBookRepository.findAllBook();
+//    }
 
     @Override
     public void delete(Integer id) {
@@ -42,5 +43,10 @@ public class BookServiceImpl implements IBookService {
                 book.getCreateDate(), book.getDescription(), book.getImage(), book.getName(),
                 book.getNumberOfPage(), book.getPrice(), book.getSize(), book.getCategory(),
                 book.getCompany(), book.getDiscount(), book.getId());
+    }
+
+    @Override
+    public Book findById(Integer id) {
+        return iBookRepository.findByIdBook(id);
     }
 }

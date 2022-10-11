@@ -14,12 +14,17 @@ export class BookService {
   private DEL_URL = 'http://localhost:8080/api/public/api/book/delete/';
   private CREATE_URL = 'http://localhost:8080/api/public/api/book/create';
   private UPDATE_URL = 'http://localhost:8080/api/public/api/book/update/';
+  private ID_URL = 'http://localhost:8080/api/public/api/book/';
 
   constructor(private http: HttpClient) {
   }
 
   findAllBook(): Observable<Book[]> {
     return this.http.get<Book[]>(this.LIST_URL);
+  }
+
+  findAll(page: number, keyword: string, size: number): Observable<Book[]> {
+    return this.http.get<Book[]>(API_URL + '/api/book/list?page=' + page + '&keyword=' + keyword + '&size=' + size);
   }
 
   deleteBook(id: number): Observable<Book> {
@@ -64,5 +69,8 @@ export class BookService {
       totalPrice += item.quantity * item.price;
     });
     return totalPrice;
+  }
+  findById(id: number): Observable<Book> {
+    return this.http.get<Book>(this.ID_URL + id);
   }
 }

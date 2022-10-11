@@ -58,18 +58,18 @@
         <span style="background-color: #45C4B0" class="h1 text-uppercase text-dark px-2 ml-n1">Shop</span>
       </a>
     </div>
-    <div class="col-lg-4 col-6 text-left">
-      <form action="">
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="Tìm kiếm sách..." name="keyword">
-          <div class="input-group-append">
-                            <span class="input-group-text bg-transparent text-primary">
-                                <i class="fa fa-search"></i>
-                            </span>
-          </div>
-        </div>
-      </form>
-    </div>
+<!--    <div class="col-lg-4 col-6 text-left">-->
+<!--      <form action="">-->
+<!--        <div class="input-group">-->
+<!--          <input type="text" class="form-control" placeholder="Tìm kiếm sách..." name="keyword">-->
+<!--          <div class="input-group-append">-->
+<!--                            <span class="input-group-text bg-transparent text-dark">-->
+<!--                                <i class="fa fa-search"></i>-->
+<!--                            </span>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </form>-->
+<!--    </div>-->
     <div class="col-lg-4 col-6 text-right">
       <p class="m-0">Dịch vụ tư vấn</p>
       <h5 class="m-0">+012 345 6789</h5>
@@ -120,7 +120,7 @@
             <a href="detail.html" class="nav-item nav-link">Chương trình khuyến mãi</a>
             <a href="contact.html" class="nav-item nav-link">Giảm giá đặc biệt</a>
             <div class="nav-item dropdown">
-              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Thanh toán<i class="fa fa-angle-down mt-1"></i></a>
+              <a [hidden]="!isLoggedIn" href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Thanh toán<i class="fa fa-angle-down mt-1"></i></a>
               <div class="dropdown-menu bg-white rounded-0 border-0 m-0">
                 <a href="cart.html" class="dropdown-item">Shopping Cart</a>
                 <a href="checkout.html" class="dropdown-item">Checkout</a>

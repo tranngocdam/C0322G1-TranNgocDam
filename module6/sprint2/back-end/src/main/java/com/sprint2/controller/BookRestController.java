@@ -21,22 +21,23 @@ public class BookRestController {
     @Autowired
     private IBookService iBookService;
 
-//    @GetMapping("/list")
-//    public ResponseEntity<List<Book>> findAllBook() {
-//        List<Book> bookList = iBookService.findAllBook();
-//        if (bookList.isEmpty()) {
-//            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-//        }
-//        return new ResponseEntity<>(bookList, HttpStatus.OK);
-//    }
-        @GetMapping("/list")
-    public ResponseEntity<List<Book>> findAllBook() {
-        List<Book> bookPage = iBookService.findAllBook();
-        if (bookPage.isEmpty()) {
+    @GetMapping("/list")
+    public ResponseEntity<Page<Book>> findAllBook(@PageableDefault(value = 3) Pageable pageable,
+                                                  @RequestParam Optional<String> keyword) {
+        Page<Book> book= iBookService.findAllBook(pageable, keyword.orElse(""));
+        if (book.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
-        return new ResponseEntity<>(bookPage, HttpStatus.OK);
+        return new ResponseEntity<>(book, HttpStatus.OK);
     }
+//        @GetMapping("/list")
+//    public ResponseEntity<List<Book>> findAllBook() {
+//        List<Book> bookPage = iBookService.findAllBook();
+//        if (bookPage.isEmpty()) {
+//            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+//        }
+//        return new ResponseEntity<>(bookPage, HttpStatus.OK);
+//    }
 
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> deleteBook(@PathVariable Integer id) {
@@ -54,5 +55,13 @@ public class BookRestController {
     public ResponseEntity<?> updateBook(@PathVariable Integer id, @RequestBody Book book){
         this.iBookService.updateBook(id, book);
         return new ResponseEntity<>(HttpStatus.OK);
+    }
+    @GetMapping("/{id}")
+    public ResponseEntity<Book> findByIdBook(@PathVariable Integer id){
+            Book book = iBookService.findById(id);
+            if (book == null){
+                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            }
+            return new ResponseEntity<>(book, HttpStatus.OK);
     }
 }
