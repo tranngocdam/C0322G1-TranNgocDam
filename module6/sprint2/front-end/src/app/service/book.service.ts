@@ -39,38 +39,17 @@ export class BookService {
     return this.http.put<Book>(this.UPDATE_URL + id, book);
   }
 
-  getCards() {
-    let cardJson = sessionStorage.getItem('card');
-    if (cardJson) {
-      return JSON.parse(cardJson);
+  findById(id: number): Observable<Book> {
+    return this.http.get<Book>(this.ID_URL + id);
+  }
+
+
+  getDetail() {
+    let detailJson = sessionStorage.getItem('detail');
+    if (detailJson) {
+      return JSON.parse(detailJson);
     } else {
       return [];
     }
-  }
-
-  saveCarts(card: any) {
-    let cardJson = JSON.stringify(card);
-    sessionStorage.setItem('card', cardJson);
-  }
-
-  getTotalCartQuantity(): number {
-    let cardList = this.getCards();
-    let totalQuantity = 0;
-    cardList.forEach((item: any) => {
-      totalQuantity += item.quantity;
-    });
-    return totalQuantity;
-  }
-
-  getTotalCartPrice(): number {
-    let cardList = this.getCards();
-    let totalPrice = 0;
-    cardList.forEach((item: any) => {
-      totalPrice += item.quantity * item.price;
-    });
-    return totalPrice;
-  }
-  findById(id: number): Observable<Book> {
-    return this.http.get<Book>(this.ID_URL + id);
   }
 }

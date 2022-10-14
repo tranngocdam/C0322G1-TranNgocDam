@@ -4,6 +4,10 @@ import {ShareService} from '../security/share.service';
 import {Book} from '../model/book';
 import {BookService} from '../service/book.service';
 import {ToastrService} from 'ngx-toastr';
+import {Category} from '../model/category';
+import {Company} from '../model/company';
+import {Discount} from '../model/discount';
+import {CartService} from '../service/cart.service';
 
 @Component({
   selector: 'app-home-page',
@@ -14,7 +18,8 @@ export class HomePageComponent implements OnInit {
   books: Book[] = [];
   nameBook: string;
   idBook: number;
-  cards: any = this.bookService.getCards();
+  carts: any = this.cartService.getCarts();
+  detail: any = this.bookService.getDetail();
   username: string;
   currentUser: string;
   role: string;
@@ -33,6 +38,7 @@ export class HomePageComponent implements OnInit {
   constructor(private tokenStorageService: TokenStorageService,
               private shareService: ShareService,
               private bookService: BookService,
+              private cartService: CartService,
               private toastrServiceo: ToastrService) {
     this.shareService.getClickEvent().subscribe(() => {
       this.loadEditAdd();
@@ -41,7 +47,7 @@ export class HomePageComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadEditAdd();
-    this.getAllBook();
+    this.getAll();
   }
 
   loadEditAdd(): void {
@@ -72,28 +78,46 @@ export class HomePageComponent implements OnInit {
     });
   }
 
-  onAddToCard(book: any) {
-    let idx = this.cards.findIndex((item: any) => {
+  onAddToCart(book: any) {
+    let idx = this.carts.findIndex((item: any) => {
       return item.id == book.id;
     });
 
     if (idx >= 0) {
-      this.cards[idx].quantity += 1;
+      this.carts[idx].quantity += 1;
     } else {
-      let cardItem: any = {
+      let cartItem: any = {
+        id: book.id,
         image: book.image,
         name: book.name,
         price: book.price,
         quantity: 1,
-        total: function() {
-          return this.price * this.quantity;
-        }
       };
-      this.cards.push(cardItem);
+      this.carts.push(cartItem);
     }
-    let cardJson = JSON.stringify(this.cards);
-    sessionStorage.setItem('card', cardJson);
+    let cartJson = JSON.stringify(this.carts);
+    sessionStorage.setItem('cart', cartJson);
     this.toastrServiceo.success('Thêm thêm giỏ hàng thành công', 'Thông báo');
+  }
+  onAddToDetail(book: any) {
+    let detail: any = {
+      name: book.name,
+      code: book.code,
+      createDate: book.createDate,
+      size: book.size,
+      description: book.description,
+      author: book.author,
+      price: book.price,
+      amount: book.amount,
+      image: book.image,
+      numberOfPage: book.numberOfPage,
+      category: book.category,
+      company: book.company,
+      discount: book.discount,
+    };
+    this.detail.push(detail);
+    let detailJson = JSON.stringify(this.detail);
+    sessionStorage.setItem('detail', detailJson);
   }
   getAll(): void {
     this.bookService.findAll(this.indexPagination, this.keyword, this.pageSize).subscribe((result?: any) => {

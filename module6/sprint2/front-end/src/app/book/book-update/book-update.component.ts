@@ -18,12 +18,13 @@ import {ActivatedRoute, ParamMap, Router} from '@angular/router';
   styleUrls: ['./book-update.component.css']
 })
 export class BookUpdateComponent implements OnInit {
-  book: Book = {};
-  categorys: Category[];
-  companys: Company[];
-  discounts: Discount[];
+  // book: Book = {};
+  categorys: Category[] = [];
+  companys: Company[] = [];
+  discounts: Discount[] = [];
+  id: number;
   bookForm: FormGroup = new FormGroup({
-    id: new FormControl(''),
+    // id: new FormControl(''),
     name: new FormControl(''),
     code: new FormControl(''),
     createDate: new FormControl(''),
@@ -34,12 +35,10 @@ export class BookUpdateComponent implements OnInit {
     amount: new FormControl(''),
     image: new FormControl(''),
     numberOfPage: new FormControl(''),
-    isDelete: new FormControl(''),
     category: new FormControl(''),
     company: new FormControl(''),
     discount: new FormControl('')
   });
-  id: number;
 
   constructor(private bookService: BookService,
               private categoryService: CategoryService,
@@ -52,25 +51,7 @@ export class BookUpdateComponent implements OnInit {
     this.title.setTitle('Sửa thông tin sách'),
       this.activatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
         this.id = +paramMap.get('id');
-        this.bookService.findById(this.id).subscribe(book => {
-          this.bookForm = new FormGroup({
-            id: new FormControl(book.id),
-            name: new FormControl(book.name),
-            code: new FormControl(book.code),
-            createDate: new FormControl(book.createDate),
-            size: new FormControl(book.size),
-            description: new FormControl(book.description),
-            author: new FormControl(book.author),
-            price: new FormControl(book.price),
-            amount: new FormControl(book.amount),
-            image: new FormControl(book.image),
-            numberOfPage: new FormControl(book.numberOfPage),
-            status: new FormControl(book.status),
-            category: new FormControl(book.category),
-            company: new FormControl(book.company),
-            discount: new FormControl(book.discount)
-          });
-        });
+        this.getBook(this.id);
       });
   }
 
@@ -78,6 +59,58 @@ export class BookUpdateComponent implements OnInit {
     this.getAllCategory();
     this.getAllCompany();
     this.getAllDiscount();
+  }
+
+  getBook(id: number) {
+    return this.bookService.findById(id).subscribe(book => {
+      this.bookForm = new FormGroup({
+        id: new FormControl(book.id),
+        name: new FormControl(book.name),
+        code: new FormControl(book.code),
+        createDate: new FormControl(book.createDate),
+        size: new FormControl(book.size),
+        description: new FormControl(book.description),
+        author: new FormControl(book.author),
+        price: new FormControl(book.price),
+        amount: new FormControl(book.amount),
+        image: new FormControl(book.image),
+        numberOfPage: new FormControl(book.numberOfPage),
+        category: new FormControl(book.category.id),
+        company: new FormControl(book.company.id),
+        discount: new FormControl(book.discount.id)
+      });
+    });
+  }
+
+  submit(id: number) {
+    const book = this.bookForm.value;
+    this.categoryService.findById(book.category).subscribe(category => {
+        this.companyService.findById(book.company).subscribe(company => {
+            this.discountService.findById(book.discount).subscribe(discount => {
+                book.category = {
+                  id: category.id,
+                  name: category.name
+                };
+                book.company = {
+                  id: company.id,
+                  name: company.name
+                };
+                book.discount = {
+                  id: discount.id,
+                  percent: discount.percent
+                };
+                this.bookService.updateBook(id, book).subscribe(() => {
+                  console.log(book);
+                  this.toastrService.success('Cập nhật thành công', 'Thông báo');
+                  // this.bookForm.reset();
+                  this.router.navigateByUrl('/book/list');
+                }, e => console.log(e));
+              }
+            );
+          }
+        );
+      }
+    );
   }
 
   getAllCategory() {
@@ -98,33 +131,4 @@ export class BookUpdateComponent implements OnInit {
     });
   }
 
-  submit() {
-    const book = this.bookForm.value;
-    this.categoryService.findById(book.category).subscribe(category => {
-        this.companyService.findById(book.company).subscribe(company => {
-            this.discountService.findById(book.discount).subscribe(discount => {
-                book.category = {
-                  id: category.id,
-                  name: category.name
-                };
-                book.company = {
-                  id: company.id,
-                  name: company.name
-                };
-                book.discount = {
-                  id: discount.id,
-                  percent: discount.percent
-                };
-                this.bookService.updateBook(this.id, this.bookForm.value).subscribe(() => {
-                  this.toastrService.success('Cập nhật thành công', 'Thông báo');
-                  this.bookForm.reset();
-                  this.router.navigateByUrl('/book/list');
-                }, error => console.log(error));
-              }
-            );
-          }
-        );
-      }
-    );
-  }
 }

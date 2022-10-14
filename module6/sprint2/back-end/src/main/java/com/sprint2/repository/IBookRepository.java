@@ -53,7 +53,7 @@ Page<Book> findAllBook(Pageable pageable, @Param("keyword") String keyword);
 
     @Modifying
     @Transactional
-    @Query(value = "update book set amount = :amount, author = :author, code = :code," +
+    @Query(value = "update book set amount = :amount, author = :author, code = :code, " +
             "create_date = :createDate, description = :description, image = :image, `name` = :name, " +
             "number_of_page = :numberOfPage, price = :price, `size` = :size, category_id = :category, " +
             "company_id = :company, discount_id = :discount where id = :id", nativeQuery = true)
@@ -71,6 +71,7 @@ Page<Book> findAllBook(Pageable pageable, @Param("keyword") String keyword);
                     @Param("company") Company company,
                     @Param("discount") Discount discount,
                     @Param("id") Integer id);
+
     @Query(value="select * from book where id = :id", nativeQuery = true)
     Book findByIdBook(@Param("id")Integer id);
 }

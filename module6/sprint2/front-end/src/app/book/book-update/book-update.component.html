@@ -5,14 +5,14 @@
     <div class="row formRow">
       <div class="col-3"></div>
       <div class="col-6">
-        <form [formGroup]="bookForm" (ngSubmit)="submit()">
+        <form [formGroup]="bookForm" (ngSubmit)="submit(id)">
           <div class="mb-3 formRow_create_title">
-            <h5><b>Thêm mới sách</b></h5>
+            <h5><b>Sửa thông tin sách</b></h5>
           </div>
           <hr>
           <div class="formRow_create_content">
             <div class="mb-3">
-              <label class="form-label">Tên sách<span class="text-danger">*</span> </label>
+              <label class="form-label">Tên sách<span class="text-danger">*</span></label>
               <input type="text" class="form-control" formControlName="name">
             </div>
             <div class="mb-3">
@@ -83,8 +83,8 @@
               </div>
               <div class="d-grid gap-2 d-md-flex justify-content-md-around">
                 <button class="btn btn-outline-danger" routerLink="/book/list"> Quay Lại</button>
-                <button class="btn btn-outline-success" type="submit" [disabled]="bookForm.invalid"> Thêm Mới</button>
-                <button class="btn btn-outline-danger" type="reset"> Nhập Lại</button>
+                <button class="btn btn-outline-success" type="submit"> Cập nhật</button>
+                <button class="btn btn-outline-dark" type="reset"> Nhập Lại</button>
               </div>
             </div>
           </div>

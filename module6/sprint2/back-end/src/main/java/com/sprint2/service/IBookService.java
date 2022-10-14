@@ -16,7 +16,7 @@ public interface IBookService {
 
     void saveBook(Book book);
 
-    void updateBook(Integer id, Book book);
+    void updateBook(Book book);
 
     Book findById(Integer id);
 }

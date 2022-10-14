@@ -13,6 +13,22 @@ public class HocVien extends Person{
         this.diemSo = diemSo;
     }
 
+    public String getLop() {
+        return lop;
+    }
+
+    public void setLop(String lop) {
+        this.lop = lop;
+    }
+
+    public Double getDiemSo() {
+        return diemSo;
+    }
+
+    public void setDiemSo(Double diemSo) {
+        this.diemSo = diemSo;
+    }
+
     @Override
     public String toString() {
         return "HocVien{" + super.toString()+

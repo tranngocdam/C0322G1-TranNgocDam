@@ -22,7 +22,7 @@ public class BookRestController {
     private IBookService iBookService;
 
     @GetMapping("/list")
-    public ResponseEntity<Page<Book>> findAllBook(@PageableDefault(value = 3) Pageable pageable,
+    public ResponseEntity<Page<Book>> findAllBook(@PageableDefault(value = 6) Pageable pageable,
                                                   @RequestParam Optional<String> keyword) {
         Page<Book> book= iBookService.findAllBook(pageable, keyword.orElse(""));
         if (book.isEmpty()) {
@@ -52,10 +52,11 @@ public class BookRestController {
     }
 
     @PutMapping("/update/{id}")
-    public ResponseEntity<?> updateBook(@PathVariable Integer id, @RequestBody Book book){
-        this.iBookService.updateBook(id, book);
+    public ResponseEntity<?> updateBook(@RequestBody Book book){
+        this.iBookService.updateBook(book);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
     @GetMapping("/{id}")
     public ResponseEntity<Book> findByIdBook(@PathVariable Integer id){
             Book book = iBookService.findById(id);

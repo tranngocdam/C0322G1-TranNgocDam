@@ -18,6 +18,14 @@ public class HocVienServiceimpl implements HocVienService {
         hocViens.add(new HocVien("SV-0423", "lài", "12/11/1990", 1, "C13", 9.1));
     }
 
+    @Override
+    public void diemSo() {
+        for (int i = 0; i <hocViens.size() ; i++) {
+            if (hocViens.get(i).getDiemSo()>8){
+                System.out.println(HocVienServiceimpl.hocViens.get(i));
+            }
+        }
+    }
 
     @Override
     public void themMoi() {
@@ -62,4 +70,6 @@ public class HocVienServiceimpl implements HocVienService {
             }
         }
     }
+
+
 }

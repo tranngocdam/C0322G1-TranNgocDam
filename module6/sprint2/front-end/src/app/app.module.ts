@@ -13,6 +13,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { HomePageComponent } from './home-page/home-page.component';
 import {CardModule} from './card/card.module';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,24 +23,25 @@ import {CardModule} from './card/card.module';
     HomeComponent,
     HomePageComponent,
   ],
-  imports: [
-    BrowserModule,
-    ToastrModule.forRoot(
-      {
-        timeOut: 2000,
-        closeButton: true,
-        progressBar: true,
-        positionClass: 'toast-top-center',
-        preventDuplicates: true,
-      }
-    ),
-    BookModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    SecurityModule,
-    HttpClientModule,
-    CardModule
-  ],
+    imports: [
+        BrowserModule,
+        ToastrModule.forRoot(
+            {
+                timeOut: 2000,
+                closeButton: true,
+                progressBar: true,
+                positionClass: 'toast-top-center',
+                preventDuplicates: true,
+            }
+        ),
+        BookModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        SecurityModule,
+        HttpClientModule,
+        CardModule,
+        FormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

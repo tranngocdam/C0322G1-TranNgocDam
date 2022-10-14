@@ -1,0 +1,39 @@
+
+f
+java:S1192#"PDefine a constant instead of duplicating this literal "2. Há»c viÃªn
+" 4 times.(ÈÔç
+m
+java:S1192""RDefine a constant instead of duplicating this literal "1. Giáº£ng viÃªn
+" 4 times.(çâºÌÿÿÿÿÿ
+d
+java:S1192$"IDefine a constant instead of duplicating this literal "Chá»n: " 4 times.(Üİ¾«üÿÿÿÿ
+=
+java:S2189""Add an end condition to this loop.(˜ïˆÿÿÿÿÿ
+P
+java:S1118":Add a private constructor to hide the implicit public one.(Éıû¥
+h	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(üŠˆÛúÿÿÿÿ
+m
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 35 to the 15 allowed.(üŠˆÛúÿÿÿÿ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(Ëë°„
+f	java:S128m"LEnd this switch case with an unconditional break, return or throw statement.(ÌÊëÎüÿÿÿÿ
+7	java:S131""Add a default case to this switch.(¨ÕÉ
+@
+java:S1219"%Remove this misleading "exit1" label.(ÇËšúÿÿÿÿ
+V
+java:S1119";Refactor the code to remove this label and the need for it.(ÇËšúÿÿÿÿ
+N	java:S106!"9Replace this use of System.out or System.err by a logger.(½¼×
+@
+java:S12192"%Remove this misleading "exit2" label.(Û•ÒÒøÿÿÿÿ
+V
+java:S11192";Refactor the code to remove this label and the need for it.(Û•ÒÒøÿÿÿÿ
+N	java:S1065"9Replace this use of System.out or System.err by a logger.(ç÷å„
+@
+java:S1219F"%Remove this misleading "exit3" label.(İèÄ·ùÿÿÿÿ
+V
+java:S1119F";Refactor the code to remove this label and the need for it.(İèÄ·ùÿÿÿÿ
+N	java:S106I"9Replace this use of System.out or System.err by a logger.(¼Ö¸‚
+@
+java:S1219["%Remove this misleading "exit4" label.(˜Öèıÿÿÿÿÿ
+V
+java:S1119[";Refactor the code to remove this label and the need for it.(˜Öèıÿÿÿÿÿ
+S	java:S106]"9Replace this use of System.out or System.err by a logger.(£áÀ™úÿÿÿÿ

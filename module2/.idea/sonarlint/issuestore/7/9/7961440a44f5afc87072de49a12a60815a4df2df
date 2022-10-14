@@ -1,0 +1,14 @@
+
+Q	java:S125"<This block of commented-out lines of code should be removed.(şİÎ
+V	java:S125"<This block of commented-out lines of code should be removed.(£ãÀîøÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(œİ¡ƒùÿÿÿÿ
+M	java:S106"9Replace this use of System.out or System.err by a logger.(Öç«g
+N	java:S106"9Replace this use of System.out or System.err by a logger.(Áàü»
+N	java:S106!"9Replace this use of System.out or System.err by a logger.(ššÁÏ
+N	java:S106#"9Replace this use of System.out or System.err by a logger.(êŸ„è
+S	java:S106%"9Replace this use of System.out or System.err by a logger.(­Ñ§œúÿÿÿÿ
+S	java:S106."9Replace this use of System.out or System.err by a logger.(¶‰ıÿÿÿÿ
+U
+java:S1128":Remove this unused import 'bai_tap_oop.model.HangSanXuat'.(ïß†õüÿÿÿÿ
+Z
+java:S1128"DRemove this unused import 'ss10_danh_sach.bai_tap.ArrayList.MyList'.(Ğšª

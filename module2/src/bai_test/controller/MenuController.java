@@ -21,7 +21,8 @@ public class MenuController {
                     "2. Xóa giảng viên hoặc học sinh\n" +
                     "3. Xem danh sách giảng viên hoặc học sinh\n" +
                     "4. Tìm kiếm giảng viên hoặc học sinh\n" +
-                    "5. Thoát\n" +
+                    "5. Điểm số\n" +
+                    "6. Thoát\n" +
                     "Chọn chức năng: ");
             choice= Selection.luaChon(1,5);
             switch (choice){
@@ -106,7 +107,9 @@ public class MenuController {
                     }
                     break;
                 case 5:
-                    System.exit(0);
+                    hocVienService.diemSo();
+                    case 6:
+                        System.exit(0);
             }
         }
     }

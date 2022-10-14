@@ -38,7 +38,7 @@ public class BookServiceImpl implements IBookService {
     }
 
     @Override
-    public void updateBook(Integer id, Book book) {
+    public void updateBook(Book book) {
         iBookRepository.updateBook(book.getAmount(), book.getAuthor(), book.getCode(),
                 book.getCreateDate(), book.getDescription(), book.getImage(), book.getName(),
                 book.getNumberOfPage(), book.getPrice(), book.getSize(), book.getCategory(),
