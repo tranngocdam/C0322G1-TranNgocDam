@@ -28,7 +28,6 @@ export class BookCreateComponent implements OnInit {
               private router: Router) {
     this.title.setTitle('Tạo mới sách');
   }
-
   books: Book[] = [];
   categorys: Category[] = [];
   companys: Company[] = [];
@@ -82,15 +81,12 @@ export class BookCreateComponent implements OnInit {
         this.discountService.findById(book.discount).subscribe(value2 => {
             book.category = {
               id: value.id,
-              name: value.name
             };
             book.company = {
               id: value1.id,
-              name: value1.name
             };
             book.discount = {
               id: value2.id,
-              percent: value2.percent
             };
             this.bookService.saveBook(book).subscribe(() => {
                 this.toastrServiceo.success('Thêm mới thành công', 'Thông báo');

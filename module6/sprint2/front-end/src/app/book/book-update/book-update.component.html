@@ -24,21 +24,21 @@
               <input type="text" class="form-control" formControlName="description">
             </div>
             <div class="mb-3">
-              <label class="form-label">Thể loại sách:</label>
+              <label class="form-label">Thể loại sách<span class="text-danger">*</span></label>
               <select class="form-select" id="inlineFormSelectPref" formControlName="category">
                 <option value="" [selected]="true" [disabled]="true">--Chọn loại sách--</option>
                 <option *ngFor="let p of categorys" [ngValue]="p.id">{{p.name}}</option>
               </select>
             </div>
             <div class="mb-3">
-              <label class="form-label">Nhà xuất bản:</label>
+              <label class="form-label">Nhà xuất bản<span class="text-danger">*</span></label>
               <select class="form-select" id="inlineFormSelectPref1" formControlName="company">
                 <option value="" [selected]="true" [disabled]="true">--Chọn nhà xuất bản--</option>
                 <option *ngFor="let p of companys" [ngValue]="p.id">{{p.name}}</option>
               </select>
             </div>
             <div class="mb-3">
-              <label class="form-label">Tỷ lệ giảm giá:</label>
+              <label class="form-label">Tỷ lệ giảm giá<span class="text-danger">*</span></label>
               <select class="form-select" id="inlineFormSelectPref2" formControlName="discount">
                 <option value="" [selected]="true" [disabled]="true">--Chọn tỉ lệ giảm giá--</option>
                 <option *ngFor="let p of discounts" [ngValue]="p.id">{{p.percent}}</option>
@@ -82,7 +82,7 @@
                 </div>
               </div>
               <div class="d-grid gap-2 d-md-flex justify-content-md-around">
-                <button class="btn btn-outline-danger" routerLink="/book/list"> Quay Lại</button>
+                <button class="btn btn-outline-danger" routerLink="/homepage"> Quay Lại</button>
                 <button class="btn btn-outline-success" type="submit"> Cập nhật</button>
                 <button class="btn btn-outline-dark" type="reset"> Nhập Lại</button>
               </div>

@@ -24,7 +24,6 @@ export class BookUpdateComponent implements OnInit {
   discounts: Discount[] = [];
   id: number;
   bookForm: FormGroup = new FormGroup({
-    // id: new FormControl(''),
     name: new FormControl(''),
     code: new FormControl(''),
     createDate: new FormControl(''),
@@ -89,21 +88,18 @@ export class BookUpdateComponent implements OnInit {
             this.discountService.findById(book.discount).subscribe(discount => {
                 book.category = {
                   id: category.id,
-                  name: category.name
                 };
                 book.company = {
                   id: company.id,
-                  name: company.name
                 };
                 book.discount = {
                   id: discount.id,
-                  percent: discount.percent
                 };
                 this.bookService.updateBook(id, book).subscribe(() => {
                   console.log(book);
                   this.toastrService.success('Cập nhật thành công', 'Thông báo');
                   // this.bookForm.reset();
-                  this.router.navigateByUrl('/book/list');
+                  this.router.navigateByUrl('/homepage');
                 }, e => console.log(e));
               }
             );
@@ -130,5 +126,4 @@ export class BookUpdateComponent implements OnInit {
       this.discounts = value;
     });
   }
-
 }

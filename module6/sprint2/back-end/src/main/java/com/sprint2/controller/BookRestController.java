@@ -30,14 +30,6 @@ public class BookRestController {
         }
         return new ResponseEntity<>(book, HttpStatus.OK);
     }
-//        @GetMapping("/list")
-//    public ResponseEntity<List<Book>> findAllBook() {
-//        List<Book> bookPage = iBookService.findAllBook();
-//        if (bookPage.isEmpty()) {
-//            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-//        }
-//        return new ResponseEntity<>(bookPage, HttpStatus.OK);
-//    }
 
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> deleteBook(@PathVariable Integer id) {

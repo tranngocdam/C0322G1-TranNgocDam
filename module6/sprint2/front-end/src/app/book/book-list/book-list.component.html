@@ -51,7 +51,7 @@
         <td class="align-middle">{{b.size}}</td>
         <td class="align-middle">{{b.description}}</td>
         <td class="align-middle">{{b.author}}</td>
-        <td class="align-middle">{{b.price}}</td>
+        <td class="align-middle">{{b.price|currency: 'VND':''}}</td>
         <td class="align-middle">{{b.amount}}</td>
         <td class="align-middle">{{b.numberOfPage}}</td>
         <td class="align-middle" *ngIf="['ROLE_USER'].indexOf(role)! ==-1">

@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {BookService} from '../../service/book.service';
 import {DataService} from '../../service/data.service';
 import {render} from 'creditcardpayments/creditCardPayments';
 import {CartService} from '../../service/cart.service';
+import {TokenStorageService} from '../../security/token-storage.service';
 
 @Component({
   selector: 'app-card-list',
@@ -12,8 +12,10 @@ import {CartService} from '../../service/cart.service';
 export class CardListComponent implements OnInit {
   carts: any = [];
   item: any;
+  role: string;
+  shiper: number;
+  ship = '---Giao hàng--';
   totalQuantity: number = this.cartService.getTotalCartQuantity();
-
   totalPrice: number = this.cartService.getTotalCartPrice();
   sumPrice: number = this.cartService.getCartTotalPrice();
   sumQuantity: number = this.cartService.getCartTotalQuantity();
@@ -34,7 +36,6 @@ export class CardListComponent implements OnInit {
   ngOnInit(): void {
     this.carts = this.cartService.getCarts();
   }
-
   minusQuantity(i: number, quantity: any) {
     let newQuantity = parseInt(quantity) - 1;
     newQuantity = newQuantity > 0 ? newQuantity : 1;

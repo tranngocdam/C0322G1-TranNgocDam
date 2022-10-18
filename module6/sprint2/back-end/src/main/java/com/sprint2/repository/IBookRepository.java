@@ -16,18 +16,15 @@ import java.time.LocalDate;
 import java.util.List;
 
 public interface IBookRepository extends JpaRepository<Book, Integer> {
-//    @Query(value = "select id, amount, author, code, create_date, description, image, `name`, number_of_page, price, `size`, status,  category_id, company_id, discount_id from book where status = 0 and `name` like %:keyword%", nativeQuery = true)
-//    Page<Book> findAllBook(Pageable pageable, @Param("keyword") String keyword);
-@Query(value = "select * " +
-        "from book " +
-        "where `name` like %:keyword% " +
-        "and status = 0 " +
-        "order by id desc",
-        nativeQuery = true)
-Page<Book> findAllBook(Pageable pageable, @Param("keyword") String keyword);
 
-//    @Query(value = "select id, amount, author, code, create_date, description, image, `name`, number_of_page, price, `size`, status,  category_id, company_id, discount_id from book where status = 0", nativeQuery = true)
-//    List<Book> findAllBook();
+    @Query(value = "select * " +
+            "from book " +
+            "where `name` like %:keyword% " +
+            "and status = 0 " +
+            "order by id desc",
+            nativeQuery = true)
+    Page<Book> findAllBook(Pageable pageable, @Param("keyword") String keyword);
+
     @Transactional
     @Modifying// cho phép thay đổi dữ liệu
     @Query(value = "update book set status = 1 where id =:id", nativeQuery = true)
@@ -72,6 +69,6 @@ Page<Book> findAllBook(Pageable pageable, @Param("keyword") String keyword);
                     @Param("discount") Discount discount,
                     @Param("id") Integer id);
 
-    @Query(value="select * from book where id = :id", nativeQuery = true)
-    Book findByIdBook(@Param("id")Integer id);
+    @Query(value = "select * from book where id = :id", nativeQuery = true)
+    Book findByIdBook(@Param("id") Integer id);
 }

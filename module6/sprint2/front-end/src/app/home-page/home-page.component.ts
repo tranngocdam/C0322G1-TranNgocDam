@@ -8,6 +8,7 @@ import {Category} from '../model/category';
 import {Company} from '../model/company';
 import {Discount} from '../model/discount';
 import {CartService} from '../service/cart.service';
+import {DataService} from '../service/data.service';
 
 @Component({
   selector: 'app-home-page',
@@ -35,11 +36,27 @@ export class HomePageComponent implements OnInit {
   totalElements = 0;
   previousPageStyle = 'inline-block';
   nextPageStyle = 'inline-block';
+
+  bname: string;
+  bcode: string;
+  bcreateDate: string;
+  bsize: string;
+  bdescription: string;
+  bauthor: string;
+  bprice: number;
+  bamount: number;
+  bimage: string;
+  bnumberOfPage: number;
+  caname: string;
+  coname: string;
+  dpercent: string;
+
   constructor(private tokenStorageService: TokenStorageService,
               private shareService: ShareService,
               private bookService: BookService,
               private cartService: CartService,
-              private toastrServiceo: ToastrService) {
+              private toastrServiceo: ToastrService,
+              private data: DataService) {
     this.shareService.getClickEvent().subscribe(() => {
       this.loadEditAdd();
     });
@@ -59,12 +76,6 @@ export class HomePageComponent implements OnInit {
     this.isLoggedIn = this.username != null;
   }
 
-  getAllBook() {
-    this.bookService.findAllBook().subscribe(value => {
-      this.books = value;
-    });
-  }
-
   deleteBook(b: Book) {
     this.nameBook = b.name;
     this.idBook = b.id;
@@ -72,7 +83,7 @@ export class HomePageComponent implements OnInit {
 
   delete(idBook: number) {
     this.bookService.deleteBook(idBook).subscribe(() => {
-      this.getAllBook();
+      this.getAll();
     }, error => {
       console.log(error);
     });
@@ -99,6 +110,7 @@ export class HomePageComponent implements OnInit {
     sessionStorage.setItem('cart', cartJson);
     this.toastrServiceo.success('Thêm thêm giỏ hàng thành công', 'Thông báo');
   }
+
   onAddToDetail(book: any) {
     let detail: any = {
       name: book.name,
@@ -114,11 +126,13 @@ export class HomePageComponent implements OnInit {
       category: book.category,
       company: book.company,
       discount: book.discount,
+      quantity: 1
     };
     this.detail.push(detail);
     let detailJson = JSON.stringify(this.detail);
     sessionStorage.setItem('detail', detailJson);
   }
+
   getAll(): void {
     this.bookService.findAll(this.indexPagination, this.keyword, this.pageSize).subscribe((result?: any) => {
       if (result === null) {
@@ -149,6 +163,7 @@ export class HomePageComponent implements OnInit {
       this.nextPageStyle = 'none';
     }
   }
+
   previousPage(event: any) {
     event.preventDefault();
     this.indexPagination--;
@@ -160,10 +175,12 @@ export class HomePageComponent implements OnInit {
     this.indexPagination++;
     this.ngOnInit();
   }
+
   checkRegex(content: string): boolean {
     const format = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
     return format.test(content);
   }
+
   search() {
     if (this.checkRegex(this.keyword)) {
       this.indexPagination = 0;
@@ -176,5 +193,50 @@ export class HomePageComponent implements OnInit {
       this.displayPagination = 'inline-block';
       this.getAll();
     }
+  }
+
+  Detail(b: Book) {
+    this.bname = b.name;
+    this.bcode = b.code;
+    this.bcreateDate = b.createDate;
+    this.bsize = b.size;
+    this.bdescription = b.description;
+    this.bauthor = b.author;
+    this.bprice = b.price;
+    this.bamount = b.amount;
+    this.bimage = b.image;
+    this.bnumberOfPage = b.numberOfPage;
+    this.caname = b.category.name;
+    this.coname = b.company.name;
+    this.dpercent = b.discount.percent;
+  }
+  minusQuantity(i: number, quantity: any) {
+    let newQuantity = parseInt(quantity) - 1;
+    newQuantity = newQuantity > 0 ? newQuantity : 1;
+    this.detail[i].quantity = newQuantity;
+    this.cartService.saveCarts(this.detail);
+    this.data.changeData({
+      totalQuantity: this.cartService.getTotalCartQuantity()
+    });
+  }
+
+  updateQuantity(i: number, event: any) {
+    let newQuantity = event.target.value;
+    newQuantity = newQuantity > 0 ? newQuantity : 1;
+    event.target.value = newQuantity;
+    this.detail[i].quantity = newQuantity;
+    this.cartService.saveCarts(this.detail);
+    this.data.changeData({
+      totalQuantity: this.cartService.getTotalCartQuantity()
+    });
+  }
+
+  plusQuantity(i: number, quantity: any) {
+    let newQuantity = parseInt(quantity) + 1;
+    this.detail[i].quantity = newQuantity;
+    this.cartService.saveCarts(this.detail);
+    this.data.changeData({
+      totalQuantity: this.cartService.getTotalCartQuantity()
+    });
   }
 }

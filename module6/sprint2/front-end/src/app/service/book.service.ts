@@ -10,17 +10,12 @@ const API_URL = `${environment.apiUrl}`;
   providedIn: 'root'
 })
 export class BookService {
-  private LIST_URL = 'http://localhost:8080/api/public/api/book/list';
   private DEL_URL = 'http://localhost:8080/api/public/api/book/delete/';
   private CREATE_URL = 'http://localhost:8080/api/public/api/book/create';
   private UPDATE_URL = 'http://localhost:8080/api/public/api/book/update/';
   private ID_URL = 'http://localhost:8080/api/public/api/book/';
 
   constructor(private http: HttpClient) {
-  }
-
-  findAllBook(): Observable<Book[]> {
-    return this.http.get<Book[]>(this.LIST_URL);
   }
 
   findAll(page: number, keyword: string, size: number): Observable<Book[]> {
@@ -42,7 +37,6 @@ export class BookService {
   findById(id: number): Observable<Book> {
     return this.http.get<Book>(this.ID_URL + id);
   }
-
 
   getDetail() {
     let detailJson = sessionStorage.getItem('detail');

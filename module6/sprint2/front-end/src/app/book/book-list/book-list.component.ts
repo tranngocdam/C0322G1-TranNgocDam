@@ -59,12 +59,6 @@ export class BookListComponent implements OnInit {
     this.loadEditAdd();
   }
 
-  // getAllBook() {
-  //   this.bookService.findAllBook().subscribe(value => {
-  //     this.books = value;
-  //   });
-  // }
-
   deleteBook(b: Book) {
     this.nameBook = b.name;
     this.idBook = b.id;

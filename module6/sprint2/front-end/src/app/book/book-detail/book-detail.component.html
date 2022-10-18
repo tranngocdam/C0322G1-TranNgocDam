@@ -1,123 +1,7 @@
-<!--<div class="container-fluid mt-3" *ngFor="let d of detail">-->
-<!--  <div class="row" >-->
-<!--    <div class="col-sm-1 text-white"></div>-->
-<!--    <div class="col-sm-3 text-white">-->
-<!--      <div style="text-align: center">-->
-<!--        <img src="{{d.image}}" width="230" height="340">-->
-<!--      </div>-->
-<!--    </div>-->
-<!--    <div class="col-sm-4" >-->
-<!--      <h5> Sách là tất cả</h5>-->
-<!--      <table class="table">-->
-<!--        <tbody>-->
-<!--        <tr >-->
-<!--          <td>* Mã sản phẩm</td>-->
-<!--          <td></td>-->
-<!--          <td>{{d.code}}</td>-->
-<!--        </tr>-->
-<!--        <tr>-->
-<!--          <td>* Tác giả</td>-->
-<!--          <td></td>-->
-<!--          <td>{{d.author}}</td>-->
-<!--        </tr>-->
-<!--        <tr>-->
-<!--          <td>* Dịch giả</td>-->
-<!--          <td></td>-->
-<!--          <td>{{d.company}}</td>-->
-<!--        </tr>-->
-<!--        <tr>-->
-<!--          <td>* Nhà xuất bản</td>-->
-<!--          <td></td>-->
-<!--          <td>{{d.category}}</td>-->
-<!--          &lt;!&ndash;          <td>Số lượng</td>&ndash;&gt;-->
-<!--        </tr>-->
-<!--        <tr>-->
-<!--          <td>* Số trang</td>-->
-<!--          <td></td>-->
-<!--          <td>{{d.numberOfPage}}</td>-->
-<!--        </tr>-->
-<!--        <tr>-->
-<!--          <td>* Kích thước</td>-->
-<!--          <td></td>-->
-<!--          <td>{{d.size}}</td>-->
-<!--        </tr>-->
-<!--        <tr>-->
-<!--          <td>Ngày phát hành</td>-->
-<!--          <td></td>-->
-<!--          <td>{{d.createDate| date : "dd-MM-yyyy"}}</td>-->
-<!--        </tr>-->
-<!--        <button type="button" class="btn btn-primary">Like</button>-->
-<!--        <button type="button" class="btn btn-primary">Share</button>-->
-<!--        </tbody>-->
-<!--      </table>-->
-<!--      <hr>-->
-<!--    </div>-->
-<!--    <div class="col-sm-3">-->
-<!--      <h5> Giá cả</h5>-->
-<!--      <table class="table">-->
-<!--        <tbody>-->
-<!--        <tr>-->
-<!--        </tr>-->
-<!--        <tr>-->
-<!--          <td>Giá bìa</td>-->
-<!--          <td>{{d.price+1000}}</td>-->
-<!--        <tr>-->
-<!--          <td>Giá shop</td>-->
-<!--          <td>{{d.price}}</td>-->
-<!--        </tr>-->
-<!--        <tr>-->
-<!--          <td>Số lượng</td>-->
-<!--          <td>{{d.amount}}</td>-->
-<!--        </tr>-->
-<!--        <tr>-->
-<!--          <td><input class="form-control text-center" value="1" type="number" style="width: 70px"></td>-->
-<!--        </tr>-->
-<!--        <tr>-->
-<!--          <td>-->
-<!--            <button type="button" class="btn btn-primary">Thêm vào giỏ hàng</button>-->
-<!--          </td>-->
-<!--          <td>-->
-<!--            <button type="button" class="btn btn-primary">Mua ngay</button>-->
-<!--          </td>-->
-<!--        </tr>-->
-<!--        </tbody>-->
-<!--      </table>-->
-<!--    </div>-->
-<!--    <div class="col-sm-1 text-white"></div>-->
-<!--  </div>-->
-<!--  <div class="row">-->
-<!--    <div class="col-sm-2 text-white"></div>-->
-<!--    <div class="col-sm-8">-->
-<!--      <h5 style="text-align: center">Giới thiệu sách</h5>-->
-<!--      <p>{{d.description}}</p>-->
-<!--    </div>-->
-<!--    <div class="col-sm-2 text-white"></div>-->
-<!--  </div>-->
-<!--  <div class="row">-->
-<!--    <div class="col-sm-2 text-white"></div>-->
-<!--    <div class="col-sm-8">-->
-<!--      <button type="button" class="btn btn-primary">Sách cùng tác giả</button>-->
-<!--      <hr style="background-color: black">-->
-<!--      <div style="display:flex">-->
-<!--        <div>-->
-<!--          <img-->
-<!--            src="https://marketplace.canva.com/EAEs44o24ek/1/0/1003w/canva-h%E1%BB%93ng-v%C3%A0-xanh-h%E1%BA%A3i-qu%C3%A2n-%C4%91%C6%A1n-gi%E1%BA%A3n-b%C3%ACa-s%C3%A1ch-th%E1%BB%9Di-trang-S5f9M8dHg1k.jpg"-->
-<!--            width="140" height="190">-->
-<!--        </div>-->
-<!--        <div style="padding-left: 10px">-->
-<!--          <img-->
-<!--            src="https://marketplace.canva.com/EAEs44o24ek/1/0/1003w/canva-h%E1%BB%93ng-v%C3%A0-xanh-h%E1%BA%A3i-qu%C3%A2n-%C4%91%C6%A1n-gi%E1%BA%A3n-b%C3%ACa-s%C3%A1ch-th%E1%BB%9Di-trang-S5f9M8dHg1k.jpg"-->
-<!--            width="140" height="190">-->
-<!--        </div>-->
 
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--  <div class="col-sm-2 text-white"></div>-->
-<!--</div>-->
 <!------------------------------------------------------------------------------------------------------------------->
-<div class="container-fluid pb-5">
-  <div class="row px-xl-5" *ngFor="let d of detail">
+<div class="container-fluid pb-5"*ngFor="let d of detail ; let i = index">
+  <div class="row px-xl-5">
     <div class="col-lg-5 mb-30">
       <div id="product-carousel" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner bg-light">
@@ -148,105 +32,46 @@
           <small class="pt-1">(99 Reviews)</small>
         </div>
         <h3 class="font-weight-semi-bold mb-4">{{d.price|currency: 'VND':''}}</h3>
-        <p class="mb-4">{{d.description}}</p>
-<!--        <div class="row">-->
-<!--          <div >-->
-<!--            <div class="d-flex mb-4">-->
-<!--              <strong class="text-dark mr-3">Mã sách:</strong>-->
-<!--              <strong class="text-dark mr-3"></strong>-->
-<!--              <form>-->
-<!--                <div class="custom-control custom-radio custom-control-inline">-->
-<!--                  <input class="custom-control-input" id="color-0" name="color">-->
-<!--                  <label class="custom-control-label" for="color-0">{{d.code}}</label>-->
-<!--                </div>-->
-<!--              </form>-->
-<!--            </div>-->
-<!--            <div class="d-flex mb-4">-->
-<!--              <strong class="text-dark mr-3">Tác giả:</strong>-->
-<!--              <strong class="text-dark mr-3"></strong>-->
-<!--              <form>-->
-<!--                <div class="custom-control custom-radio custom-control-inline">-->
-<!--                  <input class="custom-control-input" id="color-1" name="color">-->
-<!--                  <label class="custom-control-label" for="color-1">{{d.author}}</label>-->
-<!--                </div>-->
-<!--              </form>-->
-<!--            </div>-->
-<!--            <div class="d-flex mb-4">-->
-<!--              <strong class="text-dark mr-3">Nhà xuất bản:</strong>-->
-<!--              <strong class="text-dark mr-3"></strong>-->
-<!--              <form>-->
-<!--                <div class="custom-control custom-radio custom-control-inline">-->
-<!--                  <input type="radio" class="custom-control-input" id="color-2" name="color">-->
-<!--                  <label class="custom-control-label" for="color-1">{{d.company}}</label>-->
-<!--                </div>-->
-<!--              </form>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--          <div >-->
-<!--            <div class="d-flex mb-4">-->
-<!--              <strong class="text-dark mr-3">Số trang:</strong>-->
-<!--              <form>-->
-<!--                <div class="custom-control custom-radio custom-control-inline">-->
-<!--                  <input type="radio" class="custom-control-input" id="color-3" name="color">-->
-<!--                  <label class="custom-control-label" for="color-1">{{d.numberOfPage}}</label>-->
-<!--                </div>-->
-<!--              </form>-->
-<!--            </div>-->
-<!--            <div class="d-flex mb-4">-->
-<!--              <strong class="text-dark mr-3">Kích thước:</strong>-->
-<!--              <form>-->
-<!--                <div class="custom-control custom-radio custom-control-inline">-->
-<!--                  <input type="radio" class="custom-control-input" id="color-4" name="color">-->
-<!--                  <label class="custom-control-label" for="color-1">{{d.size}}</label>-->
-<!--                </div>-->
-<!--              </form>-->
-<!--            </div>-->
-<!--            <div class="d-flex mb-4">-->
-<!--              <strong class="text-dark mr-3">Ngày phát hành:</strong>-->
-<!--              <form>-->
-<!--                <div class="custom-control custom-radio custom-control-inline">-->
-<!--                  <input type="radio" class="custom-control-input" id="color-5" name="color">-->
-<!--                  <label class="custom-control-label" for="color-1">{{d.createDate| date : "dd-MM-yyyy"}}</label>-->
-<!--                </div>-->
-<!--              </form>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>-->
-        <table class="table table-borderless">
+        <table class="table">
           <thead>
           <tr>
-            <th>Mã sách:</th>
-            <td>{{d.code}}</td>
-            <th>Tác giả:</th>
-            <td>{{d.author}}</td>
+            <td>Mã sách</td>
+            <td>Tác giả</td>
+            <td>Nhà xuất bản</td>
+            <td>Số trang</td>
+            <td>Kích thước</td>
+            <td>Ngày phát hành</td>
           </tr>
           </thead>
           <tbody>
           <tr>
-            <th>Nhà xuất bản:</th>
-            <td>{{d.company}}</td>
-            <th>Số trang:</th>
-            <td>{{d.numberOfPage}}</td>
+            <th scope="row">{{d.code}}</th>
+            <th scope="row">{{d.author}}</th>
+            <th scope="row">{{d.category.name}}</th>
+            <th scope="row">{{d.numberOfPage}}</th>
+            <th scope="row">{{d.size}}</th>
+            <th scope="row">{{d.createDate}}</th>
           </tr>
-          </tbody>
         </table>
         <div class="d-flex align-items-center mb-4 pt-2">
-          <div class="input-group quantity mr-3" style="width: 130px;">
+          <div class="input-group quantity mr-3" style="width: 100px;">
             <div class="input-group-btn">
-              <button class="btn btn-primary btn-minus">
-                <i class="fa fa-minus"></i>
+              <button class="btn btn-sm btn-primary btn-minus" (click)="minusQuantity(i, d.quantity)">
+                <i class="fa fa-minus text-white"></i>
               </button>
             </div>
-            <input type="text" class="form-control bg-secondary border-0 text-center" value="1">
+            <input type="number" class="form-control form-control-sm bg-secondary border-0 text-center"
+                   [value]="d.quantity" (change)="updateQuantity(i, $event)">
             <div class="input-group-btn">
-              <button class="btn btn-primary btn-plus">
-                <i class="fa fa-plus"></i>
+              <button class="btn btn-sm btn-primary btn-plus" (click)="plusQuantity(i, d.quantity)">
+                <i class="fa fa-plus text-white"></i>
               </button>
             </div>
           </div>
-          <button class="btn btn-primary px-3"><i class="fa fa-shopping-cart mr-1"></i> Add To
+          <a class="btn btn-primary px-3 mr-3" (click)="onAddToCart(d)" ><i class="fa fa-shopping-cart mr-1"></i> Add To
             Cart
-          </button>
+          </a>
+          <button class="btn btn-primary px-3">Mua ngay</button>
         </div>
         <div class="d-flex pt-2">
           <strong class="text-dark mr-2">Share on:</strong>
@@ -278,7 +103,7 @@
         </div>
         <div class="tab-content">
           <div class="tab-pane fade show active" id="tab-pane-1">
-            <h4 class="mb-3">Product Description</h4>
+            <h4 class="mb-3">{{d.name}}</h4>
             <p>Eos no lorem eirmod diam diam, eos elitr et gubergren diam sea. Consetetur vero aliquyam invidunt duo
               dolores et duo sit. Vero diam ea vero et dolore rebum, dolor rebum eirmod consetetur invidunt sed sed et,
               lorem duo et eos elitr, sadipscing kasd ipsum rebum diam. Dolore diam stet rebum sed tempor kasd eirmod.
