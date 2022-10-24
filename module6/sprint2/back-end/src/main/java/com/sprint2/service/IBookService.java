@@ -19,4 +19,6 @@ public interface IBookService {
     void updateBook(Book book);
 
     Book findById(Integer id);
+
+    Page<Book> findAllHistoryBook(Pageable pageable, Integer id);
 }

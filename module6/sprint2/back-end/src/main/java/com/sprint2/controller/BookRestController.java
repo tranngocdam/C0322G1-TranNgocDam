@@ -10,8 +10,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -56,5 +54,13 @@ public class BookRestController {
                 return new ResponseEntity<>(HttpStatus.NOT_FOUND);
             }
             return new ResponseEntity<>(book, HttpStatus.OK);
+    }
+    @GetMapping("/history/{id}")
+    public ResponseEntity<Page<Book>> findAllHistoryBook(@PageableDefault(value = 9) Pageable pageable, @PathVariable Integer id){
+        Page<Book> bookPage = iBookService.findAllHistoryBook(pageable, id);
+        if (bookPage.isEmpty()){
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity<>(bookPage, HttpStatus.OK);
     }
 }

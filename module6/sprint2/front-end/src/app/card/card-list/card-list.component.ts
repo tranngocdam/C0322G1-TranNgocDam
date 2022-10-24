@@ -13,21 +13,20 @@ export class CardListComponent implements OnInit {
   carts: any = [];
   item: any;
   role: string;
-  shiper: number;
-  ship = '---Giao hàng--';
-  totalQuantity: number = this.cartService.getTotalCartQuantity();
-  totalPrice: number = this.cartService.getTotalCartPrice();
   sumPrice: number = this.cartService.getCartTotalPrice();
   sumQuantity: number = this.cartService.getCartTotalQuantity();
+
   constructor(private cartService: CartService,
               private data: DataService) {
     render(
       {
-        id: "#myPaypalButtons",
-        currency: "USD",
-        value: "100.00",
+        id: '#myPaypal',
+        currency: 'USD',
+        value: String((this.sumPrice / 23000).toFixed(2)),
         onApprove: (details) => {
-          alert("Transaction");
+          alert('Transaction');
+          localStorage.clear();
+          this.carts = [];
         }
       }
     );
@@ -36,6 +35,7 @@ export class CardListComponent implements OnInit {
   ngOnInit(): void {
     this.carts = this.cartService.getCarts();
   }
+
   minusQuantity(i: number, quantity: any) {
     let newQuantity = parseInt(quantity) - 1;
     newQuantity = newQuantity > 0 ? newQuantity : 1;
@@ -83,9 +83,10 @@ export class CardListComponent implements OnInit {
       _this.cartService.saveCarts(_this.carts);
     }
   }
+
   onClearCart() {
     let _this = this;
-    sessionStorage.clear();
+    localStorage.clear();
     _this.carts = [];
   }
 }

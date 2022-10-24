@@ -39,11 +39,14 @@ export class BookService {
   }
 
   getDetail() {
-    let detailJson = sessionStorage.getItem('detail');
+    let detailJson = localStorage.getItem('detail');
     if (detailJson) {
       return JSON.parse(detailJson);
     } else {
       return [];
     }
+  }
+  getHistoryBook(page: number, pageSize: number, customerId: number): Observable<Book[]> {
+    return this.http.get<Book[]>(API_URL + `/api/book/history/${customerId}?page=` + page + `&size=` + pageSize);
   }
 }

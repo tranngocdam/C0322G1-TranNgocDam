@@ -8,8 +8,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Service
 public class BookServiceImpl implements IBookService {
     @Autowired
@@ -48,5 +46,10 @@ public class BookServiceImpl implements IBookService {
     @Override
     public Book findById(Integer id) {
         return iBookRepository.findByIdBook(id);
+    }
+
+    @Override
+    public Page<Book> findAllHistoryBook(Pageable pageable, Integer id) {
+        return iBookRepository.findAllHistoryBook(pageable, id);
     }
 }

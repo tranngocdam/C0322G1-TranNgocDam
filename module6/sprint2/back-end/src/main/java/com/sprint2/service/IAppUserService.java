@@ -7,13 +7,13 @@ import java.io.UnsupportedEncodingException;
 import java.util.List;
 import java.util.Optional;
 
-public interface IUserService {
+public interface IAppUserService {
+
     AppUsers findByName(String name);
 
     String existsByUserName(String username) throws MessagingException, UnsupportedEncodingException;
 
     void saveNewPassword(String password, String name);
-
 
     List<AppUsers> findAll();
 

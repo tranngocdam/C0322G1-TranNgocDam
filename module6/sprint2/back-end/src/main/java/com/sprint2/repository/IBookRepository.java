@@ -71,4 +71,10 @@ public interface IBookRepository extends JpaRepository<Book, Integer> {
 
     @Query(value = "select * from book where id = :id", nativeQuery = true)
     Book findByIdBook(@Param("id") Integer id);
+
+    @Query(value = "select b.*, ob.customer_id from book b " +
+            "join order_book ob on ob.book_id = b.id " +
+            "where ob.customer_id = :id", nativeQuery = true)
+    Page<Book> findAllHistoryBook(Pageable pageable, @Param("id") Integer id);
+
 }

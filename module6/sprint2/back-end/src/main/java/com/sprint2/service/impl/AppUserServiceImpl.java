@@ -2,12 +2,11 @@ package com.sprint2.service.impl;
 
 import com.sprint2.model.AppUsers;
 import com.sprint2.repository.IAppUsersRepository;
-import com.sprint2.service.IUserService;
+import com.sprint2.service.IAppUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
-
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
 import java.io.UnsupportedEncodingException;
@@ -15,7 +14,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class UserServiceImpl implements IUserService {
+public class AppUserServiceImpl implements IAppUserService {
     @Autowired
     private IAppUsersRepository iAppUsersRepository;
 
@@ -49,7 +48,7 @@ public class UserServiceImpl implements IUserService {
 
     @Override
     public void save(AppUsers appUsers) {
-        iAppUsersRepository.save(appUsers.getUsername(), appUsers.getPassword());
+        iAppUsersRepository.save(appUsers);
     }
 
     @Override

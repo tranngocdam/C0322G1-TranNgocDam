@@ -12,79 +12,129 @@
           <hr>
           <div class="formRow_create_content">
             <div class="mb-3">
-              <label class="form-label">Tên sách<span class="text-danger">*</span></label>
+              <label class="form-label">Tên sách:</label>
               <input type="text" class="form-control" formControlName="name">
+              <div class="form-text"><span><p
+                *ngIf="bookForm.controls.name.hasError('required') && bookForm.controls.name.touched">Không
+                được để trống</p></span></div>
             </div>
             <div class="mb-3">
-              <label class="form-label">Nhập mã sách<span class="text-danger">*</span></label>
+              <label class="form-label">Nhập mã sách:</label>
               <input type="text" class="form-control" formControlName="code">
+              <div class="form-text"><span><p
+                *ngIf="bookForm.controls.code.hasError('required') && bookForm.controls.code.touched">Không
+                được để trống</p></span></div>
             </div>
             <div class="mb-3">
-              <label class="form-label">Nội dung<span class="text-danger">*</span></label>
+              <label class="form-label">Nội dung:</label>
               <input type="text" class="form-control" formControlName="description">
+              <div class="form-text"><span><p
+                *ngIf="bookForm.controls.description.hasError('required') && bookForm.controls.description.touched">Không
+                được để trống</p></span></div>
             </div>
-            <div class="mb-3">
-              <label class="form-label">Thể loại sách<span class="text-danger">*</span></label>
-              <select class="form-select" id="inlineFormSelectPref" formControlName="category">
-                <option value="" [selected]="true" [disabled]="true">--Chọn loại sách--</option>
-                <option *ngFor="let p of categorys" [ngValue]="p.id">{{p.name}}</option>
-              </select>
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Nhà xuất bản<span class="text-danger">*</span></label>
-              <select class="form-select" id="inlineFormSelectPref1" formControlName="company">
-                <option value="" [selected]="true" [disabled]="true">--Chọn nhà xuất bản--</option>
-                <option *ngFor="let p of companys" [ngValue]="p.id">{{p.name}}</option>
-              </select>
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Tỷ lệ giảm giá<span class="text-danger">*</span></label>
-              <select class="form-select" id="inlineFormSelectPref2" formControlName="discount">
-                <option value="" [selected]="true" [disabled]="true">--Chọn tỉ lệ giảm giá--</option>
-                <option *ngFor="let p of discounts" [ngValue]="p.id">{{p.percent}}</option>
-              </select>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Thể loại sách:</label>
+            <select class="form-select" id="inlineFormSelectPref" formControlName="category">
+              <option value="" [selected]="true" [disabled]="true">--Chọn loại sách--</option>
+              <option *ngFor="let p of categorys" [ngValue]="p.id">{{p.name}}</option>
+            </select>
+            <div class="form-text"><span><p
+              *ngIf="bookForm.controls.category.hasError('required') && bookForm.controls.category.touched">Không
+                được để trống</p></span></div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Nhà xuất bản:</label>
+            <select class="form-select" id="inlineFormSelectPref1" formControlName="company">
+              <option value="" [selected]="true" [disabled]="true">--Chọn nhà xuất bản--</option>
+              <option *ngFor="let p of companys" [ngValue]="p.id">{{p.name}}</option>
+            </select>
+            <div class="form-text"><span><p
+              *ngIf="bookForm.controls.company.hasError('required') && bookForm.controls.company.touched">Không
+                được để trống</p></span></div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Tỷ lệ giảm giá:</label>
+            <select class="form-select" id="inlineFormSelectPref2" formControlName="discount">
+              <option value="" [selected]="true" [disabled]="true">--Chọn tỉ lệ giảm giá--</option>
+              <option *ngFor="let p of discounts" [ngValue]="p.id">{{p.percent}}</option>
+            </select>
+            <div class="form-text"><span><p
+              *ngIf="bookForm.controls.discount.hasError('required') && bookForm.controls.discount.touched">Không
+                được để trống</p></span></div>
+          </div>
+          <div class="mb-3">
+            <div class="row">
+              <div class="col-md">
+                <label class="form-label">Ngày tạo:</label>
+                <input type="date" class="form-control" formControlName="createDate">
+                <div class="form-text"><span><p
+                  *ngIf="bookForm.controls.createDate.hasError('required') && bookForm.controls.createDate.touched">Không
+                được để trống</p></span></div>
+              </div>
+              <div class="col-md">
+                <label class="form-label">Kích thước:</label>
+                <input type="text" class="form-control" formControlName="size">
+                <div class="form-text"><span><p
+                  *ngIf="bookForm.controls.size.hasError('required') && bookForm.controls.size.touched">Không
+                được để trống</p></span></div>
+              </div>
             </div>
             <div class="mb-3">
               <div class="row">
                 <div class="col-md">
-                  <label class="form-label">Ngày tạo<span class="text-danger">*</span></label>
-                  <input type="date" class="form-control" formControlName="createDate">
+                  <label class="form-label">Tác giả:</label>
+                  <input type="text" class="form-control" formControlName="author">
+                  <div class="form-text"><span><p
+                    *ngIf="bookForm.controls.author.hasError('required') && bookForm.controls.author.touched">Không
+                được để trống</p>
+                     <p *ngIf="bookForm.controls.author.hasError('pattern') && bookForm.controls.author.touched">Không
+                  đúng định dạng</p>
+                  </span></div>
                 </div>
                 <div class="col-md">
-                  <label class="form-label">Kích thước<span class="text-danger">*</span> </label>
-                  <input type="text" class="form-control" formControlName="size">
+                  <label class="form-label">Giá bán:</label>
+                  <input type="text" class="form-control" formControlName="price">
+                  <div class="form-text"><span><p
+                    *ngIf="bookForm.controls.price.hasError('required') && bookForm.controls.price.touched">Không
+                được để trống</p>
+                     <p *ngIf="bookForm.controls.price.hasError('pattern') && bookForm.controls.price.touched">Không đúng định dạng</p>
+                    </span></div>
                 </div>
               </div>
-              <div class="mb-3">
-                <div class="row">
-                  <div class="col-md">
-                    <label class="form-label">Tác giả<span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" formControlName="author">
-                  </div>
-                  <div class="col-md">
-                    <label class="form-label">Giá bán<span class="text-danger">*</span> </label>
-                    <input type="text" class="form-control" formControlName="price">
-                  </div>
+              <div class="row">
+                <div class="col-md">
+                  <label class="form-label">Số lượng:</label>
+                  <input type="number" class="form-control" formControlName="amount">
+                  <div class="form-text"><span><p
+                    *ngIf="bookForm.controls.amount.hasError('required') && bookForm.controls.amount.touched">Không
+                được để trống</p>
+                         <p *ngIf="bookForm.controls.amount.hasError('min') && bookForm.controls.amount.touched">Số lượng phải lớn hơn 0</p>
+                <p *ngIf="bookForm.controls.amount.hasError('max') && bookForm.controls.amount.touched">Số lượng phải nhỏ hơn 50</p>
+                  </span></div>
                 </div>
-                <div class="row">
-                  <div class="col-md">
-                    <label class="form-label">Số lượng<span class="text-danger">*</span></label>
-                    <input type="number" class="form-control" formControlName="amount">
-                  </div>
-                  <div class="col-md">
-                    <label class="form-label">Số trang<span class="text-danger">*</span> </label>
-                    <input type="number" class="form-control" formControlName="numberOfPage">
-                  </div>
+                <div class="col-md">
+                  <label class="form-label">Số trang:</label>
+                  <input type="number" class="form-control" formControlName="numberOfPage">
+                  <div class="form-text"><span><p
+                    *ngIf="bookForm.controls.numberOfPage.hasError('required') && bookForm.controls.numberOfPage.touched">Không
+                được để trống</p>
+                      <p *ngIf="bookForm.controls.numberOfPage.hasError('min') && bookForm.controls.numberOfPage.touched">Số trang phải lớn hơn 0</p>
+                  </span></div>
                 </div>
                 <div class="mb-3">
-                  <label class="form-label">Ảnh<span class="text-danger">*</span></label>
+                  <label class="form-label">Ảnh:</label>
                   <input type="text" class="form-control" formControlName="image">
+                  <div class="form-text"><span><p
+                    *ngIf="bookForm.controls.image.hasError('required') && bookForm.controls.image.touched">Không
+                được để trống</p></span>
+                  </div>
                 </div>
-              </div>
-              <div class="d-grid gap-2 d-md-flex justify-content-md-around">
-                <button class="btn btn-outline-danger" routerLink="/homepage"> Quay Lại</button>
-                <button class="btn btn-outline-success" type="submit"> Cập nhật</button>
-                <button class="btn btn-outline-dark" type="reset"> Nhập Lại</button>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-around">
+                  <button class="btn btn-outline-danger" routerLink="/homepage"> Quay Lại</button>
+                  <button class="btn btn-outline-success" type="submit"> Cập nhật</button>
+                  <button class="btn btn-outline-dark" type="reset"> Nhập Lại</button>
+                </div>
               </div>
             </div>
           </div>

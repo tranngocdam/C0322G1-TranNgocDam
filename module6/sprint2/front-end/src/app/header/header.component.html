@@ -1,11 +1,10 @@
-
 <div class="container-fluid">
   <div class="row bg-dark py-1 px-xl-5">
     <div class="col-lg-6 d-none d-lg-block">
       <div class="d-inline-flex align-items-center h-100">
         <a class="text-white mr-3" href="">Giới thiệu</a>
         <a class="text-white mr-3" href="">Liên hệ</a>
-        <a class="text-white mr-3" href="">Lịch sử giao dịch</a>
+        <a class="text-white mr-3" [routerLink]="['book/history']">Lịch sử giao dịch</a>
         <a class="text-white mr-3" href="">Kiểm tra đơn hàng</a>
       </div>
     </div>
@@ -13,14 +12,20 @@
       <div class="d-inline-flex align-items-center">
         <div class="btn-group" [hidden]="isLoggedIn">
           <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">Tài khoản</button>
-          <div class="dropdown-menu dropdown-menu-right" >
+          <div class="dropdown-menu dropdown-menu-right">
             <button class="dropdown-item" type="button" routerLink="/login">Đăng nhập</button>
             <button class="dropdown-item" type="button" routerLink="/signup">Đăng kí</button>
           </div>
         </div>
         <div class="btn-group" [hidden]="!isLoggedIn">
-          <button type="button" class="btn btn-sm btn-light"><span class="text-primary">{{username}}</span></button>
-          <a href="" class="btn btn-sm btn-light" (click)="logout()">Đăng xuất</a>
+          <button type="button" class="btn btn-sm btn-light" data-toggle="dropdown"><span
+            class="text-danger">{{username}}
+            <ul class="dropdown-menu">
+            <li><a class="dropdown-item" [routerLink]="['customer']">Xem Thông Tin</a></li>
+          </ul>
+          </span>
+          </button>
+          <a class="btn btn-sm btn-light"(click)="logout()">Đăng xuất</a>
         </div>
         <div class="btn-group mx-2">
           <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">USD</button>
@@ -58,15 +63,15 @@
         <span style="background-color: #45C4B0" class="h1 text-uppercase text-dark px-2 ml-n1">Shop</span>
       </a>
     </div>
-<!--    <div class="col-lg-4 col-6 text-left">-->
-<!--      <form action="">-->
-<!--        <div class="input-group">-->
-<!--          <input type="text" class="form-control" placeholder="Tìm kiếm sách..." name="keyword">-->
-<!--          <div class="input-group-append"><span class="input-group-text bg-transparent text-dark"><i class="fa fa-search"></i></span>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </form>-->
-<!--    </div>-->
+    <!--    <div class="col-lg-4 col-6 text-left">-->
+    <!--      <form action="">-->
+    <!--        <div class="input-group">-->
+    <!--          <input type="text" class="form-control" placeholder="Tìm kiếm sách..." name="keyword">-->
+    <!--          <div class="input-group-append"><span class="input-group-text bg-transparent text-dark"><i class="fa fa-search"></i></span>-->
+    <!--          </div>-->
+    <!--        </div>-->
+    <!--      </form>-->
+    <!--    </div>-->
     <div class="col-lg-8 col-6 text-right">
       <p class="m-0">Dịch vụ tư vấn</p>
       <h5 class="m-0">+012 345 6789</h5>
@@ -76,14 +81,17 @@
 <div class="container-fluid bg-dark mb-30">
   <div class="row px-xl-5">
     <div class="col-lg-3 d-none d-lg-block">
-      <a class="btn d-flex align-items-center justify-content-between w-100" data-toggle="collapse" href="#navbar-vertical" style="height: 65px; padding: 0 30px; background-color:#45C4B0">
-        <h6  class="text-white m-0"><i class="fa fa-bars mr-2"></i>Thể loại sách</h6>
-        <i class="fa fa-angle-down text-dark"></i>
+      <a class="btn d-flex align-items-center justify-content-between w-100" data-toggle="collapse"
+         href="#navbar-vertical" style="height: 65px; padding: 0 30px; background-color:#45C4B0">
+        <h6 class="text-white m-0"><i class="fa fa-bars mr-2"></i>Thể loại sách</h6>
+        <i class="fa fa-angle-down text-white"></i>
       </a>
-      <nav class="collapse position-absolute navbar navbar-vertical navbar-light align-items-start p-0 bg-light" id="navbar-vertical" style="width: calc(100% - 30px); z-index: 999;">
+      <nav class="collapse position-absolute navbar navbar-vertical navbar-light align-items-start p-0 bg-light"
+           id="navbar-vertical" style="width: calc(100% - 30px); z-index: 999;">
         <div class="navbar-nav w-100">
           <div class="nav-item dropdown dropright">
-            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Giáo dục <i class="fa fa-angle-right float-right mt-1"></i></a>
+            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Giáo dục <i
+              class="fa fa-angle-right float-right mt-1"></i></a>
             <div class="dropdown-menu position-absolute rounded-0 border-0 m-0">
               <a href="" class="dropdown-item">Tiểu học</a>
               <a href="" class="dropdown-item">Trung học</a>
@@ -117,7 +125,8 @@
             <a href="detail.html" class="nav-item nav-link">Chương trình khuyến mãi</a>
             <a href="contact.html" class="nav-item nav-link">Giảm giá đặc biệt</a>
             <div class="nav-item dropdown">
-              <a [hidden]="!isLoggedIn" href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Thanh toán<i class="fa fa-angle-down mt-1"></i></a>
+              <a [hidden]="!isLoggedIn" href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Thanh toán<i
+                class="fa fa-angle-down mt-1"></i></a>
               <div class="dropdown-menu bg-white rounded-0 border-0 m-0">
                 <a href="cart.html" class="dropdown-item">Shopping Cart</a>
                 <a href="checkout.html" class="dropdown-item">Checkout</a>
@@ -127,11 +136,13 @@
           <div class="navbar-nav ml-auto py-0 d-none d-lg-block">
             <a href="" class="btn px-0">
               <i class="fas fa-heart text-white"></i>
-              <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">0</span>
+              <span class="badge text-secondary border border-secondary rounded-circle"
+                    style="padding-bottom: 2px;">0</span>
             </a>
             <a routerLink="/card" class="btn px-0 ml-3">
-              <i class="fas fa-shopping-cart text-white" ></i>
-              <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">0</span>
+              <i class="fas fa-shopping-cart text-white"></i>
+              <span class="badge text-secondary border border-secondary rounded-circle"
+                    style="padding-bottom: 2px;">0</span>
             </a>
           </div>
         </div>

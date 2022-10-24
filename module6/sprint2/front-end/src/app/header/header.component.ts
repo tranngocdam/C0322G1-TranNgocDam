@@ -37,10 +37,4 @@ export class HeaderComponent implements OnInit {
   logout() {
     this.tokenStorageService.signOut();
   }
-
-  search() {
-    // this.data.changeData({
-    //   keyword: this.keyword;
-    // });
-  }
 }

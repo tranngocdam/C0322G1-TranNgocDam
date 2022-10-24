@@ -24,17 +24,14 @@ public class Customer {
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id", referencedColumnName = "id")
-//    @JsonBackReference
     @JsonIgnore
     private AppUsers appUsers;
 
-//    @JsonBackReference
-@JsonIgnore
+    @JsonIgnore
     @OneToMany(mappedBy = "customer")
     private List<OrderBook> orderBookList;
 
-//    @JsonBackReference
-@JsonIgnore
+    @JsonIgnore
     @OneToMany(mappedBy = "customer")
     private List<FeedBack> feedBackList;
 

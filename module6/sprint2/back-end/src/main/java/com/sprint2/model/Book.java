@@ -39,8 +39,8 @@ public class Book {
     @JoinColumn(name = "discount_id", referencedColumnName = "id")
     private Discount discount;
 
-//    @JsonBackReference
-@JsonIgnore
+
+    @JsonIgnore
     @OneToMany(mappedBy = "book")
     private List<OrderBook> orderBookList;
 

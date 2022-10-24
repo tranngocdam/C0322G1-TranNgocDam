@@ -15,8 +15,6 @@ public class UserRoleServiceImpl implements IUserRoleService {
     @Autowired
     private IUserRoleRepository iUserRoleRepository;
 
-    @Autowired
-    private IAppUsersRepository iAppUsersRepository;
     @Override
     public List<UserRole> findAll() {
         return iUserRoleRepository.findAll();
@@ -24,7 +22,7 @@ public class UserRoleServiceImpl implements IUserRoleService {
 
     @Override
     public void save(UserRole userRole) {
-        iUserRoleRepository.save(userRole.getAppRole().getId(), userRole.getAppUsers().getId());
+        iUserRoleRepository.save(userRole);
     }
 
     @Override

@@ -4,7 +4,7 @@ import com.sprint2.config.JwtTokenUtil;
 import com.sprint2.model.JwtRequest;
 import com.sprint2.model.JwtResponse;
 import com.sprint2.model.MessageResponse;
-import com.sprint2.service.IUserService;
+import com.sprint2.service.IAppUserService;
 import com.sprint2.service.impl.JwtUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -39,7 +39,7 @@ public class JwtAuthenticationController {
     private JwtUserDetailsService userDetailsService;
 
     @Autowired
-    private IUserService appUserService;
+    private IAppUserService appUserService;
 
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();

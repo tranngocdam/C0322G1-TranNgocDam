@@ -14,6 +14,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { HomePageComponent } from './home-page/home-page.component';
 import {CardModule} from './card/card.module';
 import {FormsModule} from '@angular/forms';
+import {HistoryCartComponent} from './history/history-cart/history-cart.component';
+import {HistoryModule} from './history/history.module';
+import {CustomerModule} from './customer/customer.module';
 
 @NgModule({
   declarations: [
@@ -40,7 +43,9 @@ import {FormsModule} from '@angular/forms';
         SecurityModule,
         HttpClientModule,
         CardModule,
-        FormsModule
+        FormsModule,
+        HistoryModule,
+        CustomerModule
     ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,29 @@
+<section class="about_section layout_padding">
+  <div class="container ">
+    <div class="row">
+      <div class="col-md-3">
+      </div>
+      <div class="col-md-6">
+        <div class="detail-box formRow_create">
+          <div>
+            <h2 style="color: #45C4B0" class="formRow">
+              Thông Tin Khách Hàng
+            </h2>
+          </div>
+          <ul style="font-size: 14px; list-style: none" class="information text-dark">
+            <li>Họ và tên: <span style="padding-left: 12px">{{customer?.name}}</span></li>
+            <li>Ngày Sinh: <span style="padding-left: 8px">{{customer?.dayOfBirth}}</span></li>
+            <li>Địa chỉ: <span style="padding-left: 27px">{{customer?.address}}</span></li>
+            <li>Điện thoại: <span style="padding-left: 5px">{{customer?.phone}}</span></li>
+            <li>Email: <span style="padding-left: 32px">{{customer?.email}}</span></li>
+          </ul>
+          <div class="d-grid gap-2 d-md-flex justify-content-md-around">
+            <a routerLink="/customer/edit" class="text-dark" style="background-color: #45C4B0; font-weight: bold">Sửa Thông Tin</a>
+            <a routerLink="/homepage" class="text-dark" style="background-color: #45C4B0; font-weight: bold">Quay lại</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3"></div>
+    </div>
+  </div>
+</section>

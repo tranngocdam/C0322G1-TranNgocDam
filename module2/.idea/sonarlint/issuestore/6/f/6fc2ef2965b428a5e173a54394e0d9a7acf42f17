@@ -22,3 +22,7 @@ D
 java:S5413i")Verify that "remove()" is used correctly.(ÁÔ¶øÿÿÿÿ
 S	java:S106d"9Replace this use of System.out or System.err by a logger.(ìŸâÔüÿÿÿÿ
 V	java:S125v"<This block of commented-out lines of code should be removed.(»Îèøÿÿÿÿ
+s
+java:S1128"QRemove this unused import 'case_study.common.exception.NotYet18YearOldException'.(¥€Îùÿÿÿÿ8£áó¬À0
+s
+java:S1128	"QRemove this unused import 'case_study.common.exception.Over100YearsOldException'.(ôÖ“ëùÿÿÿÿ8£áó¬À0

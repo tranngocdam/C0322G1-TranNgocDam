@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import {RouterModule, Routes} from '@angular/router';
 import {BookListComponent} from './book-list/book-list.component';
 import {BookDetailComponent} from './book-detail/book-detail.component';
 import {BookCreateComponent} from './book-create/book-create.component';
 import {BookUpdateComponent} from './book-update/book-update.component';
+
 
 
 const routes: Routes = [

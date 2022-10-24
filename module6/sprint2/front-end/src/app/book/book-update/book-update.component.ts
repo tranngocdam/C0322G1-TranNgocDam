@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl, FormControlName, FormGroup} from '@angular/forms';
+import {FormControl, FormControlName, FormGroup, Validators} from '@angular/forms';
 import {Category} from '../../model/category';
 import {Company} from '../../model/company';
 import {Discount} from '../../model/discount';
@@ -64,19 +64,19 @@ export class BookUpdateComponent implements OnInit {
     return this.bookService.findById(id).subscribe(book => {
       this.bookForm = new FormGroup({
         id: new FormControl(book.id),
-        name: new FormControl(book.name),
-        code: new FormControl(book.code),
-        createDate: new FormControl(book.createDate),
-        size: new FormControl(book.size),
-        description: new FormControl(book.description),
-        author: new FormControl(book.author),
-        price: new FormControl(book.price),
-        amount: new FormControl(book.amount),
-        image: new FormControl(book.image),
-        numberOfPage: new FormControl(book.numberOfPage),
-        category: new FormControl(book.category.id),
-        company: new FormControl(book.company.id),
-        discount: new FormControl(book.discount.id)
+        name: new FormControl(book.name, [Validators.required]),
+        code: new FormControl(book.code, [Validators.required]),
+        createDate: new FormControl(book.createDate, [Validators.required]),
+        size: new FormControl(book.size, [Validators.required]),
+        description: new FormControl(book.description, [Validators.required]),
+        author: new FormControl(book.author, [Validators.required, Validators.pattern('^[A-ZÀÁẠẢÃÂẦẤẬẨẪĂẰẮẶẲẴÈÉẸẺẼÊỀẾỆỂỄÌÍỊỈĨÒÓỌỎÕÔỒỐỘỔỖƠỜỚỢỞỠÙÚỤỦŨƯỪỨỰỬỮỲÝỴỶỸĐ][a-zàáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]*(?:[ ][A-ZÀÁẠẢÃÂẦẤẬẨẪĂẰẮẶẲẴÈÉẸẺẼÊỀẾỆỂỄÌÍỊỈĨÒÓỌỎÕÔỒỐỘỔỖƠỜỚỢỞỠÙÚỤỦŨƯỪỨỰỬỮỲÝỴỶỸĐ][a-zàáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]*)*$')]),
+        price: new FormControl(book.price, [Validators.required, Validators.pattern('^[1-9]{1,}$')]),
+        amount: new FormControl(book.amount, [Validators.required, Validators.min(1), Validators.max(100)]),
+        image: new FormControl(book.image, [Validators.required]),
+        numberOfPage: new FormControl(book.numberOfPage, [Validators.required, Validators.min(1)]),
+        category: new FormControl(book.category.id, [Validators.required]),
+        company: new FormControl(book.company.id, [Validators.required]),
+        discount: new FormControl(book.discount.id, [Validators.required])
       });
     });
   }

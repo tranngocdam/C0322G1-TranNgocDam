@@ -10,7 +10,7 @@ import {Book} from '../../model/book';
 import {Category} from '../../model/category';
 import {Company} from '../../model/company';
 import {Discount} from '../../model/discount';
-import {FormControl, FormGroup} from '@angular/forms';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-book-create',
@@ -33,21 +33,19 @@ export class BookCreateComponent implements OnInit {
   companys: Company[] = [];
   discounts: Discount[] = [];
   bookForm: FormGroup = new FormGroup({
-    id: new FormControl(''),
-    name: new FormControl(''),
-    code: new FormControl(''),
-    createDate: new FormControl(''),
-    size: new FormControl(''),
-    description: new FormControl(''),
-    author: new FormControl(''),
-    price: new FormControl(''),
-    amount: new FormControl(''),
-    image: new FormControl(''),
-    numberOfPage: new FormControl(''),
-    isDelete: new FormControl(''),
-    category: new FormControl(''),
-    company: new FormControl(''),
-    discount: new FormControl(''),
+    name: new FormControl('', [Validators.required]),
+    code: new FormControl('', [Validators.required]),
+    createDate: new FormControl('', [Validators.required]),
+    size: new FormControl('', [Validators.required]),
+    description: new FormControl('', [Validators.required]),
+    author: new FormControl('', [Validators.required, Validators.pattern('^[A-ZÀÁẠẢÃÂẦẤẬẨẪĂẰẮẶẲẴÈÉẸẺẼÊỀẾỆỂỄÌÍỊỈĨÒÓỌỎÕÔỒỐỘỔỖƠỜỚỢỞỠÙÚỤỦŨƯỪỨỰỬỮỲÝỴỶỸĐ][a-zàáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]*(?:[ ][A-ZÀÁẠẢÃÂẦẤẬẨẪĂẰẮẶẲẴÈÉẸẺẼÊỀẾỆỂỄÌÍỊỈĨÒÓỌỎÕÔỒỐỘỔỖƠỜỚỢỞỠÙÚỤỦŨƯỪỨỰỬỮỲÝỴỶỸĐ][a-zàáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]*)*$')]),
+    price: new FormControl('', [Validators.required, Validators.pattern('^[1-9]{1,}$')]),
+    amount: new FormControl('', [Validators.required, Validators.min(1), Validators.max(100)]),
+    image: new FormControl('', [Validators.required]),
+    numberOfPage: new FormControl('', [Validators.required, Validators.min(1)]),
+    category: new FormControl('', [Validators.required]),
+    company: new FormControl('', [Validators.required]),
+    discount: new FormControl('', [Validators.required]),
   });
 
   ngOnInit(): void {

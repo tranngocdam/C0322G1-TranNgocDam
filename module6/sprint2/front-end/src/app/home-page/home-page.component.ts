@@ -4,11 +4,9 @@ import {ShareService} from '../security/share.service';
 import {Book} from '../model/book';
 import {BookService} from '../service/book.service';
 import {ToastrService} from 'ngx-toastr';
-import {Category} from '../model/category';
-import {Company} from '../model/company';
-import {Discount} from '../model/discount';
 import {CartService} from '../service/cart.service';
 import {DataService} from '../service/data.service';
+import {Cart} from '../model/cart';
 
 @Component({
   selector: 'app-home-page',
@@ -50,7 +48,8 @@ export class HomePageComponent implements OnInit {
   caname: string;
   coname: string;
   dpercent: string;
-
+  cart: Cart;
+  cartList: Cart[] = [];
   constructor(private tokenStorageService: TokenStorageService,
               private shareService: ShareService,
               private bookService: BookService,
@@ -102,35 +101,14 @@ export class HomePageComponent implements OnInit {
         image: book.image,
         name: book.name,
         price: book.price,
+        discount: book.discount,
         quantity: 1,
       };
       this.carts.push(cartItem);
     }
     let cartJson = JSON.stringify(this.carts);
-    sessionStorage.setItem('cart', cartJson);
+    localStorage.setItem('cart', cartJson);
     this.toastrServiceo.success('Thêm thêm giỏ hàng thành công', 'Thông báo');
-  }
-
-  onAddToDetail(book: any) {
-    let detail: any = {
-      name: book.name,
-      code: book.code,
-      createDate: book.createDate,
-      size: book.size,
-      description: book.description,
-      author: book.author,
-      price: book.price,
-      amount: book.amount,
-      image: book.image,
-      numberOfPage: book.numberOfPage,
-      category: book.category,
-      company: book.company,
-      discount: book.discount,
-      quantity: 1
-    };
-    this.detail.push(detail);
-    let detailJson = JSON.stringify(this.detail);
-    sessionStorage.setItem('detail', detailJson);
   }
 
   getAll(): void {
@@ -150,7 +128,27 @@ export class HomePageComponent implements OnInit {
       this.checkPreviousAndNext();
     });
   }
-
+  addBook(id: number) {
+    this.bookService.findById(id).subscribe((data: any) => {
+      this.cart = {
+        book: data,
+        quantity: 1
+      };
+      this.cartService.saveBook(this.cart);
+      // this.getAllCart();
+    });
+  }
+  // getAllCart() {
+  //   if (this.cartService.getCart()) {
+  //     this.cartList = this.cartService.getCart();
+  //     this.total = 0;
+  //     for (const item of this.cartList) {
+  //       this.total = this.total + ((item.book.price * (100 - item.book.promotion.promotionPrice) / 100) * item.quantity);
+  //     }
+  //   } else {
+  //     this.cartList = null;
+  //   }
+  // }
   checkPreviousAndNext() {
     if (this.indexPagination === 0) {
       this.previousPageStyle = 'none';
@@ -210,33 +208,56 @@ export class HomePageComponent implements OnInit {
     this.coname = b.company.name;
     this.dpercent = b.discount.percent;
   }
-  minusQuantity(i: number, quantity: any) {
-    let newQuantity = parseInt(quantity) - 1;
-    newQuantity = newQuantity > 0 ? newQuantity : 1;
-    this.detail[i].quantity = newQuantity;
-    this.cartService.saveCarts(this.detail);
-    this.data.changeData({
-      totalQuantity: this.cartService.getTotalCartQuantity()
-    });
-  }
+  // minusQuantity(i: number, quantity: any) {
+  //   let newQuantity = parseInt(quantity) - 1;
+  //   newQuantity = newQuantity > 0 ? newQuantity : 1;
+  //   this.detail[i].quantity = newQuantity;
+  //   this.cartService.saveCarts(this.detail);
+  //   this.data.changeData({
+  //     totalQuantity: this.cartService.getTotalCartQuantity()
+  //   });
+  // }
 
-  updateQuantity(i: number, event: any) {
-    let newQuantity = event.target.value;
-    newQuantity = newQuantity > 0 ? newQuantity : 1;
-    event.target.value = newQuantity;
-    this.detail[i].quantity = newQuantity;
-    this.cartService.saveCarts(this.detail);
-    this.data.changeData({
-      totalQuantity: this.cartService.getTotalCartQuantity()
-    });
-  }
+  // updateQuantity(i: number, event: any) {
+  //   let newQuantity = event.target.value;
+  //   newQuantity = newQuantity > 0 ? newQuantity : 1;
+  //   event.target.value = newQuantity;
+  //   this.detail[i].quantity = newQuantity;
+  //   this.cartService.saveCarts(this.detail);
+  //   this.data.changeData({
+  //     totalQuantity: this.cartService.getTotalCartQuantity()
+  //   });
+  // }
 
-  plusQuantity(i: number, quantity: any) {
-    let newQuantity = parseInt(quantity) + 1;
-    this.detail[i].quantity = newQuantity;
-    this.cartService.saveCarts(this.detail);
-    this.data.changeData({
-      totalQuantity: this.cartService.getTotalCartQuantity()
-    });
-  }
+  // plusQuantity(i: number, quantity: any) {
+  //   let newQuantity = parseInt(quantity) + 1;
+  //   this.detail[i].quantity = newQuantity;
+  //   this.cartService.saveCarts(this.detail);
+  //   this.data.changeData({
+  //     totalQuantity: this.cartService.getTotalCartQuantity()
+  //   });
+  // }
+  // onAddToDetail(book: any) {
+    //   let detail: any = {
+    //     name: book.name,
+    //     code: book.code,
+    //     createDate: book.createDate,
+    //     size: book.size,
+    //     description: book.description,
+    //     author: book.author,
+    //     price: book.price,
+    //     amount: book.amount,
+    //     image: book.image,
+    //     numberOfPage: book.numberOfPage,
+    //     category: book.category,
+    //     company: book.company,
+    //     discount: book.discount,
+    //     quantity: 1
+    //   };
+    //   this.detail.push(detail);
+    //   let detailJson = JSON.stringify(this.detail);
+    //   localStorage.setItem('detail', detailJson);
+    // }
+
+
 }
